@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+	bootstrap="tests/bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	verbose="true"
+	>
+	<php>
+		<const name="DOING_TESTS" value="1" />
+	</php>
+	<testsuites>
+		<testsuite name="WP_Lock concurrency mutexes for WordPress test suite">
+			<directory suffix=".php">tests/lock</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

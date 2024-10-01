@@ -1,0 +1,888 @@
+/* stylish header */
+.fwp-admin-banner {
+    background-color: #344054;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.fwp-admin-banner.fusewp-no-submenu {
+    padding-bottom: 6px;
+}
+
+.fusewp-admin .wrap {
+    padding-left: 20px;
+    margin: 0 20px 0 2px;
+}
+
+.wp-admin.fusewp-admin #wpcontent {
+    padding: 0;
+}
+
+.fusewp-admin #wpbody #wpbody-content .wrap h2.wp-csa-heading {
+    background-color: #fff;
+    padding: 15px 20px;
+    font-size: 2em;
+    margin: 0 -20px 20px;
+}
+
+.fwp-admin-banner__helplinks a {
+    color: rgba(255, 255, 255, .92);
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+.fusewp-admin div#screen-meta-links {
+    position: absolute;
+    right: 0;
+    z-index: 9;
+    margin-top: 58px;
+}
+
+.fusewp-admin .fusewp-admin-wrap {
+    margin-bottom: 10px;
+}
+
+.fusewp-admin .fwp-admin-banner.fusewp-pro {
+    padding: 15px 15px 0;
+}
+
+.fusewp-admin .fwp-admin-banner.fusewp-pro.fusewp-no-submenu {
+    padding-bottom: 15px
+}
+
+.fusewp-admin .wrap {
+    padding-left: 20px;
+    margin: 0 20px 0 2px
+}
+
+.fusewp-admin .fwp-admin-banner__logo {
+    display: inline-block;
+    padding: 0 0 5px;
+    margin: 0;
+}
+
+.fusewp-admin .fwp-admin-banner__logo img {
+    width: 140px;
+    height: auto;
+    float: left;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.fusewp-admin .fwp-admin-banner__helplinks {
+    float: right;
+    padding: 18px 20px;
+    padding-bottom: 0;
+}
+
+.fusewp-admin .fwp-admin-banner__helplinks a.fusewp-active {
+    background: #fff;
+    padding: 5px;
+    color: #326ee0;
+    border-radius: 4px
+}
+
+.fusewp-admin .fwp-admin-banner__helplinks > span {
+    padding-right: 15px
+}
+
+.fusewp-admin .fwp-admin-banner__helplinks a.fusewp-right-nav-active {
+    background: #475467;
+    padding: 6px 5px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.fusewp-admin .fusewp-nav-tab-wrapper {
+    padding: 0;
+    margin: 15px 16px 0;
+    border-bottom: 0;
+    display: inline-block !important;
+}
+
+.fusewp-admin .fusewp-nav-tab-wrapper .fusewp-nav-tab {
+    display: block;
+    font-weight: 500;
+    padding: 5px 12px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: rgba(255, 255, 255, .92);
+    margin: 0;
+    margin-bottom: -5px;
+}
+
+.fusewp-admin .fusewp-nav-tab-wrapper .fusewp-nav-tab.fusewp-nav-active {
+    background-color: #fff;
+    color: #2d3559;
+    border-color: #fff;
+    border-radius: 4px 4px 0 0
+}
+
+/* end stylish header */
+
+.wp_csa_view.fusewp-license .fusewp-banner {
+    display: block;
+    margin: 0 0 20px;
+    width: 100%;
+    height: 60px;
+    border-left: 2px solid #2271b1;
+    font: 400 30px/60px '';
+    text-align: center;
+    color: #ffffff;
+    background: #2271b1;
+    border-radius: 4px;
+}
+
+
+.fusewp-admin #postbox-container-1 .inside ul {
+    margin-bottom: 20px;
+}
+
+.fusewp-admin #postbox-container-1 .inside ul li {
+    position: relative;
+    padding-left: 22px;
+    font-weight: 600;
+    font-size: .9em;
+}
+
+.fusewp-admin .columns-2 #postbox-container-1 .inside ul li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: #2271b1;
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/></svg>");
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/></svg>");
+    mask-size: 16px;
+    -webkit-mask-size: 16px;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: left;
+    -webkit-mask-position: left;
+}
+
+.fusewp-admin.wp-core-ui .wrap a.fusewp-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 1em;
+
+}
+
+#fusewp-sync-pro-features .inside {
+    padding: 0 12px 12px !important;
+    margin: 6px 0 0 !important;
+}
+
+.fusewp-admin .fusewp-pro-features {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+}
+
+/*lite license page */
+.fusewp-lite-license-wrap .fusewp-license-field {
+    display: flex;
+    align-items: center;
+}
+
+.wp-core-ui .fusewp-lite-license-wrap .button.fusewp-license-button.button-secondary {
+    font-size: 1rem;
+    line-height: 1;
+    margin: 0 8px;
+    padding: 13px;
+}
+
+.fusewp-lite-license-wrap .fusewp-license-message {
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade {
+    margin-top: 20px;
+    padding: 1px;
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 20%), 0 5px 10px rgb(0 0 0 / 10%);
+    max-width: 680px;
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade__inner {
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade h3 {
+    line-height: 1.5;
+    font-size: 22px;
+    margin: 0 0 1.5rem;
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade ul {
+    margin: 1.5rem 0 calc(1.5rem - 6px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+@media screen and (min-width: 782px) {
+    .fusewp-lite-license-wrap .fusewp-settings-upgrade ul {
+        margin-left: 2.7rem;
+        margin-right: 2.7rem
+    }
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade li {
+    font-size: 15px;
+    margin: 6px 0;
+    width: 100%
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade li a {
+    color: #3c434a;
+    text-decoration: none
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade li a:hover {
+    color: var(--wp-admin-theme-color);
+    text-decoration: underline
+}
+
+@media screen and (min-width: 782px) {
+    .fusewp-lite-license-wrap .fusewp-settings-upgrade li {
+        text-align: left;
+        width: 50%
+    }
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade .button.button-large {
+    font-size: 17px;
+    line-height: 30px;
+    padding: 10px 20px
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade .fusewp-upgrade-btn-subtext {
+    text-align: center;
+    margin: 0;
+    padding: 30px 20px 20px;
+    background-color: #fcf9e8;
+    border: 1px solid #edeac9;
+    border-width: 1px 0 0;
+    position: relative;
+    border-radius: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: #3c434a;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 782px) {
+    .fusewp-lite-license-wrap .fusewp-settings-upgrade .fusewp-upgrade-btn-subtext {
+        padding-left: 4rem;
+        padding-right: 4rem
+    }
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade .fusewp-upgrade-btn-subtext svg {
+    background: #00a32a;
+    fill: #fff;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 1px #edeac9;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    margin-left: -18px
+}
+
+.fusewp-lite-license-wrap .fusewp-upgrade-btn-subtext a {
+    text-decoration: none;
+    display: block;
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade .fusewp-upgrade-btn-subtext a {
+    font-weight: normal;
+    display: inline-block;
+}
+
+.fusewp-lite-license-wrap .fusewp-settings-upgrade .fusewp-upgrade-btn-subtext u {
+    text-decoration: none;
+    font-weight: bold;
+    color: #00a32a;
+}
+
+/* tabbed settings page UI */
+
+
+.fwpview .fwp-settings-wrap {
+    display: flex;
+    border: 1px solid #c8d7e1;
+    /*border-top: 0;*/
+    margin-top: 5px;
+}
+
+.fwpview .fwp-settings-wrap .dashicons {
+    padding-top: 2px;
+    margin-right: 5px;
+}
+
+.fwpview .fwp-settings-wrap h2.nav-tab-wrapper {
+    flex: 1;
+    border-bottom: none;
+    padding: 0;
+    background: #f7f8fa;
+    border-right: 1px solid #c8d7e1;
+}
+
+.fwpview .fwp-settings-wrap h2.nav-tab-wrapper a {
+    float: none;
+    display: block;
+    margin: 0;
+    border: none;
+    padding: 15px;
+    background: #f7f8fa;
+    font-weight: 500;
+    border-bottom: 1px solid #c8d7e1;
+}
+
+.fwpview .fwp-settings-wrap h2.nav-tab-wrapper a.nav-tab-active {
+    background: #fff !important;
+    border-right: 1px solid #c8d7e1;
+    width: 99%;
+    color: #2e4453;
+}
+
+.fwpview .fwp-settings-wrap .metabox-holder {
+    flex: 3;
+    padding-left: 3%;
+    padding-right: 10px;
+    background: #fff;
+}
+
+.fwpview .fwp-settings-wrap .fwp-tab-settings .postbox {
+    border: none;
+    box-shadow: none;
+}
+
+.fwpview .fwp-settings-wrap .metabox-holder h3.hndle {
+    padding: 12px;
+    cursor: default;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.fwpview .fwp-settings-wrap .postbox:first-child h3.hndle {
+    border-top: none !important;
+}
+
+/* integrations listing design */
+
+.fwpview .fusewp-integrations-wrap {
+    position: relative;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.fwpview .fusewp-integrations-wrap .fusewp-integrations-wrap:before {
+    content: "";
+    display: table;
+}
+
+.fwpview .fusewp-integrations-wrap .fusewp-integration-tile {
+    position: relative;
+    border: none;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.1);
+    float: left;
+    background: #fff;
+    height: 200px;
+    margin: 0 15px 15px 0;
+    text-align: center;
+    width: 208px;
+    transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -webkit-transition: opacity .3s ease-in-out;
+    border-radius: 3px;
+}
+
+.fwpview .fusewp-integrations-wrap .fusewp-integration-icon {
+    margin: 25px auto 0;
+    height: 55px;
+    width: 65px;
+    text-indent: -9999px;
+    background-size: 65px 55px;
+}
+
+.fwpview .fusewp-integrations-wrap .fusewp-integration-tile.fs-active::after {
+    font-family: 'dashicons';
+    content: "\f147";
+    color: #ffffff;
+    margin: 5px;
+    background-color: #00b300;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+
+.fwpview .fusewp-integrations-wrap .fusewp-integration-name {
+    margin: 14px 5px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+}
+
+.fusewp-modal-settings-wrap p {
+    font-size: 14px;
+}
+
+/* Sync admin page */
+.fusewp-wp-list-empty-state-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.fusewp-wp-list-empty-state-wrapper .fusewp-wp-list-empty-state-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    text-align: center;
+    max-width: 380px;
+    min-height: 320px;
+}
+
+#poststuff .fusewp-wp-list-empty-state-wrapper .fusewp-wp-list-empty-state-inner h2 {
+    margin-top: 32px;
+    margin-bottom: 0;
+    padding: 0;
+    color: #344054;
+    flex: 1 0 100%;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.fusewp-wp-list-empty-state-wrapper .fusewp-wp-list-empty-state-inner p {
+    flex: 1 0 100%;
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding: 0;
+    color: #667085;
+    font-size: 14px;
+
+}
+
+.fusewp-wp-list-empty-state-wrapper .fusewp-wp-list-empty-state-inner .fusewp-btn {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 40px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    background-color: #2271b1;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2271b1;
+    text-decoration: none;
+    color: #fff !important;
+    transition: all 0.2s ease-in-out;
+    transition-property: background, border, box-shadow;
+    margin-top: 32px;
+}
+
+.fusewp-wp-list-empty-state-wrapper .fusewp-wp-list-empty-state-inner .dashicons {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    mask-size: 20px;
+    margin-right: 6px;
+    margin-left: -4px;
+}
+
+.fusewp-wp-list-empty-state-wrapper .fusewp-wp-list-empty-state-inner .fusewp-small {
+    font-size: 12px;
+    display: block;
+    position: relative;
+    margin-top: 32px;
+    margin-bottom: 0;
+    padding: 0;
+    color: #667085;
+}
+
+/* sync add/edit screen */
+#post-body .fusewp-metabox.postbox.no-drag .hndle {
+    cursor: default;
+}
+
+.fusewp-admin .fusewp-metabox .handle-actions .handle-order-higher,
+.fusewp-admin .fusewp-metabox .handle-actions .handle-order-lower {
+    display: none
+}
+
+/* */
+#post-body .fusewp-metabox.postbox .inside {
+    padding: 0;
+    margin: 0;
+}
+
+.fusewp-table {
+    line-height: 1.3;
+    color: #515151;
+    background: #fff;
+    border: 0;
+    border-spacing: 0;
+    margin: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.fusewp-table table {
+    table-layout: fixed;
+}
+
+.fusewp-table .fusewp-table__col {
+    vertical-align: top;
+    border: 0 none;
+    border-top: 1px solid #f2f2f2;
+    padding: 18px 20px 18px 20px;
+    float: none;
+}
+
+.fusewp-table .fusewp-table__col--label {
+    border-top-color: #f0f0f0;
+    line-height: 1.15;
+    font-size: 13px;
+    font-weight: 600;
+    border-right: 1px solid #e6e6e6;
+    background: #f9f9f9;
+    width: 200px;
+    overflow: hidden;
+}
+
+.fusewp-table th.fusewp-map-field-table-data {
+    width: 40%;
+}
+
+.fusewp-table th.fusewp-map-field-table-data-type {
+    width: 15%;
+}
+
+.fusewp-table th.fusewp-map-field-table-field-value {
+    width: 40%;
+}
+
+.fusewp-table th.fusewp-map-field-table-actions {
+    width: 5%;
+}
+
+.fusewp-table .fusewp-table__row:first-child .fusewp-table__col {
+    border-top: none;
+}
+
+.fusewp-table .fusewp-table__col--field {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.fusewp-field {
+    margin: 1px;
+    width: 100%;
+}
+
+.wp-admin select.fusewp-field {
+    max-width: 100%;
+}
+
+.fusewp-actions-container {
+    padding: 10px 15px;
+}
+
+.fusewp-metabox.postbox .fusewp-metabox-footer {
+    padding: 9px 15px;
+    background: #f5f5f5;
+    border-top: 1px solid #e1e1e1;
+    text-align: right;
+    display: none;
+}
+
+.fusewp-metabox.postbox .fusewp-metabox-footer.fusewp-show {
+    display: block;
+}
+
+/* builder spinner */
+.fusewp_preloader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 250, 250, 0.9);
+    z-index: 99995;
+}
+
+#poststuff {
+    position: relative;
+}
+
+.fusewp_preloader .spinner {
+    display: block;
+    width: 85px;
+    height: 85px;
+    top: 40%;
+    right: 50%;
+    text-align: center;
+    margin: auto;
+    position: fixed;
+}
+
+.fusewp-action {
+    margin: 5px 0 10px;
+}
+
+.fusewp-action__header {
+    position: relative;
+    padding: 14px 17px;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+}
+
+.fusewp-action.fusewp-open .fusewp-action__header {
+    background: #2a9bd9;
+    color: #fff;
+    position: relative;
+    margin: 0 -1px 0 -1px;
+    border: none;
+    text-shadow: none;
+}
+
+.fusewp-action__header .row-options {
+    float: right;
+    font-size: 12px;
+}
+
+.fusewp-action__header .row-options a {
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.fusewp-action__header h4 {
+    font-size: 14px;
+    margin: 0;
+    display: inline-block;
+}
+
+.fusewp-table {
+    line-height: 1.3;
+    color: #515151;
+    background: #fff;
+    border: 0;
+    border-spacing: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.fusewp-action.js-open .fusewp-action__header h4, .fusewp-action.fusewp-open .fusewp-action__header a {
+    color: #fff;
+}
+
+.fusewp-action__fields {
+    border: 1px solid #e1e1e1;
+    display: none;
+}
+
+.fusewp-action.fusewp-open .fusewp-action__fields {
+    display: block;
+}
+
+.fusewp-field-description {
+    color: #8e8e8e;
+    font-size: 13px;
+    margin: 7px 1px 0;
+    font-style: italic;
+}
+
+.fusewp-help-tip {
+    display: inline-block;
+    font-style: normal;
+    height: 16px;
+    line-height: 16px;
+    position: relative;
+    vertical-align: middle;
+    width: 16px;
+    color: #a9a9a9;
+    float: right;
+    right: -2px;
+    font-size: 1.2em;
+    cursor: help;
+    margin: 0;
+    font-weight: normal;
+}
+
+.fusewp-field-wrap tbody tr {
+    background-color: #f9f9f9;
+}
+
+.fusewp-field-wrap tbody tr .fusewp-map-field-table-delete-icon {
+    cursor: pointer;
+}
+
+.fusewp-field-wrap .fusewp-map-field-table-delete-icon {
+    background: #aaa;
+    border-radius: 50% !important;
+    padding: 4px 2px 4px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.fusewp-field-wrap td.fusewp-map-field-table-actions {
+    padding-top: 12px;
+}
+
+.fusewp-switch {
+    cursor: pointer;
+    text-indent: -999em;
+    display: block;
+    width: 38px;
+    height: 22px;
+    border-radius: 30px;
+    border: none;
+    position: relative;
+    box-sizing: border-box;
+    transition: all .3s ease;
+    box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.fusewp-switch[data-fusewp-switch=active] {
+    box-shadow: inset 0 0 0 11px #0085ba;
+}
+
+.fusewp-switch[data-fusewp-switch=disabled] {
+    background: #ccc;
+}
+
+.fusewp-switch::before {
+    border-radius: 50%;
+    background: #fff;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    top: 2px;
+    left: 2px;
+    transition: all .15s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+.fusewp-switch[data-fusewp-switch=active]::before {
+    transform: translateX(16px);
+}
+
+.fusewp-switch.fusewp-loading {
+    cursor: default;
+    opacity: .5;
+}
+
+.fwpview .fusewp-sync-status-wrap {
+    display: block;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.fwpview .fusewp-sync-status-wrap select {
+    min-width: 208px;
+}
+
+.fusewp_sync_page .sync_rules th#status {
+    width: 70px;
+}
+
+.fusewp-sync-source-info p {
+    font-size: 14px;
+}
+
+.fusewp-sync-source-info {
+    background-color: #cfe2ff8c;
+    border: 1px solid #9ec5fe;
+    border-radius: 4px;
+    color: #052c65;
+    margin-bottom: 12px;
+    padding: 1px 12px;
+}
+
+.fusewp-field-wrap .select2-container {
+    width: 100% !important;
+}
+
+.fusewp_sync_log_page th#integration {
+    width: 250px;
+}
+
+.fusewp_sync_log_page th#date {
+    width: 180px;
+}
+
+.fusewp_sync_log_page .error_message textarea {
+    width: 100%;
+    min-height: 70px;
+}
+
+.fusewp-upsell-block {
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+    box-sizing: border-box;
+    color: #31708f;
+    outline: 0;
+    margin: 10px;
+    padding: 10px;
+}
+
+.fusewp-upsell-block p {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+.fusewp-license-message {
+    font-size: 15px;
+    margin-top: 8px
+}
+
+.fusewp-license-message--valid {
+    color: #15803d
+}
+
+.fusewp-license-message--invalid {
+    color: #b91c1c
+}
+
+.fusewp-modal-settings-wrap label {
+    display:block;
+    font-weight: 500;
+}

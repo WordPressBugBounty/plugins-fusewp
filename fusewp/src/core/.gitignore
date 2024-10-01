@@ -1,0 +1,7 @@
+build/
+node_modules/*
+vendor/*
+vendor-prefixed/*
+libs/*
+composer.lock
+.DS_Store

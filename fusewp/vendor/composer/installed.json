@@ -1,0 +1,382 @@
+{
+    "packages": [
+        {
+            "name": "barryvdh/composer-cleanup-plugin",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mailoptin/composer-cleanup-plugin.git",
+                "reference": "80cceff45bfb85a0f49236537b1f1c928a1ee820"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mailoptin/composer-cleanup-plugin/zipball/80cceff45bfb85a0f49236537b1f1c928a1ee820",
+                "reference": "80cceff45bfb85a0f49236537b1f1c928a1ee820",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0"
+            },
+            "time": "2024-03-06T10:56:07+00:00",
+            "default-branch": true,
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                },
+                "class": "Barryvdh\\Composer\\CleanupPlugin"
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Composer\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A composer cleanup plugin, to remove tests and documentation to save space",
+            "support": {
+                "source": "https://github.com/mailoptin/composer-cleanup-plugin/tree/master"
+            },
+            "install-path": "../barryvdh/composer-cleanup-plugin"
+        },
+        {
+            "name": "collizo4sky/persist-admin-notices-dismissal",
+            "version": "1.4.5",
+            "version_normalized": "1.4.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/w3guy/persist-admin-notices-dismissal.git",
+                "reference": "163b868c98cf97ea15b4d7e1305e2d52c9242e7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/w3guy/persist-admin-notices-dismissal/zipball/163b868c98cf97ea15b4d7e1305e2d52c9242e7e",
+                "reference": "163b868c98cf97ea15b4d7e1305e2d52c9242e7e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "time": "2024-03-10T15:11:42+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "persist-admin-notices-dismissal.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Collins Agbonghama",
+                    "email": "me@w3guy.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Simple library to persist dismissal of admin notices across pages in WordPress dashboard.",
+            "support": {
+                "issues": "https://github.com/w3guy/persist-admin-notices-dismissal/issues",
+                "source": "https://github.com/w3guy/persist-admin-notices-dismissal"
+            },
+            "install-path": "../collizo4sky/persist-admin-notices-dismissal"
+        },
+        {
+            "name": "composer/installers",
+            "version": "v1.12.0",
+            "version_normalized": "1.12.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.6.* || ^2.0",
+                "composer/semver": "^1 || ^3",
+                "phpstan/phpstan": "^0.12.55",
+                "phpstan/phpstan-phpunit": "^0.12.16",
+                "symfony/phpunit-bridge": "^4.2 || ^5",
+                "symfony/process": "^2.3"
+            },
+            "time": "2021-09-13T08:19:44+00:00",
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Starbug",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "miaoxing",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "pantheon",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "processwire",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "symfony",
+                "tastyigniter",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v1.12.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "./installers"
+        },
+        {
+            "name": "fusewp/core",
+            "version": "0.2.1723397579",
+            "version_normalized": "0.2.1723397579.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://php.fury.io/uDXRvLf8b2ywvgcokC7z/mailoptin/~/up/ver_1kh8HD/fusewpcore-0-2-1723397579.zip"
+            },
+            "require": {
+                "barryvdh/composer-cleanup-plugin": "dev-master",
+                "collizo4sky/persist-admin-notices-dismissal": "^1.3",
+                "composer/installers": "~1.0",
+                "soulseekah/wp-lock": "dev-master"
+            },
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "FuseWP\\Core\\": "src/"
+                },
+                "classmap": [
+                    "src/Libs/"
+                ],
+                "files": [
+                    "src/Functions/CustomSettingsPageApi.php",
+                    "src/Functions/functions.php"
+                ]
+            },
+            "description": "Core lib for FuseWP",
+            "install-path": "../../src/core"
+        },
+        {
+            "name": "mailoptin/authifly",
+            "version": "0.2.1723380183",
+            "version_normalized": "0.2.1723380183.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://php.fury.io/uDXRvLf8b2ywvgcokC7z/mailoptin/~/up/ver_278ctx/mailoptinauthifly-0-2-1723380183.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "ext-curl": "*"
+            },
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Authifly\\": "src/"
+                },
+                "classmap": [
+                    "OAuthCredentialStorage.php",
+                    "ConstantContact.php",
+                    "ConstantContactV3.php",
+                    "Aweber.php",
+                    "Aweber2.php",
+                    "CampaignMonitor.php",
+                    "VerticalResponse.php",
+                    "Facebook.php",
+                    "Hubspot.php",
+                    "Zoho.php",
+                    "Infusionsoft.php",
+                    "CleverReach.php",
+                    "Stripe.php",
+                    "Newsman.php",
+                    "Mailchimp.php",
+                    "Salesforce.php",
+                    "Microsoft.php",
+                    "HighLevel.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP OAuth Authentication Library",
+            "keywords": [
+                "api",
+                "authentication",
+                "authorization",
+                "oauth",
+                "openid",
+                "social"
+            ],
+            "install-path": "../authifly"
+        },
+        {
+            "name": "soulseekah/wp-lock",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/soulseekah/wp-lock.git",
+                "reference": "188e13dacdec526cf2e50a761a1061992d4c2486"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/soulseekah/wp-lock/zipball/188e13dacdec526cf2e50a761a1061992d4c2486",
+                "reference": "188e13dacdec526cf2e50a761a1061992d4c2486",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-05-10T17:42:22+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "lib/class-wp-lock.php",
+                    "lib/backend/class-wp-lock-backend.php",
+                    "lib/backend/class-wp-lock-backend-flock.php",
+                    "lib/backend/class-wp-lock-backend-wpdb.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "A library for locking and mutexes for the WordPress Core",
+            "homepage": "https://github.com/soulseekah/wp-lock",
+            "support": {
+                "issues": "https://github.com/soulseekah/wp-lock/issues",
+                "source": "https://github.com/soulseekah/wp-lock/tree/master"
+            },
+            "install-path": "../soulseekah/wp-lock"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

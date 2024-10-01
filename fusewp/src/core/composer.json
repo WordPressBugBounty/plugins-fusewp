@@ -1,0 +1,32 @@
+{
+  "name": "fusewp/core",
+  "description": "Core lib for FuseWP",
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "~1.0",
+    "collizo4sky/persist-admin-notices-dismissal": "^1.3",
+    "soulseekah/wp-lock": "dev-master",
+    "barryvdh/composer-cleanup-plugin": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "FuseWP\\Core\\": "src/"
+    },
+    "classmap": [
+      "src/Libs/"
+    ],
+    "files": [
+      "src/Functions/CustomSettingsPageApi.php",
+      "src/Functions/functions.php"
+    ]
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "barryvdh/composer-cleanup-plugin": true
+    }
+  }
+}

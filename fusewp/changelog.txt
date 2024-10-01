@@ -1,0 +1,102 @@
+== Changelog ==
+
+= 1.1.14.0 =
+* Added [Gravity Forms integration](https://fusewp.com/article/sync-gravity-forms-email-marketing/?ref=changelog).
+* Added [GetResponse integration](https://fusewp.com/article/connect-wordpress-to-getresponse/?ref=changelog).
+* Added [Mailjet integration](https://fusewp.com/article/connect-wordpress-to-mailjet/?ref=changelog).
+* Added tag as segmentation support to Mailchimp integration.
+* Fixed bug where some CRM integrations didn't fetch all lists, tags, and custom fields.
+* Fixed N+1 DB query issue by introducing Source Item row to Sync rule page.
+* Added caching to the AWeber email list and custom field methods.
+* Reduced Bulksync cron schedule from 5 to 1mins.
+
+= 1.1.13.0 =
+* Added [EmailOctopus integration](https://fusewp.com/article/connect-wordpress-to-emailoctopus/?ref=changelog).
+* Added [Drip integration](https://fusewp.com/article/connect-wordpress-to-drip/?ref=changelog).
+* Added [Omnisend integration](https://fusewp.com/article/connect-wordpress-to-omnisend/?ref=changelog).
+
+= 1.1.12.0 =
+* Added [Zoho CRM integration](https://fusewp.com/article/connect-wordpress-to-zoho-crm/?ref=changelog).
+* Pro [Easy Digital Downloads integration](https://fusewp.com/article/sync-easy-digital-downloads-email-marketing/?ref=changelog).
+* Added context to error logs.
+* Fixed bug where bulk-sync processed items from newest to oldest instead of the opposite.
+
+= 1.1.11.0 =
+* Added [MailerLite integration](https://fusewp.com/article/connect-wordpress-to-mailerlite/?ref=changelog).
+* Added [HighLevel integration](https://fusewp.com/article/connect-wordpress-to-highlevel/?ref=changelog).
+* Enhancement: Sync actions are now executed on PHP shutdown.
+* Added filter to sync roles of users.
+
+= 1.1.10.1 =
+* Fixed bug where hubspot fails to add contact to list.
+
+= 1.1.10.0 =
+* Fixed bug where Klaviyo only returned 10 lists.
+* Fixed bug where multi select field was not clearing in Campaign Monitor Sync.
+* Added setting to enable/disable external sync on profile update.
+* Added filter to bulk sync record limit.
+* Ensure Klaviyo adds users to the correct list even if they already exist as profiles.
+* Fixed bug with sync causing issues when users are added from wp-admin.
+* Fixed PHP Warning: Attempt to read property "ID" on bool.
+
+= 1.1.9.0 =
+* Added [Klaviyo integration](https://fusewp.com/article/connect-wordpress-to-klaviyo/?ref=changelog).
+* Added [Flodesk integration](https://fusewp.com/article/connect-wordpress-to-flodesk/?ref=changelog).
+* Pro: [WooCommerce Sync](https://fusewp.com/article/sync-woocommerce-email-marketing/?ref=changelog).
+* Use tagging for segmentation in ConvertKit.
+* Declared HPOS support for WooCommerce.
+* Added ANY source rule support for bulk sync.
+* Fixed a couple of PHP Warnings.
+
+= 1.1.8.1 =
+* Fixed PHP fatal error on user role sync.
+
+= 1.1.8.0 =
+* Added [ConvertKit integration](https://fusewp.com/article/connect-wordpress-to-convertkit/?ref=prochangelog).
+* Pro: [ACF integration](https://fusewp.com/article/advanced-custom-fields/?ref=prochangelog).
+* Added sync support when user role changes.
+* Added bulk action to delete all logs.
+
+= 1.1.7.0 =
+* Added [HubSpot integration](https://fusewp.com/article/connect-wordpress-to-hubspot/?ref=changelog).
+* Pro: [ProfilePress integration](https://fusewp.com/article/sync-profilepress-email-marketing/?ref=changelog).
+* Pro: [Restrict Content Pro integration](https://fusewp.com/article/sync-restrict-content-pro-email-marketing/?ref=changelog).
+
+= 1.1.6.0 =
+* Added [Bulk-sync feature](https://fusewp.com/article/bulk-sync-existing-users-memberships-records/) for syncing historical/existing records.
+
+= 1.1.5.0 =
+* Pro [LifterLMS integration](https://fusewp.com/article/sync-lifterlms-email-marketing/?ref=changelog).
+* Pro [Constant Contact - Custom App](https://fusewp.com/article/connect-wordpress-to-constant-contact/?ref=changelog#Connecting_Constant_Contact_via_Custom_App) integration.
+* Pro: Sync support for Ultimate Member.
+* Added [Sendy integration](https://fusewp.com/article/connect-wordpress-to-sendy/?ref=changelog).
+* Fixed bug with AWeber not updating a subscriber that exists.
+* Fixed memory issue on user sync table display.
+
+= 1.1.4.0 =
+* Pro [Paid Memberships Pro integration](https://fusewp.com/article/sync-paid-memberships-pro-email-marketing/?ref=changelog)
+* Added [AWeber integration](https://fusewp.com/article/connect-wordpress-to-aweber/?ref=changelog)
+* Fixed bug where contacts might be unsubscribed when they should be subscribed.
+* Fixed bug where ActiveCampaign jobTitle value could be Array.
+
+= 1.1.3.0 =
+* Pro: [LearnDash integration](https://fusewp.com/article/sync-learndash-email-marketing/?ref=changelog)
+* Added [Brevo (Sendinblue integration)](https://fusewp.com/article/connect-wordpress-to-brevo/?ref=changelog)
+
+= 1.1.2.0 =
+* Pro [WooCommerce Subscriptions integration](https://fusewp.com/article/sync-woocommerce-subscriptions-email-marketing/?ref=changelog)
+* Added [ActiveCampaign integration](https://fusewp.com/article/connect-wordpress-to-activecampaign/?ref=changelog)
+* Fixed bug where an empty error could be logged.
+
+= 1.1.1.0 =
+* Pro [MemberPress integration](https://fusewp.com/article/sync-memberpress-email-marketing/?ref=changelog)
+* Added [Campaign Monitor integration](https://fusewp.com/article/connect-wordpress-to-campaign-monitor/?ref=changelog)
+* Added "any roles" support to user role sync.
+* Fixed bug where mailchimp subscription fails on empty merge fields.
+* PHP 8 improvements.
+* Fixed bug where disabled sync rules might still be triggered.
+* Fixed bug where integration select-dropdown included unconnected integrations.
+* Fixed bug where Add new sync rule page left the menu inactive.
+
+= 1.1.0.0 =
+* The genesis
