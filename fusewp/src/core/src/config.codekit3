@@ -17,28 +17,12 @@
       "oAP" : "\/Admin\/AdminNotices.php",
       "oF" : 0
     },
-    "\/Admin\/BulkSync\/BulkSyncBGProcess.php" : {
+    "\/Admin\/BulkSyncHandler.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/Admin\/BulkSync\/BulkSyncBGProcess.php",
-      "oF" : 0
-    },
-    "\/Admin\/BulkSync\/BulkSyncHandler.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/Admin\/BulkSync\/BulkSyncHandler.php",
-      "oF" : 0
-    },
-    "\/Admin\/BulkSync\/index.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/Admin\/BulkSync\/index.php",
+      "oAP" : "\/Admin\/BulkSyncHandler.php",
       "oF" : 0
     },
     "\/Admin\/Fields\/AbstractFieldEntity.php" : {
@@ -649,6 +633,14 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Core.php",
+      "oF" : 0
+    },
+    "\/Cron.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Cron.php",
       "oF" : 0
     },
     "\/DBUpdates.php" : {
@@ -1355,28 +1347,36 @@
       "oAP" : "\/Integrations\/ZohoCRM\/ZohoCRM.php",
       "oF" : 0
     },
-    "\/Libs\/index.php" : {
+    "\/QueueManager\/Connection.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/Libs\/index.php",
+      "oAP" : "\/QueueManager\/Connection.php",
       "oF" : 0
     },
-    "\/Libs\/WP_Async_Request.php" : {
+    "\/QueueManager\/Queue.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/Libs\/WP_Async_Request.php",
+      "oAP" : "\/QueueManager\/Queue.php",
       "oF" : 0
     },
-    "\/Libs\/WP_Background_Process.php" : {
+    "\/QueueManager\/QueueJob.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/Libs\/WP_Background_Process.php",
+      "oAP" : "\/QueueManager\/QueueJob.php",
+      "oF" : 0
+    },
+    "\/QueueManager\/QueueManager.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/QueueManager\/QueueManager.php",
       "oF" : 0
     },
     "\/RegisterActivation\/Base.php" : {
@@ -1451,6 +1451,22 @@
       "oAP" : "\/Sync\/Sources\/MappingUserDataEntity.php",
       "oF" : 0
     },
+    "\/Sync\/Sources\/SyncQueueHandler.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/SyncQueueHandler.php",
+      "oF" : 0
+    },
+    "\/Sync\/Sources\/WPForms.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/WPForms.php",
+      "oF" : 0
+    },
     "\/Sync\/Sources\/WPUserRoles.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1472,7 +1488,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 745081272.34121704
+    "lastBuiltDate" : 749730656.22172594
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

@@ -17,6 +17,7 @@ function fusewp_mo_uninstall_function()
 
         $drop_tables[] = "DROP TABLE IF EXISTS " . Core::sync_rule_db_table();
         $drop_tables[] = "DROP TABLE IF EXISTS " . Core::sync_log_db_table();
+        $drop_tables[] = "DROP TABLE IF EXISTS " . Core::queue_db_table();
 
         foreach ($drop_tables as $tables) {
             $wpdb->query($tables);
@@ -29,6 +30,7 @@ function fusewp_mo_uninstall_function()
         delete_option('fusewp_dismiss_leave_review_forever');
         delete_option('fusewp_upgrader_success_flag');
         delete_option('fusewp_connect_token');
+        delete_option('fusewp_bulk_sync_processed_cache');
 
         delete_option('fusewp_license_status');
         delete_option('fusewp_license_expired_status');

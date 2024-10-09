@@ -1,5 +1,16 @@
 == Changelog ==
 
+= 1.1.15.0 =
+* Added [WPForms integration](https://fusewp.com/article/sync-wpforms-email-marketing/?ref=changelog).
+* Added Queue system for processing sync actions.
+* Improve bulk-syncing by showing processing status and skipping processed records.
+* Added fusewp_should_process_sync_immediately filter.
+* Enhancement: Add data as custom properties in Klaviyo without a mapped corresponding field.
+* Fixed a bug where the Gravity Form LeadEmailAddress field was showing for other integrations.
+* Fixed bug where empty field value didn't update in HubSpot.
+* Fixed bug with fusewpEmail included in sync payload.
+* Remove deprecated jQuery codes.
+
 = 1.1.14.0 =
 * Added [Gravity Forms integration](https://fusewp.com/article/sync-gravity-forms-email-marketing/?ref=changelog).
 * Added [GetResponse integration](https://fusewp.com/article/connect-wordpress-to-getresponse/?ref=changelog).

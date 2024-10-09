@@ -4,6 +4,7 @@ namespace FuseWP\Core\Sync\Sources;
 
 use FuseWP\Core\Integrations\ContactFieldEntity;
 use FuseWP\Core\Integrations\IntegrationInterface;
+use FuseWP\Core\QueueManager\QueueManager;
 
 class GravityForms extends AbstractSyncSource
 {
@@ -11,7 +12,7 @@ class GravityForms extends AbstractSyncSource
     {
         parent::__construct();
 
-        $this->title = esc_html__('Gravity Forms', 'fusewp');
+        $this->title = 'Gravity Forms';
 
         $this->id = 'gravity_forms';
 
@@ -68,6 +69,7 @@ class GravityForms extends AbstractSyncSource
         return $options;
     }
 
+    /** Ensures fusewpEmail/Lead Email address field isn't added multiple times in the mapping UI */
     protected function is_email_field_found($integration_contact_fields)
     {
         if (is_array($integration_contact_fields)) {
@@ -88,13 +90,18 @@ class GravityForms extends AbstractSyncSource
      */
     public function add_email_field_mapping_ui($integration_contact_fields)
     {
-        if ($this->is_email_field_found($integration_contact_fields) === false) {
+        $souceData = $this->get_source_data();
 
-            $field = (new ContactFieldEntity())
-                ->set_id('fusewpEmail')
-                ->set_name(esc_html__('Lead Email Address', 'fusewp'));
+        if ($souceData[0] == $this->id) {
 
-            array_unshift($integration_contact_fields, $field);
+            if ($this->is_email_field_found($integration_contact_fields) === false) {
+
+                $field = (new ContactFieldEntity())
+                    ->set_id('fusewpEmail')
+                    ->set_name(esc_html__('Lead Email Address', 'fusewp'));
+
+                array_unshift($integration_contact_fields, $field);
+            }
         }
 
         return $integration_contact_fields;
@@ -225,7 +232,7 @@ class GravityForms extends AbstractSyncSource
             $value = $extras[$field_key] ?? '';
         }
 
-        return apply_filters('fusewp_' . $this->id . '_custom_field_data', $value, $field_id, $wp_user_id, $this);
+        return apply_filters('fusewp_' . $this->id . '_custom_field_data', $value, $field_id, $wp_user_id, $this, $extras);
     }
 
     protected function get_email_gf_field_id($mapped_custom_fields)
@@ -243,8 +250,9 @@ class GravityForms extends AbstractSyncSource
     }
 
     /**
-     * @param $event
-     * @param $entry
+     * @param string $event
+     * @param mixed $entry
+     * @param int $user_id
      *
      * @return void
      */
@@ -294,17 +302,17 @@ class GravityForms extends AbstractSyncSource
 
                             $list_id = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
 
-                            $GLOBALS['fusewp_sync_source_id']             = $this->id;
-                            $GLOBALS['fusewp_sync_destination'][$list_id] = $destination;
-                            $GLOBALS['fusewp_sync_execution_rule_id']     = $rule['id'];
-
-                            $sync_action->subscribe_user(
-                                $list_id,
-                                $email_address,
-                                $user_data,
-                                fusewpVar($destination, $sync_action::CUSTOM_FIELDS_FIELD_ID, []),
-                                fusewpVar($destination, $sync_action::TAGS_FIELD_ID, ''),
-                            );
+                            QueueManager::push([
+                                'action'                => 'subscribe_user',
+                                'source_id'             => $this->id,
+                                'rule_id'               => $rule['id'],
+                                'destination'           => $destination,
+                                'integration'           => $sync_action->get_integration_id(),
+                                'mappingUserDataEntity' => $user_data,
+                                'extras'                => $entry,
+                                'list_id'               => $list_id,
+                                'email_address'         => $email_address
+                            ], 5, 1);
                         }
                     }
                 }

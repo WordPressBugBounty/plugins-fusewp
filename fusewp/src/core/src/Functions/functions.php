@@ -174,7 +174,6 @@ function fusewp_clean($var, $callback = 'sanitize_text_field')
  * @param $callback
  *
  * @return bool|mixed
- * @todo add support for using transient for cache
  */
 function fusewp_cache_transform($cache_key, $callback)
 {
@@ -612,11 +611,6 @@ function fusewp_delete_bulk_sync_flag($flag_id)
     $old = get_option('fusewp_bulk_sync_flag', []);
 
     return update_option('fusewp_bulk_sync_flag', array_diff($old, [$flag_id]), false);
-}
-
-function fusewp_is_bulk_sync_background_process()
-{
-    return defined('FUSEWP_BULK_SYNC_PROCESS_TASK') && FUSEWP_BULK_SYNC_PROCESS_TASK === 'true';
 }
 
 function fusewp_set_time_limit($limit = 0)

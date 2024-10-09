@@ -20,7 +20,7 @@
 
             $(document).on('click', '.fusewp-switch.fusewp-toggle-sync-status', this.syncStatusSwitch);
 
-            $(document).on('ready', this.onReady);
+            $(this.onReady); // trigger on ready event
         };
 
         this.initScript = function () {

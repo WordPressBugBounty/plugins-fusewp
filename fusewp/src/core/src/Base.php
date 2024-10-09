@@ -3,7 +3,7 @@
 namespace FuseWP\Core;
 
 use FuseWP\Core\Admin\AdminNotices;
-use FuseWP\Core\Admin\BulkSync\BulkSyncHandler;
+use FuseWP\Core\Admin\BulkSyncHandler;
 use FuseWP\Core\Admin\SettingsPage\LicenseUpgrader;
 use FuseWP\Core\Admin\SettingsPage\ProUpgrade;
 use FuseWP\Core\Admin\SettingsPage\SyncLogPage;
@@ -27,7 +27,10 @@ use FuseWP\Core\Integrations\Flodesk;
 use FuseWP\Core\Integrations\Klaviyo;
 use FuseWP\Core\Integrations\HighLevel;
 use FuseWP\Core\Integrations\ZohoCRM;
+use FuseWP\Core\QueueManager\QueueManager;
 use FuseWP\Core\Sync\Sources\GravityForms;
+use FuseWP\Core\Sync\Sources\SyncQueueHandler;
+use FuseWP\Core\Sync\Sources\WPForms;
 use FuseWP\Core\Sync\Sources\WPUserRoles;
 
 if ( ! defined('ABSPATH')) {
@@ -41,13 +44,7 @@ define('FUSEWP_ROOT', wp_normalize_path(plugin_dir_path(FUSEWP_SYSTEM_FILE_PATH)
 define('FUSEWP_URL', plugin_dir_url(FUSEWP_SYSTEM_FILE_PATH));
 define('FUSEWP_ASSETS_DIR', wp_normalize_path(dirname(__FILE__) . '/assets/'));
 
-if (strpos(__FILE__, 'fusewp' . DIRECTORY_SEPARATOR . 'src') !== false) {
-    // production url path to assets folder.
-    define('FUSEWP_ASSETS_URL', FUSEWP_URL . 'src/core/src/assets/');
-} else {
-    // dev url path to assets folder.
-    define('FUSEWP_ASSETS_URL', dirname(FUSEWP_URL) . wp_normalize_path('/' . dirname(substr(__FILE__, strpos(__FILE__, 'fusewp'))) . '/assets/'));
-}
+define('FUSEWP_ASSETS_URL', plugins_url('assets/', __FILE__));
 
 define('FUSEWP_SRC', wp_normalize_path(dirname(__FILE__) . '/'));
 define('FUSEWP_SETTINGS_PAGE_FOLDER', wp_normalize_path(dirname(__FILE__) . '/Admin/SettingsPage/'));
@@ -97,6 +94,11 @@ class Base
             }
         });
 
+        Cron::get_instance();
+
+        QueueManager::get_instance()->init_cron();
+        SyncQueueHandler::get_instance();
+
         AjaxHandler::get_instance();
         RegisterScripts::get_instance();
         BulkSyncHandler::get_instance();
@@ -124,9 +126,14 @@ class Base
 
         // Sources
         WPUserRoles::get_instance();
+
         add_action('gform_loaded', function () {
             GravityForms::get_instance();
         }, 5);
+
+        add_action('wpforms_loaded', function () {
+            WPForms::get_instance();
+        });
 
         $this->admin_hooks();
 

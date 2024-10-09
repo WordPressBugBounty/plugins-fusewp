@@ -260,26 +260,19 @@ class SyncAction extends AbstractSyncAction
                 $properties['hubspot_owner_id'] = $owner;
             }
 
-            $transformed_data = array_filter(
-                $this->transform_custom_field_data($custom_fields, $mappingUserDataEntity),
-                'fusewp_is_valid_data'
-            );
+            // not using fusewp_is_valid_data so removed/empty data can be transferred over to HubSpot. That is, if a user empty out a field or
+            // want to remove a previously selected data, fusewp_is_valid_data would remove that field. so we dont want that.
+            $transformed_data = $this->transform_custom_field_data($custom_fields, $mappingUserDataEntity);
 
-            $properties = apply_filters(
-                'fusewp_hubspot_subscription_parameters',
-                array_filter(array_merge($properties, $transformed_data), 'fusewp_is_valid_data'),
-                $this
-            );
+            $properties = apply_filters('fusewp_hubspot_subscription_parameters', array_merge($properties, $transformed_data), $this);
 
             $contact_data = ['properties' => []];
 
             foreach ($properties as $property => $value) {
-                if ( ! empty($value)) {
-                    $contact_data['properties'][] = [
-                        'property' => $property,
-                        'value'    => $value
-                    ];
-                }
+                $contact_data['properties'][] = [
+                    'property' => $property,
+                    'value'    => $value
+                ];
             }
 
             $response = $this->hubspotInstance->apiClass()->addSubscriber(

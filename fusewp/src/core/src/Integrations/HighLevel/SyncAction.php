@@ -293,10 +293,14 @@ class SyncAction extends AbstractSyncAction
                     'DELETE',
                     ['tags' => [$list_id]]
                 );
+
+                return true;
             }
 
         } catch (\Exception $e) {
         }
+
+        return false;
     }
 
     protected function add_tags_to_contact($contact_id, $lead_tag)

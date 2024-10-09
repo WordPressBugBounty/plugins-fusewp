@@ -18,6 +18,7 @@ class CreateDBTables
 
         $sync_table     = Core::sync_rule_db_table();
         $sync_log_table = Core::sync_log_db_table();
+        $queue_table = Core::queue_db_table();
 
         $sqls[] = "CREATE TABLE IF NOT EXISTS $sync_table (
                   id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -37,6 +38,17 @@ class CreateDBTables
                   PRIMARY KEY (id)
                 ) $collate;
 				";
+
+        $sqls[] = "CREATE TABLE IF NOT EXISTS $queue_table (
+                    id bigint(20) NOT NULL AUTO_INCREMENT,
+                    priority bigint(20) NOT NULL DEFAULT 0,
+                    job longtext NOT NULL,
+                    attempts tinyint(3) NOT NULL DEFAULT 0,
+                    reserved_at datetime DEFAULT NULL,
+                    available_at datetime NOT NULL,
+                    created_at datetime NOT NULL,
+                    PRIMARY KEY (id)
+                ) $collate;";
 
         $sqls = apply_filters('fusewp_create_database_tables', $sqls, $collate);
 

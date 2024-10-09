@@ -2,8 +2,8 @@
 
 namespace FuseWP\Core\Integrations;
 
-use soulseekah\WP_Lock\WP_Lock;
-use soulseekah\WP_Lock\WP_Lock_Backend_wpdb;
+use FuseWPVendor\soulseekah\WP_Lock\WP_Lock as WP_Lock;
+use FuseWPVendor\soulseekah\WP_Lock\WP_Lock_Backend_wpdb as WP_Lock_Backend_wpdb;
 
 abstract class AbstractIntegration implements IntegrationInterface
 {

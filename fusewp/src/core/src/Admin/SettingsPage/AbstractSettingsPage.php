@@ -268,6 +268,7 @@ abstract class AbstractSettingsPage
             'WooCommerce Memberships Sync',
             'Easy Digital Downloads Sync',
             'MemberPress Sync',
+            'WPForms Sync',
             'Advanced Gravity Forms Sync',
             'ProfilePress Sync',
             'Paid Memberships Pro Sync',

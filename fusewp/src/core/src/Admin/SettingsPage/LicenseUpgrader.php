@@ -205,6 +205,12 @@ class LicenseUpgrader
                                 <?php esc_html_e('Advanced Gravity Forms Sync', 'fusewp'); ?>
                             </a>
                         </li>
+                        <li>
+                            <div class="dashicons dashicons-yes"></div>
+                            <a href="https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
+                                <?php esc_html_e('Advanced WPForms Sync', 'fusewp'); ?>
+                            </a>
+                        </li>
                     </ul>
 
                     <a href="https://fusewp.com/pricing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" class="button button-primary button-large fusewp-upgrade-btn fusewp-upgrade-btn-large" target="_blank" rel="noopener noreferrer">

@@ -41,7 +41,7 @@ class Aweber extends AbstractIntegration
 
     public function set_bulk_sync_throttle_seconds($seconds)
     {
-        return 1;
+        return 2;
     }
 
     public function get_account_id()

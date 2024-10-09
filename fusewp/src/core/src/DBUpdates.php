@@ -6,7 +6,7 @@ class DBUpdates
 {
     public static $instance;
 
-    const DB_VER = 0;
+    const DB_VER = 1;
 
     public function init_options()
     {
@@ -53,6 +53,27 @@ class DBUpdates
         // update the option in the database, so that this process can always
         // pick up where it left off
         update_option('fusewp_db_ver', $current_db_ver);
+    }
+
+    public function update_routine_1()
+    {
+        global $wpdb;
+        require_once \ABSPATH . 'wp-admin/includes/upgrade.php';
+        $table = Core::queue_db_table();
+        $wpdb->hide_errors();
+        $charset_collate = $wpdb->get_charset_collate();
+        $sql = "CREATE TABLE IF NOT EXISTS $table (
+                    id bigint(20) NOT NULL AUTO_INCREMENT,
+                    priority bigint(20) NOT NULL DEFAULT 0,
+                    job longtext NOT NULL,
+                    attempts tinyint(3) NOT NULL DEFAULT 0,
+                    reserved_at datetime DEFAULT NULL,
+                    available_at datetime NOT NULL,
+                    created_at datetime NOT NULL,
+                    PRIMARY KEY (id)
+                ) {$charset_collate};";
+
+        \dbDelta($sql);
     }
 
     public static function get_instance()

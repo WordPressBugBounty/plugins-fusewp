@@ -266,6 +266,8 @@ class SyncAction extends AbstractSyncAction
             }
         }
 
+        return true;
+
         // not unsubscribing because ConvertKit unsubscribe api (https://developers.convertkit.com/#unsubscribe-subscriber) makes subscriber inactive and
         // thus, can't be resubscribed nor added to another form/list
         // so we are removing and adding tags instead of using list for segmentation.

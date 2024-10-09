@@ -90,9 +90,11 @@ class SyncAction extends AbstractSyncAction
 
                 foreach ($field_values as $index => $field_value) {
 
-                    $data = $mappingUserDataEntity->get($mappable_data[$index]);
+                    $mappable_data_id = $mappable_data[$index];
 
-                    if ( ! empty($mappable_data[$index])) {
+                    $data = $mappingUserDataEntity->get($mappable_data_id);
+
+                    if ( ! empty($mappable_data_id)) {
 
                         $klaviyo_field_id = $field_values[$index];
 
@@ -122,7 +124,11 @@ class SyncAction extends AbstractSyncAction
                             continue;
                         }
 
-                        $output['main'][str_replace('$', '', $klaviyo_field_id)] = $data;
+                        if (empty($klaviyo_field_id)) {
+                            $output['extra'][$mappable_data_id] = $data;
+                        } else {
+                            $output['main'][str_replace('$', '', $klaviyo_field_id)] = $data;
+                        }
                     }
                 }
             }
@@ -151,6 +157,10 @@ class SyncAction extends AbstractSyncAction
             );
 
             $parameters['main'] = array_merge($parameters['main'], $field_mapping['main']);
+
+            if ( ! empty($field_mapping['extra'])) {
+                $parameters['extra'] = $field_mapping['extra'];
+            }
 
             $parameters = apply_filters(
                 'fusewp_klaviyo_subscription_parameters',

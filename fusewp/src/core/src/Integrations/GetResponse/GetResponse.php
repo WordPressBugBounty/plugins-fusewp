@@ -270,7 +270,7 @@ class GetResponse extends AbstractIntegration
                 $('#fusewp-getresponse-registered-domain-p').toggle(is_checked());
                 $('#fusewp-getresponse-country-p').toggle(is_checked());
 
-                $('#fusewp-getresponse-max').change(function () {
+                $('#fusewp-getresponse-max').on('change', function () {
                     $('#fusewp-getresponse-registered-domain-p').toggle(this.checked);
                     $('#fusewp-getresponse-country-p').toggle(this.checked);
                 })

@@ -5,7 +5,7 @@ Tags: user role, automation, marketing, mailchimp, hubspot
 Requires at least: 5.3
 Requires PHP: 7.4
 Tested up to: 6.5
-Stable tag: 1.1.14.0
+Stable tag: 1.1.15.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber ConvertKit etc
@@ -66,7 +66,11 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 **– Gravity Forms –**
 
-[Subscribe Gravity Forms leads with your email list](https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission, user registration, successful payment and refund. Segmentation based on product subscription status is also possible.
+[Subscribe Gravity Forms leads to your email marketing list](https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission, user registration, successful payment and refund. Segmentation based on product subscription status is also possible.
+
+**– WPForms –**
+
+[Subscribe WPForms leads to your CRM and email marketing list](https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission and user registration.
 
 **– ProfilePress –**
 
@@ -95,6 +99,9 @@ Integrations with other membership, learning management systems (LMS), and e-com
 FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, Paid Memberships Pro.
 
 [Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/wp.com/article/sync-lifterlms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
+
+### Supported Forms, LMS, Ecommerce and Membership Plugins
+WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, ProfilePress, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS.
 
 ### Supported Email Marketing & CRM Integrations
 
@@ -147,6 +154,17 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.15.0 =
+* Added [WPForms integration](https://fusewp.com/article/sync-wpforms-email-marketing/?ref=changelog).
+* Added Queue system for processing sync actions.
+* Improve bulk-syncing by showing processing status and skipping processed records.
+* Added fusewp_should_process_sync_immediately filter.
+* Enhancement: Add data as custom properties in Klaviyo without a mapped corresponding field.
+* Fixed a bug where the Gravity Form LeadEmailAddress field was showing for other integrations.
+* Fixed bug where empty field value didn't update in HubSpot.
+* Fixed bug with fusewpEmail included in sync payload.
+* Remove deprecated jQuery codes.
+
 = 1.1.14.0 =
 * Added [Gravity Forms integration](https://fusewp.com/article/sync-gravity-forms-email-marketing/?ref=changelog).
 * Added [GetResponse integration](https://fusewp.com/article/connect-wordpress-to-getresponse/?ref=changelog).
@@ -156,10 +174,5 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 * Fixed N+1 DB query issue by introducing Source Item row to Sync rule page.
 * Added caching to the AWeber email list and custom field methods.
 * Reduced Bulksync cron schedule from 5 to 1mins.
-
-= 1.1.13.0 =
-* Added [EmailOctopus integration](https://fusewp.com/article/connect-wordpress-to-emailoctopus/?ref=changelog).
-* Added [Drip integration](https://fusewp.com/article/connect-wordpress-to-drip/?ref=changelog).
-* Added [Omnisend integration](https://fusewp.com/article/connect-wordpress-to-omnisend/?ref=changelog).
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.

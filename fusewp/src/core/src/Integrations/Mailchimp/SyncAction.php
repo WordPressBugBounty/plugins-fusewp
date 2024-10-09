@@ -45,7 +45,7 @@ class SyncAction extends AbstractSyncAction
             (new Custom($prefix('mailchimp_upsell'), esc_html__('Premium Features', 'fusewp')))
                 ->set_content(function () {
                     return '<p>' . sprintf(
-                            esc_html__('%sUpgrade to FuseWP Premium%s to assign tags to contact.', 'fusewp'),
+                            esc_html__('%sUpgrade to FuseWP Premium%s to assign tags to contact and map custom fields.', 'fusewp'),
                             '<a href="https://fusewp.com/pricing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=mailchimp_sync_destination_upsell" target="_blank">', '</a>'
                         ) . '</p>';
                 })

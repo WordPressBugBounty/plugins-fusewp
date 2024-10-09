@@ -2,7 +2,7 @@
 
 namespace FuseWP\Core\Admin;
 
-use \PAnD;
+use FuseWPVendor\PAnD as PAnD;
 
 class AdminNotices
 {
@@ -18,7 +18,7 @@ class AdminNotices
             add_filter('removable_query_args', [$this, 'removable_query_args']);
         });
 
-        add_action('admin_init', ['PAnD', 'init']);
+        add_action('admin_init', ['\FuseWPVendor\PAnD', 'init']);
         add_action('admin_init', [$this, 'dismiss_leave_review_notice_forever']);
     }
 
@@ -172,6 +172,12 @@ class AdminNotices
                 'is_active' => class_exists('\GFForms'),
                 'url'       => 'https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=gravity_forms_admin_notice',
                 'message'   => esc_html__('Did you know you can sync Gravity Forms to your CRM and email list after payment and submission based on the form submitted, order and subscription status? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'wpforms',
+                'is_active' => function_exists('wpforms'),
+                'url'       => 'https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=gravity_forms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync WPForms to your CRM and email list after form submission and user registration based on the form submitted? %sLearn more%s', 'fusewp')
             ]
         ];
 
