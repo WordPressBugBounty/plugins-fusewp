@@ -167,7 +167,7 @@ class SyncLogList extends \WP_List_Table
     {
         return wp_date(
             get_option('date_format') . ' ' . get_option('time_format'),
-            strtotime("{$item['date']} UTC")
+            fusewp_strtotime_utc($item['date'])
         );
     }
 

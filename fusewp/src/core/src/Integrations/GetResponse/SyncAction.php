@@ -11,7 +11,7 @@ use FuseWP\Core\Sync\Sources\MappingUserDataEntity;
 
 class SyncAction extends AbstractSyncAction
 {
-    protected GetResponse $getResponseInstance;
+    protected $getResponseInstance;
 
     /**
      * @param GetResponse $getResponseInstance
@@ -155,11 +155,11 @@ class SyncAction extends AbstractSyncAction
                         }
 
                         if ($field_type == ContactFieldEntity::DATE_FIELD && ! empty($data)) {
-                            $data = gmdate('Y-m-d', strtotime("$data UTC"));
+                            $data = gmdate('Y-m-d', fusewp_strtotime_utc($data));
                         }
 
                         if ($field_type == ContactFieldEntity::DATETIME_FIELD && ! empty($data)) {
-                            $data = gmdate('Y-m-d H:i:s', strtotime("$data UTC"));
+                            $data = gmdate('Y-m-d H:i:s', fusewp_strtotime_utc($data));
                         }
 
                         if ($field_type == ContactFieldEntity::MULTISELECT_FIELD) {

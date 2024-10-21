@@ -144,7 +144,7 @@ class SyncAction extends AbstractSyncAction
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 
                         if (fusewpVar($mappable_data_types, $index) == ContactFieldEntity::DATE_FIELD) {
-                            $data = gmdate('m/d/Y', strtotime("$data UTC"));
+                            $data = gmdate('m/d/Y', fusewp_strtotime_utc($data));
                         }
 
                         if (is_array($data)) {

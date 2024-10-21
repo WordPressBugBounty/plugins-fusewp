@@ -1,6 +1,6 @@
 <?php
 
-$lms = ['LearnDash', 'LifterLMS'];
+$lms = ['LearnDash', 'LifterLMS', 'Tutor LMS'];
 
 $membership_plugins = [
     'WooCommerce Memberships',

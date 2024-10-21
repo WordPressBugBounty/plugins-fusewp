@@ -95,7 +95,7 @@ class SyncAction extends AbstractSyncAction
                         $field_type = fusewpVar($mappable_data_types, $index);
 
                         if ($field_type == ContactFieldEntity::DATE_FIELD && ! empty($data)) {
-                            $data = gmdate('Y-m-d', strtotime("$data UTC"));
+                            $data = gmdate('Y-m-d', fusewp_strtotime_utc($data));
                         }
 
                         if ($field_type == ContactFieldEntity::NUMBER_FIELD) {

@@ -138,6 +138,12 @@ class AdminNotices
                 'message'   => esc_html__('Did you know you can sync your LifterLMS students or users to your CRM and email list based on their enrolled courses and memberships, and enrollment status? %sLearn more%s', 'fusewp')
             ],
             [
+                'id'        => 'tutor_lms',
+                'is_active' => function_exists('tutor_lms'),
+                'url'       => 'https://fusewp.com/article/sync-tutor-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=tutor_lms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync your Tutor LMS students or users to your CRM and email list based on their enrolled courses and enrollment status? %sLearn more%s', 'fusewp')
+            ],
+            [
                 'id'        => 'paid_memberships_pro',
                 'is_active' => defined('PMPRO_VERSION'),
                 'url'       => 'https://fusewp.com/article/sync-paid-memberships-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=paid_memberships_pro_admin_notice',

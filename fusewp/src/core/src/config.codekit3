@@ -380,6 +380,29 @@
       "q" : 90,
       "rq" : 75
     },
+    "\/assets\/images\/fluentcrm-integration.png" : {
+      "ft" : 32768,
+      "iS" : 1405,
+      "oA" : 0,
+      "oAP" : "\/assets\/images\/fluentcrm-integration.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/assets\/images\/fluentcrm-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/fluentcrm-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/images\/fusewp-iconmark-white.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -1003,6 +1026,38 @@
       "oAP" : "\/Integrations\/Flodesk\/SyncAction.php",
       "oF" : 0
     },
+    "\/Integrations\/FluentCRM\/AdminSettingsPage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/FluentCRM\/AdminSettingsPage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/FluentCRM\/FluentCRM.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/FluentCRM\/FluentCRM.php",
+      "oF" : 0
+    },
+    "\/Integrations\/FluentCRM\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/FluentCRM\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/FluentCRM\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/FluentCRM\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/GetResponse\/APIClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1488,7 +1543,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 749730656.22172594
+    "lastBuiltDate" : 750945462.93436801
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

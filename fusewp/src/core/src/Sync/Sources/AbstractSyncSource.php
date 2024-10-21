@@ -15,6 +15,10 @@ abstract class AbstractSyncSource
 
     public $title;
 
+    protected $subscribe_bucket = [];
+
+    protected $unsubscribe_bucket = [];
+
     public function __construct()
     {
         add_filter('fusewp_registered_sync_sources', [$this, 'register_source']);
@@ -191,55 +195,101 @@ abstract class AbstractSyncSource
 
                         $list_id = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
 
+                        $bucket_key = md5($sync_action->get_integration_id() . $list_id);
+
                         if ($destination['destination_item'] == 'any') {
 
-                            QueueManager::push([
-                                'action'                => 'subscribe_user',
-                                'source_id'             => $this->id,
-                                'rule_id'               => $rule['id'],
-                                'destination'           => $destination,
-                                'integration'           => $sync_action->get_integration_id(),
-                                'mappingUserDataEntity' => $user_data,
-                                'extras'                => $extras,
-                                'list_id'               => $list_id,
-                                'email_address'         => $email_address
-                            ], 5, 1);
+                            $this->subscribe_bucket[] = [
+                                'bucket_key' => $bucket_key,
+                                'payload'    => [
+                                    'action'                => 'subscribe_user',
+                                    'source_id'             => $this->id,
+                                    'rule_id'               => $rule['id'],
+                                    'destination'           => $destination,
+                                    'integration'           => $sync_action->get_integration_id(),
+                                    'mappingUserDataEntity' => $user_data,
+                                    'extras'                => $extras,
+                                    'list_id'               => $list_id,
+                                    'email_address'         => $email_address
+                                ]
+                            ];
 
                             continue;
                         }
 
                         if ($destination['destination_item'] != $status) {
 
-                            QueueManager::push([
-                                'action'                => 'unsubscribe_user',
-                                'source_id'             => $this->id,
-                                'rule_id'               => $rule['id'],
-                                'destination'           => $destination,
-                                'integration'           => $sync_action->get_integration_id(),
-                                'mappingUserDataEntity' => $user_data,
-                                'extras'                => $extras,
-                                'list_id'               => $list_id,
-                                'email_address'         => $email_address
-                            ]);
+                            $this->unsubscribe_bucket[] = [
+                                'bucket_key' => $bucket_key,
+                                'payload'    => [
+                                    'action'                => 'unsubscribe_user',
+                                    'source_id'             => $this->id,
+                                    'rule_id'               => $rule['id'],
+                                    'destination'           => $destination,
+                                    'integration'           => $sync_action->get_integration_id(),
+                                    'mappingUserDataEntity' => $user_data,
+                                    'extras'                => $extras,
+                                    'list_id'               => $list_id,
+                                    'email_address'         => $email_address
+                                ]
+                            ];
 
                         } else {
 
-                            QueueManager::push([
-                                'action'                => 'subscribe_user',
-                                'source_id'             => $this->id,
-                                'rule_id'               => $rule['id'],
-                                'destination'           => $destination,
-                                'integration'           => $sync_action->get_integration_id(),
-                                'mappingUserDataEntity' => $user_data,
-                                'extras'                => $extras,
-                                'list_id'               => $list_id,
-                                'email_address'         => $email_address
-                            ], 5, 1);
+                            $this->subscribe_bucket[] = [
+                                'bucket_key' => $bucket_key,
+                                'payload'    => [
+                                    'action'                => 'subscribe_user',
+                                    'source_id'             => $this->id,
+                                    'rule_id'               => $rule['id'],
+                                    'destination'           => $destination,
+                                    'integration'           => $sync_action->get_integration_id(),
+                                    'mappingUserDataEntity' => $user_data,
+                                    'extras'                => $extras,
+                                    'list_id'               => $list_id,
+                                    'email_address'         => $email_address
+                                ]
+                            ];
                         }
                     }
                 }
             }
         }
+
+        $this->process_subscribe_unsubscribe_actions();
+    }
+
+    public function process_subscribe_unsubscribe_actions()
+    {
+        if (empty($this->subscribe_bucket) && empty($this->unsubscribe_bucket)) return;
+
+        $subscribe_bucket_keys = wp_list_pluck($this->subscribe_bucket, 'bucket_key');
+
+        // any unsubscribe action from a list that is in subscribe action bucket (which will resubscribe them again) is removed
+        // to avoid unsubscription (by unsubscribe actions bucket) and re-subscription (by subscribe actions bucket)
+        $filtered_unsubscribe_bucket = array_reduce($this->unsubscribe_bucket, function ($carry, $item) use ($subscribe_bucket_keys) {
+            if ( ! in_array($item['bucket_key'], $subscribe_bucket_keys)) {
+                $carry[] = $item;
+            }
+
+            return $carry;
+        }, []);
+
+        if (is_array($filtered_unsubscribe_bucket) && ! empty($filtered_unsubscribe_bucket)) {
+            foreach ($filtered_unsubscribe_bucket as $item) {
+                QueueManager::push($item['payload']);
+            }
+        }
+
+        if (is_array($this->subscribe_bucket) && ! empty($this->subscribe_bucket)) {
+            foreach ($this->subscribe_bucket as $item) {
+                QueueManager::push($item['payload'], 5, 1);
+            }
+        }
+
+        // empty after processing
+        $this->subscribe_bucket   = [];
+        $this->unsubscribe_bucket = [];
     }
 
     public function get_source_data()

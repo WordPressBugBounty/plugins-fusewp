@@ -8,7 +8,10 @@ defined('ABSPATH') || exit;
 /** @global array $db_destination */
 /** @global string $wrapper_class */
 
-foreach ($fields as $field) : $wrapper_class = ! empty($wrapper_class) ? " $wrapper_class" : ''; ?>
+foreach ($fields as $field) :
+    $wrapper_class = ! empty($wrapper_class) ? " $wrapper_class" : '';
+    $db_value = isset($db_destination) ? fusewpVar($db_destination, $field->db_field_id, '') : '';
+    ?>
     <tr class="fusewp-table__row fusewp-sub-fields<?php echo esc_attr($wrapper_class) ?>">
         <td class="fusewp-table__col fusewp-table__col--label">
 
@@ -24,7 +27,7 @@ foreach ($fields as $field) : $wrapper_class = ! empty($wrapper_class) ? " $wrap
         </td>
 
         <td class="fusewp-table__col fusewp-table__col--field fusewp-field-wrap">
-            <?php $field->render(fusewpVar($db_destination, $field->db_field_id, '')); ?>
+            <?php $field->render($db_value); ?>
             <?php if ( ! empty($field->description)) : ?>
                 <p class="fusewp-field-description"><?php echo wp_kses_post($field->description); ?></p>
             <?php endif; ?>

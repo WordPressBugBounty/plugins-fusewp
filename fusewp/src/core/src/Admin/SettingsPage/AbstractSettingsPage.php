@@ -104,7 +104,7 @@ abstract class AbstractSettingsPage
 			<div class="fwp-admin-banner__helplinks">
                 <?php if (defined('FUSEWP_DETACH_LIBSODIUM')) : ?>
 					<span>
-                            <a rel="noopener" href="https://fusewp.com/submit-ticket/" target="_blank">
+                            <a rel="noopener" href="https://fusewp.com/support/" target="_blank">
                                 <span class="dashicons dashicons-admin-users"></span> <?php echo __('Request Support', 'fusewp'); ?>
                             </a>
                         </span>
@@ -275,6 +275,7 @@ abstract class AbstractSettingsPage
             'Restrict Content Pro Sync',
             'LearnDash Sync',
             'LifterLMS Sync',
+            'Tutor LMS Sync',
             'Advanced Custom Fields Sync'
         ];
 
@@ -307,7 +308,7 @@ abstract class AbstractSettingsPage
         $support_url = 'https://wordpress.org/support/plugin/fusewp/';
 
         if (defined('FUSEWP_DETACH_LIBSODIUM')) {
-            $support_url = 'https://fusewp.com/submit-ticket/';
+            $support_url = 'https://fusewp.com/support/';
         }
 
         $content .= sprintf(

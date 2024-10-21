@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.1.16.0 =
+* Added [Tutor LMS integration](https://fusewp.com/article/sync-tutor-lms-email-marketing/?ref=changelog).
+* Added [FluentCRM integration](https://fusewp.com/article/connect-wordpress-to-fluentcrm/?ref=changelog).
+* Improve queue system to prevent unsubscription and resubscription loop.
+
 = 1.1.15.0 =
 * Added [WPForms integration](https://fusewp.com/article/sync-wpforms-email-marketing/?ref=changelog).
 * Added Queue system for processing sync actions.

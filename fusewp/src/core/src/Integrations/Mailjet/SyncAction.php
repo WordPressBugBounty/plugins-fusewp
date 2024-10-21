@@ -83,7 +83,7 @@ class SyncAction extends AbstractSyncAction
                         }
 
                         if ($field_type == ContactFieldEntity::DATETIME_FIELD) {
-                            $data = gmdate('c', strtotime("$data UTC"));
+                            $data = gmdate('c', fusewp_strtotime_utc($data));
                         }
 
                         if ($field_type == ContactFieldEntity::NUMBER_FIELD && ! empty($data)) {

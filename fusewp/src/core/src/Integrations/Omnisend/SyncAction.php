@@ -12,7 +12,7 @@ use FuseWP\Core\Sync\Sources\MappingUserDataEntity;
 
 class SyncAction extends AbstractSyncAction
 {
-    protected Omnisend $omnisendInstance;
+    protected $omnisendInstance;
 
     /**
      * @param Omnisend $omnisendInstance
@@ -118,7 +118,7 @@ class SyncAction extends AbstractSyncAction
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 
                         if (fusewpVar($mappable_data_types, $index) == ContactFieldEntity::DATE_FIELD && ! empty($data)) {
-                            $data = gmdate('Y-m-d', strtotime("$data UTC"));
+                            $data = gmdate('Y-m-d', fusewp_strtotime_utc($data));
                         }
 
                         if (is_array($data)) $data = implode(', ', $data);

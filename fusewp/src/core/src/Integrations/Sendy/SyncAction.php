@@ -12,7 +12,7 @@ class SyncAction extends AbstractSyncAction
     protected $sendyInstance;
 
     /**
-     * @param Sendy $sendyInstance
+     * @param $sendyInstance
      */
     public function __construct($sendyInstance)
     {

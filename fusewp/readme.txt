@@ -5,10 +5,10 @@ Tags: user role, automation, marketing, mailchimp, hubspot
 Requires at least: 5.3
 Requires PHP: 7.4
 Tested up to: 6.5
-Stable tag: 1.1.15.0
+Stable tag: 1.1.16.0
 License: GPLv2 or later
 
-Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber ConvertKit etc
+Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
 
 == Description ==
 
@@ -40,7 +40,7 @@ Map user profile information to custom fields or attributes in your email market
 
 = Integration with Ecommerce, Forms, LMS & Membership Plugins =
 
-FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, HubSpot, ConvertKit, Zoho CRM, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, GetResponse, Mailjet, etc.
+FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, HubSpot, Kit (ConvertKit), Zoho CRM, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, GetResponse, Mailjet, FluentCRM etc.
 
 Say a user's membership or subscription status changes from Active to Cancelled; they will be removed from the Active email list and added to that of Cancelled.
 
@@ -92,16 +92,20 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 [Sync students in LifterLMS with your email list](https://fusewp.com/article/sync-lifterlms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses and memberships they are enrolled in as well as their enrollment status.
 
+**– Tutor LMS –**
+
+[Sync students in Tutor LMS with your email list](https://fusewp.com/article/sync-tutor-lms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses they are enrolled in as well as their enrollment status.
+
 Integrations with other membership, learning management systems (LMS), and e-commerce plugins are coming soon.
 
 ### Other Integration
 
-FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, Paid Memberships Pro.
+FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, Paid Memberships Pro, Tutor LMS.
 
-[Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/wp.com/article/sync-lifterlms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
+[Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
 
 ### Supported Forms, LMS, Ecommerce and Membership Plugins
-WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, ProfilePress, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS.
+WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, ProfilePress, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS.
 
 ### Supported Email Marketing & CRM Integrations
 
@@ -110,7 +114,7 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * Constant Contact
 * Campaign Monitor
 * HubSpot
-* ConvertKit
+* Kit (ConvertKit)
 * Zoho CRM
 * Brevo (Sendinblue)
 * AWeber
@@ -124,6 +128,7 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * Omnisend
 * GetResponse
 * Mailjet
+* FluentCRM
 * Others coming soon.
 
 = What's Next =
@@ -153,6 +158,11 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.16.0 =
+* Pro [Tutor LMS integration](https://fusewp.com/article/sync-tutor-lms-email-marketing/?ref=changelog).
+* Added [FluentCRM integration](https://fusewp.com/article/connect-wordpress-to-fluentcrm/?ref=changelog).
+* Improve queue system to prevent unsubscription and resubscription loop.
 
 = 1.1.15.0 =
 * Added [WPForms integration](https://fusewp.com/article/sync-wpforms-email-marketing/?ref=changelog).

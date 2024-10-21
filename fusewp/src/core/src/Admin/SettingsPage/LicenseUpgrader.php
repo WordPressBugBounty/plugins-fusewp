@@ -189,6 +189,12 @@ class LicenseUpgrader
                         </li>
                         <li>
                             <div class="dashicons dashicons-yes"></div>
+                            <a href="https://fusewp.com/article/sync-tutor-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
+                                <?php esc_html_e('Tutor LMS Sync', 'fusewp'); ?>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="dashicons dashicons-yes"></div>
                             <a href="https://fusewp.com/article/sync-restrict-content-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
                                 <?php esc_html_e('Restrict Content Pro Sync', 'fusewp'); ?>
                             </a>

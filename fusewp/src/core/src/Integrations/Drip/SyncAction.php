@@ -11,7 +11,7 @@ use FuseWP\Core\Sync\Sources\MappingUserDataEntity;
 
 class SyncAction extends AbstractSyncAction
 {
-    protected Drip $dripInstance;
+    protected $dripInstance;
 
     /**
      * @param Drip $dripInstance

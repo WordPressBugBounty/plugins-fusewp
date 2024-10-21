@@ -111,9 +111,9 @@ class AjaxHandler
 
             $integration = fusewp_get_registered_sync_integrations(sanitize_text_field($_POST['integration']));
 
-            $list_id = sanitize_text_field($_POST['list_id']);
+            $list_id = sanitize_text_field($_POST['list_id'] ?? '');
 
-            $source = sanitize_text_field($_POST['source']);
+            $source = sanitize_text_field($_POST['source'] ?? '');
 
             $synAction = $integration->get_sync_action();
 

@@ -112,8 +112,8 @@ class ConvertKit extends AbstractIntegration
         $html .= sprintf(
         '<p class="regular-text">%s</p>',
         sprintf(
-            __('Log in to your %sConvertKit account%s to get your api key.', 'fusewp'),
-            '<a target="_blank" href="https://app.convertkit.com/account/edit">',
+            __('Log in to your %sKit (ConvertKit) account%s to get your api key.', 'fusewp'),
+            '<a target="_blank" href="https://app.kit.com/account_settings/developer_settings">',
             '</a>')
         );
         $html .= wp_nonce_field('fusewp_save_integration_settings');
@@ -156,7 +156,7 @@ class ConvertKit extends AbstractIntegration
         $api_secret = fusewpVar($this->get_settings(), 'api_secret');
 
         if (empty($api_secret)) {
-            throw new \Exception(__('ConvertKit API Secret not found.', 'fusewp'));
+            throw new \Exception(__('Kit (ConvertKit) API Secret not found.', 'fusewp'));
         }
 
         return new APIClass($api_secret);

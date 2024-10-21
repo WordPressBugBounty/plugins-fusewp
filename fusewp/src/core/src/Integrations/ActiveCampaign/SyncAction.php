@@ -182,11 +182,11 @@ class SyncAction extends AbstractSyncAction
                         }
 
                         if (fusewpVar($mappable_data_types, $index) == ContactFieldEntity::DATE_FIELD) {
-                            $data = gmdate('Y-m-d', strtotime("$data UTC"));
+                            $data = gmdate('Y-m-d', fusewp_strtotime_utc($data));
                         }
 
                         if (fusewpVar($mappable_data_types, $index) == ContactFieldEntity::DATETIME_FIELD) {
-                            $data = gmdate('c', strtotime("$data UTC"));
+                            $data = gmdate('c', fusewp_strtotime_utc($data));
                         }
 
                         if (fusewpVar($mappable_data_types, $index) == ContactFieldEntity::MULTISELECT_FIELD) {

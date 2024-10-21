@@ -27,6 +27,7 @@ use FuseWP\Core\Integrations\Flodesk;
 use FuseWP\Core\Integrations\Klaviyo;
 use FuseWP\Core\Integrations\HighLevel;
 use FuseWP\Core\Integrations\ZohoCRM;
+use FuseWP\Core\Integrations\FluentCRM;
 use FuseWP\Core\QueueManager\QueueManager;
 use FuseWP\Core\Sync\Sources\GravityForms;
 use FuseWP\Core\Sync\Sources\SyncQueueHandler;
@@ -123,6 +124,7 @@ class Base
         Omnisend\Omnisend::get_instance();
         GetResponse\GetResponse::get_instance();
         Mailjet\Mailjet::get_instance();
+        FluentCRM\FluentCRM::get_instance();
 
         // Sources
         WPUserRoles::get_instance();

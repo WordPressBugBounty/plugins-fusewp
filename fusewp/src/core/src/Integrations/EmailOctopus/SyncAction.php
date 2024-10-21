@@ -12,7 +12,7 @@ use FuseWP\Core\Sync\Sources\MappingUserDataEntity;
 
 class SyncAction extends AbstractSyncAction
 {
-    protected EmailOctopus $emailOctopusInstance;
+    protected $emailOctopusInstance;
 
     /**
      * @param EmailOctopus $emailOctopusInstance
@@ -114,7 +114,7 @@ class SyncAction extends AbstractSyncAction
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 
                         if (fusewpVar($mappable_data_types, $index) == ContactFieldEntity::DATE_FIELD && ! empty($data)) {
-                            $data = gmdate('Y-m-d', strtotime("$data UTC"));
+                            $data = gmdate('Y-m-d', fusewp_strtotime_utc($data));
                         }
 
                         if (fusewpVar($mappable_data_types, $index) == ContactFieldEntity::NUMBER_FIELD && ! empty($data)) {
