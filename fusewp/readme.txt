@@ -4,8 +4,8 @@ Donate link: https://fusewp.com/pricing/
 Tags: user role, automation, marketing, mailchimp, hubspot
 Requires at least: 5.3
 Requires PHP: 7.4
-Tested up to: 6.5
-Stable tag: 1.1.16.0
+Tested up to: 6.7
+Stable tag: 1.1.16.1
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -158,6 +158,11 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.16.1 =
+* Added tool for cleaning up bulk sync queued jobs.
+* Improved caching of HubSpot API data to avoid rate limiting.
+* Fixed bug with incorrect insertion of ob_start().
 
 = 1.1.16.0 =
 * Pro [Tutor LMS integration](https://fusewp.com/article/sync-tutor-lms-email-marketing/?ref=changelog).

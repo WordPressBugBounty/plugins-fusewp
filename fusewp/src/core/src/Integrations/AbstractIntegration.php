@@ -15,6 +15,8 @@ abstract class AbstractIntegration implements IntegrationInterface
 
     const SYNC_SUPPORT = 'sync_support';
 
+    const CACHE_CLEARING_SUPPORT = 'cache_clearing_support';
+
     public function __construct()
     {
         add_filter('fusewp_registered_integrations', [$this, 'register_integration']);
@@ -26,6 +28,35 @@ abstract class AbstractIntegration implements IntegrationInterface
             return $seconds;
         });
     }
+
+    public function has_support($flag)
+    {
+        return in_array($flag, static::features_support());
+    }
+
+    function delete_transients_by_prefix($prefix)
+    {
+        global $wpdb;
+
+        $transient_prefix = '_transient_' . $prefix;
+
+        // Delete transients from the options table
+        $transients = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s",
+                $wpdb->esc_like($transient_prefix) . '%'
+            )
+        );
+
+        if ( ! empty($transients) && is_array($transients)) {
+
+            foreach ($transients as $transient) {
+                $transient_name = str_replace('_transient_', '', $transient->option_name);
+                delete_transient($transient_name);
+            }
+        }
+    }
+
 
     abstract public static function features_support();
 
@@ -85,6 +116,17 @@ abstract class AbstractIntegration implements IntegrationInterface
         );
     }
 
+    public function get_clear_cache_url()
+    {
+        return add_query_arg(
+            array(
+                'fusewp-integration-clear-cache' => $this->id,
+                'fwpnonce'                       => wp_create_nonce('fusewp_' . $this->id . '_clear_cache')
+            ),
+            FUSEWP_SETTINGS_GENERAL_SETTINGS_PAGE
+        );
+    }
+
     public function get_settings()
     {
         return fusewp_cache_transform('fwp_get_settings_' . $this->id, function () {
@@ -135,25 +177,28 @@ abstract class AbstractIntegration implements IntegrationInterface
      */
     protected function is_rate_limit_exceeded()
     {
-        $count     = (int)\get_option("fusewp_oauth_refresh_count_" . $this->id, 0);
-        $timestamp = (int)\get_option("fusewp_oauth_refresh_time_" . $this->id, 0);
+        if ( ! apply_filters('fusewp_disable_rate_limiting', false)) {
 
-        $error_message = sprintf('%s: %s', $this->id, esc_html__('rate limit exceeded', 'fusewp'));
+            $count     = (int)\get_option("fusewp_oauth_refresh_count_" . $this->id, 0);
+            $timestamp = (int)\get_option("fusewp_oauth_refresh_time_" . $this->id, 0);
 
-        if ($count > 3 && time() < ($timestamp + (6 * HOUR_IN_SECONDS))) {
-            throw new \Exception($error_message);
-        }
+            $error_message = sprintf('%s: %s', $this->id, esc_html__('rate limit exceeded', 'fusewp'));
 
-        if ($count > 6 && time() < ($timestamp + (12 * HOUR_IN_SECONDS))) {
-            throw new \Exception($error_message);
-        }
+            if ($count > 3 && time() < ($timestamp + (6 * HOUR_IN_SECONDS))) {
+                throw new \Exception($error_message);
+            }
 
-        if ($count > 12 && time() < ($timestamp + (HOUR_IN_SECONDS))) {
-            throw new \Exception($error_message);
-        }
+            if ($count > 6 && time() < ($timestamp + (12 * HOUR_IN_SECONDS))) {
+                throw new \Exception($error_message);
+            }
 
-        if ($count > 24 && time() < ($timestamp + (DAY_IN_SECONDS))) {
-            throw new \Exception($error_message);
+            if ($count > 12 && time() < ($timestamp + (HOUR_IN_SECONDS))) {
+                throw new \Exception($error_message);
+            }
+
+            if ($count > 24 && time() < ($timestamp + (DAY_IN_SECONDS))) {
+                throw new \Exception($error_message);
+            }
         }
     }
 

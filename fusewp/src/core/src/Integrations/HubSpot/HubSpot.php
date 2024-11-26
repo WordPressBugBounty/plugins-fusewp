@@ -22,11 +22,13 @@ class HubSpot extends AbstractIntegration
         $this->adminSettingsPageInstance = new AdminSettingsPage($this);
 
         parent::__construct();
+
+        add_action('fusewp_cache_clearing_' . $this->id, [$this, 'clear_cache']);
     }
 
     public static function features_support()
     {
-        return [self::SYNC_SUPPORT];
+        return [self::SYNC_SUPPORT, self::CACHE_CLEARING_SUPPORT];
     }
 
     public function is_connected()
@@ -37,6 +39,14 @@ class HubSpot extends AbstractIntegration
 
             return ! empty(fusewpVar($settings, 'access_token'));
         });
+    }
+
+    public function clear_cache()
+    {
+        delete_transient('fusewp_hubspot_contact_fields');
+        delete_transient('fusewp_hubspot_get_owners');
+        $this->delete_transients_by_prefix('fusewp_hubspot_contact_id_');
+        $this->delete_transients_by_prefix('fusewp_hubspot_get_property_options_');
     }
 
     /**
@@ -67,7 +77,7 @@ class HubSpot extends AbstractIntegration
 
                     $fields = $this->apiClass()->apiRequest("crm/v3/properties/contacts");
 
-                    set_transient('fusewp_hubspot_contact_fields', $fields, 10 * MINUTE_IN_SECONDS);
+                    set_transient('fusewp_hubspot_contact_fields', $fields, 12 * HOUR_IN_SECONDS);
                 }
 
                 if ( ! empty($fields->results)) {
@@ -82,7 +92,13 @@ class HubSpot extends AbstractIntegration
                         // legacy properties
                         if (in_array($field->name, ['owneremail', 'ownername'])) continue;
 
-                        if (in_array($field->name, ['hs_lead_status', 'lifecyclestage', 'email', 'firstname', 'lastname'])) continue;
+                        if (in_array($field->name, [
+                            'hs_lead_status',
+                            'lifecyclestage',
+                            'email',
+                            'firstname',
+                            'lastname'
+                        ])) continue;
 
                         switch ($field->type) {
                             case 'number':
@@ -134,7 +150,7 @@ class HubSpot extends AbstractIntegration
     {
         $lists = get_transient('fusewp_hubspot_email_list');
 
-        if ($lists === false) {
+        if (empty($lists)) {
 
             try {
 
@@ -146,7 +162,7 @@ class HubSpot extends AbstractIntegration
             }
 
             // save cache.
-            set_transient('fusewp_hubspot_email_list', $lists, 10 * MINUTE_IN_SECONDS);
+            set_transient('fusewp_hubspot_email_list', $lists, 12 * HOUR_IN_SECONDS);
         }
 
         return $lists;

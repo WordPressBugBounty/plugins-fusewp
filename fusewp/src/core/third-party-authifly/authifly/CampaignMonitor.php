@@ -14,7 +14,7 @@ class CampaignMonitor extends OAuth2
     /**
      * {@inheritdoc}
      */
-    protected $apiBaseUrl = 'https://api.createsend.com/api/v3.2/';
+    protected $apiBaseUrl = 'https://api.createsend.com/api/v3.3/';
 
     /**
      * {@inheritdoc}

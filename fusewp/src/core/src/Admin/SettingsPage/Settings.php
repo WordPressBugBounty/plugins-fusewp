@@ -27,6 +27,7 @@ class Settings extends AbstractSettingsPage
         });
 
         add_action('admin_init', [$this, 'install_missing_db_tables']);
+        add_action('admin_init', [$this, 'clear_bulk_sync_queue']);
 
         add_action('fusewp_admin_settings_page_general', [$this, 'settings_admin_page_callback']);
 
@@ -35,6 +36,7 @@ class Settings extends AbstractSettingsPage
         add_action('admin_init', [$this, 'save_oauth_credentials']);
 
         add_action('admin_init', [$this, 'oauth_disconnect_handler']);
+        add_action('admin_init', [$this, 'clear_cache_handler']);
 
         add_action('admin_menu', [$this, 'upsell_menu_item'], 9999);
         add_action('admin_head', [$this, 'style_upsell_menu_item']);
@@ -131,11 +133,31 @@ class Settings extends AbstractSettingsPage
         }
     }
 
+    public function clear_cache_handler()
+    {
+        if ( ! empty($_GET['fusewp-integration-clear-cache'])) {
+            $integration_id = sanitize_text_field($_GET['fusewp-integration-clear-cache']);
+            check_admin_referer('fusewp_' . $integration_id . '_clear_cache', 'fwpnonce');
+
+            delete_transient('fusewp_' . $integration_id . '_email_list');
+
+            do_action('fusewp_cache_clearing_' . $integration_id);
+
+            wp_safe_redirect(FUSEWP_SETTINGS_GENERAL_SETTINGS_PAGE);
+            exit;
+        }
+    }
+
     public function settings_admin_page_callback()
     {
         $fix_db_url = wp_nonce_url(
             add_query_arg('fusewp-install-missing-db', 'true', FUSEWP_SETTINGS_GENERAL_SETTINGS_PAGE),
             'fusewp_install_missing_db_tables'
+        );
+
+        $clear_bulk_sync_queue_url = wp_nonce_url(
+            add_query_arg('fusewp-clear-bulk-sync-queue', 'true', FUSEWP_SETTINGS_GENERAL_SETTINGS_PAGE),
+            'fusewp_clear_bulk_sync_queue'
         );
 
         $args = [
@@ -151,6 +173,11 @@ class Settings extends AbstractSettingsPage
                     'type'  => 'custom_field_block',
                     'label' => __('Install Missing DB Tables', 'fusewp'),
                     'data'  => "<a href='$fix_db_url' class='button action fusewp-confirm-delete'>" . __('Fix Database', 'fusewp') . '</a>',
+                ],
+                'clear_bulk_sync_queue'           => [
+                    'type'  => 'custom_field_block',
+                    'label' => __('Clear Bulk-Sync Queue', 'fusewp'),
+                    'data'  => "<a href='$clear_bulk_sync_queue_url' class='button action fusewp-confirm-delete'>" . __('Clear Queued Jobs', 'fusewp') . '</a>',
                 ],
                 'remove_plugin_data'                  => [
                     'type'           => 'checkbox',
@@ -204,6 +231,25 @@ class Settings extends AbstractSettingsPage
             delete_option('fwp_db_ver');
 
             CreateDBTables::make();
+
+            wp_safe_redirect(add_query_arg('settings-updated', 'true', FUSEWP_SETTINGS_GENERAL_SETTINGS_PAGE));
+            exit;
+        }
+    }
+
+    public function clear_bulk_sync_queue()
+    {
+        if (defined('DOING_AJAX')) return;
+
+        if (fusewpVarGET('fusewp-clear-bulk-sync-queue') == 'true' && current_user_can('manage_options')) {
+
+            check_admin_referer('fusewp_clear_bulk_sync_queue');
+
+            global $wpdb;
+
+            $jobs_table = $wpdb->prefix . 'fusewp_queue_jobs';
+
+            $wpdb->query("DELETE FROM $jobs_table WHERE job LIKE '%fwp_bulk_syncing%'");
 
             wp_safe_redirect(add_query_arg('settings-updated', 'true', FUSEWP_SETTINGS_GENERAL_SETTINGS_PAGE));
             exit;

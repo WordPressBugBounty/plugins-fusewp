@@ -6,6 +6,8 @@ interface IntegrationInterface
 {
     public static function features_support();
 
+    public function has_support($flag);
+
     public function is_connected();
 
     public function connection_settings();

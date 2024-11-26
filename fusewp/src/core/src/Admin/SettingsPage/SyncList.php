@@ -331,8 +331,7 @@ class SyncList extends \WP_List_Table
 
             fusewp_sync_delete_rule(intval($_GET['id']));
 
-            wp_safe_redirect(FUSEWP_SYNC_SETTINGS_PAGE);
-            exit;
+            fusewp_do_admin_redirect(FUSEWP_SYNC_SETTINGS_PAGE);
         }
 
         // Detect when a bulk action is being triggered...

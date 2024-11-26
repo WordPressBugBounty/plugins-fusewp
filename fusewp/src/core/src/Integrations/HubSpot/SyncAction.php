@@ -34,7 +34,7 @@ class SyncAction extends AbstractSyncAction
 
             $options = get_transient($cache_key);
 
-            if (empty($options) || false === $options) {
+            if (false === $options) {
 
                 $response = $this->hubspotInstance->apiClass()->apiRequest(
                     sprintf('crm/v3/properties/contacts/%s', $property)
@@ -67,7 +67,7 @@ class SyncAction extends AbstractSyncAction
     {
         $bucket = get_transient('fusewp_hubspot_get_owners');
 
-        if (empty($bucket) || false === $bucket) {
+        if (false === $bucket) {
 
             $bucket = ['' => '&mdash;&mdash;&mdash;'];
 
@@ -331,20 +331,34 @@ class SyncAction extends AbstractSyncAction
      */
     public function get_contact_id($email_address)
     {
-        $parameters = apply_filters(
-            'fusewp_hubspot_get_contact_id_parameters', [
-            'idProperty' => 'email',
-            'inputs'     => [['id' => $email_address]],
-            'properties' => ['email']
-        ], $this, $email_address);
+        $contact_id = get_transient('fusewp_hubspot_contact_id_' . $email_address);
 
-        $contacts = $this->hubspotInstance->apiClass()->apiRequest(
-            'crm/v3/objects/contacts/batch/read',
-            'POST',
-            $parameters,
-            ['Content-Type' => 'application/json']
-        );
+        if (empty($contact_id)) {
 
-        return $contacts->results[0]->id ?? false;
+            $contact_id = false;
+
+            $parameters = apply_filters(
+                'fusewp_hubspot_get_contact_id_parameters', [
+                'idProperty' => 'email',
+                'inputs'     => [['id' => $email_address]],
+                'properties' => ['email']
+            ], $this, $email_address);
+
+            $contacts = $this->hubspotInstance->apiClass()->apiRequest(
+                'crm/v3/objects/contacts/batch/read',
+                'POST',
+                $parameters,
+                ['Content-Type' => 'application/json']
+            );
+
+            if (isset($contacts->results[0]->id)) {
+
+                $contact_id = $contacts->results[0]->id;
+
+                set_transient('fusewp_hubspot_contact_id_' . $email_address, $contact_id, 12 * HOUR_IN_SECONDS);
+            }
+        }
+
+        return $contact_id;
     }
 }

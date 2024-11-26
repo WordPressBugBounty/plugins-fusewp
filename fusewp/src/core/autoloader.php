@@ -35,3 +35,4 @@ spl_autoload_register(function ($class) {
 // Include any additional required files
 require __DIR__ . "/src/Functions/CustomSettingsPageApi.php";
 require __DIR__ . "/src/Functions/functions.php";
+require __DIR__ . "/src/Functions/Shogun.php";

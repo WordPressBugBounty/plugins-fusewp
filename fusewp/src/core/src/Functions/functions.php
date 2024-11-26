@@ -619,3 +619,13 @@ function fusewp_set_time_limit($limit = 0)
         @set_time_limit($limit);
     }
 }
+
+function fusewp_do_admin_redirect($url)
+{
+    if ( ! headers_sent()) {
+        wp_safe_redirect($url);
+        exit;
+    }
+
+    fusewp_content_http_redirect($url);
+}

@@ -698,6 +698,14 @@
       "oAP" : "\/Functions\/index.php",
       "oF" : 0
     },
+    "\/Functions\/Shogun.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Functions\/Shogun.php",
+      "oF" : 0
+    },
     "\/index.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1543,7 +1551,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 750945462.93436801
+    "lastBuiltDate" : 751206452.60849702
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

@@ -153,6 +153,8 @@ class SyncAction extends AbstractSyncAction
 
     public function subscribe_user($list_id, $email_address, $mappingUserDataEntity, $custom_fields = [], $tags = '', $old_email_address = '')
     {
+        if ( ! function_exists('FluentCrmApi')) return false;
+
         $func_args = $this->get_sync_payload_json_args(func_get_args());
 
         $parameters = [

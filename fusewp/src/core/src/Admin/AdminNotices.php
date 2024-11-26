@@ -42,6 +42,7 @@ class AdminNotices
         $args[] = 'license-settings-updated';
         $args[] = 'oauth-error';
         $args[] = 'oauth-provider';
+        $args[] = 'license';
 
         return $args;
     }

@@ -47,6 +47,10 @@ abstract class AbstractOauthAdminSettingsPage
 
         $html .= sprintf('<p><a href="%s" class="button">%s</a></p>', $this->integrationInstance->get_connect_url(), $label);
 
+        if ($this->integrationInstance->has_support(AbstractIntegration::CACHE_CLEARING_SUPPORT)) {
+            $html .= sprintf('<p><a href="%s">%s</a></p>', $this->integrationInstance->get_clear_cache_url(), esc_html__('Clear cache', 'fusewp'));
+        }
+
         if ($this->integrationInstance->is_connected()) {
             $html .= sprintf('<p><a class="fusewp-confirm-delete" href="%s">%s</a></p>', $this->integrationInstance->get_disconnect_url(), esc_html__('Disconnect', 'fusewp'));
         }

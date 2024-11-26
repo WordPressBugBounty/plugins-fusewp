@@ -91,48 +91,51 @@ class FluentCRM extends AbstractIntegration
     {
         $bucket = [];
 
-        $default           = SubscriberModel::mappables();
-        $default['avatar'] = esc_html__('Contact Photo URL', 'fusewp');
+        if (class_exists('\FluentCrm\App\Models\Subscriber')) {
 
-        foreach ($default as $key => $value) {
+            $default           = SubscriberModel::mappables();
+            $default['avatar'] = esc_html__('Contact Photo URL', 'fusewp');
 
-            $data_type = ContactFieldEntity::TEXT_FIELD;
+            foreach ($default as $key => $value) {
 
-            if ($key == 'date_of_birth') $data_type = ContactFieldEntity::DATE_FIELD;
+                $data_type = ContactFieldEntity::TEXT_FIELD;
 
-            $bucket[] = (new ContactFieldEntity())
-                ->set_id($key)
-                ->set_name($value)
-                ->set_data_type($data_type);
-        }
+                if ($key == 'date_of_birth') $data_type = ContactFieldEntity::DATE_FIELD;
 
-        if (self::is_connected() && fusewp_is_premium()) {
+                $bucket[] = (new ContactFieldEntity())
+                    ->set_id($key)
+                    ->set_name($value)
+                    ->set_data_type($data_type);
+            }
 
-            $custom_fields = fluentcrm_get_option('contact_custom_fields', []);
+            if (self::is_connected() && fusewp_is_premium()) {
 
-            if (is_array($custom_fields) && ! empty($custom_fields)) {
+                $custom_fields = fluentcrm_get_option('contact_custom_fields', []);
 
-                foreach ($custom_fields as $custom_field) {
+                if (is_array($custom_fields) && ! empty($custom_fields)) {
 
-                    switch ($custom_field['type']) {
-                        case 'select-multi':
-                        case 'checkbox':
-                            $datatype = ContactFieldEntity::MULTISELECT_FIELD;
-                            break;
-                        case 'date_time':
-                            $datatype = ContactFieldEntity::DATETIME_FIELD;
-                            break;
-                        case 'date':
-                            $datatype = ContactFieldEntity::DATE_FIELD;
-                            break;
-                        default:
-                            $datatype = ContactFieldEntity::TEXT_FIELD;
+                    foreach ($custom_fields as $custom_field) {
+
+                        switch ($custom_field['type']) {
+                            case 'select-multi':
+                            case 'checkbox':
+                                $datatype = ContactFieldEntity::MULTISELECT_FIELD;
+                                break;
+                            case 'date_time':
+                                $datatype = ContactFieldEntity::DATETIME_FIELD;
+                                break;
+                            case 'date':
+                                $datatype = ContactFieldEntity::DATE_FIELD;
+                                break;
+                            default:
+                                $datatype = ContactFieldEntity::TEXT_FIELD;
+                        }
+
+                        $bucket[] = (new ContactFieldEntity())
+                            ->set_id('fcrm_cf_' . $custom_field['slug'])
+                            ->set_name($custom_field['label'])
+                            ->set_data_type($datatype);
                     }
-
-                    $bucket[] = (new ContactFieldEntity())
-                        ->set_id('fcrm_cf_' . $custom_field['slug'])
-                        ->set_name($custom_field['label'])
-                        ->set_data_type($datatype);
                 }
             }
         }

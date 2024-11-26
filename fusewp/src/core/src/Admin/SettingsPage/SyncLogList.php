@@ -235,8 +235,7 @@ class SyncLogList extends \WP_List_Table
 
             fusewp_delete_error_log(intval($_GET['id']));
 
-            wp_safe_redirect(FUSEWP_SYNC_LOGS_SETTINGS_PAGE);
-            exit;
+            fusewp_do_admin_redirect(FUSEWP_SYNC_LOGS_SETTINGS_PAGE);
         }
 
         // Detect when a bulk action is being triggered...
