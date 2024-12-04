@@ -162,10 +162,10 @@ class CustomSettingsPageApi
         if ( ! empty($args)) {
             $html .= '<h2 class="nav-tab-wrapper">';
             foreach ($args as $arg) {
-                $url    = esc_url_raw(@$arg['url']);
-                $label  = esc_html(@$arg['label']);
-                $class  = esc_attr(@$arg['class']);
-                $style  = esc_attr(@$arg['style']);
+                $url    = esc_url_raw($arg['url'] ?? '');
+                $label  = esc_html($arg['label'] ?? '');
+                $class  = esc_attr($arg['class'] ?? '');
+                $style  = esc_attr($arg['style'] ?? '');
                 $active = remove_query_arg(array_merge(['type', 'settings-updated', 'ppsc', 'license', 'mc-audience', 'cm-email-list', 'id', 'contact-info', 'edit']), $this->current_page_url()) == $url ? ' nav-tab-active' : null;
                 $html   .= "<a href=\"$url\" class=\"$class nav-tab{$active}\" style='$style'>$label</a>";
             }
@@ -538,8 +538,8 @@ class CustomSettingsPageApi
     public function _arbitrary($db_options, $key, $args)
     {
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
-        $data        = @$args['data'];
-        $description = @$args['description'];
+        $data        = $args['data'] ?? '';
+        $description = $args['description'] ?? '';
 
         return "<tr id=\"$tr_id\"><td colspan=\"5\" style='margin:0;padding:0;'>" . $data . $description . '</td></tr>';
     }
@@ -562,8 +562,8 @@ class CustomSettingsPageApi
     {
         $key         = fusewp_sanitize_key($key);
         $label       = esc_attr($args['label']);
-        $defvalue    = sanitize_text_field(@$args['value']);
-        $description = @$args['description'];
+        $defvalue    = sanitize_text_field($args['value'] ?? '');
+        $description = $args['description'] ?? '';
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $option_name = $this->option_name;
         $name_attr   = $option_name . '[' . $key . ']';
@@ -610,12 +610,12 @@ class CustomSettingsPageApi
     public function _custom_field_block($db_options, $key, $args)
     {
         $key         =fusewp_sanitize_key($key);
-        $label       = esc_attr(@$args['label']);
-        $description = @$args['description'];
+        $label       = esc_attr($args['label'] ?? '');
+        $description = $args['description'] ?? '';
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $option_name = $this->option_name;
 
-        $data = @$args['data'];
+        $data = $args['data'] ?? '';
 
         ob_start(); ?>
         <tr id="<?php echo esc_attr($tr_id); ?>">
@@ -644,9 +644,9 @@ class CustomSettingsPageApi
     {
         $key         = esc_attr($key);
         $label       = esc_attr($args['label']);
-        $defvalue    = sanitize_text_field(@$args['value']);
+        $defvalue    = sanitize_text_field($args['value'] ?? '');
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
-        $description = @$args['description'];
+        $description = $args['description'] ?? '';
         $option_name = $this->option_name;
         $value       = ! empty($db_options[$key]) ? $db_options[$key] : $defvalue;
         $placeholder = fusewpVar($args, 'placeholder', '');
@@ -679,10 +679,10 @@ class CustomSettingsPageApi
     {
         $key         = esc_attr($key);
         $label       = esc_attr($args['label']);
-        $defvalue    = sanitize_text_field(@$args['value']);
+        $defvalue    = sanitize_text_field($args['value'] ?? '');
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $disabled    = isset($args['disabled']) && $args['disabled'] === true ? 'disabled="disabled"' : '';
-        $description = @$args['description'];
+        $description = $args['description'] ?? '';
         $option_name = $this->option_name;
         $value       = ! empty($db_options[$key]) ? $db_options[$key] : $defvalue;
         ob_start(); ?>
@@ -714,10 +714,10 @@ class CustomSettingsPageApi
     {
         $key         = esc_attr($key);
         $label       = esc_attr($args['label']);
-        $description = @$args['description'];
+        $description = $args['description'] ?? '';
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $option_name = $this->option_name;
-        $value = ! empty($db_options[$key]) ? $db_options[$key] : @$args['value'];
+        $value = ! empty($db_options[$key]) ? $db_options[$key] : $args['value'] ?? '';
         ob_start(); ?>
         <tr id="<?php echo esc_attr($tr_id); ?>">
             <th scope="row"><label for="<?php echo esc_attr($key); ?>"><?php echo esc_html($label); ?></label></th>
@@ -746,12 +746,12 @@ class CustomSettingsPageApi
     {
         $key         = esc_attr($key);
         $label       = esc_attr($args['label']);
-        $description = @$args['description'];
+        $description = $args['description'] ?? '';
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $rows        = ! empty($args['rows']) ? $args['rows'] : 5;
         $cols        = ! empty($args['column']) ? $args['column'] : '';
         $option_name = $this->option_name;
-        $value       = ! empty($db_options[$key]) ? stripslashes($db_options[$key]) : @$args['value'];
+        $value       = ! empty($db_options[$key]) ? stripslashes($db_options[$key]) : $args['value'] ?? '';
         $placeholder = fusewpVar($args, 'placeholder', '');
         ob_start();
         ?>
@@ -785,10 +785,10 @@ class CustomSettingsPageApi
     {
         $key         = esc_attr($key);
         $label       = esc_attr($args['label']);
-        $description = @$args['description'];
+        $description = $args['description'] ?? '';
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $option_name = $this->option_name;
-        $value       = ! empty($db_options[$key]) ? stripslashes($db_options[$key]) : @$args['value'];
+        $value       = ! empty($db_options[$key]) ? stripslashes($db_options[$key]) : $args['value'] ?? '';
         $name_attr   = isset($args['skip_name']) ? '' : 'name="' . $option_name . '[' . $key . ']"';
         ob_start();
         ?>
@@ -828,10 +828,10 @@ class CustomSettingsPageApi
 
         $key         = esc_attr($key);
         $label       = esc_attr($args['label']);
-        $description = @$args['description'];
+        $description = $args['description'] ?? '';
         $tr_id       = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $option_name = $this->option_name;
-        $value       = ! empty($db_options[$key]) ? stripslashes($db_options[$key]) : @$args['value'];
+        $value       = ! empty($db_options[$key]) ? stripslashes($db_options[$key]) : $args['value'] ?? '';
         $settings    = ! empty($args['settings']) ? $args['settings'] : ['wpautop'=> false];
 
         $settings = array_replace(['textarea_name' => $option_name . '[' . $key . ']'], $settings);
@@ -864,13 +864,13 @@ class CustomSettingsPageApi
     {
         $key                  = esc_attr($key);
         $label                = esc_attr($args['label']);
-        $description          = @$args['description'];
+        $description          = $args['description'] ?? '';
         $tr_id                = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $disabled             = isset($args['disabled']) && $args['disabled'] === true ? 'disabled="disabled"' : '';
         $options              = $args['options'];
-        $default_select_value = @$args['value'];
+        $default_select_value = $args['value'] ?? '';
         $option_name          = $this->option_name;
-        $attributes =  @$args['attributes'];
+        $attributes =  $args['attributes'] ?? [];
         $attributes_output = '';
         if(is_array($attributes) && !empty($attributes)) {
             foreach ($attributes as $attr => $val) {
@@ -931,7 +931,7 @@ class CustomSettingsPageApi
     {
         $key                  = esc_attr($key);
         $label                = esc_attr($args['label']);
-        $description          = @$args['description'];
+        $description          = $args['description'] ?? '';
         $tr_id                = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $disabled             = isset($args['disabled']) && $args['disabled'] === true ? 'disabled="disabled"' : '';
         $options              = $args['options'];
@@ -981,11 +981,11 @@ class CustomSettingsPageApi
     {
         $key            = esc_attr($key);
         $label          = esc_attr($args['label']);
-        $description    = @$args['description'];
+        $description    = $args['description'] ?? '';
         $tr_id          = isset($args['tr_id']) ? $args['tr_id'] : "{$key}_row";
         $checkbox_label = ! empty($args['checkbox_label']) ? sanitize_text_field($args['checkbox_label']) : esc_html__('Activate', 'fusewp');
         $value          = ! empty($args['value']) ? esc_attr($args['value']) : 'true';
-        $default_value = isset($db_options[$key]) && ! empty($db_options[$key]) ? $db_options[$key] : @$args['default_value'];
+        $default_value = isset($db_options[$key]) && ! empty($db_options[$key]) ? $db_options[$key] : ($args['default_value'] ?? '');
         $option_name    = $this->option_name;
         ob_start();
         ?>
@@ -1151,8 +1151,8 @@ public function _header($args)
 
         if ( ! empty($settings_args)) {
             foreach ($settings_args as $key => $settings_arg) {
-                $tab_title     = @$settings_arg['tab_title'];
-                $section_title = @$settings_arg['section_title'];
+                $tab_title     = $settings_arg['tab_title'] ?? '';
+                $section_title = $settings_arg['section_title'] ?? '';
                 unset($settings_arg['tab_title']);
                 unset($settings_arg['section_title']);
 

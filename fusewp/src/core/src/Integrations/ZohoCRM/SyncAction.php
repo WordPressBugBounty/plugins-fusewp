@@ -48,7 +48,7 @@ class SyncAction extends AbstractSyncAction
                     $bucket[$user->id] = $user->full_name;
                 }
 
-                set_transient($cache_key, $bucket, 10 * MINUTE_IN_SECONDS);
+                set_transient($cache_key, $bucket, HOUR_IN_SECONDS);
             }
 
         } catch (\Exception $e) {
@@ -83,7 +83,7 @@ class SyncAction extends AbstractSyncAction
                                 $sources[$value->actual_value] = $value->display_value;
                             }
 
-                            set_transient($cache_key, $sources, 10 * MINUTE_IN_SECONDS);
+                            set_transient($cache_key, $sources, HOUR_IN_SECONDS);
                             break;
                         }
                     }
@@ -121,14 +121,6 @@ class SyncAction extends AbstractSyncAction
         }
 
         return $fields;
-    }
-
-    private function get_upsell_content()
-    {
-        return '<p>' . sprintf(
-                esc_html__('%sUpgrade to FuseWP Premium%s to assign tags to contact, define contact owner, set description, lead source & triggers and map custom fields.', 'fusewp'),
-                '<a href="" target="_blank">', '</a>'
-            ) . '</p>';
     }
 
     public function get_list_fields($list_id = '', $index = '')
@@ -223,7 +215,7 @@ class SyncAction extends AbstractSyncAction
 
                         $field_type = fusewpVar($mappable_data_types, $index);
 
-                        $zohocrm_field_id = $field_values[$index];
+                        $zohocrm_field_id = $field_value;
 
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 

@@ -103,7 +103,7 @@ class SyncAction extends AbstractSyncAction
 
                     if ( ! empty($mappable_data[$index])) {
 
-                        $flodesk_field_id = $field_values[$index];
+                        $flodesk_field_id = $field_value;
 
                         if ($flodesk_field_id == 'fusewpFirstName') {
                             $output['firstName'] = $data;

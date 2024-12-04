@@ -112,7 +112,7 @@ class SyncAction extends AbstractSyncAction
 
                     if ( ! empty($mappable_data[$index])) {
 
-                        $fluentcrm_field_id   = $field_values[$index];
+                        $fluentcrm_field_id   = $field_value;
                         $fluentcrm_field_type = fusewpVar($mappable_data_types, $index);
 
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);

@@ -130,7 +130,7 @@ class SyncAction extends AbstractSyncAction
                             if (empty($data)) {
 
                                 $output['CustomFields'][] = [
-                                    'Key'   => $field_values[$index],
+                                    'Key'   => $field_value,
                                     'Value' => '',
                                     'Clear' => 'true'
                                 ];
@@ -140,7 +140,7 @@ class SyncAction extends AbstractSyncAction
                                 foreach ($data as $datum) {
 
                                     $output['CustomFields'][] = [
-                                        'Key'   => $field_values[$index],
+                                        'Key'   => $field_value,
                                         'Value' => $datum
                                     ];
                                 }
@@ -152,7 +152,7 @@ class SyncAction extends AbstractSyncAction
                         if (is_array($data)) $data = implode(', ', $data);
 
                         $output['CustomFields'][] = [
-                            'Key'   => $field_values[$index],
+                            'Key'   => $field_value,
                             'Value' => $data
                         ];
                     }

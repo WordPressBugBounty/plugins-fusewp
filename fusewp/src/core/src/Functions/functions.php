@@ -527,7 +527,7 @@ function fusewp_is_boolean($maybe_bool)
 
 function fusewp_is_valid_data($value)
 {
-    return fusewp_is_boolean($value) || is_int($value) || ! empty($value);
+    return fusewp_is_boolean($value) || is_int($value) || is_numeric($value) || ! empty($value);
 }
 
 /**

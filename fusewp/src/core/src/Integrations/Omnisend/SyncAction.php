@@ -123,7 +123,7 @@ class SyncAction extends AbstractSyncAction
 
                         if (is_array($data)) $data = implode(', ', $data);
 
-                        $output[$field_values[$index]] = (string)$data;
+                        $output[$field_value] = (string)$data;
                     }
                 }
             }

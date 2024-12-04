@@ -5,7 +5,7 @@ Tags: user role, automation, marketing, mailchimp, hubspot
 Requires at least: 5.3
 Requires PHP: 7.4
 Tested up to: 6.7
-Stable tag: 1.1.16.1
+Stable tag: 1.1.17.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -40,7 +40,7 @@ Map user profile information to custom fields or attributes in your email market
 
 = Integration with Ecommerce, Forms, LMS & Membership Plugins =
 
-FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, HubSpot, Kit (ConvertKit), Zoho CRM, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, GetResponse, Mailjet, FluentCRM etc.
+FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, GetResponse, Mailjet, FluentCRM etc.
 
 Say a user's membership or subscription status changes from Active to Cancelled; they will be removed from the Active email list and added to that of Cancelled.
 
@@ -116,10 +116,12 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * HubSpot
 * Kit (ConvertKit)
 * Zoho CRM
+* Zoho Campaigns
 * Brevo (Sendinblue)
 * AWeber
 * Sendy
 * Klaviyo
+* Keap (Infusionsoft)
 * MailerLite
 * EmailOctopus
 * Drip
@@ -159,6 +161,10 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.17.0 =
+* Added [Keap integration](https://fusewp.com/article/connect-wordpress-to-keap/?ref=changelog).
+* Added [Zoho Campaigns integration](https://fusewp.com/article/connect-wordpress-to-zoho-campaigns/?ref=changelog).
+
 = 1.1.16.1 =
 * Added tool for cleaning up bulk sync queued jobs.
 * Improved caching of HubSpot API data to avoid rate limiting.
@@ -168,26 +174,5 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 * Pro [Tutor LMS integration](https://fusewp.com/article/sync-tutor-lms-email-marketing/?ref=changelog).
 * Added [FluentCRM integration](https://fusewp.com/article/connect-wordpress-to-fluentcrm/?ref=changelog).
 * Improve queue system to prevent unsubscription and resubscription loop.
-
-= 1.1.15.0 =
-* Added [WPForms integration](https://fusewp.com/article/sync-wpforms-email-marketing/?ref=changelog).
-* Added Queue system for processing sync actions.
-* Improve bulk-syncing by showing processing status and skipping processed records.
-* Added fusewp_should_process_sync_immediately filter.
-* Enhancement: Add data as custom properties in Klaviyo without a mapped corresponding field.
-* Fixed a bug where the Gravity Form LeadEmailAddress field was showing for other integrations.
-* Fixed bug where empty field value didn't update in HubSpot.
-* Fixed bug with fusewpEmail included in sync payload.
-* Remove deprecated jQuery codes.
-
-= 1.1.14.0 =
-* Added [Gravity Forms integration](https://fusewp.com/article/sync-gravity-forms-email-marketing/?ref=changelog).
-* Added [GetResponse integration](https://fusewp.com/article/connect-wordpress-to-getresponse/?ref=changelog).
-* Added [Mailjet integration](https://fusewp.com/article/connect-wordpress-to-mailjet/?ref=changelog).
-* Added tag as segmentation support to Mailchimp integration.
-* Fixed bug where some CRM integrations didn't fetch all lists, tags, and custom fields.
-* Fixed N+1 DB query issue by introducing Source Item row to Sync rule page.
-* Added caching to the AWeber email list and custom field methods.
-* Reduced Bulksync cron schedule from 5 to 1mins.
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.

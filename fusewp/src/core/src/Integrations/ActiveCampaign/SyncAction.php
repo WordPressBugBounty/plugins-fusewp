@@ -167,16 +167,16 @@ class SyncAction extends AbstractSyncAction
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 
                         if ($isFindJobTitle) {
-                            if ($field_values[$index] == 'fusewpJobTitle') return $data;
+                            if ($field_value == 'fusewpJobTitle') return $data;
                             continue;
                         }
 
-                        if ($field_values[$index] == 'fusewpFirstName') {
+                        if ($field_value == 'fusewpFirstName') {
                             $output['firstName'] = $data;
                             continue;
                         }
 
-                        if ($field_values[$index] == 'fusewpLastName') {
+                        if ($field_value == 'fusewpLastName') {
                             $output['lastName'] = $data;
                             continue;
                         }
@@ -197,7 +197,7 @@ class SyncAction extends AbstractSyncAction
                             $data = implode(', ', $data);
                         }
 
-                        $output['fieldValues'][] = ['field' => $field_values[$index], 'value' => $data];
+                        $output['fieldValues'][] = ['field' => $field_value, 'value' => $data];
                     }
                 }
             }

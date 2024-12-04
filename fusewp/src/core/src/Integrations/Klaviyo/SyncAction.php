@@ -96,7 +96,7 @@ class SyncAction extends AbstractSyncAction
 
                     if ( ! empty($mappable_data_id)) {
 
-                        $klaviyo_field_id = $field_values[$index];
+                        $klaviyo_field_id = $field_value;
 
                         if (is_array($data)) $data = implode(', ', $data);
 

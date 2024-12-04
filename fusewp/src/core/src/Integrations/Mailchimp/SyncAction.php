@@ -113,9 +113,9 @@ class SyncAction extends AbstractSyncAction
 
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 
-                        if (strpos($field_values[$index], '|') !== false) {
+                        if (strpos($field_value, '|') !== false) {
 
-                            $key_parts = explode('|', $field_values[$index]);
+                            $key_parts = explode('|', $field_value);
 
                             if ( ! isset($output[$key_parts[0]])) {
                                 // All address fields are required, hence the default values below.
@@ -139,7 +139,7 @@ class SyncAction extends AbstractSyncAction
                                 $data = implode(', ', $data);
                             }
 
-                            $output[$field_values[$index]] = $data;
+                            $output[$field_value] = $data;
                         }
                     }
                 }

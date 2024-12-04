@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.17.0 =
+* Added [Keap integration](https://fusewp.com/article/connect-wordpress-to-keap/?ref=changelog).
+* Added [Zoho Campaigns integration](https://fusewp.com/article/connect-wordpress-to-zoho-campaigns/?ref=changelog).
+
 = 1.1.16.1 =
 * Added tool for cleaning up bulk sync queued jobs.
 * Improved caching of HubSpot API data to avoid rate limiting.

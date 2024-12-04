@@ -39,7 +39,7 @@ humbug_phpscoper_expose_class('Stringable', 'FuseWPVendor\Stringable');
 // https://github.com/humbug/php-scoper/blob/master/docs/further-reading.md#function-aliases
 if (!function_exists('app')) { function app() { return \FuseWPVendor\app(...func_get_args()); } }
 if (!function_exists('calculateTranslationStatus')) { function calculateTranslationStatus() { return \FuseWPVendor\calculateTranslationStatus(...func_get_args()); } }
-if (!function_exists('composerRequirecb4cbc1d30d746e9cf215e032fbeaa0b')) { function composerRequirecb4cbc1d30d746e9cf215e032fbeaa0b() { return \FuseWPVendor\composerRequirecb4cbc1d30d746e9cf215e032fbeaa0b(...func_get_args()); } }
+if (!function_exists('composerRequiree2de1fb47b5c659117b45a803a471f4c')) { function composerRequiree2de1fb47b5c659117b45a803a471f4c() { return \FuseWPVendor\composerRequiree2de1fb47b5c659117b45a803a471f4c(...func_get_args()); } }
 if (!function_exists('extractLocaleFromFilePath')) { function extractLocaleFromFilePath() { return \FuseWPVendor\extractLocaleFromFilePath(...func_get_args()); } }
 if (!function_exists('extractTranslationKeys')) { function extractTranslationKeys() { return \FuseWPVendor\extractTranslationKeys(...func_get_args()); } }
 if (!function_exists('fdiv')) { function fdiv() { return \FuseWPVendor\fdiv(...func_get_args()); } }

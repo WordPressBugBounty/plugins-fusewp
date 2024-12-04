@@ -151,7 +151,7 @@ class SyncAction extends AbstractSyncAction
                             $data = implode(', ', $data);
                         }
 
-                        $output[$field_values[$index]] = $data;
+                        $output[$field_value] = $data;
                     }
                 }
             }

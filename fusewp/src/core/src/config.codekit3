@@ -459,6 +459,19 @@
       "q" : 90,
       "rq" : 75
     },
+    "\/assets\/images\/keap-integration.png" : {
+      "ft" : 32768,
+      "iS" : 4547,
+      "oA" : 0,
+      "oAP" : "\/assets\/images\/keap-integration.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/assets\/images\/klaviyo-integration.png" : {
       "ft" : 32768,
       "iS" : 2926,
@@ -520,6 +533,19 @@
       "iS" : 15065,
       "oA" : 0,
       "oAP" : "\/assets\/images\/sendy-integration.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/assets\/images\/zohocampaigns-integration.png" : {
+      "ft" : 32768,
+      "iS" : 15301,
+      "oA" : 0,
+      "oAP" : "\/assets\/images\/zohocampaigns-integration.png",
       "oF" : 0,
       "oIPL" : 1,
       "opt" : 1,
@@ -1178,6 +1204,38 @@
       "oAP" : "\/Integrations\/IntegrationInterface.php",
       "oF" : 0
     },
+    "\/Integrations\/Keap\/AdminSettingsPage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Keap\/AdminSettingsPage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Keap\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Keap\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Keap\/Keap.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Keap\/Keap.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Keap\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Keap\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/Klaviyo\/APIClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1378,6 +1436,38 @@
       "oAP" : "\/Integrations\/SyncActionInterface.php",
       "oF" : 0
     },
+    "\/Integrations\/ZohoCampaigns\/AdminSettingsPage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/ZohoCampaigns\/AdminSettingsPage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/ZohoCampaigns\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/ZohoCampaigns\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/ZohoCampaigns\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/ZohoCampaigns\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/ZohoCampaigns\/ZohoCampaigns.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/ZohoCampaigns\/ZohoCampaigns.php",
+      "oF" : 0
+    },
     "\/Integrations\/ZohoCRM\/AdminSettingsPage.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1551,7 +1641,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 751206452.60849702
+    "lastBuiltDate" : 754829173.40862799
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

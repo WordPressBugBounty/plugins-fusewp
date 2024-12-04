@@ -163,14 +163,14 @@ class SyncAction extends AbstractSyncAction
 
                     if ( ! empty($mappable_data[$index])) {
 
-                        if ($field_values[$index] == 'fusewpFirstName') {
+                        if ($field_value == 'fusewpFirstName') {
                             $output['firstName'] = $data;
                             continue;
                         }
 
                         if (is_array($data)) $data = implode(', ', $data);
 
-                        $output['fields'][$field_values[$index]] = $data;
+                        $output['fields'][$field_value] = $data;
                     }
                 }
             }

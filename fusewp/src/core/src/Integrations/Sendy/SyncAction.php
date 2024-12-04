@@ -92,7 +92,7 @@ class SyncAction extends AbstractSyncAction
 
                     if ( ! empty($mappable_data[$index])) {
 
-                        $sendy_field_id = $field_values[$index];
+                        $sendy_field_id = $field_value;
 
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 

@@ -185,7 +185,7 @@ class SyncAction extends AbstractSyncAction
 
                         $field_type = fusewpVar($mappable_data_types, $index);
 
-                        $drip_field_id = $field_values[$index];
+                        $drip_field_id = $field_value;
 
                         $data = $mappingUserDataEntity->get($mappable_data[$index]);
 

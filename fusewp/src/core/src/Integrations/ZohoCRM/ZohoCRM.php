@@ -206,7 +206,7 @@ class ZohoCRM extends AbstractIntegration
                 $old_data[$this->id]['access_token'] = $result['data']['access_token'];
                 // when a token is refreshed, zoho doesn't include a new refresh token as it never expires unless it was revoked.
                 // And in that case, the user will re-authorize fusewp to generate a new token
-                $old_data[$this->id]['expires_at'] = $this->oauth_expires_at_transform($result['data']['expires_at']);
+                $old_data[$this->id]['expires_at'] = $expires_at;
                 $old_data[$this->id]['api_domain'] = $result['data']['api_domain'];
 
                 update_option($option_name, $old_data);
