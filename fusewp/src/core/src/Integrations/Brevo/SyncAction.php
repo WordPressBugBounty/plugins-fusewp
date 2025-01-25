@@ -94,7 +94,7 @@ class SyncAction extends AbstractSyncAction
 
                         $field_type = fusewpVar($mappable_data_types, $index);
 
-                        if ($field_type == ContactFieldEntity::DATE_FIELD  && ! empty($data)) {
+                        if ($field_type == ContactFieldEntity::DATE_FIELD && ! empty($data)) {
                             $data = gmdate('Y-m-d', fusewp_strtotime_utc($data));
                         }
 
@@ -227,9 +227,18 @@ class SyncAction extends AbstractSyncAction
 
         try {
 
+            $contact_id = $this->is_contact_exist($email_address);
+
+            $payload = ['emails' => [$email_address]];
+
+            // try to use the user ID to add the user to a list if found before using email address as ID.
+            if ( ! empty($contact_id)) {
+                $payload = ['ids' => [$contact_id]];
+            }
+
             $response = $this->brevoInstance->apiClass()->make_request(
                 "contacts/lists/$list_id/contacts/add",
-                ['emails' => [$email_address]],
+                $payload,
                 'post'
             );
 
@@ -240,17 +249,25 @@ class SyncAction extends AbstractSyncAction
         }
     }
 
+    /**
+     * @param $email_address
+     *
+     * @return bool|int
+     */
     protected function is_contact_exist($email_address)
     {
-        try {
+        return fusewp_cache_transform('brevo_is_contact_exist_' . $email_address, function () use ($email_address) {
 
-            $response = $this->brevoInstance->apiClass()->make_request("contacts/$email_address");
+            try {
 
-            return isset($response['body']->id);
+                $response = $this->brevoInstance->apiClass()->make_request("contacts/$email_address");
 
-        } catch (\Exception $e) {
-        }
+                return $response['body']->id ?? false;
 
-        return false;
+            } catch (\Exception $e) {
+            }
+
+            return false;
+        });
     }
 }

@@ -44,10 +44,6 @@ class APIClass
         }
 
         switch ($method) {
-            case 'post':
-            case 'patch':
-                $wp_args['body'] = $args;
-                break;
             case 'get':
                 $url = add_query_arg($args, $url);
                 break;

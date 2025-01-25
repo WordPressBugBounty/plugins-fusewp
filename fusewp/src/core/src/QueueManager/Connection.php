@@ -25,7 +25,7 @@ class Connection extends DatabaseConnection
         if (defined('FUSEWP_BULK_SYNC_PROCESS_TASK')) return;
 
         // limit to 10 so we don't have to deal with large queue data - just in case.
-        $sql = "SELECT id, job FROM wp_fusewp_queue_jobs WHERE job LIKE '%subscribe_user%' LIMIT 10";
+        $sql = "SELECT id, job FROM {$this->jobs_table} WHERE job LIKE '%subscribe_user%' LIMIT 10";
 
         $result = $this->database->get_results($sql);
 

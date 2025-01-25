@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.1.17.1 =
+* Added support for Klaviyo custom property field mapping via code.
+* Fixed bug with Flodesk during bulk-sync due to invalid IP.
+* Fixed bug where Brevo might not correctly add users to list.
+* Fixed DB error.
+* Improved MemberPress bulk-syncing.
+
 = 1.1.17.0 =
 * Added [Keap integration](https://fusewp.com/article/connect-wordpress-to-keap/?ref=changelog).
 * Added [Zoho Campaigns integration](https://fusewp.com/article/connect-wordpress-to-zoho-campaigns/?ref=changelog).

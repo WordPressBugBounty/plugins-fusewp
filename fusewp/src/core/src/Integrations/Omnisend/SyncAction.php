@@ -151,6 +151,7 @@ class SyncAction extends AbstractSyncAction
         $sendWelcomeEmail = $GLOBALS['fusewp_sync_destination'][$list_id]['sendWelcomeEmail'] ?? 'false';
 
         try {
+
             $parameters = [
                 'identifiers'      => [
                     [
@@ -164,9 +165,12 @@ class SyncAction extends AbstractSyncAction
                     ],
                 ],
                 'tags'             => array_map('trim', explode(',', $tags)),
-                'customProperties' => [$GLOBALS['fusewp_sync_source_id'] . '_segment' => trim($list_id)],
                 'sendWelcomeEmail' => $sendWelcomeEmail == 'true',
             ];
+
+            if ( ! empty($GLOBALS['fusewp_sync_source_id'])) {
+                $parameters['customProperties'][$GLOBALS['fusewp_sync_source_id'] . '_segment'] = trim($list_id);
+            }
 
             $transformed_data = array_filter(
                 $this->transform_custom_field_data($custom_fields, $mappingUserDataEntity),
@@ -201,6 +205,8 @@ class SyncAction extends AbstractSyncAction
     public function unsubscribe_user($list_id, $email_address)
     {
         try {
+
+            if (empty($GLOBALS['fusewp_sync_source_id'])) return false;
 
             $contact_id = $this->fetch_contact($email_address);
 

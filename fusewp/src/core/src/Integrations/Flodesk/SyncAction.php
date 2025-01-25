@@ -142,6 +142,10 @@ class SyncAction extends AbstractSyncAction
                 'double_optin' => fusewp_get_settings("flodesk_sync_double_optin") == "yes"
             ];
 
+            if (defined('FUSEWP_BULK_SYNC_PROCESS_TASK')) {
+                unset($parameters['optin_ip']);
+            }
+
             $field_mapping = array_filter(
                 $this->transform_custom_field_data($custom_fields, $mappingUserDataEntity),
                 'fusewp_is_valid_data'

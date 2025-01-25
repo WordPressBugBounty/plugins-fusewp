@@ -125,9 +125,17 @@ class SyncAction extends AbstractSyncAction
                         }
 
                         if (empty($klaviyo_field_id)) {
+
                             $output['extra'][$mappable_data_id] = $data;
+
+                        } elseif (strstr($klaviyo_field_id, 'csf_')) {
+
+                            $output['extra'][str_replace('csf_', '', $klaviyo_field_id)] = $data;
+
                         } else {
+
                             $output['main'][str_replace('$', '', $klaviyo_field_id)] = $data;
+
                         }
                     }
                 }

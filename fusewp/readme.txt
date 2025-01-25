@@ -5,7 +5,7 @@ Tags: user role, automation, marketing, mailchimp, hubspot
 Requires at least: 5.3
 Requires PHP: 7.4
 Tested up to: 6.7
-Stable tag: 1.1.17.0
+Stable tag: 1.1.17.1
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -160,6 +160,13 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.17.1 =
+* Added support for Klaviyo custom property field mapping via code.
+* Fixed bug with Flodesk during bulk-sync due to invalid IP.
+* Fixed bug where Brevo might not correctly add users to list.
+* Fixed DB error.
+* Improved MemberPress bulk-syncing.
 
 = 1.1.17.0 =
 * Added [Keap integration](https://fusewp.com/article/connect-wordpress-to-keap/?ref=changelog).
