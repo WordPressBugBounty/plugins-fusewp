@@ -68,7 +68,7 @@ class Drip extends AbstractIntegration
         );
         $html .= sprintf(
             '<p class="regular-text">%s</p>',
-            __('Get your "account ID" from "General Info" settings.', 'fusewp'),
+            __('Get your "account ID" from "General Info" settings.', 'fusewp')
         );
         $html .= wp_nonce_field('fusewp_save_integration_settings');
         $html .= sprintf('<input type="submit" class="button-primary" name="fusewp_drip_save_settings" value="%s"></form>', esc_html__('Save Changes', 'fusewp'));

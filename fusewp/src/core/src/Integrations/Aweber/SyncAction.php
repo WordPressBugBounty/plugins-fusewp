@@ -183,23 +183,16 @@ class SyncAction extends AbstractSyncAction
 
             $is_update_request = false;
 
-            $subscriber_id = $this->get_contact_id($email_address, $list_id);
-
-            if ( ! empty($subscriber_id)) {
-                $is_update_request = true;
-            }
-
             if ($is_email_change) {
-
-                $_subscriber_id = $this->get_contact_id($old_email_address, $list_id);
-
-                if ( ! empty($_subscriber_id)) {
-                    $is_update_request = true;
-                    $subscriber_id     = $_subscriber_id;
-                }
+                delete_transient(sprintf('fusewp_aweber_contact_id_%s_%s', $old_email_address, $list_id));
+                $subscriber_id = $this->get_contact_id($old_email_address, $list_id);
+            } else {
+                $subscriber_id = $this->get_contact_id($email_address, $list_id);
             }
 
-            if ($is_update_request) {
+            if ( ! empty($subscriber_id)) $is_update_request = true;
+
+            if ($is_update_request && ! empty($subscriber_id)) {
 
                 unset($properties['update_existing']);
 
@@ -275,6 +268,12 @@ class SyncAction extends AbstractSyncAction
      */
     public function get_contact_id($email_address, $list_id)
     {
+        $cache_key = sprintf('fusewp_aweber_contact_id_%s_%s', $email_address, $list_id);
+
+        $contact_id = get_transient($cache_key);
+
+        if ( ! empty($contact_id)) return $contact_id;
+
         try {
 
             $account_id = $this->aweberInstance->get_account_id();
@@ -287,6 +286,9 @@ class SyncAction extends AbstractSyncAction
             );
 
             if (isset($response['body']->entries[0]->id)) {
+
+                set_transient($cache_key, $response['body']->entries[0]->id, DAY_IN_SECONDS);
+
                 return $response['body']->entries[0]->id;
             }
 

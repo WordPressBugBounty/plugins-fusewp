@@ -19,10 +19,11 @@ class GravityForms extends AbstractSyncSource
         // using our own fusewp_sync_mappable_data filter cos we only want to return GF fields
         add_filter('fusewp_sync_mappable_data', [$this, 'get_form_fields'], 999);
 
-        add_filter('fusewp_sync_integration_list_fields_default_data', [
-            $this,
-            'add_email_default_esp_fields_mapping'
-        ], 10, 2);
+        add_filter(
+            'fusewp_sync_integration_list_fields_default_data',
+            [$this, 'add_email_default_esp_fields_mapping'],
+            10, 2
+        );
 
         add_filter('fusewp_fieldmap_integration_contact_fields', [$this, 'add_email_field_mapping_ui']);
 

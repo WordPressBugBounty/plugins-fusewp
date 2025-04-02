@@ -30,6 +30,8 @@ use FuseWP\Core\Integrations\ZohoCRM;
 use FuseWP\Core\Integrations\ZohoCampaigns;
 use FuseWP\Core\Integrations\FluentCRM;
 use FuseWP\Core\Integrations\Keap;
+use FuseWP\Core\Integrations\Encharge;
+use FuseWP\Core\Integrations\GoogleSheet;
 use FuseWP\Core\QueueManager\QueueManager;
 use FuseWP\Core\Sync\Sources\GravityForms;
 use FuseWP\Core\Sync\Sources\SyncQueueHandler;
@@ -131,6 +133,10 @@ class Base
         GetResponse\GetResponse::get_instance();
         Mailjet\Mailjet::get_instance();
         FluentCRM\FluentCRM::get_instance();
+        Encharge\Encharge::get_instance();
+        add_action('plugins_loaded', function () {
+            GoogleSheet\GoogleSheet::get_instance();
+        }, 99);
 
         // Sources
         WPUserRoles::get_instance();

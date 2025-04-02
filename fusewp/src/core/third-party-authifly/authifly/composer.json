@@ -40,7 +40,8 @@
       "Mailchimp.php",
       "Salesforce.php",
       "Microsoft.php",
-      "HighLevel.php"
+      "HighLevel.php",
+      "Google.php"
     ]
   },
   "config": {

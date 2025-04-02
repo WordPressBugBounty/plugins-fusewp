@@ -39,7 +39,6 @@ humbug_phpscoper_expose_class('Stringable', 'FuseWPVendor\Stringable');
 // https://github.com/humbug/php-scoper/blob/master/docs/further-reading.md#function-aliases
 if (!function_exists('app')) { function app() { return \FuseWPVendor\app(...func_get_args()); } }
 if (!function_exists('calculateTranslationStatus')) { function calculateTranslationStatus() { return \FuseWPVendor\calculateTranslationStatus(...func_get_args()); } }
-if (!function_exists('composerRequire47046820b370334630332e2068407a2d')) { function composerRequire47046820b370334630332e2068407a2d() { return \FuseWPVendor\composerRequire47046820b370334630332e2068407a2d(...func_get_args()); } }
 if (!function_exists('extractLocaleFromFilePath')) { function extractLocaleFromFilePath() { return \FuseWPVendor\extractLocaleFromFilePath(...func_get_args()); } }
 if (!function_exists('extractTranslationKeys')) { function extractTranslationKeys() { return \FuseWPVendor\extractTranslationKeys(...func_get_args()); } }
 if (!function_exists('fdiv')) { function fdiv() { return \FuseWPVendor\fdiv(...func_get_args()); } }

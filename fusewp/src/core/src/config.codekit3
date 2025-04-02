@@ -367,24 +367,21 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/images\/encharge-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/encharge-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/images\/flodesk-integration.png" : {
       "ft" : 32768,
       "iS" : 4428,
       "oA" : 0,
       "oAP" : "\/assets\/images\/flodesk-integration.png",
-      "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
-    },
-    "\/assets\/images\/fluentcrm-integration.png" : {
-      "ft" : 32768,
-      "iS" : 1405,
-      "oA" : 0,
-      "oAP" : "\/assets\/images\/fluentcrm-integration.png",
       "oF" : 0,
       "oIPL" : 1,
       "opt" : 1,
@@ -546,19 +543,6 @@
       "iS" : 15301,
       "oA" : 0,
       "oAP" : "\/assets\/images\/zohocampaigns-integration.png",
-      "oF" : 0,
-      "oIPL" : 1,
-      "opt" : 1,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 90,
-      "rq" : 75
-    },
-    "\/assets\/images\/zohocrm-integration.png" : {
-      "ft" : 32768,
-      "iS" : 6309,
-      "oA" : 0,
-      "oAP" : "\/assets\/images\/zohocrm-integration.png",
       "oF" : 0,
       "oIPL" : 1,
       "opt" : 1,
@@ -1026,6 +1010,38 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/EmailOctopus\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Encharge\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Encharge\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Encharge\/Encharge.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Encharge\/Encharge.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Encharge\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Encharge\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Encharge\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Encharge\/SyncAction.php",
       "oF" : 0
     },
     "\/Integrations\/Flodesk\/APIClass.php" : {

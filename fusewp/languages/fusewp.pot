@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: FuseWP - Lite 1.1.17.1\n"
+"Project-Id-Version: FuseWP - Lite 1.1.18.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fusewp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-25T11:18:24+00:00\n"
+"POT-Creation-Date: 2025-04-02T13:19:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: fusewp\n"
@@ -113,7 +113,7 @@ msgid "Text"
 msgstr ""
 
 #: src/core/src/Admin/Fields/AbstractFieldEntity.php:117
-#: src/core/src/Admin/SettingsPage/SyncLogList.php:112
+#: src/core/src/Admin/SettingsPage/SyncLogList.php:114
 #: src/core/src/Integrations/ContactFieldEntity.php:59
 msgid "Date"
 msgstr ""
@@ -195,24 +195,93 @@ msgstr ""
 msgid "Assign Tag to Users"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:286
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:267
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:145
+msgid "Google Sheets Integration"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:268
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:151
+msgid "WooCommerce Subscriptions Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:269
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:157
+msgid "WooCommerce Memberships Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:270
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:163
+msgid "Easy Digital Downloads Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:271
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:175
+msgid "MemberPress Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:272
+msgid "WPForms Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:273
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:217
+msgid "Advanced Gravity Forms Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:274
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:169
+msgid "ProfilePress Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:275
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:181
+msgid "Paid Memberships Pro Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:276
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:205
+msgid "Restrict Content Pro Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:277
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:187
+msgid "LearnDash Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:278
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:193
+msgid "LifterLMS Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:279
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:199
+msgid "Tutor LMS Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:280
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:211
+msgid "Advanced Custom Fields Sync"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:287
 msgid "Enhance the power of FuseWP with the Pro version featuring integrations with many plugins. %sLearn more%s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:299
-#: src/core/src/Admin/SettingsPage/views/sync/view.pro-upsell.php:46
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:300
+#: src/core/src/Admin/SettingsPage/views/sync/view.pro-upsell.php:49
 msgid "Get FuseWP Pro →"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:315
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:316
 msgid "Whether you need help or have a new feature request, let us know. %sRequest Support%s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:323
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:324
 msgid "Detailed documentation is also available on the plugin website. %sView Knowledge Base%s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:331
+#: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:332
 msgid "If you are enjoying FuseWP and find it useful, please consider leaving a ★★★★★ review on WordPress.org. %sLeave a Review%s"
 msgstr ""
 
@@ -251,59 +320,11 @@ msgstr ""
 msgid "Assign Tags to Users"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:145
-msgid "WooCommerce Subscriptions Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:151
-msgid "WooCommerce Memberships Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:157
-msgid "Easy Digital Downloads Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:163
-msgid "ProfilePress Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:169
-msgid "MemberPress Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:175
-msgid "Paid Memberships Pro Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:181
-msgid "LearnDash Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:187
-msgid "LifterLMS Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:193
-msgid "Tutor LMS Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:199
-msgid "Restrict Content Pro Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:205
-msgid "Advanced Custom Fields Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:211
-msgid "Advanced Gravity Forms Sync"
-msgstr ""
-
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:217
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:223
 msgid "Advanced WPForms Sync"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:223
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:229
 #: src/core/src/Integrations/Brevo/Brevo.php:252
 #: src/core/src/Integrations/Flodesk/Flodesk.php:182
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:44
@@ -312,33 +333,33 @@ msgid "Upgrade to FuseWP Premium"
 msgstr ""
 
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:236
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:242
 msgid "<strong>Bonus</strong>: Loyal FuseWP Lite users get <u>10%% off</u> regular price using the coupon code <u>10PERCENTOFF</u>, automatically applied at checkout. %1$sUpgrade to Premium →%2$s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:281
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:287
 msgid "You are not allowed to install plugins."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:287
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:293
 msgid "Please enter your license key to connect."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:291
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:297
 msgid "Only the Lite version can be upgraded."
 msgstr ""
 
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:324
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:330
 msgid "Oops! We could not automatically install an upgrade. Please download the plugin from fusewp.com and install it manually."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:363
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:424
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:369
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:430
 msgid "Plugin installed & activated."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:404
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:410
 msgid "You are not licensed."
 msgstr ""
 
@@ -425,8 +446,8 @@ msgstr ""
 #: src/core/src/Admin/SettingsPage/Settings.php:186
 #: src/core/src/Admin/SettingsPage/SyncList.php:201
 #: src/core/src/Admin/SettingsPage/SyncList.php:279
-#: src/core/src/Admin/SettingsPage/SyncLogList.php:152
-#: src/core/src/Admin/SettingsPage/SyncLogList.php:182
+#: src/core/src/Admin/SettingsPage/SyncLogList.php:154
+#: src/core/src/Admin/SettingsPage/SyncLogList.php:184
 #: src/core/src/Admin/SettingsPage/SyncPage.php:224
 #: src/core/src/Admin/SettingsPage/views/action.php:48
 #: src/core/src/Admin/SettingsPage/views/sync/sidebar.php:25
@@ -441,11 +462,11 @@ msgstr ""
 msgid "Integrations"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/Settings.php:216
+#: src/core/src/Admin/SettingsPage/Settings.php:227
 msgid "Configure"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/Settings.php:218
+#: src/core/src/Admin/SettingsPage/Settings.php:229
 msgid "Close"
 msgstr ""
 
@@ -508,26 +529,30 @@ msgstr ""
 msgid "sync_logs"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/SyncLogList.php:100
+#: src/core/src/Admin/SettingsPage/SyncLogList.php:102
 msgid "No logs found."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/SyncLogList.php:110
+#: src/core/src/Admin/SettingsPage/SyncLogList.php:112
 msgid "Integration"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/SyncLogList.php:111
+#: src/core/src/Admin/SettingsPage/SyncLogList.php:113
 msgid "Error Message"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/SyncLogList.php:183
+#: src/core/src/Admin/SettingsPage/SyncLogList.php:185
 msgid "Delete All Log"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/SyncLogPage.php:38
-#: src/core/src/Admin/SettingsPage/SyncLogPage.php:52
+#: src/core/src/Admin/SettingsPage/SyncLogPage.php:33
+#: src/core/src/Admin/SettingsPage/SyncLogPage.php:47
 #: src/core/src/Admin/SettingsPage/SyncPage.php:135
 msgid "Sync Logs"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/SyncLogPage.php:58
+msgid "Search Logs"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/SyncPage.php:75
@@ -628,6 +653,10 @@ msgstr ""
 msgid "Sync custom fields added by Advanced Custom Fields (ACF) to the user profile and form submissions and payments from Gravity Forms, WPForms to your email marketing platform and CRM."
 msgstr ""
 
+#: src/core/src/Admin/SettingsPage/views/sync/view.pro-upsell.php:36
+msgid "Access premium integrations such as Google Sheets."
+msgstr ""
+
 #: src/core/src/AjaxHandler.php:34
 msgid "No source selected."
 msgstr ""
@@ -661,8 +690,10 @@ msgstr ""
 #: src/core/src/Integrations/ConvertKit/ConvertKit.php:120
 #: src/core/src/Integrations/Drip/Drip.php:74
 #: src/core/src/Integrations/EmailOctopus/EmailOctopus.php:62
+#: src/core/src/Integrations/Encharge/Encharge.php:71
 #: src/core/src/Integrations/Flodesk/Flodesk.php:129
 #: src/core/src/Integrations/GetResponse/GetResponse.php:94
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:127
 #: src/core/src/Integrations/Klaviyo/Klaviyo.php:117
 #: src/core/src/Integrations/MailerLite/MailerLite.php:126
 #: src/core/src/Integrations/Mailjet/Mailjet.php:62
@@ -714,8 +745,10 @@ msgstr ""
 #: src/core/src/Integrations/ConvertKit/ConvertKit.php:102
 #: src/core/src/Integrations/Drip/Drip.php:46
 #: src/core/src/Integrations/EmailOctopus/EmailOctopus.php:43
+#: src/core/src/Integrations/Encharge/Encharge.php:52
 #: src/core/src/Integrations/Flodesk/Flodesk.php:111
 #: src/core/src/Integrations/GetResponse/GetResponse.php:55
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:94
 #: src/core/src/Integrations/Klaviyo/Klaviyo.php:99
 #: src/core/src/Integrations/MailerLite/MailerLite.php:108
 #: src/core/src/Integrations/Mailjet/Mailjet.php:44
@@ -725,11 +758,15 @@ msgid "Connection Successful"
 msgstr ""
 
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:51
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:95
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:106
 msgid "Clear cache"
 msgstr ""
 
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:55
 #: src/core/src/Integrations/CampaignMonitor/AdminSettingsPage.php:78
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:97
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:108
 msgid "Disconnect"
 msgstr ""
 
@@ -743,11 +780,12 @@ msgstr ""
 
 #: src/core/src/Integrations/AbstractSyncAction.php:23
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:50
-#: src/core/src/Integrations/Aweber/Aweber.php:64
+#: src/core/src/Integrations/Aweber/Aweber.php:73
 #: src/core/src/Integrations/CampaignMonitor/CampaignMonitor.php:49
 #: src/core/src/Integrations/ConstantContact/ConstantContact.php:54
 #: src/core/src/Integrations/ConvertKit/ConvertKit.php:50
 #: src/core/src/Integrations/Drip/Drip.php:113
+#: src/core/src/Integrations/Encharge/Encharge.php:109
 #: src/core/src/Integrations/Flodesk/Flodesk.php:52
 #: src/core/src/Integrations/GetResponse/GetResponse.php:200
 #: src/core/src/Integrations/HighLevel/HighLevel.php:53
@@ -762,10 +800,11 @@ msgstr ""
 
 #: src/core/src/Integrations/AbstractSyncAction.php:24
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:55
-#: src/core/src/Integrations/Aweber/Aweber.php:65
+#: src/core/src/Integrations/Aweber/Aweber.php:74
 #: src/core/src/Integrations/CampaignMonitor/CampaignMonitor.php:54
 #: src/core/src/Integrations/ConstantContact/ConstantContact.php:55
 #: src/core/src/Integrations/Drip/Drip.php:118
+#: src/core/src/Integrations/Encharge/Encharge.php:114
 #: src/core/src/Integrations/Flodesk/Flodesk.php:56
 #: src/core/src/Integrations/GetResponse/GetResponse.php:205
 #: src/core/src/Integrations/HighLevel/HighLevel.php:58
@@ -817,15 +856,15 @@ msgid "Registration Date"
 msgstr ""
 
 #: src/core/src/Integrations/AbstractSyncAction.php:34
-#: src/core/src/Integrations/Aweber/Aweber.php:87
+#: src/core/src/Integrations/Aweber/Aweber.php:96
 #: src/core/src/Integrations/GetResponse/GetResponse.php:210
 #: src/core/src/Integrations/Sendy/Sendy.php:62
 msgid "IP Address"
 msgstr ""
 
 #: src/core/src/Integrations/AbstractSyncAction.php:43
-#: src/core/src/Sync/Sources/GravityForms.php:215
-#: src/core/src/Sync/Sources/WPForms.php:144
+#: src/core/src/Sync/Sources/GravityForms.php:216
+#: src/core/src/Sync/Sources/WPForms.php:150
 msgid "WordPress User Data"
 msgstr ""
 
@@ -851,6 +890,7 @@ msgstr ""
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:149
 #: src/core/src/Integrations/Brevo/Brevo.php:122
 #: src/core/src/Integrations/EmailOctopus/EmailOctopus.php:49
+#: src/core/src/Integrations/Encharge/Encharge.php:58
 #: src/core/src/Integrations/Flodesk/Flodesk.php:117
 #: src/core/src/Integrations/GetResponse/GetResponse.php:61
 #: src/core/src/Integrations/Mailjet/Mailjet.php:50
@@ -862,6 +902,7 @@ msgstr ""
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:150
 #: src/core/src/Integrations/Brevo/Brevo.php:123
 #: src/core/src/Integrations/EmailOctopus/EmailOctopus.php:50
+#: src/core/src/Integrations/Encharge/Encharge.php:59
 #: src/core/src/Integrations/Flodesk/Flodesk.php:118
 #: src/core/src/Integrations/GetResponse/GetResponse.php:62
 #: src/core/src/Integrations/Klaviyo/Klaviyo.php:106
@@ -924,6 +965,7 @@ msgstr ""
 #: src/core/src/Integrations/ConvertKit/SyncAction.php:97
 #: src/core/src/Integrations/Drip/SyncAction.php:48
 #: src/core/src/Integrations/EmailOctopus/SyncAction.php:45
+#: src/core/src/Integrations/Encharge/SyncAction.php:54
 #: src/core/src/Integrations/Flodesk/SyncAction.php:42
 #: src/core/src/Integrations/FluentCRM/SyncAction.php:45
 #: src/core/src/Integrations/GetResponse/SyncAction.php:60
@@ -950,9 +992,11 @@ msgstr ""
 #: src/core/src/Integrations/ConvertKit/SyncAction.php:122
 #: src/core/src/Integrations/Drip/SyncAction.php:219
 #: src/core/src/Integrations/EmailOctopus/SyncAction.php:69
+#: src/core/src/Integrations/Encharge/SyncAction.php:82
 #: src/core/src/Integrations/Flodesk/SyncAction.php:60
 #: src/core/src/Integrations/FluentCRM/SyncAction.php:70
 #: src/core/src/Integrations/GetResponse/SyncAction.php:83
+#: src/core/src/Integrations/GoogleSheet/SyncAction.php:59
 #: src/core/src/Integrations/HighLevel/SyncAction.php:99
 #: src/core/src/Integrations/HubSpot/SyncAction.php:142
 #: src/core/src/Integrations/Keap/SyncAction.php:119
@@ -967,7 +1011,7 @@ msgstr ""
 msgid "Map Custom Fields"
 msgstr ""
 
-#: src/core/src/Integrations/Aweber/Aweber.php:204
+#: src/core/src/Integrations/Aweber/Aweber.php:213
 msgid "Aweber access token not found."
 msgstr ""
 
@@ -1211,6 +1255,7 @@ msgid "Drip Account ID not found."
 msgstr ""
 
 #: src/core/src/Integrations/Drip/SyncAction.php:36
+#: src/core/src/Integrations/Encharge/SyncAction.php:42
 #: src/core/src/Integrations/GetResponse/SyncAction.php:49
 #: src/core/src/Integrations/HighLevel/SyncAction.php:58
 #: src/core/src/Integrations/Keap/SyncAction.php:62
@@ -1233,6 +1278,19 @@ msgstr ""
 
 #: src/core/src/Integrations/EmailOctopus/EmailOctopus.php:164
 msgid "EmailOctopus API Key not found."
+msgstr ""
+
+#: src/core/src/Integrations/Encharge/Encharge.php:192
+msgid "Encharge API Key not found."
+msgstr ""
+
+#: src/core/src/Integrations/Encharge/SyncAction.php:48
+msgid "Select the tag to assign to contact. Can't find the appropriate tag, %sclick here%s to add one inside Encharge"
+msgstr ""
+
+#: src/core/src/Integrations/Encharge/SyncAction.php:57
+#: src/core/src/Integrations/Omnisend/SyncAction.php:48
+msgid "%sUpgrade to FuseWP Premium%s to to map custom fields to contacts."
 msgstr ""
 
 #: src/core/src/Integrations/Flodesk/Flodesk.php:124
@@ -1337,6 +1395,54 @@ msgstr ""
 
 #: src/core/src/Integrations/GetResponse/SyncAction.php:54
 msgid "Select a tag to assign to contacts. Can't find the appropriate tag, %sclick here%s to add one on GetResponse."
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:83
+msgid "Create a Google API project in %1$sGoogle console%2$s."
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:84
+msgid "Copy the %1$sproject keys%2$s and include them below."
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:85
+msgid "Use %1$s as the Authorized Redirect URI."
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:86
+msgid "Click the Authorize button to complete the connection. %sLearn more%s"
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:116
+msgid "Client ID"
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:117
+msgid "Enter Client ID"
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:122
+msgid "Client Secret"
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:123
+msgid "Enter Client Secret"
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/GoogleSheet.php:281
+msgid "Google access token not found."
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/GoogleSheet.php:287
+msgid "Google refresh token not found."
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/SyncAction.php:40
+msgid "Select Spreadsheet File"
+msgstr ""
+
+#: src/core/src/Integrations/GoogleSheet/SyncAction.php:53
+msgid "Select Sheet"
 msgstr ""
 
 #: src/core/src/Integrations/HighLevel/HighLevel.php:179
@@ -1699,10 +1805,6 @@ msgstr ""
 msgid "A custom property with the above entered value will be added to the contact so you can segment them."
 msgstr ""
 
-#: src/core/src/Integrations/Omnisend/SyncAction.php:48
-msgid "%sUpgrade to FuseWP Premium%s to to map custom fields to contacts."
-msgstr ""
-
 #: src/core/src/Integrations/Omnisend/SyncAction.php:67
 msgid "Welcome Email"
 msgstr ""
@@ -1783,118 +1885,118 @@ msgstr ""
 msgid "Are you sure you want to bulk-sync existing users? This might take some time depending on the number of your website users."
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:101
-#: src/core/src/Sync/Sources/WPForms.php:215
+#: src/core/src/Sync/Sources/GravityForms.php:102
+#: src/core/src/Sync/Sources/WPForms.php:225
 msgid "Lead Email Address"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:130
-#: src/core/src/Sync/Sources/WPForms.php:55
+#: src/core/src/Sync/Sources/GravityForms.php:131
+#: src/core/src/Sync/Sources/WPForms.php:54
 msgid "After Form Submission"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:131
+#: src/core/src/Sync/Sources/GravityForms.php:132
 msgid "After Successful Payment"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:132
+#: src/core/src/Sync/Sources/GravityForms.php:133
 msgid "After Payment Refund"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:133
-#: src/core/src/Sync/Sources/WPForms.php:56
+#: src/core/src/Sync/Sources/GravityForms.php:134
+#: src/core/src/Sync/Sources/WPForms.php:55
 msgid "After User Registration"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:142
-#: src/core/src/Sync/Sources/WPForms.php:65
+#: src/core/src/Sync/Sources/GravityForms.php:143
+#: src/core/src/Sync/Sources/WPForms.php:64
 msgid "Premium Feature"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:153
-#: src/core/src/Sync/Sources/WPForms.php:76
+#: src/core/src/Sync/Sources/GravityForms.php:154
+#: src/core/src/Sync/Sources/WPForms.php:75
 msgid "Event"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:159
+#: src/core/src/Sync/Sources/GravityForms.php:160
 msgid "Sync Gravity Forms leads to your email marketing software after form submission, successful payment, payment refund, or user registration. %sLearn more%s"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:169
-#: src/core/src/Sync/Sources/WPForms.php:133
+#: src/core/src/Sync/Sources/GravityForms.php:170
+#: src/core/src/Sync/Sources/WPForms.php:125
 msgid "Entry ID"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:170
-#: src/core/src/Sync/Sources/WPForms.php:134
+#: src/core/src/Sync/Sources/GravityForms.php:171
+#: src/core/src/Sync/Sources/WPForms.php:126
 msgid "Form ID"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:171
+#: src/core/src/Sync/Sources/GravityForms.php:172
 msgid "Entry Created Date"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:172
+#: src/core/src/Sync/Sources/GravityForms.php:173
 msgid "User IP Address"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:173
+#: src/core/src/Sync/Sources/GravityForms.php:174
 msgid "Source URL"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:174
+#: src/core/src/Sync/Sources/GravityForms.php:175
 msgid "Currency"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:175
+#: src/core/src/Sync/Sources/GravityForms.php:176
 msgid "Payment Status"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:176
+#: src/core/src/Sync/Sources/GravityForms.php:177
 msgid "Payment Date"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:177
+#: src/core/src/Sync/Sources/GravityForms.php:178
 msgid "Payment Amount"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:178
+#: src/core/src/Sync/Sources/GravityForms.php:179
 msgid "Transaction ID"
 msgstr ""
 
-#: src/core/src/Sync/Sources/GravityForms.php:179
+#: src/core/src/Sync/Sources/GravityForms.php:180
 msgid "Payment Method"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:82
+#: src/core/src/Sync/Sources/WPForms.php:81
 msgid "Sync WPForms leads to your email marketing software after form submission, or user registration. %sLearn more%s"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:107
+#: src/core/src/Sync/Sources/WPForms.php:99
 msgid "%s (Full)"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:111
+#: src/core/src/Sync/Sources/WPForms.php:103
 msgid "%s (First)"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:116
+#: src/core/src/Sync/Sources/WPForms.php:108
 msgid "%s (Middle)"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:122
+#: src/core/src/Sync/Sources/WPForms.php:114
 msgid "%s (Last)"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:135
+#: src/core/src/Sync/Sources/WPForms.php:127
 msgid "Form Name"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:136
+#: src/core/src/Sync/Sources/WPForms.php:128
 msgid "Page ID"
 msgstr ""
 
-#: src/core/src/Sync/Sources/WPForms.php:137
+#: src/core/src/Sync/Sources/WPForms.php:129
 msgid "Page URL"
 msgstr ""
 

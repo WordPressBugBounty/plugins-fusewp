@@ -22,11 +22,13 @@ class Aweber extends AbstractIntegration
         $this->adminSettingsPageInstance = new AdminSettingsPage($this);
 
         parent::__construct();
+
+        add_action('fusewp_cache_clearing_' . $this->id, [$this, 'clear_cache']);
     }
 
     public static function features_support()
     {
-        return [self::SYNC_SUPPORT];
+        return [self::SYNC_SUPPORT, self::CACHE_CLEARING_SUPPORT];
     }
 
     public function is_connected()
@@ -37,6 +39,13 @@ class Aweber extends AbstractIntegration
 
             return ! empty(fusewpVar($settings, 'access_token')) && ! empty(fusewpVar($settings, 'account_id'));
         });
+    }
+
+    public function clear_cache()
+    {
+        delete_transient('fusewp_aweber_email_list');
+        $this->delete_transients_by_prefix('fusewp_aweber_contact_field_');
+        $this->delete_transients_by_prefix('fusewp_aweber_contact_id_');
     }
 
     public function set_bulk_sync_throttle_seconds($seconds)
@@ -86,7 +95,7 @@ class Aweber extends AbstractIntegration
 
             $fieldsBucket['fusewpIPaddress'] = esc_html__('IP Address', 'fusewp');
 
-            set_transient($cache_key, $fieldsBucket, HOUR_IN_SECONDS);
+            set_transient($cache_key, $fieldsBucket, DAY_IN_SECONDS);
         }
 
         $bucket = [];
@@ -146,7 +155,7 @@ class Aweber extends AbstractIntegration
                 }
 
                 // save cache.
-                set_transient('fusewp_aweber_email_list', $lists_array, HOUR_IN_SECONDS);
+                set_transient('fusewp_aweber_email_list', $lists_array, DAY_IN_SECONDS);
 
             } catch (\Exception $e) {
                 fusewp_log_error($this->id, __METHOD__ . ':' . $e->getMessage());

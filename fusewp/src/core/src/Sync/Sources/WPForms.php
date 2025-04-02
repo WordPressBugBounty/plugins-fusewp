@@ -27,7 +27,6 @@ class WPForms extends AbstractSyncSource
 
         add_action('wpforms_process_complete', function ($fields, $entry, $form_data, $entry_id) {
             $this->sync_user('form_submission', $fields, $entry, $entry_id);
-
         }, 1, 4);
 
         add_action('wpforms_user_registration_process_registration_process_completed_after', function ($user_id, $fields, $form_data, $user_data) {
@@ -85,10 +84,60 @@ class WPForms extends AbstractSyncSource
             ) . '</p>';
     }
 
-    public function get_form_fields($fields)
+    public static function _get_form_fields($form_id, $prefix = 'fswpforms_')
     {
         $bucket = [];
 
+        $form_fields = wpforms_get_form_fields($form_id);
+
+        if (is_array($form_fields) && ! empty($form_fields)) {
+
+            foreach ($form_fields as $form_field) {
+
+                if ('name' === $form_field['type']) {
+
+                    $bucket['WPForms'][$prefix . $form_field['id'] . '_full'] = sprintf(esc_html__('%s (Full)', 'fusewp'), $form_field['label']);
+
+                    // First Name.
+                    if (strpos($form_field['format'], 'first') !== false) {
+                        $bucket['WPForms'][$prefix . $form_field['id'] . '_first'] = sprintf(esc_html__('%s (First)', 'fusewp'), $form_field['label']);
+                    }
+
+                    // Middle Name.
+                    if (strpos($form_field['format'], 'middle') !== false) {
+                        $bucket['WPForms'][$prefix . $form_field['id'] . '_middle'] = sprintf(esc_html__('%s (Middle)', 'fusewp'), $form_field['label']);
+
+                    }
+
+                    // Last Name.
+                    if (strpos($form_field['format'], 'last') !== false) {
+                        $bucket['WPForms'][$prefix . $form_field['id'] . '_last'] = sprintf(esc_html__('%s (Last)', 'fusewp'), $form_field['label']);
+                    }
+
+                } else {
+
+                    $bucket['WPForms'][$prefix . $form_field['id']] = $form_field['label'];
+                }
+            }
+        }
+
+        $metaFields = [
+            'entry_id'   => esc_html__('Entry ID', 'fusewp'),
+            'form_id'    => esc_html__('Form ID', 'fusewp'),
+            'form_title' => esc_html__('Form Name', 'fusewp'),
+            'page_id'    => esc_html__('Page ID', 'fusewp'),
+            'page_url'   => esc_html__('Page URL', 'fusewp'),
+        ];
+
+        foreach ($metaFields as $key => $label) {
+            $bucket['WPForms'][$prefix . $key] = $label;
+        }
+
+        return $bucket;
+    }
+
+    public function get_form_fields($fields)
+    {
         $sourceData = $this->get_source_data();
 
         $source      = $sourceData[0];
@@ -96,50 +145,7 @@ class WPForms extends AbstractSyncSource
 
         if ($source == $this->id) {
 
-            $form_fields = wpforms_get_form_fields($source_item);
-
-            if (is_array($form_fields) && ! empty($form_fields)) {
-
-                foreach ($form_fields as $form_field) {
-
-                    if ('name' === $form_field['type']) {
-
-                        $bucket['WPForms']['fswpforms_' . $form_field['id'] . '_full'] = sprintf(esc_html__('%s (Full)', 'fusewp'), $form_field['label']);
-
-                        // First Name.
-                        if (strpos($form_field['format'], 'first') !== false) {
-                            $bucket['WPForms']['fswpforms_' . $form_field['id'] . '_first'] = sprintf(esc_html__('%s (First)', 'fusewp'), $form_field['label']);
-                        }
-
-                        // Middle Name.
-                        if (strpos($form_field['format'], 'middle') !== false) {
-                            $bucket['WPForms']['fswpforms_' . $form_field['id'] . '_middle'] = sprintf(esc_html__('%s (Middle)', 'fusewp'), $form_field['label']);
-
-                        }
-
-                        // Last Name.
-                        if (strpos($form_field['format'], 'last') !== false) {
-                            $bucket['WPForms']['fswpforms_' . $form_field['id'] . '_last'] = sprintf(esc_html__('%s (Last)', 'fusewp'), $form_field['label']);
-                        }
-
-                    } else {
-
-                        $bucket['WPForms']['fswpforms_' . $form_field['id']] = $form_field['label'];
-                    }
-                }
-            }
-
-            $metaFields = [
-                'entry_id'   => esc_html__('Entry ID', 'fusewp'),
-                'form_id'    => esc_html__('Form ID', 'fusewp'),
-                'form_title' => esc_html__('Form Name', 'fusewp'),
-                'page_id'    => esc_html__('Page ID', 'fusewp'),
-                'page_url'   => esc_html__('Page URL', 'fusewp'),
-            ];
-
-            foreach ($metaFields as $key => $label) {
-                $bucket['WPForms']['fswpforms_' . $key] = $label;
-            }
+            $bucket = self::_get_form_fields($source_item);
 
             $userDataBucketId          = esc_html__('WordPress User Data', 'fusewp');
             $bucket[$userDataBucketId] = $fields[$userDataBucketId];
@@ -193,7 +199,7 @@ class WPForms extends AbstractSyncSource
         return $fields;
     }
 
-    protected function is_email_field_found($integration_contact_fields)
+    public function is_email_field_found($integration_contact_fields)
     {
         if (is_array($integration_contact_fields)) {
             foreach ($integration_contact_fields as $contact_field) {
@@ -208,19 +214,24 @@ class WPForms extends AbstractSyncSource
 
     public function add_email_field_mapping_ui($integration_contact_fields)
     {
-        if ($this->is_email_field_found($integration_contact_fields) === false) {
+        $souceData = $this->get_source_data();
 
-            $field = (new ContactFieldEntity())
-                ->set_id('fusewpEmail')
-                ->set_name(esc_html__('Lead Email Address', 'fusewp'));
+        if ($souceData[0] == $this->id) {
 
-            array_unshift($integration_contact_fields, $field);
+            if ($this->is_email_field_found($integration_contact_fields) === false) {
+
+                $field = (new ContactFieldEntity())
+                    ->set_id('fusewpEmail')
+                    ->set_name(esc_html__('Lead Email Address', 'fusewp'));
+
+                array_unshift($integration_contact_fields, $field);
+            }
         }
 
         return $integration_contact_fields;
     }
 
-    protected function get_email_wpf_field_id($mapped_custom_fields)
+    public static function get_email_wpf_field_id($mapped_custom_fields)
     {
         $mappable_data = $mapped_custom_fields['mappable_data'] ?? [];
         $field_values  = $mapped_custom_fields['field_values'] ?? [];
@@ -276,7 +287,7 @@ class WPForms extends AbstractSyncSource
 
                         $custom_fields = fusewpVar($destination, $sync_action::CUSTOM_FIELDS_FIELD_ID, []);
 
-                        $wpf_email_field_id = $this->get_email_wpf_field_id($custom_fields);
+                        $wpf_email_field_id = self::get_email_wpf_field_id($custom_fields);
 
                         if (false !== $wpf_email_field_id && isset($fieldsData[$wpf_email_field_id]['value'])) {
 

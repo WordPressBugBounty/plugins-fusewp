@@ -30,8 +30,7 @@ class SyncLogList extends \WP_List_Table
         );
     }
 
-    /** @todo added filtering by search => [integration=id, q=''] */
-    public function get_sync_logs($per_page, $current_page = 1, $search = [])
+    public function get_sync_logs($per_page, $current_page = 1, $search = '')
     {
         $per_page     = absint($per_page);
         $current_page = absint($current_page);
@@ -40,10 +39,12 @@ class SyncLogList extends \WP_List_Table
         $sql    = "SELECT * FROM $this->table";
         $args   = [];
 
-        /** @todo */
         if ( ! empty($search)) {
-            $sql    .= " WHERE source = %s";
-            $args[] = $source;
+            $val    = '%' . $this->wpdb->esc_like($search) . '%';
+            $sql    .= " WHERE error_message LIKE %s";
+            $sql    .= " OR integration LIKE %s";
+            $args[] = $val;
+            $args[] = $val;
         }
 
         $sql .= " ORDER BY id DESC";
@@ -56,12 +57,10 @@ class SyncLogList extends \WP_List_Table
             $sql    .= "  OFFSET %d";
         }
 
-        $result = $this->wpdb->get_results(
+        return $this->wpdb->get_results(
             $this->wpdb->prepare($sql, $args),
             'ARRAY_A'
         );
-
-        return $result;
     }
 
     /**
@@ -90,7 +89,10 @@ class SyncLogList extends \WP_List_Table
     public static function delete_url($log_id)
     {
         return wp_nonce_url(
-            add_query_arg(['fusewp_sync_logs_action' => 'delete', 'id' => absint($log_id)], FUSEWP_SYNC_LOGS_SETTINGS_PAGE),
+            add_query_arg([
+                'fusewp_sync_logs_action' => 'delete',
+                'id'                      => absint($log_id)
+            ], FUSEWP_SYNC_LOGS_SETTINGS_PAGE),
             'fusewp_sync_log_delete'
         );
     }
@@ -178,12 +180,10 @@ class SyncLogList extends \WP_List_Table
      */
     public function get_bulk_actions()
     {
-        $actions = [
+        return [
             'bulk-delete'     => esc_html__('Delete', 'fusewp'),
             'bulk-delete-all' => esc_html__('Delete All Log', 'fusewp'),
         ];
-
-        return $actions;
     }
 
     /**
@@ -204,7 +204,7 @@ class SyncLogList extends \WP_List_Table
             'per_page'    => $per_page
         ]);
 
-        $this->items = $this->get_sync_logs($per_page, $current_page, '');
+        $this->items = $this->get_sync_logs($per_page, $current_page, fusewpVarPOST('s', ''));
     }
 
     public function current_action()
@@ -266,9 +266,7 @@ class SyncLogList extends \WP_List_Table
     {
         static $instance = null;
 
-        if (is_null($instance)) {
-            $instance = new self();
-        }
+        if (is_null($instance)) $instance = new self();
 
         return $instance;
     }

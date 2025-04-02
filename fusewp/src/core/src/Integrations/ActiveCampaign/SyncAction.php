@@ -35,7 +35,7 @@ class SyncAction extends AbstractSyncAction
 
         try {
 
-            $response = $this->activecampaignInstance->apiClass()->make_request('tags');
+            $response = $this->activecampaignInstance->apiClass()->make_request('tags', ['limit' => 1000]);
 
             if (isset($response['body']->tags)) {
                 foreach ($response['body']->tags as $tag) {

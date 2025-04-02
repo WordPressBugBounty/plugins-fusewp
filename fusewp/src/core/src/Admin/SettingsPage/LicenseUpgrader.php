@@ -141,6 +141,12 @@ class LicenseUpgrader
                         </li>
                         <li>
                             <div class="dashicons dashicons-yes"></div>
+                            <a href="https://fusewp.com/article/connect-wordpress-with-google-sheets/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
+                                <?php esc_html_e('Google Sheets Integration', 'fusewp'); ?>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="dashicons dashicons-yes"></div>
                             <a href="https://fusewp.com/article/sync-woocommerce-subscriptions-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
                                 <?php esc_html_e('WooCommerce Subscriptions Sync', 'fusewp'); ?>
                             </a>

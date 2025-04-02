@@ -64,7 +64,7 @@ class Mailchimp extends OAuth2
         }
     }
 
-    public function hasAccessTokenExpired()
+    public function hasAccessTokenExpired($time = null)
     {
         return false;
     }

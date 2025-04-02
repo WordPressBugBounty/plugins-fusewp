@@ -196,27 +196,39 @@ class Settings extends AbstractSettingsPage
         $this->settingsPageInstance->build();
     }
 
-    public function integration_listing($option_name)
-    {
+    public function integration_listing($option_name) {
+
         if ('fusewp_settings' != $option_name) return;
 
         printf('<div class="postbox-header"><h3 class="hndle"><span>%s</span></h3></div>', esc_html__('Integrations', 'fusewp'));
 
         $integrations = fusewp_get_registered_integrations();
 
+        $render_integrations = $integrations;
+
+        uasort($render_integrations, function($a, $b) {
+            
+            // Prioritize connected integrations
+            if ($a->is_connected() && !$b->is_connected()) return -1;
+            if (!$a->is_connected() && $b->is_connected()) return 1;
+        return 0;
+
+            });
+
         echo '<div class="fusewp-integrations-wrap">';
+
         /** @var AbstractIntegration $integration */
-        foreach ($integrations as $integration) {
-
+        foreach ($render_integrations as $integration) {
             $is_connected = $integration->is_connected();
-
+            
             printf('<div class="fusewp-integration-tile%s">', $is_connected ? ' fs-active' : '');
             printf('<div class="fusewp-integration-icon" style="background-image: url(%s)">%s</div>', $integration->logo_url, $integration->title);
             printf('<div class="fusewp-integration-name">%s</div>', $integration->title);
             printf('<a href="#%s-modal-settings" rel="modal:open" class="button">%s</a>', $integration->id, esc_html__('Configure', 'fusewp'));
             echo '</div>';
             printf('<div id="%s-modal-settings" class="modal fusewp-modal-settings-wrap">%s</div>', $integration->id, $integration->connection_settings(), esc_html__('Close', 'fusewp'));
-        }
+            }
+
         echo '</div>';
     }
 

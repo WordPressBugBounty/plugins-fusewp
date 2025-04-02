@@ -11,12 +11,7 @@ if ( ! defined('ABSPATH')) {
 
 class SyncLogPage
 {
-    /** @var CustomSettingsPageApi */
-    public $settingsPageInstance;
-    /**
-     * @var SyncList
-     */
-    protected $wplist_instance;
+    protected SyncLogList $wplist_instance;
 
     public function __construct()
     {
@@ -59,8 +54,10 @@ class SyncLogPage
         $this->wplist_instance->prepare_items();
 
         ob_start();
-        /** @todo add search to search log as well as maybe a dropdown to filter by sync integration and by from and to date */
+        echo '<form method="post">';
+        $this->wplist_instance->search_box(esc_html__('Search Logs', 'fusewp'), 'fusewp-log');
         $this->wplist_instance->display();
+        echo '</form>';
 
         return ob_get_clean();
     }

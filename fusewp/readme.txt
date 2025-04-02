@@ -5,7 +5,7 @@ Tags: user role, automation, marketing, mailchimp, hubspot
 Requires at least: 5.3
 Requires PHP: 7.4
 Tested up to: 6.7
-Stable tag: 1.1.17.1
+Stable tag: 1.1.18.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -160,6 +160,15 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.18.0 =
+* Added [Encharge integration](https://fusewp.com/article/connect-wordpress-to-encharge/?ref=prochangelog).
+* Pro: [Google Sheets integration](https://fusewp.com/article/connect-wordpress-with-google-sheets/?ref=changelog).
+* Pro: WPForo integration.
+* Pro: Added payment subscription syncing support for WPForms.
+* Added search to sync log page.
+* Increased lifespan of AWeber caches.
+* Increase ActiveCampaign tag fetching limit to 1k.
 
 = 1.1.17.1 =
 * Added support for Klaviyo custom property field mapping via code.
