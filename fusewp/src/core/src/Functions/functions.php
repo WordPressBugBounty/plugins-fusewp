@@ -181,7 +181,7 @@ function fusewp_cache_transform($cache_key, $callback)
 
     static $cache_transform_bucket = [];
 
-    $result = fusewpVar($cache_transform_bucket, $cache_key, false);
+    $result = fusewpVar($cache_transform_bucket, $cache_key);
 
     if ( ! $result) {
 
@@ -497,7 +497,9 @@ function fusewp_get_ip_address()
             continue;
         }
 
-        $user_ip = str_replace('::1', '127.0.0.1', sanitize_text_field($_SERVER[$key]));
+        $user_ip = sanitize_text_field($_SERVER[$key]);
+
+        if ($user_ip === '::1') $user_ip = '127.0.0.1';
     }
 
     return apply_filters('fusewp_ip_address', $user_ip);

@@ -183,8 +183,14 @@ class AdminNotices
             [
                 'id'        => 'wpforms',
                 'is_active' => function_exists('wpforms'),
-                'url'       => 'https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=gravity_forms_admin_notice',
+                'url'       => 'https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=wpforms_admin_notice',
                 'message'   => esc_html__('Did you know you can sync WPForms to your CRM and email list after form submission and user registration based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'givewp',
+                'is_active' => class_exists('\Give'),
+                'url'       => 'https://fusewp.com/article/sync-givewp-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=givewp_admin_notice',
+                'message'   => esc_html__('Did you know you can sync GiveWP donors to your CRM and email list after donation based on their payment and subscription status? %sLearn more%s', 'fusewp')
             ]
         ];
 

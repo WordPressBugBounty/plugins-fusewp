@@ -1,11 +1,11 @@
 === FuseWP - WordPress User Sync to Email List & Marketing Automation (Mailchimp, Constant Contact, ActiveCampaign etc.)  ===
 Contributors: fusewp, properfraction, collizo4sky
 Donate link: https://fusewp.com/pricing/
-Tags: user role, automation, marketing, mailchimp, hubspot
+Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 5.3
 Requires PHP: 7.4
-Tested up to: 6.7
-Stable tag: 1.1.18.0
+Tested up to: 6.8
+Stable tag: 1.1.19.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -40,7 +40,7 @@ Map user profile information to custom fields or attributes in your email market
 
 = Integration with Ecommerce, Forms, LMS & Membership Plugins =
 
-FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, GetResponse, Mailjet, FluentCRM etc.
+FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, Salesforce, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Google Sheets, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, GetResponse, Mailjet, Encharge, beehiiv, FluentCRM etc.
 
 Say a user's membership or subscription status changes from Active to Cancelled; they will be removed from the Active email list and added to that of Cancelled.
 
@@ -59,6 +59,10 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 **– Easy Digital Downloads (EDD) –**
 
 [Connect Easy Digital Downloads to your CRM and email list](https://fusewp.com/article/sync-easy-digital-downloads-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) to sync customers based on their purchased product; the product categories and product tags they purchase from, as well as their subscription and order status.
+
+**– GiveWP –**
+
+[Connect GiveWP to your CRM and email list](https://fusewp.com/article/sync-givewp-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) to sync donors and users based on the form they donated from as well as their subscription and order status.
 
 **– MemberPress –**
 
@@ -100,7 +104,7 @@ Integrations with other membership, learning management systems (LMS), and e-com
 
 ### Other Integration
 
-FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, Paid Memberships Pro, Tutor LMS.
+FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, GiveWP, Paid Memberships Pro, Tutor LMS, wpForo.
 
 [Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
 
@@ -114,8 +118,10 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * Constant Contact
 * Campaign Monitor
 * HubSpot
+* Salesforce
 * Kit (ConvertKit)
 * Zoho CRM
+* Google Sheets ([Premium integration](https://fusewp.com/pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion))
 * Zoho Campaigns
 * Brevo (Sendinblue)
 * AWeber
@@ -130,6 +136,8 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * Omnisend
 * GetResponse
 * Mailjet
+* Encharge
+* beehiiv
 * FluentCRM
 * Others coming soon.
 
@@ -161,34 +169,22 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.19.0 =
+* Pro [GiveWP integration](https://fusewp.com/article/sync-givewp-email-marketing/?ref=changelog).
+* Pro [Salesforce integration](https://fusewp.com/article/connect-wordpress-with-salesforce/?ref=changelog).
+* Added [beehiiv integration](https://fusewp.com/article/connect-wordpress-to-beehiiv/?ref=changelog).
+* Added logging of failed queue jobs.
+* Added filter flag to enable adding Klaviyo profile to Lists without explicit consent.
+* Fixed: Function _load_textdomain_just_in_time was called incorrectly.
+* Fixed bug in IP address detection.
+
 = 1.1.18.0 =
-* Added [Encharge integration](https://fusewp.com/article/connect-wordpress-to-encharge/?ref=prochangelog).
+* Added [Encharge integration](https://fusewp.com/article/connect-wordpress-to-encharge/?ref=changelog).
 * Pro: [Google Sheets integration](https://fusewp.com/article/connect-wordpress-with-google-sheets/?ref=changelog).
-* Pro: WPForo integration.
+* Pro: wpForo integration.
 * Pro: Added payment subscription syncing support for WPForms.
 * Added search to sync log page.
 * Increased lifespan of AWeber caches.
 * Increase ActiveCampaign tag fetching limit to 1k.
-
-= 1.1.17.1 =
-* Added support for Klaviyo custom property field mapping via code.
-* Fixed bug with Flodesk during bulk-sync due to invalid IP.
-* Fixed bug where Brevo might not correctly add users to list.
-* Fixed DB error.
-* Improved MemberPress bulk-syncing.
-
-= 1.1.17.0 =
-* Added [Keap integration](https://fusewp.com/article/connect-wordpress-to-keap/?ref=changelog).
-* Added [Zoho Campaigns integration](https://fusewp.com/article/connect-wordpress-to-zoho-campaigns/?ref=changelog).
-
-= 1.1.16.1 =
-* Added tool for cleaning up bulk sync queued jobs.
-* Improved caching of HubSpot API data to avoid rate limiting.
-* Fixed bug with incorrect insertion of ob_start().
-
-= 1.1.16.0 =
-* Pro [Tutor LMS integration](https://fusewp.com/article/sync-tutor-lms-email-marketing/?ref=changelog).
-* Added [FluentCRM integration](https://fusewp.com/article/connect-wordpress-to-fluentcrm/?ref=changelog).
-* Improve queue system to prevent unsubscription and resubscription loop.
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.

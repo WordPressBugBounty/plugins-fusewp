@@ -129,13 +129,17 @@ class GoogleSheet extends AbstractIntegration
 
     public function get_spreadsheet_sheets($spreadsheet_id)
     {
-        if (empty($spreadsheet_id)) return [];
+        if (empty($spreadsheet_id)) {
+            return [];
+        }
 
         try {
 
             $bucket = get_transient('fusewp_google_sheet_files_sheets');
 
-            if ( ! is_array($bucket)) $bucket = [];
+            if ( ! is_array($bucket)) {
+                $bucket = [];
+            }
 
             // Check if cached data exists for the current $spreadsheet_id
             if (empty($bucket[$spreadsheet_id])) {
@@ -309,14 +313,13 @@ class GoogleSheet extends AbstractIntegration
                 $option_name = FUSEWP_SETTINGS_DB_OPTION_NAME;
                 $old_data    = get_option($option_name, []);
                 $expires_at  = $this->oauth_expires_at_transform($instance->getStorage()->get('google.expires_at'));
-                $new_data    = [
-                    'access_token' => $instance->getStorage()->get('google.access_token'),
-                    // refreshtoken is the same as google oauth does not return a new one on token refresh
-                    // See https://developers.google.com/identity/protocols/oauth2#5.-refresh-the-access-token,-if-necessary.
-                    'expires_at'   => $expires_at
-                ];
 
-                update_option($option_name, array_merge($old_data, $new_data));
+                // refreshtoken is the same as google oauth does not return a new one on token refresh
+                // See https://developers.google.com/identity/protocols/oauth2#5.-refresh-the-access-token,-if-necessary.
+                $old_data[$this->id]['access_token'] = $instance->getStorage()->get('google.access_token');
+                $old_data[$this->id]['expires_at']   = $expires_at;
+
+                update_option($option_name, $old_data);
 
                 $instance = new AuthiflyGoogle($config, null,
                     new OAuthCredentialStorage([

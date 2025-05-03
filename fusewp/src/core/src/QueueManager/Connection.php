@@ -126,6 +126,8 @@ class Connection extends DatabaseConnection
      */
     public function failure($job, \Exception $exception)
     {
+        fusewp_log_error('-', 'failedJob| ' . $this->format_exception($exception) . ' | ' . serialize($job));
+
         $this->delete($job);
 
         return true;

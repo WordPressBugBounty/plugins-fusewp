@@ -8,6 +8,7 @@ use FuseWP\Core\Admin\SettingsPage\LicenseUpgrader;
 use FuseWP\Core\Admin\SettingsPage\ProUpgrade;
 use FuseWP\Core\Admin\SettingsPage\SyncLogPage;
 use FuseWP\Core\Admin\SettingsPage\SyncPage;
+use FuseWP\Core\Integrations\Beehiiv;
 use FuseWP\Core\Integrations\CampaignMonitor;
 use FuseWP\Core\Integrations\ConstantContact;
 use FuseWP\Core\Integrations\Drip;
@@ -26,6 +27,7 @@ use FuseWP\Core\Integrations\ConvertKit;
 use FuseWP\Core\Integrations\Flodesk;
 use FuseWP\Core\Integrations\Klaviyo;
 use FuseWP\Core\Integrations\HighLevel;
+use FuseWP\Core\Integrations\Salesforce;
 use FuseWP\Core\Integrations\ZohoCRM;
 use FuseWP\Core\Integrations\ZohoCampaigns;
 use FuseWP\Core\Integrations\FluentCRM;
@@ -134,12 +136,20 @@ class Base
         Mailjet\Mailjet::get_instance();
         FluentCRM\FluentCRM::get_instance();
         Encharge\Encharge::get_instance();
+        Beehiiv\Beehiiv::get_instance();
+
         add_action('plugins_loaded', function () {
+            // important to be inside here to avoid fatal error from fusewp_is_premium() check
             GoogleSheet\GoogleSheet::get_instance();
+            Salesforce\Salesforce::get_instance();
         }, 99);
 
-        // Sources
-        WPUserRoles::get_instance();
+        add_action('init', function () {
+            // important for sync sources to he hee to avoid error "Function _load_textdomain_just_in_time was called incorrectly"
+            // because of esc_html calls in constructor.
+            WPUserRoles::get_instance();
+
+        }, 99);
 
         add_action('gform_loaded', function () {
             GravityForms::get_instance();

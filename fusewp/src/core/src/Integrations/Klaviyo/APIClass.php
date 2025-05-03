@@ -156,40 +156,58 @@ class APIClass
      */
     private function add_profile_to_list($profile_id, $list_id, $properties)
     {
-        $payload2 = [
-            'data' => [
-                'type'          => 'profile-subscription-bulk-create-job',
-                'attributes'    => [
-                    'profiles' => [
-                        'data' => [
-                            [
-                                'type'       => 'profile',
-                                'id'         => $profile_id,
-                                'attributes' => [
-                                    'email'         => $properties['main']['email'],
-                                    'subscriptions' => [
-                                        'email' => [
-                                            'marketing' => [
-                                                'consent' => 'SUBSCRIBED'
+        $override_consent = apply_filters('fusewp_klaviyo_profile_to_list_override_consent', true);
+
+        if ($override_consent) {
+            // add to list with consent
+            $payload2 = [
+                'data' => [
+                    'type'          => 'profile-subscription-bulk-create-job',
+                    'attributes'    => [
+                        'profiles' => [
+                            'data' => [
+                                [
+                                    'type'       => 'profile',
+                                    'id'         => $profile_id,
+                                    'attributes' => [
+                                        'email'         => $properties['main']['email'],
+                                        'subscriptions' => [
+                                            'email' => [
+                                                'marketing' => [
+                                                    'consent' => 'SUBSCRIBED'
+                                                ]
                                             ]
                                         ]
                                     ]
                                 ]
                             ]
                         ]
-                    ]
-                ],
-                'relationships' => [
-                    'list' => [
-                        'data' => [
-                            'type' => 'list',
-                            'id'   => $list_id
+                    ],
+                    'relationships' => [
+                        'list' => [
+                            'data' => [
+                                'type' => 'list',
+                                'id'   => $list_id
+                            ]
                         ]
                     ]
                 ]
-            ]
-        ];
+            ];
 
-        $this->make_request("profile-subscription-bulk-create-jobs/", $payload2, 'post');
+            $this->make_request("profile-subscription-bulk-create-jobs/", $payload2, 'post');
+
+        } else {
+            // add to list without consent
+            $payload2 = [
+                'data' => [
+                    [
+                        'type' => 'profile',
+                        'id'   => $profile_id
+                    ]
+                ]
+            ];
+
+            $this->make_request("lists/" . $list_id . "/relationships/profiles", $payload2, 'post');
+        }
     }
 }

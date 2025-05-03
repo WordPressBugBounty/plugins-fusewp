@@ -430,6 +430,16 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/images\/google-sheet.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/google-sheet.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/images\/highlevel-integration.png" : {
       "ft" : 32768,
       "iS" : 11198,
@@ -520,6 +530,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/images\/omnisend-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/images\/salesforce-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/salesforce-integration.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -1140,6 +1160,38 @@
       "oAP" : "\/Integrations\/GetResponse\/SyncAction.php",
       "oF" : 0
     },
+    "\/Integrations\/GoogleSheet\/AdminSettingsPage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/GoogleSheet\/AdminSettingsPage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/GoogleSheet\/GoogleSheet.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/GoogleSheet\/GoogleSheet.php",
+      "oF" : 0
+    },
+    "\/Integrations\/GoogleSheet\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/GoogleSheet\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/GoogleSheet\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/GoogleSheet\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/HighLevel\/AdminSettingsPage.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1412,6 +1464,38 @@
       "oAP" : "\/Integrations\/Omnisend\/SyncAction.php",
       "oF" : 0
     },
+    "\/Integrations\/Salesforce\/AdminSettingsPage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Salesforce\/AdminSettingsPage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Salesforce\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Salesforce\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Salesforce\/Salesforce.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Salesforce\/Salesforce.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Salesforce\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Salesforce\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/Sendy\/APIClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1657,7 +1741,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 754829173.40862799
+    "lastBuiltDate" : 766830197.82381499
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

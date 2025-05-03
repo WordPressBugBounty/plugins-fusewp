@@ -26,6 +26,14 @@ class QueueManager
      */
     public static function push($args, $delay = 0, $priority = 0)
     {
+        static $cache_bucket = [];
+
+        $cache_key = hash('sha256', serialize($args)) . sprintf('%s|%s', $delay, $priority);
+
+        if (isset($cache_bucket[$cache_key])) return;
+
+        $cache_bucket[$cache_key] = true;
+
         self::get_instance()->queue->push(
             new QueueJob($args),
             $delay,

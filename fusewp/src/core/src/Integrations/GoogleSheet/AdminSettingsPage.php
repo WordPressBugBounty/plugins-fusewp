@@ -91,7 +91,12 @@ class AdminSettingsPage extends AbstractOauthAdminSettingsPage
         // Connected - Clear cache or Disconnect
         if ($this->integrationInstance->is_connected()) {
 
+            $label = sprintf(esc_html__('Reconnect to %s', 'fusewp'), $this->googleSheetInstance->title);
+
             $html = sprintf('<p><strong>%s</strong></p>', esc_html__('Connection Successful', 'fusewp'));
+
+            $html .= sprintf('<p><a href="%s" class="button">%s</a></p>', $this->googleSheetInstance->callback_url(), $label);
+
             $html .= sprintf('<p><a href="%s">%s</a></p>', $this->integrationInstance->get_clear_cache_url(), esc_html__('Clear cache', 'fusewp'));
 
             $html .= sprintf('<p><a class="fusewp-confirm-delete button" href="%s">%s</a></p>', $this->integrationInstance->get_disconnect_url(), esc_html__('Disconnect', 'fusewp'));
@@ -101,7 +106,7 @@ class AdminSettingsPage extends AbstractOauthAdminSettingsPage
 
         // Credentials saved but not connected - Connect
         if ($this->googleSheetInstance->is_credentials_saved()) {
-            $html .= sprintf('<p><a href="%s" class="button">%s</a></p>', $this->integrationInstance->callback_url(), 'AUTHORIZE YOUR ACCOUNT');
+            $html .= sprintf('<p><a href="%s" class="button">%s</a></p>', $this->googleSheetInstance->callback_url(), 'AUTHORIZE YOUR ACCOUNT');
 
             $html .= sprintf('<p><a href="%s">%s</a></p>', $this->integrationInstance->get_clear_cache_url(), esc_html__('Clear cache', 'fusewp'));
 

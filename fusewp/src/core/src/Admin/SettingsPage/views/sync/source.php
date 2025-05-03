@@ -7,7 +7,9 @@ $db_source     = fusewp_sync_get_real_source_id($db_source_raw);
 $source_items = null;
 
 if ($db_source) {
-    $source_items = fusewp_get_registered_sync_sources($db_source)->get_source_items();
+    $source_items = [];
+    $source       = fusewp_get_registered_sync_sources($db_source);
+    if ($source) $source_items = $source->get_source_items();
 }
 
 $sources = fusewp_get_registered_sync_sources();

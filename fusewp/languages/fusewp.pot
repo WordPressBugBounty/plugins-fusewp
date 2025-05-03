@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: FuseWP - Lite 1.1.18.0\n"
+"Project-Id-Version: FuseWP - Lite 1.1.19.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fusewp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-02T13:19:06+00:00\n"
+"POT-Creation-Date: 2025-05-03T16:54:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: fusewp\n"
@@ -97,6 +97,10 @@ msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:187
 msgid "Did you know you can sync WPForms to your CRM and email list after form submission and user registration based on the form submitted? %sLearn more%s"
+msgstr ""
+
+#: src/core/src/Admin/AdminNotices.php:193
+msgid "Did you know you can sync GiveWP donors to your CRM and email list after donation based on their payment and subscription status? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/BulkSyncHandler.php:42
@@ -187,7 +191,7 @@ msgid "Double-Optin Control"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:265
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:133
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:135
 msgid "Custom Field Mapping"
 msgstr ""
 
@@ -196,8 +200,7 @@ msgid "Assign Tag to Users"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:267
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:145
-msgid "Google Sheets Integration"
+msgid "Google Sheets & Salesforce"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:268
@@ -206,17 +209,17 @@ msgid "WooCommerce Subscriptions Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:269
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:157
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:155
 msgid "WooCommerce Memberships Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:270
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:163
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:159
 msgid "Easy Digital Downloads Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:271
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:175
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:167
 msgid "MemberPress Sync"
 msgstr ""
 
@@ -225,42 +228,42 @@ msgid "WPForms Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:273
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:217
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:195
 msgid "Advanced Gravity Forms Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:274
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:169
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:163
 msgid "ProfilePress Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:275
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:181
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:171
 msgid "Paid Memberships Pro Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:276
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:205
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:187
 msgid "Restrict Content Pro Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:277
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:187
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:175
 msgid "LearnDash Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:278
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:193
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:179
 msgid "LifterLMS Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:279
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:199
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:183
 msgid "Tutor LMS Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:280
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:211
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:191
 msgid "Advanced Custom Fields Sync"
 msgstr ""
 
@@ -285,34 +288,34 @@ msgstr ""
 msgid "If you are enjoying FuseWP and find it useful, please consider leaving a ★★★★★ review on WordPress.org. %sLeave a Review%s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:31
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:40
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:34
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:44
 msgid "License"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:69
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:73
 msgid "You're using FuseWP Lite - no license needed. Enjoy! 😊"
 msgstr ""
 
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:77
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:81
 msgid "Already purchased? Simply %1$sretrieve your license key%2$s and enter it below to connect with FuseWP Pro."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:104
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:108
 msgid "Connecting..."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:105
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:107
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:109
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:111
 msgid "Unlock Premium Features"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:120
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:124
 msgid "Unlock Powerful Premium Features"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:127
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:131
 msgid "Double Optin Control"
 msgstr ""
 
@@ -320,11 +323,19 @@ msgstr ""
 msgid "Assign Tags to Users"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:223
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:143
+msgid "Google Sheets Integration"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:147
+msgid "Salesforce Integration"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:199
 msgid "Advanced WPForms Sync"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:229
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:217
 #: src/core/src/Integrations/Brevo/Brevo.php:252
 #: src/core/src/Integrations/Flodesk/Flodesk.php:182
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:44
@@ -333,33 +344,33 @@ msgid "Upgrade to FuseWP Premium"
 msgstr ""
 
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:242
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:230
 msgid "<strong>Bonus</strong>: Loyal FuseWP Lite users get <u>10%% off</u> regular price using the coupon code <u>10PERCENTOFF</u>, automatically applied at checkout. %1$sUpgrade to Premium →%2$s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:287
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:275
 msgid "You are not allowed to install plugins."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:293
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:281
 msgid "Please enter your license key to connect."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:297
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:285
 msgid "Only the Lite version can be upgraded."
 msgstr ""
 
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:330
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:318
 msgid "Oops! We could not automatically install an upgrade. Please download the plugin from fusewp.com and install it manually."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:369
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:430
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:357
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:418
 msgid "Plugin installed & activated."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:410
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:398
 msgid "You are not licensed."
 msgstr ""
 
@@ -489,7 +500,7 @@ msgstr ""
 
 #: src/core/src/Admin/SettingsPage/SyncList.php:146
 #: src/core/src/Admin/SettingsPage/views/sync/add-edit-sync-rule.php:32
-#: src/core/src/Admin/SettingsPage/views/sync/source.php:19
+#: src/core/src/Admin/SettingsPage/views/sync/source.php:21
 msgid "Source"
 msgstr ""
 
@@ -629,7 +640,7 @@ msgstr ""
 msgid "Select the corresponding item for the source selected above."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/views/sync/source.php:31
+#: src/core/src/Admin/SettingsPage/views/sync/source.php:33
 msgid "Select the user role, membership plan, form or source plugin to synchronize from."
 msgstr ""
 
@@ -654,7 +665,7 @@ msgid "Sync custom fields added by Advanced Custom Fields (ACF) to the user prof
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/views/sync/view.pro-upsell.php:36
-msgid "Access premium integrations such as Google Sheets."
+msgid "Access premium integrations such as Google Sheets, Salesforce."
 msgstr ""
 
 #: src/core/src/AjaxHandler.php:34
@@ -685,6 +696,7 @@ msgstr ""
 
 #: src/core/src/Functions/CustomSettingsPageApi.php:1064
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:161
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:77
 #: src/core/src/Integrations/Brevo/Brevo.php:134
 #: src/core/src/Integrations/CampaignMonitor/AdminSettingsPage.php:81
 #: src/core/src/Integrations/ConvertKit/ConvertKit.php:120
@@ -693,11 +705,12 @@ msgstr ""
 #: src/core/src/Integrations/Encharge/Encharge.php:71
 #: src/core/src/Integrations/Flodesk/Flodesk.php:129
 #: src/core/src/Integrations/GetResponse/GetResponse.php:94
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:127
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:132
 #: src/core/src/Integrations/Klaviyo/Klaviyo.php:117
 #: src/core/src/Integrations/MailerLite/MailerLite.php:126
 #: src/core/src/Integrations/Mailjet/Mailjet.php:62
 #: src/core/src/Integrations/Omnisend/Omnisend.php:61
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:133
 #: src/core/src/Integrations/Sendy/Sendy.php:137
 msgid "Save Changes"
 msgstr ""
@@ -725,6 +738,8 @@ msgstr ""
 
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:36
 #: src/core/src/Integrations/CampaignMonitor/AdminSettingsPage.php:63
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:94
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:95
 msgid "Reconnect to %s"
 msgstr ""
 
@@ -740,6 +755,7 @@ msgstr ""
 
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:44
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:137
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:52
 #: src/core/src/Integrations/Brevo/Brevo.php:116
 #: src/core/src/Integrations/CampaignMonitor/AdminSettingsPage.php:71
 #: src/core/src/Integrations/ConvertKit/ConvertKit.php:102
@@ -748,25 +764,29 @@ msgstr ""
 #: src/core/src/Integrations/Encharge/Encharge.php:52
 #: src/core/src/Integrations/Flodesk/Flodesk.php:111
 #: src/core/src/Integrations/GetResponse/GetResponse.php:55
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:94
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:96
 #: src/core/src/Integrations/Klaviyo/Klaviyo.php:99
 #: src/core/src/Integrations/MailerLite/MailerLite.php:108
 #: src/core/src/Integrations/Mailjet/Mailjet.php:44
 #: src/core/src/Integrations/Omnisend/Omnisend.php:43
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:97
 #: src/core/src/Integrations/Sendy/Sendy.php:114
 msgid "Connection Successful"
 msgstr ""
 
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:51
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:95
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:106
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:100
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:111
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:104
 msgid "Clear cache"
 msgstr ""
 
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:55
 #: src/core/src/Integrations/CampaignMonitor/AdminSettingsPage.php:78
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:97
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:108
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:102
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:113
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:101
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:114
 msgid "Disconnect"
 msgstr ""
 
@@ -888,6 +908,7 @@ msgid "Enter API URL"
 msgstr ""
 
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:149
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:58
 #: src/core/src/Integrations/Brevo/Brevo.php:122
 #: src/core/src/Integrations/EmailOctopus/EmailOctopus.php:49
 #: src/core/src/Integrations/Encharge/Encharge.php:58
@@ -900,6 +921,7 @@ msgid "API Key"
 msgstr ""
 
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:150
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:59
 #: src/core/src/Integrations/Brevo/Brevo.php:123
 #: src/core/src/Integrations/EmailOctopus/EmailOctopus.php:50
 #: src/core/src/Integrations/Encharge/Encharge.php:59
@@ -939,6 +961,7 @@ msgstr ""
 
 #: src/core/src/Integrations/ActiveCampaign/SyncAction.php:92
 #: src/core/src/Integrations/Aweber/SyncAction.php:40
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:52
 #: src/core/src/Integrations/ConstantContact/SyncAction.php:71
 #: src/core/src/Integrations/ConvertKit/SyncAction.php:87
 #: src/core/src/Integrations/EmailOctopus/SyncAction.php:41
@@ -960,6 +983,7 @@ msgstr ""
 
 #: src/core/src/Integrations/ActiveCampaign/SyncAction.php:97
 #: src/core/src/Integrations/Aweber/SyncAction.php:45
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:56
 #: src/core/src/Integrations/CampaignMonitor/SyncAction.php:59
 #: src/core/src/Integrations/ConstantContact/SyncAction.php:76
 #: src/core/src/Integrations/ConvertKit/SyncAction.php:97
@@ -986,6 +1010,7 @@ msgstr ""
 
 #: src/core/src/Integrations/ActiveCampaign/SyncAction.php:122
 #: src/core/src/Integrations/Aweber/SyncAction.php:69
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:89
 #: src/core/src/Integrations/Brevo/SyncAction.php:48
 #: src/core/src/Integrations/CampaignMonitor/SyncAction.php:51
 #: src/core/src/Integrations/ConstantContact/SyncAction.php:100
@@ -1005,6 +1030,7 @@ msgstr ""
 #: src/core/src/Integrations/MailerLite/SyncAction.php:48
 #: src/core/src/Integrations/Mailjet/SyncAction.php:200
 #: src/core/src/Integrations/Omnisend/SyncAction.php:73
+#: src/core/src/Integrations/Salesforce/SyncAction.php:66
 #: src/core/src/Integrations/Sendy/SyncAction.php:47
 #: src/core/src/Integrations/ZohoCampaigns/SyncAction.php:98
 #: src/core/src/Integrations/ZohoCRM/SyncAction.php:162
@@ -1030,6 +1056,7 @@ msgid "Select List"
 msgstr ""
 
 #: src/core/src/Integrations/Aweber/SyncAction.php:42
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:54
 #: src/core/src/Integrations/EmailOctopus/SyncAction.php:43
 #: src/core/src/Integrations/Mailchimp/SyncAction.php:43
 #: src/core/src/Integrations/Omnisend/SyncAction.php:43
@@ -1038,6 +1065,7 @@ msgid "tag1, tag2"
 msgstr ""
 
 #: src/core/src/Integrations/Aweber/SyncAction.php:43
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:55
 #: src/core/src/Integrations/EmailOctopus/SyncAction.php:44
 #: src/core/src/Integrations/Mailchimp/SyncAction.php:44
 #: src/core/src/Integrations/Omnisend/SyncAction.php:44
@@ -1052,6 +1080,42 @@ msgstr ""
 #: src/core/src/Integrations/Mailchimp/SyncAction.php:48
 #: src/core/src/Integrations/ZohoCampaigns/SyncAction.php:93
 msgid "%sUpgrade to FuseWP Premium%s to assign tags to contact and map custom fields."
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:64
+msgid "Publication ID"
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:65
+msgid "Enter Publication ID"
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:205
+msgid "Beehiiv API Key not found."
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/Beehiiv.php:209
+msgid "Beehiiv publication ID not found."
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:45
+msgid "Select Tier"
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:49
+msgid "Select the tier to assign to contact."
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:59
+msgid "%sUpgrade to FuseWP Premium%s to assign tags to contacts and send welcome emails."
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:83
+msgid "Send Welcome Email"
+msgstr ""
+
+#: src/core/src/Integrations/Beehiiv/SyncAction.php:85
+msgid "Enable to send welcome email to new subscribers."
 msgstr ""
 
 #: src/core/src/Integrations/Brevo/Brevo.php:129
@@ -1413,27 +1477,27 @@ msgstr ""
 msgid "Click the Authorize button to complete the connection. %sLearn more%s"
 msgstr ""
 
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:116
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:121
 msgid "Client ID"
 msgstr ""
 
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:117
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:122
 msgid "Enter Client ID"
 msgstr ""
 
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:122
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:127
 msgid "Client Secret"
 msgstr ""
 
-#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:123
+#: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:128
 msgid "Enter Client Secret"
 msgstr ""
 
-#: src/core/src/Integrations/GoogleSheet/GoogleSheet.php:281
+#: src/core/src/Integrations/GoogleSheet/GoogleSheet.php:285
 msgid "Google access token not found."
 msgstr ""
 
-#: src/core/src/Integrations/GoogleSheet/GoogleSheet.php:287
+#: src/core/src/Integrations/GoogleSheet/GoogleSheet.php:291
 msgid "Google refresh token not found."
 msgstr ""
 
@@ -1807,6 +1871,98 @@ msgstr ""
 
 #: src/core/src/Integrations/Omnisend/SyncAction.php:67
 msgid "Welcome Email"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:81
+msgid "An application must be created with Salesforce to get your API Key and App Secret. %sLearn more%s"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:83
+msgid "In Salesforce, go to Setup -> App -> App Manager and click on \"New Connected App\"."
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:84
+msgid "Enter Application Name(eg. My App), email address then check \"Enable OAuth Settings\" checkbox."
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:85
+msgid "Enter %s as the Callback URL."
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:86
+msgid "Select %s and %s as OAuth Scopes then Save to create the application."
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:87
+msgid "Copy the Consumer Key and Secret of the app and save them here."
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:112
+msgid "AUTHORIZE YOUR ACCOUNT"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:122
+msgid "Consumer Key"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:123
+msgid "Enter Consumer Key"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:128
+msgid "Consumer Secret"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:129
+msgid "Enter Consumer Secret"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:94
+msgid "Account"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:95
+msgid "Campaign"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:96
+msgid "Case"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:97
+msgid "Contact"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:98
+msgid "Lead"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:99
+msgid "Opportunity"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:100
+msgid "Product"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:261
+msgid "Salesforce access token not found."
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/Salesforce.php:265
+msgid "Salesforce refresh token not found."
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/SyncAction.php:41
+msgid "Select Object"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/SyncAction.php:47
+msgid "Topics"
+msgstr ""
+
+#: src/core/src/Integrations/Salesforce/SyncAction.php:53
+msgid "Select the topics to assign to contacts. %sLearn more about topics%s"
 msgstr ""
 
 #: src/core/src/Integrations/Sendy/Sendy.php:67

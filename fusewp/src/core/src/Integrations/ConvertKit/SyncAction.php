@@ -255,7 +255,7 @@ class SyncAction extends AbstractSyncAction
      */
     public function unsubscribe_user($list_id, $email_address)
     {
-        if ( ! isset($GLOBALS['fusewp_sync_destination'][$list_id]['tags'])) return;
+        if ( ! isset($GLOBALS['fusewp_sync_destination'][$list_id]['tags'])) return false;
 
         $tags = $GLOBALS['fusewp_sync_destination'][$list_id]['tags'];
 

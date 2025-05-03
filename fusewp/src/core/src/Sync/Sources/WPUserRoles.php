@@ -174,24 +174,6 @@ class WPUserRoles extends AbstractSyncSource
 
                         } else {
 
-                            if ($destination['destination_item'] == 'any') {
-
-                                QueueManager::push([
-                                    'action'                => 'subscribe_user',
-                                    'source_id'             => $this->id,
-                                    'rule_id'               => $rule['id'],
-                                    'destination'           => $destination,
-                                    'integration'           => $sync_action->get_integration_id(),
-                                    'mappingUserDataEntity' => $user_data,
-                                    'extras'                => $user,
-                                    'list_id'               => $list_id,
-                                    'email_address'         => $email_address,
-                                    'old_email_address'     => $old_email_address
-                                ], 5, 1);
-
-                                continue;
-                            }
-
                             QueueManager::push([
                                 'action'                => 'subscribe_user',
                                 'source_id'             => $this->id,
@@ -204,6 +186,7 @@ class WPUserRoles extends AbstractSyncSource
                                 'email_address'         => $email_address,
                                 'old_email_address'     => $old_email_address
                             ], 5, 1);
+
                         }
                     }
                 }

@@ -264,7 +264,7 @@ abstract class AbstractSettingsPage
             esc_html__('Double-Optin Control', 'fusewp'),
             esc_html__('Custom Field Mapping', 'fusewp'),
             esc_html__('Assign Tag to Users', 'fusewp'),
-            esc_html__('Google Sheets Integration', 'fusewp'),
+            esc_html__('Google Sheets & Salesforce', 'fusewp'),
             esc_html__('WooCommerce Subscriptions Sync', 'fusewp'),
             esc_html__('WooCommerce Memberships Sync', 'fusewp'),
             esc_html__('Easy Digital Downloads Sync', 'fusewp'),

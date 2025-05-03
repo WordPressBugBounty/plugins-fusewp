@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 1.1.19.0 =
+* Pro [GiveWP integration](https://fusewp.com/article/sync-givewp-email-marketing/?ref=changelog).
+* Pro [Salesforce integration](https://fusewp.com/article/connect-wordpress-with-salesforce/?ref=changelog).
+* Added [beehiiv integration](https://fusewp.com/article/connect-wordpress-to-beehiiv/?ref=changelog).
+* Added logging of failed queue jobs.
+* Added filter flag to enable adding Klaviyo profile to Lists without explicit consent.
+* Fixed: Function _load_textdomain_just_in_time was called incorrectly.
+* Fixed bug in IP address detection.
+
 = 1.1.18.0 =
 * Added [Encharge integration](https://fusewp.com/article/connect-wordpress-to-encharge/?ref=prochangelog).
 * Pro: [Google Sheets integration](https://fusewp.com/article/connect-wordpress-with-google-sheets/?ref=changelog).

@@ -28,7 +28,11 @@ class LicenseUpgrader
     public function add_menu($tabs)
     {
         // changed from 11 to 99 to move license tab after General
-        $tabs[99] = ['id' => 'license', 'url' => add_query_arg(['view' => 'license'], FUSEWP_SETTINGS_SETTINGS_PAGE), 'label' => esc_html__('License', 'fusewp')];
+        $tabs[99] = [
+            'id'    => 'license',
+            'url'   => add_query_arg(['view' => 'license'], FUSEWP_SETTINGS_SETTINGS_PAGE),
+            'label' => esc_html__('License', 'fusewp')
+        ];
 
         return $tabs;
     }
@@ -90,19 +94,19 @@ class LicenseUpgrader
 
             <div class="fusewp-license-field">
                 <input
-                    type="text"
-                    id="fusewp-connect-license-key"
-                    name="fusewp-license-key"
-                    value=""
-                    class="regular-text"
-                    style="line-height: 1; font-size: 1.15rem; padding: 10px;"
+                        type="text"
+                        id="fusewp-connect-license-key"
+                        name="fusewp-license-key"
+                        value=""
+                        class="regular-text"
+                        style="line-height: 1; font-size: 1.15rem; padding: 10px;"
                 />
 
                 <button
-                    class="button button-secondary fusewp-license-button"
-                    id="fusewp-connect-license-submit"
-                    data-connecting="<?php esc_attr_e('Connecting...', 'fusewp'); ?>"
-                    data-connect="<?php esc_attr_e('Unlock Premium Features', 'fusewp'); ?>"
+                        class="button button-secondary fusewp-license-button"
+                        id="fusewp-connect-license-submit"
+                        data-connecting="<?php esc_attr_e('Connecting...', 'fusewp'); ?>"
+                        data-connect="<?php esc_attr_e('Unlock Premium Features', 'fusewp'); ?>"
                 >
                     <?php esc_html_e('Unlock Premium Features', 'fusewp'); ?>
                 </button>
@@ -120,109 +124,93 @@ class LicenseUpgrader
                         <?php esc_html_e('Unlock Powerful Premium Features', 'fusewp'); ?>
                     </h3>
 
+                    <?php
+
+                    $features = [
+                        [
+                            'label' => esc_html__('Double Optin Control', 'fusewp'),
+                            'url'   => 'https://fusewp.com/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Custom Field Mapping', 'fusewp'),
+                            'url'   => 'https://fusewp.com/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Assign Tags to Users', 'fusewp'),
+                            'url'   => 'https://fusewp.com/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Google Sheets Integration', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/connect-wordpress-with-google-sheets/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Salesforce Integration', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/connect-wordpress-with-salesforce/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('WooCommerce Subscriptions Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-woocommerce-subscriptions-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('WooCommerce Memberships Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-woocommerce-memberships-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Easy Digital Downloads Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-easy-digital-downloads-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('ProfilePress Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-profilepress-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('MemberPress Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-memberpress-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Paid Memberships Pro Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-paid-memberships-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('LearnDash Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-learndash-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('LifterLMS Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-lifterlms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Tutor LMS Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-tutor-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Restrict Content Pro Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-restrict-content-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Advanced Custom Fields Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/advanced-custom-fields/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Advanced Gravity Forms Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Advanced WPForms Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                    ];
+                    ?>
+
                     <ul>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Double Optin Control', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Custom Field Mapping', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Assign Tags to Users', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/connect-wordpress-with-google-sheets/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Google Sheets Integration', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-woocommerce-subscriptions-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('WooCommerce Subscriptions Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-woocommerce-memberships-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('WooCommerce Memberships Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-easy-digital-downloads-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Easy Digital Downloads Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-profilepress-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('ProfilePress Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-memberpress-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('MemberPress Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-paid-memberships-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Paid Memberships Pro Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-learndash-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('LearnDash Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-lifterlms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('LifterLMS Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-tutor-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Tutor LMS Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-restrict-content-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Restrict Content Pro Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/advanced-custom-fields/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Advanced Custom Fields Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Advanced Gravity Forms Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dashicons dashicons-yes"></div>
-                            <a href="https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" target="_blank" rel="noopener noreferrer">
-                                <?php esc_html_e('Advanced WPForms Sync', 'fusewp'); ?>
-                            </a>
-                        </li>
+                        <?php foreach ($features as $feature): ?>
+                            <li>
+                                <div class="dashicons dashicons-yes"></div>
+                                <a href="<?php echo esc_url($feature['url']); ?>" target="_blank" rel="noopener noreferrer">
+                                    <?php echo esc_html__($feature['label'], 'fusewp'); ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
 
                     <a href="https://fusewp.com/pricing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page" class="button button-primary button-large fusewp-upgrade-btn fusewp-upgrade-btn-large" target="_blank" rel="noopener noreferrer">
