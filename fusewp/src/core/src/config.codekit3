@@ -304,6 +304,16 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/images\/beehiiv-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/beehiiv-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/images\/brevo-integration.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -525,11 +535,31 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/images\/mailpoet-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/mailpoet-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/images\/omnisend-integration.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/images\/omnisend-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/images\/ortto-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/ortto-integration.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -830,6 +860,38 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/Aweber\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Beehiiv\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Beehiiv\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Beehiiv\/Beehiiv.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Beehiiv\/Beehiiv.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Beehiiv\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Beehiiv\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Beehiiv\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Beehiiv\/SyncAction.php",
       "oF" : 0
     },
     "\/Integrations\/Brevo\/APIClass.php" : {
@@ -1432,6 +1494,30 @@
       "oAP" : "\/Integrations\/Mailjet\/SyncAction.php",
       "oF" : 0
     },
+    "\/Integrations\/MailPoet\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/MailPoet\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/MailPoet\/MailPoet.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/MailPoet\/MailPoet.php",
+      "oF" : 0
+    },
+    "\/Integrations\/MailPoet\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/MailPoet\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/Omnisend\/APIClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1462,6 +1548,38 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/Omnisend\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/OrttoCRM\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/OrttoCRM\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/OrttoCRM\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/OrttoCRM\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/OrttoCRM\/OrttoCRM.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/OrttoCRM\/OrttoCRM.php",
+      "oF" : 0
+    },
+    "\/Integrations\/OrttoCRM\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/OrttoCRM\/SyncAction.php",
       "oF" : 0
     },
     "\/Integrations\/Salesforce\/AdminSettingsPage.php" : {
@@ -1680,6 +1798,14 @@
       "oAP" : "\/Sync\/Sources\/AbstractSyncSource.php",
       "oF" : 0
     },
+    "\/Sync\/Sources\/ContactForms7.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/ContactForms7.php",
+      "oF" : 0
+    },
     "\/Sync\/Sources\/GravityForms.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1741,7 +1867,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 766830197.82381499
+    "lastBuiltDate" : 770161264.751055
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

@@ -57,7 +57,7 @@ class APIClass
             'X-Auth-Token' => 'api-key ' . $this->api_key,
             'Accept'       => 'application/json',
             'Content-Type' => 'application/json',
-            'User-Agent'   => 'FuseWP',
+            'User-Agent'   => 'FuseWP; ' . home_url(),
         ];
 
         if ( ! empty($this->registered_domain)) {

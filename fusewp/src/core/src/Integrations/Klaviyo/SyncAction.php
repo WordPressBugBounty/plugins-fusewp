@@ -28,7 +28,7 @@ class SyncAction extends AbstractSyncAction
     {
         $prefix = $this->get_field_name($index);
 
-        $fields = [
+        return [
             (new Select($prefix(self::EMAIL_LIST_FIELD_ID), esc_html__('Select List', 'fusewp')))
                 ->set_db_field_id(self::EMAIL_LIST_FIELD_ID)
                 ->set_classes(['fusewp-sync-list-select'])
@@ -36,8 +36,6 @@ class SyncAction extends AbstractSyncAction
                 ->set_required()
                 ->set_placeholder('&mdash;&mdash;&mdash;')
         ];
-
-        return $fields;
     }
 
     public function get_list_fields($list_id = '', $index = '')
@@ -110,17 +108,19 @@ class SyncAction extends AbstractSyncAction
                             continue;
                         }
 
-                        if (in_array(
-                            $klaviyo_field_id,
-                            [
-                                '$address1',
-                                '$address2',
-                                '$city',
-                                '$country',
-                                '$region',
-                                '$zip'
-                            ])) {
-                            $output['main']['location'][str_replace('$', '', $klaviyo_field_id)] = $data;
+                        if ($klaviyo_field_id == '$phone_number') {
+                            // klaviyo expect a valid phone number in E.164 format
+                            if ( ! empty($data) && strpos(trim($data), '+') === 0) {
+                                $output['main']['phone_number'] = trim($data);
+                            }
+                            continue;
+                        }
+
+                        if (in_array($klaviyo_field_id, ['$address1', '$address2', '$city', '$country', '$region', '$zip'])) {
+                            // klaviyo expect a non-empty data for addresses
+                            if ( ! empty($data)) {
+                                $output['main']['location'][str_replace('$', '', $klaviyo_field_id)] = $data;
+                            }
                             continue;
                         }
 

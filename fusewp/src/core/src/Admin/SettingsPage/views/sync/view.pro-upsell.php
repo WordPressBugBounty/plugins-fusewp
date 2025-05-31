@@ -30,10 +30,10 @@ $pro_features = [
         )
     ],
     'Forms & Other Integrations'                  => [
-        esc_html__("Sync custom fields added by Advanced Custom Fields (ACF) to the user profile and form submissions and payments from Gravity Forms, WPForms to your email marketing platform and CRM.", 'fusewp')
+        esc_html__("Sync custom fields added by Advanced Custom Fields (ACF) to the user profile and form submissions and payments from Gravity Forms, WPForms, Contact Form 7 to your email marketing platform and CRM.", 'fusewp')
     ],
     'Premium CRM Integrations'                    => [
-        esc_html__("Access premium integrations such as Google Sheets, Salesforce.", 'fusewp')
+        esc_html__("Access premium integrations such as Google Sheets, Salesforce, Ortto.", 'fusewp')
     ]
 ];
 ?>

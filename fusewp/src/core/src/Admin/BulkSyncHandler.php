@@ -105,7 +105,7 @@ class BulkSyncHandler
 
                 $records = $sync_rule_source_obj->get_bulk_sync_data($source_item_id, $page, $number);
 
-                if ( ! empty($records)) {
+                if ( ! empty($records) && is_array($records)) {
 
                     $record_count = count($records);
 

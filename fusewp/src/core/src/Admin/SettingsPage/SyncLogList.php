@@ -66,19 +66,22 @@ class SyncLogList extends \WP_List_Table
     /**
      * Returns the count of records in the database.
      *
-     * @param array $search
+     * @param string $search
      *
      * @return null|string
      */
-    public function record_count($search = [])
+    public function record_count($search = '')
     {
         $sql = "SELECT COUNT(*) FROM $this->table WHERE 1 = %d";
 
         $args[] = 1;
 
-        if ( ! empty($source)) {
-            $sql    .= "  AND source = %s";
-            $args[] = $source;
+        if ( ! empty($search)) {
+            $val    = '%' . $this->wpdb->esc_like($search) . '%';
+            $sql    .= " AND (error_message LIKE %s";
+            $sql    .= " OR integration LIKE %s)";
+            $args[] = $val;
+            $args[] = $val;
         }
 
         return $this->wpdb->get_var(
@@ -107,14 +110,12 @@ class SyncLogList extends \WP_List_Table
      */
     public function get_columns()
     {
-        $columns = array(
+        return array(
             'cb'            => '<input type="checkbox" />',
             'integration'   => esc_html__('Integration', 'fusewp'),
             'error_message' => esc_html__('Error Message', 'fusewp'),
             'date'          => esc_html__('Date', 'fusewp')
         );
-
-        return $columns;
     }
 
     /**
@@ -196,15 +197,16 @@ class SyncLogList extends \WP_List_Table
         $this->_column_headers = $this->get_column_info();
         /** Process bulk action */
         $this->process_actions();
+        $search_term = fusewpVarGET('s', '');
         $per_page     = $this->get_items_per_page('sync_logs_per_page', 10);
         $current_page = $this->get_pagenum();
-        $total_items  = self::record_count();
+        $total_items  = self::record_count($search_term);
         $this->set_pagination_args([
             'total_items' => $total_items,
             'per_page'    => $per_page
         ]);
 
-        $this->items = $this->get_sync_logs($per_page, $current_page, fusewpVarPOST('s', ''));
+        $this->items = $this->get_sync_logs($per_page, $current_page, $search_term);
     }
 
     public function current_action()

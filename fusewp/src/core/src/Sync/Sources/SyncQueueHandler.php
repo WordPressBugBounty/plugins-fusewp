@@ -41,7 +41,9 @@ class SyncQueueHandler
 
                 $processed_bucket = get_option('fusewp_bulk_sync_processed_cache', []);
 
-                if ( ! empty($processed_bucket[$cache_key])) {
+                $is_bulk_sync_cache_enabled = apply_filters('fusewp_bulk_sync_cache_enabled', true);
+
+                if ($is_bulk_sync_cache_enabled && ! empty($processed_bucket[$cache_key])) {
 
                     $last_processed_time = absint($processed_bucket[$cache_key]);
 
@@ -50,7 +52,7 @@ class SyncQueueHandler
 
                 $is_success = call_user_func_array([$sync_action, $item['action']], $args);
 
-                if ($is_success) {
+                if ($is_bulk_sync_cache_enabled && $is_success) {
 
                     $processed_bucket[$cache_key] = time();
                     // save bulk-sync last processed date

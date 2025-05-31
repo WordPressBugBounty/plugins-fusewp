@@ -1,27 +1,30 @@
 <?php
 
-namespace FuseWP\Core\Integrations\Drip;
+namespace FuseWP\Core\Integrations\OrttoCRM;
 
 class APIClass
 {
-    protected $api_url;
     protected $api_key;
-    protected $account_id;
 
-    /**
-     * @var string
-     */
-    protected $api_version = 'v2';
+    protected $api_url;
 
-    /**
-     * @var string
-     */
-    protected $api_base_url = 'https://api.getdrip.com/';
+    protected $base_url = 'https://api.ap3api.com/';
 
-    public function __construct($account_id, $api_key)
+    protected $api_version = 1;
+
+    public function __construct($api_key, $region = null)
     {
+        // Set the base URL based on the region
+        if ( ! empty($region)) {
+            if (strtolower($region) == 'au') {
+                $this->base_url = 'https://api.au.ap3api.com/';
+            } elseif (strtolower($region) == 'eu') {
+                $this->base_url = 'https://api.eu.ap3api.com/';
+            }
+        }
+
         $this->api_key = $api_key;
-        $this->api_url = $this->api_base_url . $this->api_version . '/' . $account_id . '/';
+        $this->api_url = $this->base_url . 'v' . $this->api_version . '/';
     }
 
     /**
@@ -36,20 +39,22 @@ class APIClass
     {
         $url = $this->api_url . $endpoint;
 
-        $wp_args = ['method' => strtoupper($method), 'timeout' => 30];
-
-        $wp_args['headers'] = [
-            'Authorization' => sprintf('Basic %s:', base64_encode($this->api_key)),
-            'Accept'        => 'application/json',
-            'Content-Type'  => 'application/json',
-            'User-Agent'    => 'FuseWP; ' . home_url(),
+        $wp_args = [
+            'method'     => strtoupper($method),
+            'timeout'    => 30,
+            'user-agent' => 'FuseWP; ' . home_url(),
+            'headers'    => [
+                'X-Api-Key'    => $this->api_key,
+                'Content-Type' => 'application/json'
+            ],
         ];
 
-        switch ($method) {
+        switch (strtolower($method)) {
             case 'post':
             case 'put':
             case 'delete':
-                $wp_args['body'] = json_encode($args);
+                $wp_args['headers']["Content-Type"] = "application/json";
+                $wp_args['body']                    = json_encode($args);
                 break;
             case 'get':
                 $url = add_query_arg($args, $url);

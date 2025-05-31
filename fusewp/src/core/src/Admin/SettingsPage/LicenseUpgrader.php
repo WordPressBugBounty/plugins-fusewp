@@ -144,7 +144,7 @@ class LicenseUpgrader
                             'url'   => 'https://fusewp.com/article/connect-wordpress-with-google-sheets/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
                         [
-                            'label' => esc_html__('Salesforce Integration', 'fusewp'),
+                            'label' => esc_html__('Salesforce & Ortto Integrations', 'fusewp'),
                             'url'   => 'https://fusewp.com/article/connect-wordpress-with-salesforce/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
                         [
@@ -199,6 +199,10 @@ class LicenseUpgrader
                             'label' => esc_html__('Advanced WPForms Sync', 'fusewp'),
                             'url'   => 'https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
+                        [
+                            'label' => esc_html__('Contact Form 7 Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-contact-form-7-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ]
                     ];
                     ?>
 

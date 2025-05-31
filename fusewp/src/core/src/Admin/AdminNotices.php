@@ -145,10 +145,22 @@ class AdminNotices
                 'message'   => esc_html__('Did you know you can sync your Tutor LMS students or users to your CRM and email list based on their enrolled courses and enrollment status? %sLearn more%s', 'fusewp')
             ],
             [
+                'id'        => 'academy_lms',
+                'is_active' => class_exists('\Academy'),
+                'url'       => 'https://fusewp.com/article/sync-academy-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=academy_lms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync your Academy LMS students to your CRM and email list based on their enrolled courses and enrollment status? %sLearn more%s', 'fusewp')
+            ],
+            [
                 'id'        => 'paid_memberships_pro',
                 'is_active' => defined('PMPRO_VERSION'),
                 'url'       => 'https://fusewp.com/article/sync-paid-memberships-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=paid_memberships_pro_admin_notice',
                 'message'   => esc_html__('Did you know you can sync your Paid Memberships Pro users to your CRM and email list based on their subscribed membership level and membership status? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'paid_member_subscriptions',
+                'is_active' => defined('PMS_VERSION'),
+                'url'       => 'https://fusewp.com/article/sync-paid-member-subscriptions-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=paid_member_subscriptions_admin_notice',
+                'message'   => esc_html__('Did you know you can sync your Paid Member Subscriptions users to your CRM and email list based on their subscribed membership plan and subscription status? %sLearn more%s', 'fusewp')
             ],
             [
                 'id'        => 'profilepress',
@@ -166,7 +178,13 @@ class AdminNotices
                 'id'        => 'ultimate_member',
                 'is_active' => class_exists('\UM'),
                 'url'       => 'https://fusewp.com/article/connect-ultimate-member-email-marketing-software/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=ultimate_member_admin_notice',
-                'message'   => esc_html__('Did you know you can sync registered users via Ultimate Member registration to your CRM and email list? %sLearn more%s', 'fusewp')
+                'message'   => esc_html__('Did you know you can sync registered users through Ultimate Member registration forms to your CRM and email list? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'profile_builder',
+                'is_active' => defined('PROFILE_BUILDER_VERSION'),
+                'url'       => 'https://fusewp.com/article/connect-profile-builder-email-marketing-software/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=profile_builder_admin_notice',
+                'message'   => esc_html__('Did you know you can sync registered users through Profile Builder registration forms to your CRM and email list? %sLearn more%s', 'fusewp')
             ],
             [
                 'id'        => 'easy_digital_downloads',
@@ -185,6 +203,12 @@ class AdminNotices
                 'is_active' => function_exists('wpforms'),
                 'url'       => 'https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=wpforms_admin_notice',
                 'message'   => esc_html__('Did you know you can sync WPForms to your CRM and email list after form submission and user registration based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'contact_form_7',
+                'is_active' => class_exists('\WPCF7'),
+                'url'       => 'https://fusewp.com/article/sync-contact-form-7-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=cf7_admin_notice',
+                'message'   => esc_html__('Did you know you can sync Contact Form 7 to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
             ],
             [
                 'id'        => 'givewp',

@@ -1,5 +1,19 @@
 == Changelog ==
 
+= 1.1.20.0 =
+* Added [Contact forms 7 integration](https://fusewp.com/article/sync-contact-form-7-email-marketing/?ref=changelog).
+* Pro [Academy LMS integration](https://fusewp.com/article/sync-academy-lms-email-marketing/?ref=changelog).
+* Pro [Paid Member Subscriptions integration](https://fusewp.com/article/sync-paid-member-subscriptions-email-marketing/?ref=changelog).
+* Pro [Profile Builder Integration](https://fusewp.com/article/connect-profile-builder-email-marketing-software/?ref=changelog).
+* Pro [Ortto integration](https://fusewp.com/article/connect-wordpress-to-ortto/?ref=changelog).
+* Pro [MailPoet integration](https://fusewp.com/article/connect-wordpress-to-mailpoet/?ref=changelog).
+* Fixed bug where sync for plugin integrations didn't work.
+* Optimized queue popping query so over-attempted jobs don't stop the queue.
+* Skip Klaviyo phone number if of invalid format.
+* Fixed sync failure due to empty Klaviyo address field data.
+* Fixed search not working correctly on the Sync Log page.
+* Added fusewp_bulk_sync_cache_enabled filter to disable bulk-sync cache.
+
 = 1.1.19.0 =
 * Pro [GiveWP integration](https://fusewp.com/article/sync-givewp-email-marketing/?ref=changelog).
 * Pro [Salesforce integration](https://fusewp.com/article/connect-wordpress-with-salesforce/?ref=changelog).

@@ -43,8 +43,14 @@ class SyncLogPage
     public function settings_admin_page_callback()
     {
         add_action('wp_cspa_main_content_area', [$this, 'sync_log_page'], 10, 2);
+        add_action('wp_cspa_form_tag', function ($option_name) {
+            if ($option_name == 'fusewp_sync_log_page') {
+                printf(' action="%s"', fusewp_get_current_url_query_string());
+            }
+        });
 
         $settingsPageInstance = CustomSettingsPageApi::instance([], 'fusewp_sync_log_page', esc_html__('Sync Logs', 'fusewp'));
+        $settingsPageInstance->form_method('get');
         $settingsPageInstance->sidebar(AbstractSettingsPage::sidebar_args());
         $settingsPageInstance->build();
     }
@@ -54,10 +60,10 @@ class SyncLogPage
         $this->wplist_instance->prepare_items();
 
         ob_start();
-        echo '<form method="post">';
+        echo '<input type="hidden" name="page" value="' . FUSEWP_SYNC_SETTINGS_SLUG . '" />';
+        echo '<input type="hidden" name="view" value="sync-logs" />';
         $this->wplist_instance->search_box(esc_html__('Search Logs', 'fusewp'), 'fusewp-log');
         $this->wplist_instance->display();
-        echo '</form>';
 
         return ob_get_clean();
     }

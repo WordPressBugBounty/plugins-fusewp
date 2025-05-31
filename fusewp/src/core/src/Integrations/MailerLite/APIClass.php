@@ -30,7 +30,7 @@ class APIClass
     {
         $url = $this->api_url . $endpoint;
 
-        $wp_args = ['method' => strtoupper($method), 'timeout' => 30, 'user-agent' => 'FuseWP MailerLite Connect (https://fusewp.com)'];
+        $wp_args = ['method' => strtoupper($method), 'timeout' => 30, 'user-agent' => 'FuseWP; ' . home_url()];
 
         $wp_args['headers'] = [
             "Content-Type"  => 'application/json',

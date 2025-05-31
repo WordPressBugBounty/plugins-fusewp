@@ -319,13 +319,16 @@ function fusewp_sync_get_source_item_id($source_id)
  */
 function fusewp_sync_get_rule($rule_id)
 {
-    global $wpdb;
+    return fusewp_cache_transform('fusewp_sync_get_rule' . $rule_id, function () use ($rule_id) {
 
-    $table = Core::sync_rule_db_table();
+        global $wpdb;
 
-    return $wpdb->get_row(
-        $wpdb->prepare("SELECT * FROM {$table} WHERE id = %d", absint($rule_id))
-    );
+        $table = Core::sync_rule_db_table();
+
+        return $wpdb->get_row(
+            $wpdb->prepare("SELECT * FROM {$table} WHERE id = %d", absint($rule_id))
+        );
+    });
 }
 
 /**
@@ -463,6 +466,28 @@ function fusewp_sync_update_rule_status($rule_id, $status)
     }
 
     return false;
+}
+
+/**
+ * Return currently viewed page url with query string.
+ *
+ * @return string
+ */
+function fusewp_get_current_url_query_string()
+{
+    $protocol = 'http://';
+
+    if ((isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1))
+        || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+    ) {
+        $protocol = 'https://';
+    }
+
+    $url = $protocol . $_SERVER['HTTP_HOST'];
+
+    $url .= $_SERVER['REQUEST_URI'];
+
+    return esc_url_raw($url);
 }
 
 function fusewp_get_ip_address()

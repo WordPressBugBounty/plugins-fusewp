@@ -3,13 +3,14 @@
 namespace FuseWP\Core\QueueManager;
 
 use FuseWPVendor\WP_Queue\Connections\DatabaseConnection;
+use FuseWPVendor\WP_Queue\Exceptions\WorkerAttemptsExceededException;
 use FuseWPVendor\WP_Queue\Job;
 
 class Connection extends DatabaseConnection
 {
     public function __construct($wpdb)
     {
-        parent::__construct($wpdb, []);
+        parent::__construct($wpdb);
 
         $this->jobs_table = $wpdb->prefix . 'fusewp_queue_jobs';
     }
@@ -103,12 +104,19 @@ class Connection extends DatabaseConnection
     {
         $this->remove_unsubscribe_sync_jobs_with_resubscribe_action();
         $this->release_reserved();
-        $sql     = $this->database->prepare("\n\t\t\tSELECT * FROM {$this->jobs_table}\n\t\t\tWHERE reserved_at IS NULL\n\t\t\tAND available_at <= %s\n\t\t\tORDER BY priority, available_at, id\n\t\t\tLIMIT 1\n\t\t", $this->datetime());
+        $sql     = $this->database->prepare("SELECT * FROM {$this->jobs_table} WHERE reserved_at IS NULL AND attempts <= 5 AND available_at <= %s ORDER BY priority, available_at, id LIMIT 1", $this->datetime());
         $raw_job = $this->database->get_row($sql);
         if (is_null($raw_job)) {
             return false;
         }
         $job = $this->vitalize_job($raw_job);
+
+        if ($job && $job->attempts() > 5) {
+            $this->failure($job, new WorkerAttemptsExceededException());
+
+            return false;
+        }
+
         if ($job && is_a($job, Job::class)) {
             $this->reserve($job);
         }

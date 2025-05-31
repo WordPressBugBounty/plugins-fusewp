@@ -21,6 +21,7 @@ use FuseWP\Core\Integrations\Aweber;
 use FuseWP\Core\Integrations\MailerLite;
 use FuseWP\Core\Integrations\Mailjet;
 use FuseWP\Core\Integrations\Omnisend;
+use FuseWP\Core\Integrations\OrttoCRM;
 use FuseWP\Core\Integrations\Sendy;
 use FuseWP\Core\Integrations\HubSpot;
 use FuseWP\Core\Integrations\ConvertKit;
@@ -31,14 +32,16 @@ use FuseWP\Core\Integrations\Salesforce;
 use FuseWP\Core\Integrations\ZohoCRM;
 use FuseWP\Core\Integrations\ZohoCampaigns;
 use FuseWP\Core\Integrations\FluentCRM;
+use FuseWP\Core\Integrations\MailPoet;
 use FuseWP\Core\Integrations\Keap;
 use FuseWP\Core\Integrations\Encharge;
 use FuseWP\Core\Integrations\GoogleSheet;
-use FuseWP\Core\QueueManager\QueueManager;
+use FuseWP\Core\Sync\Sources\ContactForms7;
 use FuseWP\Core\Sync\Sources\GravityForms;
 use FuseWP\Core\Sync\Sources\SyncQueueHandler;
 use FuseWP\Core\Sync\Sources\WPForms;
 use FuseWP\Core\Sync\Sources\WPUserRoles;
+use FuseWP\Core\QueueManager\QueueManager;
 
 if ( ! defined('ABSPATH')) {
     exit;
@@ -137,11 +140,13 @@ class Base
         FluentCRM\FluentCRM::get_instance();
         Encharge\Encharge::get_instance();
         Beehiiv\Beehiiv::get_instance();
+        MailPoet\MailPoet::get_instance();
 
         add_action('plugins_loaded', function () {
             // important to be inside here to avoid fatal error from fusewp_is_premium() check
             GoogleSheet\GoogleSheet::get_instance();
             Salesforce\Salesforce::get_instance();
+            OrttoCRM\OrttoCRM::get_instance();
         }, 99);
 
         add_action('init', function () {
@@ -154,6 +159,10 @@ class Base
         add_action('gform_loaded', function () {
             GravityForms::get_instance();
         }, 5);
+
+        add_action('wpcf7_init', function () {
+            ContactForms7::get_instance();
+        });
 
         add_action('wpforms_loaded', function () {
             WPForms::get_instance();

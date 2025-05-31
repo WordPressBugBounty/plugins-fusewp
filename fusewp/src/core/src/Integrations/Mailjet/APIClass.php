@@ -35,7 +35,7 @@ class APIClass
             'Authorization' => sprintf('Basic %s', base64_encode($this->api_key . ':' . $this->secret_key)),
             'Accept'        => 'application/json',
             'Content-Type'  => 'application/json',
-            'User-Agent'    => 'FuseWP',
+            'User-Agent'    => 'FuseWP; ' . home_url(),
         ];
 
         switch ($method) {
