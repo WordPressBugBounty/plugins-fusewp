@@ -7,7 +7,7 @@
       "uuidString" : "04862057-F51D-4B60-B794-1FFA84414C60"
     }
   ],
-  "creatorBuild" : "34627",
+  "creatorBuild" : "34704",
   "files" : {
     "\/Admin\/AdminNotices.php" : {
       "cB" : 0,
@@ -450,6 +450,19 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/images\/groundhogg-integration.png" : {
+      "ft" : 32768,
+      "iS" : 50661,
+      "oA" : 0,
+      "oAP" : "\/assets\/images\/groundhogg-integration.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/assets\/images\/highlevel-integration.png" : {
       "ft" : 32768,
       "iS" : 11198,
@@ -570,6 +583,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/images\/salesforce-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/images\/sender-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/sender-integration.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -732,6 +755,14 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/DBUpdates.php",
+      "oF" : 0
+    },
+    "\/Functions\/countries.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Functions\/countries.php",
       "oF" : 0
     },
     "\/Functions\/CustomSettingsPageApi.php" : {
@@ -1254,6 +1285,30 @@
       "oAP" : "\/Integrations\/GoogleSheet\/SyncAction.php",
       "oF" : 0
     },
+    "\/Integrations\/Groundhogg\/Groundhogg.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Groundhogg\/Groundhogg.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Groundhogg\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Groundhogg\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Groundhogg\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Groundhogg\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/HighLevel\/AdminSettingsPage.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1614,6 +1669,38 @@
       "oAP" : "\/Integrations\/Salesforce\/SyncAction.php",
       "oF" : 0
     },
+    "\/Integrations\/Sender\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Sender\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Sender\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Sender\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Sender\/Sender.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Sender\/Sender.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Sender\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Sender\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/Sendy\/APIClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1806,6 +1893,22 @@
       "oAP" : "\/Sync\/Sources\/ContactForms7.php",
       "oF" : 0
     },
+    "\/Sync\/Sources\/FluentForms.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/FluentForms.php",
+      "oF" : 0
+    },
+    "\/Sync\/Sources\/Forminator.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/Forminator.php",
+      "oF" : 0
+    },
     "\/Sync\/Sources\/GravityForms.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1867,7 +1970,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 770161264.751055
+    "lastBuiltDate" : 773487681.88124001
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -2165,8 +2268,6 @@
     "buildFolderActive" : 0,
     "buildFolderName" : "build",
     "cleanBuild" : 1,
-    "cssoForceMediaMerge" : 0,
-    "cssoRestructure" : 1,
     "environmentVariableEntries" : [
       "NODE_ENV:::production"
     ],

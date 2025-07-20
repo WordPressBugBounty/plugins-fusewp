@@ -160,6 +160,10 @@ class LicenseUpgrader
                             'url'   => 'https://fusewp.com/article/sync-easy-digital-downloads-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
                         [
+                            'label' => esc_html__('WP Travel Engine Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
                             'label' => esc_html__('ProfilePress Sync', 'fusewp'),
                             'url'   => 'https://fusewp.com/article/sync-profilepress-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
@@ -202,6 +206,14 @@ class LicenseUpgrader
                         [
                             'label' => esc_html__('Contact Form 7 Sync', 'fusewp'),
                             'url'   => 'https://fusewp.com/article/sync-contact-form-7-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Advanced Fluent Forms Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-fluent-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Advanced Forminator Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ]
                     ];
                     ?>

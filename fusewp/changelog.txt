@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.1.21.0 =
+* Pro [WP Travel Engine integration](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?ref=changelog).
+* Added [Fluent Forms integration](https://fusewp.com/article/sync-fluent-forms-email-marketing/?ref=changelog).
+* Added [Forminator integration](https://fusewp.com/article/sync-forminator-email-marketing/?ref=changelog).
+* Added [Sender.net integration](https://fusewp.com/article/connect-wordpress-to-sender/?ref=changelog).
+* Added [Groundhogg integration](https://fusewp.com/article/connect-wordpress-to-groundhogg/?ref=changelog).
+
 = 1.1.20.0 =
 * Added [Contact forms 7 integration](https://fusewp.com/article/sync-contact-form-7-email-marketing/?ref=changelog).
 * Pro [Academy LMS integration](https://fusewp.com/article/sync-academy-lms-email-marketing/?ref=changelog).

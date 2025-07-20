@@ -14,6 +14,7 @@ use FuseWP\Core\Integrations\ConstantContact;
 use FuseWP\Core\Integrations\Drip;
 use FuseWP\Core\Integrations\EmailOctopus;
 use FuseWP\Core\Integrations\GetResponse;
+use FuseWP\Core\Integrations\Groundhogg;
 use FuseWP\Core\Integrations\Mailchimp;
 use FuseWP\Core\Integrations\ActiveCampaign;
 use FuseWP\Core\Integrations\Brevo;
@@ -22,6 +23,7 @@ use FuseWP\Core\Integrations\MailerLite;
 use FuseWP\Core\Integrations\Mailjet;
 use FuseWP\Core\Integrations\Omnisend;
 use FuseWP\Core\Integrations\OrttoCRM;
+use FuseWP\Core\Integrations\Sender;
 use FuseWP\Core\Integrations\Sendy;
 use FuseWP\Core\Integrations\HubSpot;
 use FuseWP\Core\Integrations\ConvertKit;
@@ -37,6 +39,8 @@ use FuseWP\Core\Integrations\Keap;
 use FuseWP\Core\Integrations\Encharge;
 use FuseWP\Core\Integrations\GoogleSheet;
 use FuseWP\Core\Sync\Sources\ContactForms7;
+use FuseWP\Core\Sync\Sources\Forminator;
+use FuseWP\Core\Sync\Sources\FluentForms;
 use FuseWP\Core\Sync\Sources\GravityForms;
 use FuseWP\Core\Sync\Sources\SyncQueueHandler;
 use FuseWP\Core\Sync\Sources\WPForms;
@@ -127,6 +131,7 @@ class Base
         ZohoCampaigns\ZohoCampaigns::get_instance();
         ConvertKit\ConvertKit::get_instance();
         Klaviyo\Klaviyo::get_instance();
+        Sender\Sender::get_instance();
         Sendy\Sendy::get_instance();
         Keap\Keap::get_instance();
         MailerLite\MailerLite::get_instance();
@@ -141,6 +146,10 @@ class Base
         Encharge\Encharge::get_instance();
         Beehiiv\Beehiiv::get_instance();
         MailPoet\MailPoet::get_instance();
+
+        add_action('groundhogg/loaded', function () {
+            Groundhogg\Groundhogg::get_instance();
+        });
 
         add_action('plugins_loaded', function () {
             // important to be inside here to avoid fatal error from fusewp_is_premium() check
@@ -166,6 +175,14 @@ class Base
 
         add_action('wpforms_loaded', function () {
             WPForms::get_instance();
+        });
+
+        add_action('forminator_loaded', function () {
+            Forminator::get_instance();
+        });
+      
+        add_action('fluentform/loaded', function () {
+            FluentForms::get_instance();
         });
 
         $this->admin_hooks();

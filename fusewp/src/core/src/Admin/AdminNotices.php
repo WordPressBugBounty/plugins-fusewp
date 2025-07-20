@@ -211,10 +211,28 @@ class AdminNotices
                 'message'   => esc_html__('Did you know you can sync Contact Form 7 to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
             ],
             [
+                'id'        => 'fluent_forms',
+                'is_active' => defined('FLUENTFORM_VERSION'),
+                'url'       => 'https://fusewp.com/article/sync-fluent-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=fluent_forms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync Fluent Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'forminator',
+                'is_active' => class_exists('\Forminator'),
+                'url'       => 'https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=forminator_admin_notice',
+                'message'   => esc_html__('Did you know you can integrate Forminator to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
                 'id'        => 'givewp',
                 'is_active' => class_exists('\Give'),
                 'url'       => 'https://fusewp.com/article/sync-givewp-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=givewp_admin_notice',
                 'message'   => esc_html__('Did you know you can sync GiveWP donors to your CRM and email list after donation based on their payment and subscription status? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'wp_travel_engine',
+                'is_active' => function_exists('\WPTravelEngine'),
+                'url'       => 'https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=wp_travel_engine_admin_notice',
+                'message'   => esc_html__('Did you know you can sync WP Travel Engine customers to your CRM and email list after donation based on their booked trips, trip type and booking status? %sLearn more%s', 'fusewp')
             ]
         ];
 

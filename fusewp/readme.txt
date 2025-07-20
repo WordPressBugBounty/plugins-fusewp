@@ -2,10 +2,10 @@
 Contributors: fusewp, properfraction, collizo4sky
 Donate link: https://fusewp.com/pricing/
 Tags: google sheets, automation, marketing, mailchimp, membership
-Requires at least: 5.3
+Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.8
-Stable tag: 1.1.20.0
+Stable tag: 1.1.21.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -40,7 +40,7 @@ Map user profile information to custom fields or attributes in your email market
 
 = Integration with Ecommerce, Forms, LMS & Membership Plugins =
 
-FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, Salesforce, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Google Sheets, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, Ortto, GetResponse, Mailjet, Encharge, beehiiv, FluentCRM, MailPoet etc.
+FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, Salesforce, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Google Sheets, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, Ortto, GetResponse, Mailjet, Encharge, Sender, beehiiv, FluentCRM, MailPoet, Groundhogg etc.
 
 Say a user's membership or subscription status changes from Active to Cancelled; they will be removed from the Active email list and added to that of Cancelled.
 
@@ -80,6 +80,14 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 [Subscribe Contact Form 7 leads to your CRM and email marketing list](https://fusewp.com/article/sync-contact-form-7-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission.
 
+**– Fluent Forms –**
+
+[Subscribe leads and form submissions from Fluent Forms to your CRM and email marketing list](https://fusewp.com/article/sync-fluent-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+
+**– Forminator Forms –**
+
+[Subscribe leads and sync form data from Forminator Forms to your CRM and email marketing list](https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission.
+
 **– ProfilePress –**
 
 [Sync customers in ProfilePress with your email list](https://fusewp.com/article/sync-profilepress-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the membership plan they subscribe to and their membership subscription status.
@@ -112,16 +120,20 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 [Sync students in Academy LMS with your email list](https://fusewp.com/article/sync-academy-lms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses they are enrolled in as well as their enrollment status.
 
+**– WP Travel Engine –**
+
+[Sync users in WP Travel Engine with your email list](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on their booked trips and order status.
+
 Integrations with other membership, learning management systems (LMS), and e-commerce plugins are coming soon.
 
 ### Other Integration
 
-FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, GiveWP, Paid Memberships Pro, Tutor LMS, Academy LMS, wpForo, Profile Builder, Paid Member Subscriptions.
+FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, GiveWP, Paid Memberships Pro, Tutor LMS, Academy LMS, wpForo, Profile Builder, Paid Member Subscriptions, WP Travel Engine.
 
 [Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
 
 ### Supported Forms, LMS, Ecommerce and Membership Plugins
-WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, ProfilePress, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, Paid Member Subscriptions.
+WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, Forminator Forms, Fluent Forms, ProfilePress, WP Travel Engine, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, Paid Member Subscriptions.
 
 ### Supported Email Marketing & CRM Integrations
 
@@ -150,8 +162,10 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * GetResponse
 * Mailjet
 * Encharge
+* Sender (Sender.net)
 * beehiiv
 * FluentCRM
+* Groundhogg
 * MailPoet
 * Others coming soon.
 
@@ -182,6 +196,13 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.21.0 =
+* Pro [WP Travel Engine integration](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?ref=changelog).
+* Added [Fluent Forms integration](https://fusewp.com/article/sync-fluent-forms-email-marketing/?ref=changelog).
+* Added [Forminator integration](https://fusewp.com/article/sync-forminator-email-marketing/?ref=changelog).
+* Added [Sender.net integration](https://fusewp.com/article/connect-wordpress-to-sender/?ref=changelog).
+* Added [Groundhogg integration](https://fusewp.com/article/connect-wordpress-to-groundhogg/?ref=changelog).\
 
 = 1.1.20.0 =
 * Added [Contact forms 7 integration](https://fusewp.com/article/sync-contact-form-7-email-marketing/?ref=changelog).

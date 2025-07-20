@@ -656,3 +656,48 @@ function fusewp_do_admin_redirect($url)
 
     fusewp_content_http_redirect($url);
 }
+
+
+/**
+ * Return array of countries. Typically for consumption by select dropdown.
+ *
+ * @param string $iso_type
+ *
+ * @return array
+ */
+function fusewp_countries_array($iso_type = 'alpha-2')
+{
+    return apply_filters('mailoptin_countries_array', include(dirname(__FILE__) . '/countries.php'));
+}
+
+/**
+ * @param $code
+ * @param $iso_type
+ *
+ * @return false|string
+ */
+function fusewp_country_code_to_name($code, $iso_type = 'alpha-2')
+{
+    if (empty($code)) return '';
+
+    $countries_array = fusewp_countries_array($iso_type);
+
+    return $countries_array[strtoupper($code)] ?? false;
+}
+
+/**
+ * Get country code from name.
+ *
+ * @param $country_name
+ * @param string $iso_type
+ *
+ * @return false|string
+ */
+function fusewp_country_name_to_code($country_name, $iso_type = 'alpha-2')
+{
+    if (empty($country_name)) return false;
+
+    $countries_array = fusewp_countries_array($iso_type);
+
+    return array_search($country_name, $countries_array);
+}
