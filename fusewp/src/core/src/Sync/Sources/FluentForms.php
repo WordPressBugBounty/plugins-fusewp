@@ -170,9 +170,7 @@ class FluentForms extends AbstractSyncSource
                 ->where('id', $entryId)
                 ->first();
 
-            if ( ! $submission) {
-                return;
-            }
+            if ( ! $submission) return;
 
             $response_data = json_decode($submission->response, true);
 

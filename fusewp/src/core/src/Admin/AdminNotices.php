@@ -151,6 +151,18 @@ class AdminNotices
                 'message'   => esc_html__('Did you know you can sync your Academy LMS students to your CRM and email list based on their enrolled courses and enrollment status? %sLearn more%s', 'fusewp')
             ],
             [
+                'id'        => 'sensei_lms',
+                'is_active' => function_exists('Sensei'),
+                'url'       => 'https://fusewp.com/article/sync-sensei-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=sensei_admin_notice',
+                'message'   => esc_html__('Did you know you can sync your Sensei LMS students and users to your CRM and email list based on their enrolled courses and groups, and enrollment status? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'masterstudy_lms',
+                'is_active' => class_exists('\MasterStudy\Lms\Plugin'),
+                'url'       => 'https://fusewp.com/article/sync-masterstudy-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=masterstudy_admin_notice',
+                'message'   => esc_html__('Did you know you can sync your MasterStudy LMS students and users to your CRM and email list based on their enrolled courses and groups, and enrollment status? %sLearn more%s', 'fusewp')
+            ],
+            [
                 'id'        => 'paid_memberships_pro',
                 'is_active' => defined('PMPRO_VERSION'),
                 'url'       => 'https://fusewp.com/article/sync-paid-memberships-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=paid_memberships_pro_admin_notice',
@@ -221,6 +233,24 @@ class AdminNotices
                 'is_active' => class_exists('\Forminator'),
                 'url'       => 'https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=forminator_admin_notice',
                 'message'   => esc_html__('Did you know you can integrate Forminator to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'formidable_forms',
+                'is_active' => class_exists('\FrmForm'),
+                'url'       => 'https://fusewp.com/article/sync-formidable-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=formidable_forms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync Formidable Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'everest_forms',
+                'is_active' => class_exists('\EverestForms'),
+                'url'       => 'https://fusewp.com/article/sync-everest-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=everest_forms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync Everest Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'ninja_forms',
+                'is_active' => class_exists('\Ninja_Forms'),
+                'url'       => 'https://fusewp.com/article/sync-ninja-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=ninja_forms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync Ninja Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
             ],
             [
                 'id'        => 'givewp',

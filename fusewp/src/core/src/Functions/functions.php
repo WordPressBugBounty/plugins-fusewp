@@ -667,7 +667,7 @@ function fusewp_do_admin_redirect($url)
  */
 function fusewp_countries_array($iso_type = 'alpha-2')
 {
-    return apply_filters('mailoptin_countries_array', include(dirname(__FILE__) . '/countries.php'));
+    return apply_filters('fusewp_countries_array', include(dirname(__FILE__) . '/countries.php'));
 }
 
 /**

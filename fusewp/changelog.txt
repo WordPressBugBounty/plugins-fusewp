@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.1.22.0 =
+* Added [Ninja Forms integration](https://fusewp.com/article/sync-ninja-forms-email-marketing/?ref=changelog).
+* Added [Formidable Forms integration](https://fusewp.com/article/sync-formidable-forms-email-marketing/?ref=changelog).
+* Added [Everest Forms integration](https://fusewp.com/article/sync-everest-forms-email-marketing/?ref=changelog).
+* Pro [Sensei LMS integration](https://fusewp.com/article/sync-sensei-lms-email-marketing/?ref=changelog).
+* Pro [Masterstudy LMS integration](https://fusewp.com/article/sync-masterstudy-lms-email-marketing/?ref=changelog).
+
 = 1.1.21.0 =
 * Pro [WP Travel Engine integration](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?ref=changelog).
 * Added [Fluent Forms integration](https://fusewp.com/article/sync-fluent-forms-email-marketing/?ref=changelog).

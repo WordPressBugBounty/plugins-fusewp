@@ -39,9 +39,12 @@ use FuseWP\Core\Integrations\Keap;
 use FuseWP\Core\Integrations\Encharge;
 use FuseWP\Core\Integrations\GoogleSheet;
 use FuseWP\Core\Sync\Sources\ContactForms7;
+use FuseWP\Core\Sync\Sources\FormidableForms;
+use FuseWP\Core\Sync\Sources\EverestForms;
 use FuseWP\Core\Sync\Sources\Forminator;
 use FuseWP\Core\Sync\Sources\FluentForms;
 use FuseWP\Core\Sync\Sources\GravityForms;
+use FuseWP\Core\Sync\Sources\NinjaForms;
 use FuseWP\Core\Sync\Sources\SyncQueueHandler;
 use FuseWP\Core\Sync\Sources\WPForms;
 use FuseWP\Core\Sync\Sources\WPUserRoles;
@@ -180,9 +183,23 @@ class Base
         add_action('forminator_loaded', function () {
             Forminator::get_instance();
         });
-      
+
         add_action('fluentform/loaded', function () {
             FluentForms::get_instance();
+        });
+
+        add_action('ninja_forms_loaded', function () {
+            NinjaForms::get_instance();
+        });
+      
+        add_action('plugins_loaded', function () {
+            if (class_exists('FrmForm')) {
+                FormidableForms::get_instance();
+            }
+        }, 20);
+      
+        add_action('everest_forms_init', function () {
+            EverestForms::get_instance();
         });
 
         $this->admin_hooks();

@@ -188,6 +188,14 @@ class LicenseUpgrader
                             'url'   => 'https://fusewp.com/article/sync-tutor-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
                         [
+                            'label' => esc_html__('MasterStudy LMS Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-masterstudy-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
+                            'label' => esc_html__('Sensei LMS Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-sensei-lms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
                             'label' => esc_html__('Restrict Content Pro Sync', 'fusewp'),
                             'url'   => 'https://fusewp.com/article/sync-restrict-content-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
@@ -203,18 +211,6 @@ class LicenseUpgrader
                             'label' => esc_html__('Advanced WPForms Sync', 'fusewp'),
                             'url'   => 'https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
-                        [
-                            'label' => esc_html__('Contact Form 7 Sync', 'fusewp'),
-                            'url'   => 'https://fusewp.com/article/sync-contact-form-7-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
-                        ],
-                        [
-                            'label' => esc_html__('Advanced Fluent Forms Sync', 'fusewp'),
-                            'url'   => 'https://fusewp.com/article/sync-fluent-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
-                        ],
-                        [
-                            'label' => esc_html__('Advanced Forminator Sync', 'fusewp'),
-                            'url'   => 'https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
-                        ]
                     ];
                     ?>
 

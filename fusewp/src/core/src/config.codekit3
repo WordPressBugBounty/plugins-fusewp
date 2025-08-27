@@ -1893,12 +1893,28 @@
       "oAP" : "\/Sync\/Sources\/ContactForms7.php",
       "oF" : 0
     },
+    "\/Sync\/Sources\/EverestForms.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/EverestForms.php",
+      "oF" : 0
+    },
     "\/Sync\/Sources\/FluentForms.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Sync\/Sources\/FluentForms.php",
+      "oF" : 0
+    },
+    "\/Sync\/Sources\/FormidableForms.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/FormidableForms.php",
       "oF" : 0
     },
     "\/Sync\/Sources\/Forminator.php" : {
@@ -1931,6 +1947,14 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Sync\/Sources\/MappingUserDataEntity.php",
+      "oF" : 0
+    },
+    "\/Sync\/Sources\/NinjaForms.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/NinjaForms.php",
       "oF" : 0
     },
     "\/Sync\/Sources\/SyncQueueHandler.php" : {

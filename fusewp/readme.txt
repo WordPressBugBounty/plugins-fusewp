@@ -5,7 +5,7 @@ Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.8
-Stable tag: 1.1.21.0
+Stable tag: 1.1.22.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -84,9 +84,21 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 [Subscribe leads and form submissions from Fluent Forms to your CRM and email marketing list](https://fusewp.com/article/sync-fluent-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
+**– Ninja Forms –**
+
+[Subscribe leads and form submissions from Ninja Forms to your CRM and email marketing list](https://fusewp.com/article/sync-ninja-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+
+**– Formidable Forms –**
+
+[Subscribe leads and form submissions from Formidable Forms to your CRM and email marketing list](https://fusewp.com/article/sync-formidable-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+
 **– Forminator Forms –**
 
 [Subscribe leads and sync form data from Forminator Forms to your CRM and email marketing list](https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission.
+
+**– Everest Forms –**
+
+[Subscribe leads and form submissions from Everest Forms to your CRM and email marketing list](https://fusewp.com/article/sync-everest-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
 **– ProfilePress –**
 
@@ -120,6 +132,14 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 [Sync students in Academy LMS with your email list](https://fusewp.com/article/sync-academy-lms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses they are enrolled in as well as their enrollment status.
 
+**– MasterStudy LMS –**
+
+[Sync students in MasterStudy LMS with your email list](https://fusewp.com/article/sync-masterstudy-lms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses they are enrolled in and their enrollment status.
+
+**– Sensei LMS –**
+
+[Sync students in Sensei LMS with your email list](https://fusewp.com/article/sync-sensei-lms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses and groups they are enrolled in and their enrollment status.
+
 **– WP Travel Engine –**
 
 [Sync users in WP Travel Engine with your email list](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on their booked trips and order status.
@@ -133,7 +153,7 @@ FuseWP supports various e-commerce, forms, and user registration plugins that al
 [Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
 
 ### Supported Forms, LMS, Ecommerce and Membership Plugins
-WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, Forminator Forms, Fluent Forms, ProfilePress, WP Travel Engine, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, Paid Member Subscriptions.
+WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, Ninja Forms, Forminator Forms, Fluent Forms, Formidable Forms, Everest Forms, ProfilePress, WP Travel Engine, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, MasterStudy LMS, Sensei LMS, Paid Member Subscriptions.
 
 ### Supported Email Marketing & CRM Integrations
 
@@ -196,6 +216,13 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.22.0 =
+* Added [Ninja Forms integration](https://fusewp.com/article/sync-ninja-forms-email-marketing/?ref=changelog).
+* Added [Formidable Forms integration](https://fusewp.com/article/sync-formidable-forms-email-marketing/?ref=changelog).
+* Added [Everest Forms integration](https://fusewp.com/article/sync-everest-forms-email-marketing/?ref=changelog).
+* Pro [Sensei LMS integration](https://fusewp.com/article/sync-sensei-lms-email-marketing/?ref=changelog).
+* Pro [Masterstudy LMS integration](https://fusewp.com/article/sync-masterstudy-lms-email-marketing/?ref=changelog).
 
 = 1.1.21.0 =
 * Pro [WP Travel Engine integration](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?ref=changelog).
