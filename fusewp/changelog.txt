@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 1.1.23.0 =
+* Added [SureForms integration](https://fusewp.com/article/sync-sureforms-email-marketing/?ref=changelog).
+* Added [WS Form integration](https://fusewp.com/article/sync-wsform-email-marketing/?ref=changelog).
+* Pro [FluentCommunity integration](https://fusewp.com/article/sync-fluentcommunity-email-marketing/?ref=changelog).
+* Pro [AffiliateWP integration](https://fusewp.com/article/sync-affiliatewp-email-marketing/?ref=changelog).
+* Pro [SliceWP integration](https://fusewp.com/article/sync-slicewp-email-marketing/?ref=changelog).
+* Added fusewp_sync_mailchimp_api_key filter.
+* Fixed token refresh not working for zoho for non-US accounts.
+
 = 1.1.22.0 =
 * Added [Ninja Forms integration](https://fusewp.com/article/sync-ninja-forms-email-marketing/?ref=changelog).
 * Added [Formidable Forms integration](https://fusewp.com/article/sync-formidable-forms-email-marketing/?ref=changelog).

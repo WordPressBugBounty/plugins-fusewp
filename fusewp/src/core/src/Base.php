@@ -45,10 +45,12 @@ use FuseWP\Core\Sync\Sources\Forminator;
 use FuseWP\Core\Sync\Sources\FluentForms;
 use FuseWP\Core\Sync\Sources\GravityForms;
 use FuseWP\Core\Sync\Sources\NinjaForms;
+use FuseWP\Core\Sync\Sources\SureForms;
 use FuseWP\Core\Sync\Sources\SyncQueueHandler;
 use FuseWP\Core\Sync\Sources\WPForms;
 use FuseWP\Core\Sync\Sources\WPUserRoles;
 use FuseWP\Core\QueueManager\QueueManager;
+use FuseWP\Core\Sync\Sources\WSForm;
 
 if ( ! defined('ABSPATH')) {
     exit;
@@ -191,15 +193,23 @@ class Base
         add_action('ninja_forms_loaded', function () {
             NinjaForms::get_instance();
         });
-      
+
         add_action('plugins_loaded', function () {
             if (class_exists('FrmForm')) {
                 FormidableForms::get_instance();
             }
         }, 20);
-      
+
+        add_action('srfm_core_loaded', function () {
+            SureForms::get_instance();
+        });
+
         add_action('everest_forms_init', function () {
             EverestForms::get_instance();
+        });
+
+        add_action('wsf_loaded', function () {
+            WSForm::get_instance();
         });
 
         $this->admin_hooks();

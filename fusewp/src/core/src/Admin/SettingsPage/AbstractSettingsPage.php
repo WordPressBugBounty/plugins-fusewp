@@ -281,8 +281,9 @@ abstract class AbstractSettingsPage
             esc_html__('Tutor LMS Sync', 'fusewp'),
             esc_html__('MasterStudy LMS Sync', 'fusewp'),
             esc_html__('Sensei LMS Sync', 'fusewp'),
-            esc_html__('Advanced Custom Fields Sync', 'fusewp'),
+            esc_html__('FluentCommunity Sync', 'fusewp'),
             esc_html__('WP Travel Engine Sync', 'fusewp'),
+            esc_html__('Advanced Custom Fields Sync', 'fusewp'),
         ];
 
         $upsell_url = 'https://fusewp.com/pricing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=sidebar_upsell';

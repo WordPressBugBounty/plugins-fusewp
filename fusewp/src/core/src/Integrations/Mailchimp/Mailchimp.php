@@ -29,13 +29,19 @@ class Mailchimp extends AbstractIntegration
         return [self::SYNC_SUPPORT];
     }
 
+    private function get_custom_api_key()
+    {
+        return apply_filters('fusewp_sync_mailchimp_api_key', '');
+    }
+
     public function is_connected()
     {
         return fusewp_cache_transform('fwp_integration_' . $this->id, function () {
 
             $settings = $this->get_settings();
 
-            return ! empty(fusewpVar($settings, 'access_token')) && ! empty(fusewpVar($settings, 'dc'));
+            return ! empty($this->get_custom_api_key()) ||
+                   ( ! empty(fusewpVar($settings, 'access_token')) && ! empty(fusewpVar($settings, 'dc')));
         });
     }
 
@@ -158,12 +164,22 @@ class Mailchimp extends AbstractIntegration
             throw new \Exception(__('Mailchimp access token not found.', 'fusewp'));
         }
 
+        $dc = fusewpVar($this->get_settings(), 'dc');
+
+        $custom_api_key = $this->get_custom_api_key();
+
+        if ( ! empty($custom_api_key)) {
+            $val          = explode('-', $custom_api_key);
+            $access_token = $val[0];
+            $dc           = $val[1];
+        }
+
         $config = [
             // secret key and callback not needed but authifly requires they have a value hence the FUSEWP_OAUTH_URL constant and "__"
             'callback'     => FUSEWP_OAUTH_URL,
             'keys'         => ['key' => '_', 'secret' => '__'],
             'access_token' => $access_token,
-            'dc'           => fusewpVar($this->get_settings(), 'dc')
+            'dc'           => $dc
         ];
 
         return new AuthiflyMailchimp($config, null, new OAuthCredentialStorage());

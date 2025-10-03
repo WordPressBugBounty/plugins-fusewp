@@ -195,7 +195,7 @@ class ZohoCRM extends AbstractIntegration
         $instance->apiBaseUrl = $api_domain . '/crm/v6/';
 
         if ($instance->hasAccessTokenExpired()) {
-            $result = $this->oauth_token_refresh($refresh_token);
+            $result = $this->oauth_token_refresh($refresh_token, ['location' => $location]);
 
             if ($result) {
                 $expires_at = $this->oauth_expires_at_transform($result['data']['expires_at']);

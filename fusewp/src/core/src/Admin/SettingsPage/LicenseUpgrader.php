@@ -200,6 +200,10 @@ class LicenseUpgrader
                             'url'   => 'https://fusewp.com/article/sync-restrict-content-pro-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],
                         [
+                            'label' => esc_html__('FluentCommunity Sync', 'fusewp'),
+                            'url'   => 'https://fusewp.com/article/sync-fluentcommunity-email-marketing/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
+                        ],
+                        [
                             'label' => esc_html__('Advanced Custom Fields Sync', 'fusewp'),
                             'url'   => 'https://fusewp.com/article/advanced-custom-fields/?utm_source=wp_dashboard&utm_medium=retrieve_license&utm_campaign=lite_license_page'
                         ],

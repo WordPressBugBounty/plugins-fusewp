@@ -1,6 +1,6 @@
 <?php
 
-$lms = ['LearnDash', 'LifterLMS', 'Tutor LMS'];
+$lms = ['LearnDash', 'LifterLMS', 'Tutor LMS', 'MasterStudy LMS', 'Sensei LMS'];
 
 $membership_plugins = [
     'WooCommerce Memberships',
@@ -8,6 +8,7 @@ $membership_plugins = [
     'ProfilePress',
     'Paid Memberships Pro',
     'Restrict Content Pro',
+    'FluentCommunity'
 ];
 
 $pro_features = [
@@ -17,9 +18,9 @@ $pro_features = [
     'Ecommerce Integrations'                      => [
         esc_html__("Sync customers in WooCommerce, WooCommerce Subscriptions, Easy Digital Downloads, and WP Travel Engine with your CRM and email marketing software based on their purchased products, the categories and tags they purchased from.", 'fusewp')
     ],
-    'Membership Integrations'                     => [
+    'Membership & Community'                     => [
         sprintf(
-            esc_html__("Sync members in your membership plugin with your email marketing software based on their subscribed plans, membership level and membership status. Supports %s.", 'fusewp'),
+            esc_html__("Sync members in your membership and community plugin with your email marketing software based on their subscribed plans, membership level and membership status. Supports %s.", 'fusewp'),
             implode(', ', $membership_plugins)
         )
     ],
@@ -30,7 +31,7 @@ $pro_features = [
         )
     ],
     'Forms & Other Integrations'                  => [
-        esc_html__("Sync custom fields added by Advanced Custom Fields (ACF) to the user profile and form submissions and payments from Gravity Forms, WPForms, Ninja Forms, Contact Form 7, Fluent Forms, Formidable Forms, Everest Forms, Forminator to your email marketing platform and CRM.", 'fusewp')
+        esc_html__("Sync custom fields added by Advanced Custom Fields (ACF) to the user profile and form submissions and payments from Gravity Forms, WPForms, Ninja Forms, Contact Form 7, Fluent Forms, Formidable Forms, Everest Forms, Forminator, WS Form, SureForms to your email marketing platform and CRM. Also supports AffiliateWP & SliceWP", 'fusewp')
     ],
     'Premium CRM Integrations'                    => [
         esc_html__("Access premium integrations such as Google Sheets, Salesforce, Ortto.", 'fusewp')

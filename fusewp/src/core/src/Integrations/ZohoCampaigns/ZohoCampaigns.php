@@ -210,7 +210,7 @@ class ZohoCampaigns extends AbstractIntegration
 
         if ($instance->hasAccessTokenExpired()) {
 
-            $result = $this->oauth_token_refresh($refresh_token);
+            $result = $this->oauth_token_refresh($refresh_token, ['location' => $location]);
 
             if ($result) {
 

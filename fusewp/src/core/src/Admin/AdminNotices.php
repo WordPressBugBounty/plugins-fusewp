@@ -187,6 +187,12 @@ class AdminNotices
                 'message'   => esc_html__('Did you know you can sync your Restrict Content Pro users to your CRM and email list based on their subscribed membership level and membership status? %sLearn more%s', 'fusewp')
             ],
             [
+                'id'        => 'fluentcommunity',
+                'is_active' => class_exists('\FluentCommunity\Framework\Foundation\Application'),
+                'url'       => 'https://fusewp.com/article/sync-fluentcommunity-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=fluentcommunity_admin_notice',
+                'message'   => esc_html__('Did you know you can sync your FluentCommunity members to your CRM and email list based on their subscribed spaces and enrolled courses? %sLearn more%s', 'fusewp')
+            ],
+            [
                 'id'        => 'ultimate_member',
                 'is_active' => class_exists('\UM'),
                 'url'       => 'https://fusewp.com/article/connect-ultimate-member-email-marketing-software/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=ultimate_member_admin_notice',
@@ -247,6 +253,18 @@ class AdminNotices
                 'message'   => esc_html__('Did you know you can sync Everest Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
             ],
             [
+                'id'        => 'sureforms',
+                'is_active' => class_exists('\SRFM\Plugin_Loader'),
+                'url'       => 'https://fusewp.com/article/sync-sureforms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=sureforms_admin_notice',
+                'message'   => esc_html__('Did you know you can sync SureForms to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'ws_form',
+                'is_active' => class_exists('\WS_Form'),
+                'url'       => 'https://fusewp.com/article/sync-wsform-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=wsform_admin_notice',
+                'message'   => esc_html__('Did you know you can sync WS Form to your CRM and email list after form submission based on the form submitted? %sLearn more%s', 'fusewp')
+            ],
+            [
                 'id'        => 'ninja_forms',
                 'is_active' => class_exists('\Ninja_Forms'),
                 'url'       => 'https://fusewp.com/article/sync-ninja-forms-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=ninja_forms_admin_notice',
@@ -263,6 +281,18 @@ class AdminNotices
                 'is_active' => function_exists('\WPTravelEngine'),
                 'url'       => 'https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=wp_travel_engine_admin_notice',
                 'message'   => esc_html__('Did you know you can sync WP Travel Engine customers to your CRM and email list after donation based on their booked trips, trip type and booking status? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'affiliatewp',
+                'is_active' => class_exists('\Affiliate_WP'),
+                'url'       => 'https://fusewp.com/article/sync-affiliatewp-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=affiliatewp_admin_notice',
+                'message'   => esc_html__('Did you know you can subscribed affiliates in AffiliateWP to your CRM and email list after registration and profile update? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'slicewp',
+                'is_active' => class_exists('\SliceWP'),
+                'url'       => 'https://fusewp.com/article/sync-slicewp-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=slicewp_admin_notice',
+                'message'   => esc_html__('Did you know you can subscribed affiliates in SliceWP to your CRM and email list after registration and profile update? %sLearn more%s', 'fusewp')
             ]
         ];
 

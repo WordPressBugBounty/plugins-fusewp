@@ -5,7 +5,7 @@ Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.8
-Stable tag: 1.1.22.0
+Stable tag: 1.1.23.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -22,7 +22,20 @@ https://www.youtube.com/watch?v=7CqQslIu6Xg&rel=0
 
 FuseWP [subscribes WordPress users after registration to your email list based on their user roles](https://fusewp.com/article/sync-wordpress-users-email-list-based-on-user-roles/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion). If users update their profile information or change their account email address, their profile changes are automatically synchronized to your email marketing software and CRM. And if users' accounts are deleted, they are automatically unsubscribed.
 
-FuseWP can [export, bulk-sync, or batch-process existing WordPress users](https://fusewp.com/article/bulk-sync-existing-users-memberships-records/) to your CRM and email marketing platforms as contacts.
+With FuseWP, you can [export, bulk-sync, or batch-process existing WordPress users](https://fusewp.com/article/bulk-sync-existing-users-memberships-records/) to your CRM and email marketing platforms as contacts.
+
+FuseWP Lite connects WordPress form plugin to CRM and email marketing software so leads are synced to your email list after form submissions. They include: Contact Form 7, Gravity Forms, WPForms, Fluent Forms, Ninja Forms, Formidable Forms, Forminator Forms, Everest Forms, WS Form, SureForms.
+
+* [Contact Form 7](https://fusewp.com/article/sync-contact-form-7-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [Gravity Forms](https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [WPForms](https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [Fluent Forms](https://fusewp.com/article/sync-fluent-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [Ninja Forms](https://fusewp.com/article/sync-ninja-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [Formidable Forms](https://fusewp.com/article/sync-formidable-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [Forminator Forms](https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [Everest Forms](https://fusewp.com/article/sync-everest-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [WS Form](https://fusewp.com/article/sync-wsform-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+* [SureForms](https://fusewp.com/article/sync-sureforms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
 It can replace Zapier, Integromat / Make, Pabbly Connect, LeadsBridge, and other automator and integration tools that connect WordPress to your CRM.
 
@@ -70,35 +83,11 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 **– Gravity Forms –**
 
-[Subscribe Gravity Forms leads to your email marketing list](https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission, user registration, successful payment and refund. Segmentation based on product subscription status is also possible.
+[Subscribe Gravity Forms leads to your email marketing list](https://fusewp.com/article/sync-gravity-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after user registration, successful payment and refund. Segmentation based on product subscription status is also possible.
 
 **– WPForms –**
 
-[Subscribe WPForms leads to your CRM and email marketing list](https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission and user registration.
-
-**– Contact Form 7 –**
-
-[Subscribe Contact Form 7 leads to your CRM and email marketing list](https://fusewp.com/article/sync-contact-form-7-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission.
-
-**– Fluent Forms –**
-
-[Subscribe leads and form submissions from Fluent Forms to your CRM and email marketing list](https://fusewp.com/article/sync-fluent-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
-
-**– Ninja Forms –**
-
-[Subscribe leads and form submissions from Ninja Forms to your CRM and email marketing list](https://fusewp.com/article/sync-ninja-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
-
-**– Formidable Forms –**
-
-[Subscribe leads and form submissions from Formidable Forms to your CRM and email marketing list](https://fusewp.com/article/sync-formidable-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
-
-**– Forminator Forms –**
-
-[Subscribe leads and sync form data from Forminator Forms to your CRM and email marketing list](https://fusewp.com/article/sync-forminator-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after form submission.
-
-**– Everest Forms –**
-
-[Subscribe leads and form submissions from Everest Forms to your CRM and email marketing list](https://fusewp.com/article/sync-everest-forms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+[Subscribe WPForms leads to your CRM and email marketing list](https://fusewp.com/article/sync-wpforms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) after user registration and form submission.
 
 **– ProfilePress –**
 
@@ -140,11 +129,17 @@ Say a user's membership or subscription status changes from Active to Cancelled;
 
 [Sync students in Sensei LMS with your email list](https://fusewp.com/article/sync-sensei-lms-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses and groups they are enrolled in and their enrollment status.
 
+**– FluentCommunity –**
+
+[Sync members in FluentCommunity with your email list](https://fusewp.com/article/sync-fluentcommunity-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on the courses and spaces they are subscribed to and their enrollment and active status.
+
 **– WP Travel Engine –**
 
 [Sync users in WP Travel Engine with your email list](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) based on their booked trips and order status.
 
-Integrations with other membership, learning management systems (LMS), and e-commerce plugins are coming soon.
+**– AffiliateWP & SliceWP –**
+
+FuseWP also integrates with affiliate plugins including [SliceWP](https://fusewp.com/article/sync-slicewp-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) and [AffiliateWP](https://fusewp.com/article/sync-affiliatewp-email-marketing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) to subscribe affiliates to CRM and email marketing software after WordPress registration and profile update.
 
 ### Other Integration
 
@@ -217,6 +212,15 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.23.0 =
+* Added [SureForms integration](https://fusewp.com/article/sync-sureforms-email-marketing/?ref=changelog).
+* Added [WS Form integration](https://fusewp.com/article/sync-wsform-email-marketing/?ref=changelog).
+* Pro [FluentCommunity integration](https://fusewp.com/article/sync-fluentcommunity-email-marketing/?ref=changelog).
+* Pro [AffiliateWP integration](https://fusewp.com/article/sync-affiliatewp-email-marketing/?ref=changelog).
+* Pro [SliceWP integration](https://fusewp.com/article/sync-slicewp-email-marketing/?ref=changelog).
+* Added fusewp_sync_mailchimp_api_key filter.
+* Fixed token refresh not working for zoho for non-US accounts.
+
 = 1.1.22.0 =
 * Added [Ninja Forms integration](https://fusewp.com/article/sync-ninja-forms-email-marketing/?ref=changelog).
 * Added [Formidable Forms integration](https://fusewp.com/article/sync-formidable-forms-email-marketing/?ref=changelog).
@@ -244,14 +248,5 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 * Fixed sync failure due to empty Klaviyo address field data.
 * Fixed search not working correctly on the Sync Log page.
 * Added fusewp_bulk_sync_cache_enabled filter to disable bulk-sync cache.
-
-= 1.1.19.0 =
-* Pro [GiveWP integration](https://fusewp.com/article/sync-givewp-email-marketing/?ref=changelog).
-* Pro [Salesforce integration](https://fusewp.com/article/connect-wordpress-with-salesforce/?ref=changelog).
-* Added [beehiiv integration](https://fusewp.com/article/connect-wordpress-to-beehiiv/?ref=changelog).
-* Added logging of failed queue jobs.
-* Added filter flag to enable adding Klaviyo profile to Lists without explicit consent.
-* Fixed: Function _load_textdomain_just_in_time was called incorrectly.
-* Fixed bug in IP address detection.=
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.
