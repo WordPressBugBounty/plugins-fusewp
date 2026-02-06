@@ -103,12 +103,14 @@ class Hubspot extends OAuth2
      * Return the contact lists for a portal.
      *
      * @param integer $count max number of results to fetch
+     * @param string $prefix
      *
      * @return array
+     * @throws \Exception
      */
-    public function getEmailList($count = 250)
+    public function getEmailList($count = 500, $prefix = '')
     {
-        $response = $this->apiRequest("contacts/v1/lists/static", "GET", ['count' => $count]);
+        $response = $this->apiRequest("crm/v3/lists/search", "POST", ['count' => $count]);
         $data     = new Data\Collection($response);
         $lists    = $data->filter('lists')->toArray();
 
@@ -118,7 +120,7 @@ class Hubspot extends OAuth2
 
         $filtered = [];
         foreach ($lists as $list) {
-            $filtered[$list->listId] = $list->name;
+            $filtered[$prefix . $list->listId] = $list->name;
         }
 
         return $filtered;
@@ -187,10 +189,18 @@ class Hubspot extends OAuth2
             throw new InvalidArgumentException('Email address is missing');
         }
 
-        $response = $this->apiRequest("contacts/v1/contact/createOrUpdate/email/$email", 'POST', $contact_data);
+        try {
+            $response = $this->apiRequest("crm/v3/objects/contacts", 'POST', $contact_data);
+        } catch (\Exception $e) {
+            if (409 === $this->httpClient->getResponseHttpCode()) {
+                $response = $this->apiRequest("crm/v3/objects/contacts/$email?idProperty=email", 'PATCH', $contact_data);
+            } else {
+                throw $e;
+            }
+        }
 
-        if ( ! apply_filters('mailoptin_authifly_hubspot_disable_add_to_list', false) && ! empty($response->vid) && 'all' != $list_id) {
-            $this->addSubscriberToList($list_id, $email);
+        if ( ! apply_filters('mailoptin_authifly_hubspot_disable_add_to_list', false) && ! empty($response->id) && 'all' != $list_id) {
+            $this->addSubscriberToList($list_id, $response->id);
         }
 
         return $response;
@@ -207,12 +217,8 @@ class Hubspot extends OAuth2
      * @throws \Authifly\Exception\HttpRequestFailedException
      * @throws \Authifly\Exception\InvalidAccessTokenException
      */
-    private function addSubscriberToList($list_id, $email)
+    private function addSubscriberToList($list_id, $contact_id)
     {
-        $params = (object)[
-            'emails' => [$email]
-        ];
-
-        return $this->apiRequest("contacts/v1/lists/$list_id/add", 'POST', $params);
+        return $this->apiRequest("https://api.hubapi.com/crm/v3/lists/$list_id/memberships/add", 'PUT', [$contact_id]);
     }
 }

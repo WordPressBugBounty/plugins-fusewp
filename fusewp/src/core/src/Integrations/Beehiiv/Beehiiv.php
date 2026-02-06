@@ -41,6 +41,11 @@ class Beehiiv extends AbstractIntegration
         });
     }
 
+    public function set_bulk_sync_throttle_seconds($seconds)
+    {
+        return 1;
+    }
+
     /**
      * @return string
      */

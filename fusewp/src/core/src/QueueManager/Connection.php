@@ -83,6 +83,12 @@ class Connection extends DatabaseConnection
 
     public function push(Job $job, $delay = 0, $priority = 0)
     {
+        // this filter is particularly important if for example you syncing woo subscription to your CRM and you have a rule that add a user
+        // whose sub is on-hold to a specific list and remove the user from the Active List. Because WooSub plugin typically changes the user status
+        // to on-hold status before renewal and back to Active status after renewal, using this filter afford fusewp enough time to record the unsubscription and resubscription
+        // and delay processing the jobs because of the status change so it can call remove_unsubscribe_sync_jobs_with_resubscribe_action() to prevent the unsubscription/resubscription in the connected CRM.
+        $delay += (int)apply_filters('fusewp_queue_manager_default_delay_seconds', 0);
+
         $result = $this->database->insert(
             $this->jobs_table,
             [
@@ -109,6 +115,7 @@ class Connection extends DatabaseConnection
         if (is_null($raw_job)) {
             return false;
         }
+
         $job = $this->vitalize_job($raw_job);
 
         if ($job && $job->attempts() > 5) {
@@ -122,6 +129,32 @@ class Connection extends DatabaseConnection
         }
 
         return $job;
+    }
+
+
+    /**
+     * {inheritDoc}
+     *
+     * Modified to add a small delay (1 minute) until the next attempt is made for a job
+     *
+     * @param Job $job
+     *
+     * @return bool
+     */
+    public function release(Job $job)
+    {
+        $data  = [
+            'job'          => serialize($job),
+            'attempts'     => $job->attempts(),
+            'reserved_at'  => null,
+            'available_at' => $this->datetime(MINUTE_IN_SECONDS)
+        ];
+        $where = ['id' => $job->id()];
+        if ($this->database->update($this->jobs_table, $data, $where)) {
+            return \true;
+        }
+
+        return \false;
     }
 
     /**

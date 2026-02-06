@@ -185,6 +185,16 @@ class SyncPage extends AbstractSettingsPage
 
         if ( ! isset($_POST['fusewp_save_sync_rule'])) return;
 
+        // Security check: Verify user has proper capabilities
+        if ( ! current_user_can('manage_options')) {
+            wp_die(__('You do not have sufficient permissions to access this page.', 'fusewp'));
+        }
+
+        // Security check: Verify nonce for CSRF protection
+        if ( ! isset($_POST['fusewp_sync_nonce']) || ! wp_verify_nonce($_POST['fusewp_sync_nonce'], 'fusewp_save_sync_rule')) {
+            wp_die(__('Security check failed. Please try again.', 'fusewp'));
+        }
+
         // store source with item if item exists and is selected.
         if (isset($_POST['fusewp_sync_source_item'])) {
             $_POST['fusewp_sync_source'] = $_POST['fusewp_sync_source_item'];

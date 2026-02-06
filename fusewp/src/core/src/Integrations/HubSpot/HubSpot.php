@@ -43,6 +43,7 @@ class HubSpot extends AbstractIntegration
 
     public function clear_cache()
     {
+        delete_transient('fusewp_hubspot_v3api_email_list');
         delete_transient('fusewp_hubspot_contact_fields');
         delete_transient('fusewp_hubspot_get_owners');
         $this->delete_transients_by_prefix('fusewp_hubspot_contact_id_');
@@ -148,13 +149,13 @@ class HubSpot extends AbstractIntegration
 
     public function get_email_list()
     {
-        $lists = get_transient('fusewp_hubspot_email_list');
+        $lists = get_transient('fusewp_hubspot_v3api_email_list');
 
         if (empty($lists)) {
 
             try {
 
-                $lists = $this->apiClass()->getEmailList();
+                $lists = $this->apiClass()->getEmailList(500, 'v3_');
 
             } catch (\Exception $e) {
                 fusewp_log_error($this->id, __METHOD__ . ':' . $e->getMessage());
@@ -162,7 +163,7 @@ class HubSpot extends AbstractIntegration
             }
 
             // save cache.
-            set_transient('fusewp_hubspot_email_list', $lists, 12 * HOUR_IN_SECONDS);
+            set_transient('fusewp_hubspot_v3api_email_list', $lists, 12 * HOUR_IN_SECONDS);
         }
 
         return $lists;

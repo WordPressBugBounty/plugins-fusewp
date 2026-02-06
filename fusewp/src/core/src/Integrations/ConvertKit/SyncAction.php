@@ -292,7 +292,7 @@ class SyncAction extends AbstractSyncAction
 
     public function add_tags_to_subscribers($tags, $email_address)
     {
-        if ( ! is_array($tags) || empty($tags)) return;
+        if ( empty($email_address) || ! is_array($tags) || empty($tags)) return;
 
         $func_args = $this->get_sync_payload_json_args(func_get_args(), true);
 

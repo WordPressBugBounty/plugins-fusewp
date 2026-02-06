@@ -9,6 +9,9 @@ class SyncQueueHandler
         add_action('fusewp_queued_job_handler', [$this, 'handler'], 20);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function handler($item)
     {
         if (isset($item['action']) && in_array($item['action'], ['subscribe_user', 'unsubscribe_user'])) {
@@ -63,7 +66,12 @@ class SyncQueueHandler
 
             } else {
 
-                call_user_func_array([$sync_action, $item['action']], $args);
+                $is_success = call_user_func_array([$sync_action, $item['action']], $args);
+
+                if (false === $is_success) {
+                    // throw exception so it can be retried later
+                    throw new \Exception('Sync Error. We will retry later');
+                }
             }
         }
     }

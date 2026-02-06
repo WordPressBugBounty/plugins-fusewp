@@ -195,7 +195,7 @@ class SyncAction extends AbstractSyncAction
      * @param $tags
      * @param $old_email_address
      *
-     * @return false|void
+     * @return bool
      */
     public function subscribe_user($list_id, $email_address, $mappingUserDataEntity, $custom_fields = [], $tags = '', $old_email_address = '')
     {
@@ -206,9 +206,10 @@ class SyncAction extends AbstractSyncAction
             $main_email = ! empty($old_email_address) ? $old_email_address : $email_address;
 
             $parameters = [
-                'email'    => $email_address,
-                'campaign' => ['campaignId' => $list_id],
-                'tags'     => ['tagId' => $tags]
+                'email'      => $email_address,
+                'campaign'   => ['campaignId' => $list_id],
+                'tags'       => ['tagId' => $tags],
+                'dayOfCycle' => 0
             ];
 
             $parameters = array_merge($parameters, array_filter(
@@ -254,13 +255,27 @@ class SyncAction extends AbstractSyncAction
         try {
 
             $contactId = $this->getContactId($email_address);
-            $tag       = $GLOBALS['fusewp_sync_destination'][$list_id]['tags'];
 
-            if ( ! $contactId || ! $tag) return false;
+            if ( ! $contactId) return false;
+
+            if (apply_filters('fusewp_getresponse_delete_user_on_unsubscribe', false, $list_id, $email_address)) {
+
+                $response = $this->getResponseInstance->apiClass()->make_request(
+                    "contacts/{$contactId}",
+                    [],
+                    'delete'
+                );
+
+                return fusewp_is_http_code_success($response['status_code']);
+            }
+
+            $tag = $GLOBALS['fusewp_sync_destination'][$list_id]['tags'];
+
+            if ( ! $tag) return false;
 
             $response = $this->getResponseInstance->apiClass()->make_request("contacts/$contactId");
 
-            $existing_tags = isset($response['body']['tags']) ? $response['body']['tags'] : [];
+            $existing_tags = $response['body']['tags'] ?? [];
 
             // remove our tag from the contact existing tags
             $filtered_tags = array_filter($existing_tags, function ($val) use ($tag) {

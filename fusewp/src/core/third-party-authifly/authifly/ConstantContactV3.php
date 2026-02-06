@@ -62,7 +62,10 @@ class ConstantContactV3 extends OAuth2
             $refresh_token = $this->config->get('refresh_token');
         }
 
-        $this->tokenRefreshParameters['refresh_token'] = $refresh_token;
+        $this->tokenRefreshParameters = [
+            'grant_type'    => 'refresh_token',
+            'refresh_token' => $refresh_token,
+        ];
 
         $this->tokenRefreshHeaders = [
             'Authorization' => sprintf('Basic %s', base64_encode($this->clientId . ':' . $this->clientSecret))

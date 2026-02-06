@@ -56,9 +56,9 @@ class Authifly
      */
     public function __construct(
         $config = [],
-        HttpClientInterface $httpClient = null,
-        StorageInterface $storage = null,
-        LoggerInterface $logger = null
+        ?HttpClientInterface $httpClient = null,
+        ?StorageInterface $storage = null,
+        ?LoggerInterface $logger = null
     ) {
         if (is_string($config) && file_exists($config)) {
             $config = include $config;

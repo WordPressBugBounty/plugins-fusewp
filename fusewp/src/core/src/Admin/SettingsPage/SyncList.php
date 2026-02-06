@@ -180,7 +180,7 @@ class SyncList extends \WP_List_Table
 
             $source_obj = fusewp_get_registered_sync_sources(fusewp_sync_get_real_source_id($item['source']));
 
-            if (isset($source_obj->title)) {
+            if (is_object($source_obj) && isset($source_obj->title)) {
                 $source            = $source_obj->title;
                 $source_item_label = fusewpVar($source_obj->get_source_items(), $source_item_id, '');
 
@@ -305,7 +305,7 @@ class SyncList extends \WP_List_Table
 
     public function current_action()
     {
-        if (isset($_REQUEST['filter_action']) && ! empty($_REQUEST['filter_action'])) {
+        if ( ! empty($_REQUEST['filter_action'])) {
             return false;
         }
 

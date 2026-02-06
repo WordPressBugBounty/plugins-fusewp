@@ -81,6 +81,7 @@ $title = SyncPage::get_instance()->admin_page_title();
     <div id="poststuff">
         <div id="post-body" class="metabox-holder columns-2">
             <form method="post">
+                <?php wp_nonce_field('fusewp_save_sync_rule', 'fusewp_sync_nonce'); ?>
                 <div id="postbox-container-1" class="postbox-container">
                     <?php do_meta_boxes('fusewpsync', 'sidebar', ''); ?>
                 </div>

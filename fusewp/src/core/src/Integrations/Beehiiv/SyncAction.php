@@ -287,6 +287,8 @@ class SyncAction extends AbstractSyncAction
      */
     public function unsubscribe_user($list_id, $email_address)
     {
+        if ( ! apply_filters('fusewp_beehiiv_is_unsubscribe_user', true, $list_id, $email_address)) return false;
+
         $func_args = $this->get_sync_payload_json_args(func_get_args());
 
         try {

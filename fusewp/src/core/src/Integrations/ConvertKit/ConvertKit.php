@@ -11,7 +11,7 @@ class ConvertKit extends AbstractIntegration
     {
         $this->id = 'convertkit';
 
-        $this->title = 'ConvertKit';
+        $this->title = 'Kit (ConvertKit)';
 
         $this->logo_url = FUSEWP_ASSETS_URL . 'images/convertkit-integration.svg';
 
@@ -112,7 +112,7 @@ class ConvertKit extends AbstractIntegration
         $html .= sprintf(
         '<p class="regular-text">%s</p>',
         sprintf(
-            __('Log in to your %sKit (ConvertKit) account%s to get your api key.', 'fusewp'),
+            __('Log in to your %sKit (ConvertKit) account%s to get your V3 API Secret.', 'fusewp'),
             '<a target="_blank" href="https://app.kit.com/account_settings/developer_settings">',
             '</a>')
         );

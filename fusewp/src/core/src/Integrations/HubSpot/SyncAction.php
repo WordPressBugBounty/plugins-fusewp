@@ -269,19 +269,16 @@ class SyncAction extends AbstractSyncAction
             $contact_data = ['properties' => []];
 
             foreach ($properties as $property => $value) {
-                $contact_data['properties'][] = [
-                    'property' => $property,
-                    'value'    => $value
-                ];
+                $contact_data['properties'][$property] = $value;
             }
 
             $response = $this->hubspotInstance->apiClass()->addSubscriber(
-                $list_id,
+                $this->get_transformed_list_id($list_id),
                 $is_email_change ? $old_email_address : $email_address,
                 $contact_data
             );
 
-            if (isset($response->vid)) return true;
+            if (isset($response->id)) return true;
 
             throw new \Exception(__METHOD__ . ':' . is_string($response) ? $response : wp_json_encode($response));
 
@@ -300,6 +297,8 @@ class SyncAction extends AbstractSyncAction
     public function unsubscribe_user($list_id, $email_address)
     {
         try {
+
+            $list_id = $this->get_transformed_list_id($list_id);
 
             $contact_id = $this->get_contact_id($email_address);
 
@@ -360,5 +359,35 @@ class SyncAction extends AbstractSyncAction
         }
 
         return $contact_id;
+    }
+
+    private function get_listid_from_legacy_id($list_id)
+    {
+        $cache_key = 'fusewp_hubspot_listid_from_legacy_id_' . $list_id;
+
+        $v3_list_id = get_transient($cache_key);
+
+        if (empty($v3_list_id)) {
+
+            $response = $this->hubspotInstance->apiClass()->apiRequest('crm/v3/lists/idmapping?legacyListId=' . $list_id);
+
+            if (isset($response->listId)) {
+                $v3_list_id = $response->listId;
+                set_transient($cache_key, $v3_list_id, MONTH_IN_SECONDS);
+            }
+        }
+
+        return $v3_list_id ?: $list_id;
+    }
+
+    private function get_transformed_list_id($list_id)
+    {
+        if (strstr($list_id, 'v3_') === false) {
+            $list_id = $this->get_listid_from_legacy_id($list_id);
+        } else {
+            $list_id = str_replace('v3_', '', $list_id);
+        }
+
+        return $list_id;
     }
 }

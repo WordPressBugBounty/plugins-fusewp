@@ -195,7 +195,7 @@ abstract class AbstractSyncSource
 
                         $list_id = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
 
-                        $bucket_key = md5($sync_action->get_integration_id() . $list_id);
+                        $bucket_key = md5(sprintf('%s:%s:%s:%s', $this->id, $sync_action->get_integration_id(), $list_id, $email_address));
 
                         if ($destination['destination_item'] == 'any') {
 

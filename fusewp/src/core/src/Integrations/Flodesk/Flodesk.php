@@ -137,12 +137,26 @@ class Flodesk extends AbstractIntegration
 
         try {
 
-            $response = $this->apiClass()->make_request('segments', ['per_page' => 100]);
+            $status   = true;
+            $per_page = 100;
+            $page     = 1;
 
-            if (isset($response['body']->data) && is_array($response['body']->data)) {
+            while (true === $status) {
 
-                foreach ($response['body']->data as $segment) {
-                    $bucket[$segment->id] = $segment->name;
+                $response = $this->apiClass()->make_request('segments', ['per_page' => 100, 'page' => $page]);
+
+                if (isset($response['body']->data) && is_array($response['body']->data)) {
+
+                    foreach ($response['body']->data as $segment) {
+                        $bucket[$segment->id] = $segment->name;
+                    }
+
+                    if (count($response['body']->data) < $per_page) $status = false;
+
+                    $page++;
+
+                } else {
+                    $status = false;
                 }
             }
 

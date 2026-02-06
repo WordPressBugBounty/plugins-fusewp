@@ -183,7 +183,7 @@ function fusewp_cache_transform($cache_key, $callback)
 
     $result = fusewpVar($cache_transform_bucket, $cache_key);
 
-    if ( ! $result) {
+    if ( ! isset($cache_transform_bucket[$cache_key])) {
 
         $result = $callback();
 

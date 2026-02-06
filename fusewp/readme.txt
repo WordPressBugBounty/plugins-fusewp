@@ -1,11 +1,11 @@
 === FuseWP - WordPress User Sync to Email List & Marketing Automation (Mailchimp, Constant Contact, ActiveCampaign etc.)  ===
-Contributors: fusewp, properfraction, collizo4sky
+Contributors: fusewp, properfraction, collizo4sky, richienabuk
 Donate link: https://fusewp.com/pricing/
 Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
-Tested up to: 6.8
-Stable tag: 1.1.23.0
+Tested up to: 6.9
+Stable tag: 1.1.24.2
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -148,7 +148,7 @@ FuseWP supports various e-commerce, forms, and user registration plugins that al
 [Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
 
 ### Supported Forms, LMS, Ecommerce and Membership Plugins
-WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, Ninja Forms, Forminator Forms, Fluent Forms, Formidable Forms, Everest Forms, ProfilePress, WP Travel Engine, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, MasterStudy LMS, Sensei LMS, Paid Member Subscriptions.
+WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, Ninja Forms, Forminator Forms, Fluent Forms, Formidable Forms, Everest Forms, SureForms, WS Form, ProfilePress, WP Travel Engine, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, MasterStudy LMS, Sensei LMS, FluentCommunity, Paid Member Subscriptions, AffiliateWP, SliceWP.
 
 ### Supported Email Marketing & CRM Integrations
 
@@ -212,6 +212,29 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.24.2 =
+* Added a 1-second throttle to sender.net api during bulk-sync.
+* Added list as a segmentation to GetResponse integration.
+* Added fusewp_beehiiv_is_unsubscribe_user filter.
+* Fixed bug where dayOfCycle is missing in GetResponse subscribe params.
+* Fixed bug where Flodesk integration didn’t return all segments.
+* Fixed bug where sender.net only returned 10 groups.
+
+= 1.1.24.1 =
+* Added a mechanism for retrying jobs on failure.
+* Increased beehiiv api timeout to 60secs.
+* Added a second throttle to beehiiv api during bulksync.
+
+= 1.1.24.0 =
+* Upgraded HubSpot integration fully to v3 API.
+* Fixed bug where Kit attempted to add tag to subscriber without an email.
+* Fixed HubSpot cache clearing bug
+* Performance improvements to reduce memory usage.
+
+= 1.1.23.1 =
+* Fixed CSRF issue when saving sync rule.
+* Improved user sync caching.
+
 = 1.1.23.0 =
 * Added [SureForms integration](https://fusewp.com/article/sync-sureforms-email-marketing/?ref=changelog).
 * Added [WS Form integration](https://fusewp.com/article/sync-wsform-email-marketing/?ref=changelog).
@@ -227,26 +250,5 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 * Added [Everest Forms integration](https://fusewp.com/article/sync-everest-forms-email-marketing/?ref=changelog).
 * Pro [Sensei LMS integration](https://fusewp.com/article/sync-sensei-lms-email-marketing/?ref=changelog).
 * Pro [Masterstudy LMS integration](https://fusewp.com/article/sync-masterstudy-lms-email-marketing/?ref=changelog).
-
-= 1.1.21.0 =
-* Pro [WP Travel Engine integration](https://fusewp.com/article/sync-wp-travel-engine-email-marketing/?ref=changelog).
-* Added [Fluent Forms integration](https://fusewp.com/article/sync-fluent-forms-email-marketing/?ref=changelog).
-* Added [Forminator integration](https://fusewp.com/article/sync-forminator-email-marketing/?ref=changelog).
-* Added [Sender.net integration](https://fusewp.com/article/connect-wordpress-to-sender/?ref=changelog).
-* Added [Groundhogg integration](https://fusewp.com/article/connect-wordpress-to-groundhogg/?ref=changelog).\
-
-= 1.1.20.0 =
-* Added [Contact forms 7 integration](https://fusewp.com/article/sync-contact-form-7-email-marketing/?ref=changelog).
-* Pro [Academy LMS integration](https://fusewp.com/article/sync-academy-lms-email-marketing/?ref=changelog).
-* Pro [Paid Member Subscriptions integration](https://fusewp.com/article/sync-paid-member-subscriptions-email-marketing/?ref=changelog).
-* Pro [Profile Builder Integration](https://fusewp.com/article/connect-profile-builder-email-marketing-software/?ref=changelog).
-* Pro [Ortto integration](https://fusewp.com/article/connect-wordpress-to-ortto/?ref=changelog).
-* Pro [MailPoet integration](https://fusewp.com/article/connect-wordpress-to-mailpoet/?ref=changelog).
-* Fixed bug where sync for plugin integrations didn't work.
-* Optimized queue popping query so over-attempted jobs don't stop the queue.
-* Skip Klaviyo phone number if of invalid format.
-* Fixed sync failure due to empty Klaviyo address field data.
-* Fixed search not working correctly on the Sync Log page.
-* Added fusewp_bulk_sync_cache_enabled filter to disable bulk-sync cache.
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.

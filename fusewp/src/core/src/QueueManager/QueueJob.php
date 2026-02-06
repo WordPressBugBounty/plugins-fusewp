@@ -2,7 +2,7 @@
 
 namespace FuseWP\Core\QueueManager;
 
-use \FuseWPVendor\WP_Queue\Job;
+use FuseWPVendor\WP_Queue\Job;
 
 class QueueJob extends Job
 {

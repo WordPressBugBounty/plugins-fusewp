@@ -41,6 +41,11 @@ class Sender extends AbstractIntegration
         });
     }
 
+    public function set_bulk_sync_throttle_seconds($seconds)
+    {
+        return 1;
+    }
+
     /**
      * @return string
      */
@@ -82,7 +87,7 @@ class Sender extends AbstractIntegration
 
         try {
 
-            $response = $this->apiClass()->make_request('groups');
+            $response = $this->apiClass()->make_request('groups', ['limit' => 1000]);
 
             if (isset($response['body']->data) && is_array($response['body']->data)) {
                 foreach ($response['body']->data as $group) {

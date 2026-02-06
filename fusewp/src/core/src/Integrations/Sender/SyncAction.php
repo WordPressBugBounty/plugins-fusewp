@@ -209,8 +209,6 @@ class SyncAction extends AbstractSyncAction
                 return $response['body']->data;
 
             } catch (\Exception $e) {
-
-                fusewp_log_error($this->senderInstance->id, __METHOD__ . ':' . $e->getMessage());
             }
         }
 

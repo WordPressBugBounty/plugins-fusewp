@@ -1957,6 +1957,14 @@
       "oAP" : "\/Sync\/Sources\/NinjaForms.php",
       "oF" : 0
     },
+    "\/Sync\/Sources\/SureForms.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/SureForms.php",
+      "oF" : 0
+    },
     "\/Sync\/Sources\/SyncQueueHandler.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1979,6 +1987,14 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Sync\/Sources\/WPUserRoles.php",
+      "oF" : 0
+    },
+    "\/Sync\/Sources\/WSForm.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Sync\/Sources\/WSForm.php",
       "oF" : 0
     }
   },

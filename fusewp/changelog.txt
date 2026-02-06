@@ -1,5 +1,28 @@
 == Changelog ==
 
+= 1.1.24.2 =
+* Added a 1-second throttle to sender.net api during bulk-sync.
+* Added list as a segmentation to GetResponse integration.
+* Added fusewp_beehiiv_is_unsubscribe_user filter.
+* Fixed bug where dayOfCycle is missing in GetResponse subscribe params.
+* Fixed bug where Flodesk integration didn’t return all segments.
+* Fixed bug where sender.net only returned 10 groups.
+
+= 1.1.24.1 =
+* Added a mechanism for retrying jobs on failure.
+* Increased beehiiv api timeout to 60secs.
+* Added a second throttle to beehiiv api during bulksync.
+
+= 1.1.24.0 =
+* Upgraded HubSpot integration fully to v3 API.
+* Fixed bug where Kit attempted to add tag to subscriber without an email.
+* Fixed HubSpot cache clearing bug
+* Performance improvements to reduce memory usage.
+
+= 1.1.23.1 =
+* Fixed CSRF issue when saving sync rule.
+* Improved user sync caching.
+
 = 1.1.23.0 =
 * Added [SureForms integration](https://fusewp.com/article/sync-sureforms-email-marketing/?ref=changelog).
 * Added [WS Form integration](https://fusewp.com/article/sync-wsform-email-marketing/?ref=changelog).

@@ -50,7 +50,7 @@ class APIClass
 
         $wp_args = [
             'method'  => strtoupper($method),
-            'timeout' => 30,
+            'timeout' => 60, // a customer site had issues when this was 30 seconds
             'headers' => [
                 'Authorization' => sprintf('Bearer %s', $this->api_key)
             ],
