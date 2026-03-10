@@ -582,7 +582,7 @@ class CustomSettingsPageApi
                 <?php do_action('wp_cspa_before_text_field', $db_options, $option_name, $key, $args); ?>
                 <?php $this->_text_field($key, $name_attr, $value, $class,$placeholder); ?>
                 <?php do_action('wp_cspa_after_text_field', $db_options, $option_name, $key, $args); ?>
-                <p class="description"><?php echo esc_attr($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -624,7 +624,7 @@ class CustomSettingsPageApi
                 <?php do_action('wp_cspa_before_custom_field_block', $db_options, $option_name, $key, $args); ?>
                 <?php echo $data; ?>
                 <?php do_action('wp_cspa_after_custom_field_block', $db_options, $option_name, $key, $args); ?>
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -726,7 +726,7 @@ class CustomSettingsPageApi
                 <input type="hidden" id="<?php echo esc_attr($key); ?>" name="<?php echo esc_attr($option_name), '[', $key, ']'; ?>"
                        class="regular-text" value="<?php echo esc_attr($value); ?>"/>
                 <?php do_action('wp_cspa_after_hidden_field', $db_options, $option_name, $key, $args); ?>
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -765,7 +765,7 @@ class CustomSettingsPageApi
                           id="<?php echo esc_attr($key); ?>"><?php echo esc_textarea($value); ?></textarea>
                 <?php do_action('wp_cspa_after_textarea_field', $db_options, $option_name, $key, $args); ?>
 
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -798,7 +798,7 @@ class CustomSettingsPageApi
                 <?php do_action('wp_cspa_before_codemirror_field', $db_options, $option_name, $key, $args); ?>
                 <textarea class="fwp-codemirror-editor-textarea" <?php echo $name_attr ?> id="<?php echo esc_attr($key); ?>"><?php echo esc_textarea($value); ?></textarea>
                 <?php do_action('wp_cspa_after_codemirror_field', $db_options, $option_name, $key, $args); ?>
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -844,7 +844,7 @@ class CustomSettingsPageApi
                 <?php wp_editor($value, $key, $settings); ?>
                 <?php do_action('wp_cspa_after_wp_editor_field', $db_options, $option_name, $key, $args); ?>
 
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -900,7 +900,7 @@ class CustomSettingsPageApi
                 </select>
                 <?php do_action('wp_cspa_after_select_dropdown', $db_options, $option_name, $key, $args); ?>
 
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -961,7 +961,7 @@ class CustomSettingsPageApi
                 </select>
                 <?php do_action('wp_cspa_after_select2_dropdown', $db_options, $option_name, $key, $args); ?>
 
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php
@@ -998,7 +998,7 @@ class CustomSettingsPageApi
                 <strong><label for="<?php echo esc_attr($key); ?>"><?php echo esc_html($checkbox_label); ?></label></strong>
                 <?php do_action('wp_cspa_after_checkbox_field', $db_options, $option_name, $key, $args); ?>
 
-                <p class="description"><?php echo esc_html($description); ?></p>
+                <p class="description"><?php echo wp_kses_post($description); ?></p>
             </td>
         </tr>
         <?php

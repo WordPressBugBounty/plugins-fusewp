@@ -5,7 +5,7 @@ Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 6.9
-Stable tag: 1.1.24.2
+Stable tag: 1.1.25.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -53,7 +53,7 @@ Map user profile information to custom fields or attributes in your email market
 
 = Integration with Ecommerce, Forms, LMS & Membership Plugins =
 
-FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, Salesforce, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Google Sheets, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, Ortto, GetResponse, Mailjet, Encharge, Sender, beehiiv, FluentCRM, MailPoet, Groundhogg etc.
+FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, Salesforce, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Google Sheets, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, Ortto, GetResponse, Mailjet, Encharge, Sender, beehiiv, FluentCRM, MailPoet, Groundhogg, SendPulse, Bento, Mailercloud, BirdSend, Engage.so etc.
 
 Say a user's membership or subscription status changes from Active to Cancelled; they will be removed from the Active email list and added to that of Cancelled.
 
@@ -179,6 +179,11 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * Encharge
 * Sender (Sender.net)
 * beehiiv
+* SendPulse
+* Bento
+* Mailercloud
+* BirdSend
+* Engage.so
 * FluentCRM
 * Groundhogg
 * MailPoet
@@ -212,6 +217,15 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.25.0 =
+* Added [SendPulse integration](https://fusewp.com/article/connect-wordpress-to-sendpulse/?ref=changelog).
+* Added [Mailercloud integration](https://fusewp.com/article/connect-wordpress-to-mailercloud/?ref=changelog).
+* Added [Bento integration](https://fusewp.com/article/connect-wordpress-to-bento/?ref=changelog).
+* Added [Engage.so integration](https://fusewp.com/article/connect-wordpress-to-engage/?ref=changelog).
+* Added [Birdsend integration](https://fusewp.com/article/connect-wordpress-to-birdsend/?ref=changelog).
+* Improved reliability of sync by adding better support for delayed sync.
+* Fixed PHP fatal errors when integrated plugin becomes inactive.
+
 = 1.1.24.2 =
 * Added a 1-second throttle to sender.net api during bulk-sync.
 * Added list as a segmentation to GetResponse integration.
@@ -234,21 +248,5 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 = 1.1.23.1 =
 * Fixed CSRF issue when saving sync rule.
 * Improved user sync caching.
-
-= 1.1.23.0 =
-* Added [SureForms integration](https://fusewp.com/article/sync-sureforms-email-marketing/?ref=changelog).
-* Added [WS Form integration](https://fusewp.com/article/sync-wsform-email-marketing/?ref=changelog).
-* Pro [FluentCommunity integration](https://fusewp.com/article/sync-fluentcommunity-email-marketing/?ref=changelog).
-* Pro [AffiliateWP integration](https://fusewp.com/article/sync-affiliatewp-email-marketing/?ref=changelog).
-* Pro [SliceWP integration](https://fusewp.com/article/sync-slicewp-email-marketing/?ref=changelog).
-* Added fusewp_sync_mailchimp_api_key filter.
-* Fixed token refresh not working for zoho for non-US accounts.
-
-= 1.1.22.0 =
-* Added [Ninja Forms integration](https://fusewp.com/article/sync-ninja-forms-email-marketing/?ref=changelog).
-* Added [Formidable Forms integration](https://fusewp.com/article/sync-formidable-forms-email-marketing/?ref=changelog).
-* Added [Everest Forms integration](https://fusewp.com/article/sync-everest-forms-email-marketing/?ref=changelog).
-* Pro [Sensei LMS integration](https://fusewp.com/article/sync-sensei-lms-email-marketing/?ref=changelog).
-* Pro [Masterstudy LMS integration](https://fusewp.com/article/sync-masterstudy-lms-email-marketing/?ref=changelog).
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.

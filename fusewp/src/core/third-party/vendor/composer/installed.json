@@ -320,32 +320,30 @@
         },
         {
             "name": "deliciousbrains\/wp-queue",
-            "version": "2.1.0",
-            "version_normalized": "2.1.0.0",
+            "version": "2.2.0",
+            "version_normalized": "2.2.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/deliciousbrains\/wp-queue.git",
-                "reference": "2cc2007b996fbb9d3dbdc14c4f7938b4f5a73289"
+                "reference": "5a5fa1b73f4e3a5f774c05ded4f06e4ae44e8f21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/deliciousbrains\/wp-queue\/zipball\/2cc2007b996fbb9d3dbdc14c4f7938b4f5a73289",
-                "reference": "2cc2007b996fbb9d3dbdc14c4f7938b4f5a73289",
+                "url": "https:\/\/api.github.com\/repos\/deliciousbrains\/wp-queue\/zipball\/5a5fa1b73f4e3a5f774c05ded4f06e4ae44e8f21",
+                "reference": "5a5fa1b73f4e3a5f774c05ded4f06e4ae44e8f21",
                 "shasum": ""
             },
             "require": {
-                "nesbot\/carbon": "^2.0",
-                "php": ">=7.3.0"
+                "nesbot\/carbon": "^2|^3",
+                "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "10up\/wp_mock": "^0.4.2",
-                "humanmade\/coding-standards": "^1.1",
-                "php-stubs\/wp-cli-stubs": "^2.6",
-                "phpstan\/phpstan": "^1.4",
+                "10up\/wp_mock": "^0.5|^1",
+                "phpcompatibility\/phpcompatibility-wp": "*",
                 "phpunit\/phpunit": "^9.0.0",
-                "szepeviktor\/phpstan-wordpress": "^1.0"
+                "wp-coding-standards\/wpcs": "^3"
             },
-            "time": "2024-02-08T14:30:11+00:00",
+            "time": "2026-03-06T13:16:35+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -378,17 +376,17 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/deliciousbrains\/wp-queue\/issues",
-                "source": "https:\/\/github.com\/deliciousbrains\/wp-queue\/tree\/2.1.0"
+                "source": "https:\/\/github.com\/deliciousbrains\/wp-queue\/tree\/2.2.0"
             },
             "install-path": "..\/deliciousbrains\/wp-queue"
         },
         {
             "name": "mailoptin\/authifly",
-            "version": "0.2.1769167318",
-            "version_normalized": "0.2.1769167318.0",
+            "version": "0.2.1771339030",
+            "version_normalized": "0.2.1771339030.0",
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_1jNPfG\/mailoptinauthifly-0-2-1769167318.zip"
+                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_vtbFF\/mailoptinauthifly-0-2-1771339030.zip"
             },
             "require": {
                 "composer\/installers": "~1.0",
@@ -422,7 +420,8 @@
                     "Salesforce.php",
                     "Microsoft.php",
                     "HighLevel.php",
-                    "Google.php"
+                    "Google.php",
+                    "Birdsend.php"
                 ]
             },
             "license": [
@@ -602,26 +601,26 @@
         },
         {
             "name": "sniccowp\/php-scoper-wordpress-excludes",
-            "version": "6.9.0",
-            "version_normalized": "6.9.0.0",
+            "version": "6.9.1",
+            "version_normalized": "6.9.1.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes.git",
-                "reference": "40ab73f3def963304e23e44596baf49441f00512"
+                "reference": "94867711087d0efc3d361dbe068044e0124f4c0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/snicco\/php-scoper-wordpress-excludes\/zipball\/40ab73f3def963304e23e44596baf49441f00512",
-                "reference": "40ab73f3def963304e23e44596baf49441f00512",
+                "url": "https:\/\/api.github.com\/repos\/snicco\/php-scoper-wordpress-excludes\/zipball\/94867711087d0efc3d361dbe068044e0124f4c0b",
+                "reference": "94867711087d0efc3d361dbe068044e0124f4c0b",
                 "shasum": ""
             },
             "require-dev": {
                 "php": "^7.4",
                 "php-stubs\/wordpress-globals": "0.2.0",
-                "php-stubs\/wordpress-stubs": "6.9.0",
+                "php-stubs\/wordpress-stubs": "6.9.1",
                 "sniccowp\/php-scoper-excludes": "dev-master"
             },
-            "time": "2025-12-08T11:39:50+00:00",
+            "time": "2026-02-04T00:34:47+00:00",
             "type": "library",
             "installation-source": "dist",
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -646,7 +645,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/issues",
-                "source": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/tree\/6.9.0"
+                "source": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/tree\/6.9.1"
             },
             "install-path": "..\/sniccowp\/php-scoper-wordpress-excludes"
         },

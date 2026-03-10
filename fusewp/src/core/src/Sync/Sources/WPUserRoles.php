@@ -149,44 +149,47 @@ class WPUserRoles extends AbstractSyncSource
 
                     $integration = fusewp_get_registered_sync_integrations($integration);
 
-                    $sync_action = $integration->get_sync_action();
+                    if (is_object($integration) && method_exists($integration, 'get_sync_action')) {
 
-                    if ($integration instanceof IntegrationInterface) {
+                        $sync_action = $integration->get_sync_action();
 
-                        $list_id = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
+                        if ($integration instanceof IntegrationInterface) {
 
-                        $email_address = $user_data->get('user_email');
+                            $list_id = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
 
-                        if ($action == self::UNSUBSCRIBE_ACTION) {
+                            $email_address = $user_data->get('user_email');
 
-                            QueueManager::push([
-                                'action'                => 'unsubscribe_user',
-                                'source_id'             => $this->id,
-                                'rule_id'               => $rule['id'],
-                                'destination'           => $destination,
-                                'integration'           => $sync_action->get_integration_id(),
-                                'mappingUserDataEntity' => $user_data,
-                                'extras'                => $user,
-                                'list_id'               => $list_id,
-                                'email_address'         => $email_address,
-                                'old_email_address'     => $old_email_address
-                            ]);
+                            if ($action == self::UNSUBSCRIBE_ACTION) {
 
-                        } else {
+                                QueueManager::push([
+                                    'action'                => 'unsubscribe_user',
+                                    'source_id'             => $this->id,
+                                    'rule_id'               => $rule['id'],
+                                    'destination'           => $destination,
+                                    'integration'           => $sync_action->get_integration_id(),
+                                    'mappingUserDataEntity' => $user_data,
+                                    'extras'                => $user,
+                                    'list_id'               => $list_id,
+                                    'email_address'         => $email_address,
+                                    'old_email_address'     => $old_email_address
+                                ]);
 
-                            QueueManager::push([
-                                'action'                => 'subscribe_user',
-                                'source_id'             => $this->id,
-                                'rule_id'               => $rule['id'],
-                                'destination'           => $destination,
-                                'integration'           => $sync_action->get_integration_id(),
-                                'mappingUserDataEntity' => $user_data,
-                                'extras'                => $user,
-                                'list_id'               => $list_id,
-                                'email_address'         => $email_address,
-                                'old_email_address'     => $old_email_address
-                            ], 5, 1);
+                            } else {
 
+                                QueueManager::push([
+                                    'action'                => 'subscribe_user',
+                                    'source_id'             => $this->id,
+                                    'rule_id'               => $rule['id'],
+                                    'destination'           => $destination,
+                                    'integration'           => $sync_action->get_integration_id(),
+                                    'mappingUserDataEntity' => $user_data,
+                                    'extras'                => $user,
+                                    'list_id'               => $list_id,
+                                    'email_address'         => $email_address,
+                                    'old_email_address'     => $old_email_address
+                                ], 5, 1);
+
+                            }
                         }
                     }
                 }

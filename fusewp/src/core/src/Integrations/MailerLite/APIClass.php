@@ -53,10 +53,6 @@ class APIClass
             throw new \Exception($response->get_error_message());
         }
 
-        if (isset($response['body']['errors'])) {
-            throw new \Exception($response['body']['errors']);
-        }
-
         $response_http_code = wp_remote_retrieve_response_code($response);
 
         $response_body = wp_remote_retrieve_body($response);

@@ -19,12 +19,12 @@ class ComposerStaticInitc94a2b39422b6a9d3256991682328142
     );
 
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
         ),
-        'F' => 
+        'F' =>
         array (
             'FuseWPVendor\\WP_Queue\\' => 22,
             'FuseWPVendor\\Symfony\\Contracts\\Translation\\' => 43,
@@ -38,43 +38,43 @@ class ComposerStaticInitc94a2b39422b6a9d3256991682328142
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Php80\\' => 
+        'Symfony\\Polyfill\\Php80\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'FuseWPVendor\\WP_Queue\\' => 
+        'FuseWPVendor\\WP_Queue\\' =>
         array (
             0 => __DIR__ . '/..' . '/deliciousbrains/wp-queue/src/WP_Queue',
         ),
-        'FuseWPVendor\\Symfony\\Contracts\\Translation\\' => 
+        'FuseWPVendor\\Symfony\\Contracts\\Translation\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
-        'FuseWPVendor\\Symfony\\Component\\Translation\\' => 
+        'FuseWPVendor\\Symfony\\Component\\Translation\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
-        'FuseWPVendor\\Psr\\Clock\\' => 
+        'FuseWPVendor\\Psr\\Clock\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
-        'FuseWPVendor\\Composer\\Installers\\' => 
+        'FuseWPVendor\\Composer\\Installers\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
-        'FuseWPVendor\\Carbon\\Doctrine\\' => 
+        'FuseWPVendor\\Carbon\\Doctrine\\' =>
         array (
             0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
         ),
-        'FuseWPVendor\\Carbon\\' => 
+        'FuseWPVendor\\Carbon\\' =>
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
-        'FuseWPVendor\\Barryvdh\\Composer\\' => 
+        'FuseWPVendor\\Barryvdh\\Composer\\' =>
         array (
             0 => __DIR__ . '/..' . '/barryvdh/composer-cleanup-plugin/src',
         ),

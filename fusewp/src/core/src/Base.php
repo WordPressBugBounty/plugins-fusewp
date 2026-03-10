@@ -9,21 +9,26 @@ use FuseWP\Core\Admin\SettingsPage\ProUpgrade;
 use FuseWP\Core\Admin\SettingsPage\SyncLogPage;
 use FuseWP\Core\Admin\SettingsPage\SyncPage;
 use FuseWP\Core\Integrations\Beehiiv;
+use FuseWP\Core\Integrations\Birdsend;
+use FuseWP\Core\Integrations\BentoNow;
 use FuseWP\Core\Integrations\CampaignMonitor;
 use FuseWP\Core\Integrations\ConstantContact;
 use FuseWP\Core\Integrations\Drip;
 use FuseWP\Core\Integrations\EmailOctopus;
+use FuseWP\Core\Integrations\Engage;
 use FuseWP\Core\Integrations\GetResponse;
 use FuseWP\Core\Integrations\Groundhogg;
 use FuseWP\Core\Integrations\Mailchimp;
 use FuseWP\Core\Integrations\ActiveCampaign;
 use FuseWP\Core\Integrations\Brevo;
 use FuseWP\Core\Integrations\Aweber;
+use FuseWP\Core\Integrations\Mailercloud\Mailercloud;
 use FuseWP\Core\Integrations\MailerLite;
 use FuseWP\Core\Integrations\Mailjet;
 use FuseWP\Core\Integrations\Omnisend;
 use FuseWP\Core\Integrations\OrttoCRM;
 use FuseWP\Core\Integrations\Sender;
+use FuseWP\Core\Integrations\SendPulse;
 use FuseWP\Core\Integrations\Sendy;
 use FuseWP\Core\Integrations\HubSpot;
 use FuseWP\Core\Integrations\ConvertKit;
@@ -151,6 +156,11 @@ class Base
         Encharge\Encharge::get_instance();
         Beehiiv\Beehiiv::get_instance();
         MailPoet\MailPoet::get_instance();
+        Birdsend\Birdsend::get_instance();
+        Engage\Engage::get_instance();
+        SendPulse\SendPulse::get_instance();
+        BentoNow\BentoNow::get_instance();
+        Mailercloud::get_instance();
 
         add_action('groundhogg/loaded', function () {
             Groundhogg\Groundhogg::get_instance();

@@ -38,3 +38,4 @@ if (!\function_exists('FuseWPVendor\wp_queue_install_tables')) {
         \dbDelta($sql);
     }
 }
+//end if

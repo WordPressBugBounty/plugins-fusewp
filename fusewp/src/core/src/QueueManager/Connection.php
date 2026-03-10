@@ -25,8 +25,8 @@ class Connection extends DatabaseConnection
     {
         if (defined('FUSEWP_BULK_SYNC_PROCESS_TASK')) return;
 
-        // limit to 10 so we don't have to deal with large queue data - just in case.
-        $sql = "SELECT id, job FROM {$this->jobs_table} WHERE job LIKE '%subscribe_user%' LIMIT 10";
+        // limit to 10 (now extended to 100) so we don't have to deal with large queue data - just in case.
+        $sql = "SELECT id, job FROM {$this->jobs_table} WHERE job LIKE '%subscribe_user%' ORDER BY available_at ASC, id ASC LIMIT 100";
 
         $result = $this->database->get_results($sql);
 

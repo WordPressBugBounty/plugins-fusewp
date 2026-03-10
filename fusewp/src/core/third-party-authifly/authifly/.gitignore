@@ -2,3 +2,6 @@ vendor/*
 composer.lock
 FacebookTest.php
 VerticalResponseTest.php
+.idea/*
+.DS_Store
+.vscode/*
