@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: FuseWP - Lite 1.1.25.0\n"
+"Project-Id-Version: FuseWP - Lite 1.1.25.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fusewp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-10T09:35:18+00:00\n"
+"POT-Creation-Date: 2026-03-29T11:19:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: fusewp\n"
@@ -476,7 +476,7 @@ msgstr ""
 #: src/core/src/Integrations/Flodesk/Flodesk.php:196
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:44
 #: src/core/src/Integrations/Mailchimp/AdminSettingsPage.php:69
-#: src/core/src/Integrations/SendPulse/SendPulse.php:243
+#: src/core/src/Integrations/SendPulse/SendPulse.php:262
 msgid "Upgrade to FuseWP Premium"
 msgstr ""
 
@@ -765,15 +765,15 @@ msgstr ""
 msgid "+ Add Destination"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/views/sync/sidebar.php:15
+#: src/core/src/Admin/SettingsPage/views/sync/sidebar.php:13
 msgid "Status:"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/views/sync/sidebar.php:17
+#: src/core/src/Admin/SettingsPage/views/sync/sidebar.php:15
 msgid "Active"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/views/sync/sidebar.php:18
+#: src/core/src/Admin/SettingsPage/views/sync/sidebar.php:16
 msgid "Disabled"
 msgstr ""
 
@@ -865,7 +865,7 @@ msgstr ""
 #: src/core/src/Integrations/Mailjet/Mailjet.php:62
 #: src/core/src/Integrations/Omnisend/Omnisend.php:61
 #: src/core/src/Integrations/OrttoCRM/OrttoCRM.php:91
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:133
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:136
 #: src/core/src/Integrations/Sender/Sender.php:76
 #: src/core/src/Integrations/SendPulse/SendPulse.php:83
 #: src/core/src/Integrations/Sendy/Sendy.php:137
@@ -898,7 +898,7 @@ msgstr ""
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:36
 #: src/core/src/Integrations/CampaignMonitor/AdminSettingsPage.php:63
 #: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:94
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:95
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:98
 #, php-format
 msgid "Reconnect to %s"
 msgstr ""
@@ -933,7 +933,7 @@ msgstr ""
 #: src/core/src/Integrations/Mailjet/Mailjet.php:44
 #: src/core/src/Integrations/Omnisend/Omnisend.php:43
 #: src/core/src/Integrations/OrttoCRM/OrttoCRM.php:52
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:97
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:100
 #: src/core/src/Integrations/Sender/Sender.php:57
 #: src/core/src/Integrations/SendPulse/SendPulse.php:57
 #: src/core/src/Integrations/Sendy/Sendy.php:114
@@ -943,7 +943,7 @@ msgstr ""
 #: src/core/src/Integrations/AbstractOauthAdminSettingsPage.php:51
 #: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:100
 #: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:111
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:104
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:107
 msgid "Clear cache"
 msgstr ""
 
@@ -951,8 +951,8 @@ msgstr ""
 #: src/core/src/Integrations/CampaignMonitor/AdminSettingsPage.php:78
 #: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:102
 #: src/core/src/Integrations/GoogleSheet/AdminSettingsPage.php:113
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:101
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:114
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:104
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:117
 msgid "Disconnect"
 msgstr ""
 
@@ -985,7 +985,7 @@ msgstr ""
 #: src/core/src/Integrations/MailPoet/MailPoet.php:80
 #: src/core/src/Integrations/Omnisend/Omnisend.php:77
 #: src/core/src/Integrations/Sender/Sender.php:118
-#: src/core/src/Integrations/SendPulse/SendPulse.php:154
+#: src/core/src/Integrations/SendPulse/SendPulse.php:173
 #: src/core/src/Integrations/Sendy/Sendy.php:47
 #: src/core/src/Sync/Sources/FormidableForms.php:106
 msgid "First Name"
@@ -1011,7 +1011,7 @@ msgstr ""
 #: src/core/src/Integrations/MailPoet/MailPoet.php:81
 #: src/core/src/Integrations/Omnisend/Omnisend.php:82
 #: src/core/src/Integrations/Sender/Sender.php:123
-#: src/core/src/Integrations/SendPulse/SendPulse.php:155
+#: src/core/src/Integrations/SendPulse/SendPulse.php:174
 #: src/core/src/Integrations/Sendy/Sendy.php:52
 #: src/core/src/Sync/Sources/FormidableForms.php:108
 msgid "Last Name"
@@ -1080,7 +1080,7 @@ msgid "WordPress User Data"
 msgstr ""
 
 #: src/core/src/Integrations/ActiveCampaign/ActiveCampaign.php:60
-#: src/core/src/Integrations/SendPulse/SendPulse.php:156
+#: src/core/src/Integrations/SendPulse/SendPulse.php:175
 msgid "Phone"
 msgstr ""
 
@@ -1713,21 +1713,21 @@ msgstr ""
 #: src/core/src/Integrations/Flodesk/Flodesk.php:181
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:28
 #: src/core/src/Integrations/Mailchimp/AdminSettingsPage.php:54
-#: src/core/src/Integrations/SendPulse/SendPulse.php:196
+#: src/core/src/Integrations/SendPulse/SendPulse.php:215
 msgid "Sync Double Optin"
 msgstr ""
 
 #: src/core/src/Integrations/Flodesk/Flodesk.php:182
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:29
 #: src/core/src/Integrations/Mailchimp/AdminSettingsPage.php:55
-#: src/core/src/Integrations/SendPulse/SendPulse.php:197
+#: src/core/src/Integrations/SendPulse/SendPulse.php:216
 msgid "Check to Enable"
 msgstr ""
 
 #: src/core/src/Integrations/Flodesk/Flodesk.php:183
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:30
 #: src/core/src/Integrations/Mailchimp/AdminSettingsPage.php:56
-#: src/core/src/Integrations/SendPulse/SendPulse.php:198
+#: src/core/src/Integrations/SendPulse/SendPulse.php:217
 msgid "Double optin requires users to confirm their email address before they are added or subscribed."
 msgstr ""
 
@@ -2401,59 +2401,59 @@ msgstr ""
 msgid "Copy the Consumer Key and Secret of the app and save them here."
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:112
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:115
 msgid "AUTHORIZE YOUR ACCOUNT"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:122
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:125
 msgid "Consumer Key"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:123
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:126
 msgid "Enter Consumer Key"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:128
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:131
 msgid "Consumer Secret"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:129
+#: src/core/src/Integrations/Salesforce/AdminSettingsPage.php:132
 msgid "Enter Consumer Secret"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:94
+#: src/core/src/Integrations/Salesforce/Salesforce.php:92
 msgid "Account"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:95
+#: src/core/src/Integrations/Salesforce/Salesforce.php:93
 msgid "Campaign"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:96
+#: src/core/src/Integrations/Salesforce/Salesforce.php:94
 msgid "Case"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:97
+#: src/core/src/Integrations/Salesforce/Salesforce.php:95
 msgid "Contact"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:98
+#: src/core/src/Integrations/Salesforce/Salesforce.php:96
 msgid "Lead"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:99
+#: src/core/src/Integrations/Salesforce/Salesforce.php:97
 msgid "Opportunity"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:100
+#: src/core/src/Integrations/Salesforce/Salesforce.php:98
 msgid "Product"
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:261
+#: src/core/src/Integrations/Salesforce/Salesforce.php:259
 msgid "Salesforce access token not found."
 msgstr ""
 
-#: src/core/src/Integrations/Salesforce/Salesforce.php:265
+#: src/core/src/Integrations/Salesforce/Salesforce.php:263
 msgid "Salesforce refresh token not found."
 msgstr ""
 
@@ -2489,69 +2489,69 @@ msgstr ""
 msgid "Get your API credentials from %sSettings → API%s in your SendPulse account."
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:192
+#: src/core/src/Integrations/SendPulse/SendPulse.php:211
 msgid "SendPulse Settings"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:202
+#: src/core/src/Integrations/SendPulse/SendPulse.php:221
 msgid "Sender Email (for Double Optin)"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:204
+#: src/core/src/Integrations/SendPulse/SendPulse.php:223
 #, php-format
 msgid "Required for double optin. Must be an activated %ssender in your SendPulse account%s."
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:210
+#: src/core/src/Integrations/SendPulse/SendPulse.php:229
 msgid "Double-Optin Email Language"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:212
+#: src/core/src/Integrations/SendPulse/SendPulse.php:231
 msgid "English"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:213
+#: src/core/src/Integrations/SendPulse/SendPulse.php:232
 msgid "Russian"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:214
+#: src/core/src/Integrations/SendPulse/SendPulse.php:233
 msgid "Ukrainian"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:215
+#: src/core/src/Integrations/SendPulse/SendPulse.php:234
 msgid "Turkish"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:216
+#: src/core/src/Integrations/SendPulse/SendPulse.php:235
 msgid "Spanish"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:217
+#: src/core/src/Integrations/SendPulse/SendPulse.php:236
 msgid "Portuguese"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:219
+#: src/core/src/Integrations/SendPulse/SendPulse.php:238
 msgid "Required when double optin is enabled."
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:223
+#: src/core/src/Integrations/SendPulse/SendPulse.php:242
 msgid "Confirmation Template ID (optional)"
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:225
+#: src/core/src/Integrations/SendPulse/SendPulse.php:244
 #, php-format
 msgid "Optional. Confirmation email template ID from %sSendPulse Service Settings%s. Leave empty to use default."
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:237
+#: src/core/src/Integrations/SendPulse/SendPulse.php:256
 msgid "Upgrade to FuseWP Premium to enable double optin when subscribing users to SendPulse during sync."
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:269
+#: src/core/src/Integrations/SendPulse/SendPulse.php:288
 msgid "SendPulse Client ID not found."
 msgstr ""
 
-#: src/core/src/Integrations/SendPulse/SendPulse.php:273
+#: src/core/src/Integrations/SendPulse/SendPulse.php:292
 msgid "SendPulse Client Secret not found."
 msgstr ""
 

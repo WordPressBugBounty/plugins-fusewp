@@ -314,6 +314,32 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/images\/bentonow-integration.png" : {
+      "ft" : 32768,
+      "iS" : 41007,
+      "oA" : 0,
+      "oAP" : "\/assets\/images\/bentonow-integration.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/assets\/images\/birdsend-integration.png" : {
+      "ft" : 32768,
+      "iS" : 10822,
+      "oA" : 0,
+      "oAP" : "\/assets\/images\/birdsend-integration.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/assets\/images\/brevo-integration.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -382,6 +408,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/images\/encharge-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/images\/engage-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/engage-integration.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -456,8 +492,8 @@
       "oA" : 0,
       "oAP" : "\/assets\/images\/groundhogg-integration.png",
       "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
@@ -528,6 +564,16 @@
       "q" : 90,
       "rq" : 75
     },
+    "\/assets\/images\/mailercloud-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/mailercloud-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/images\/mailerlite-integration.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -593,6 +639,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/images\/sender-integration.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/images\/sendpulse-integration.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/images\/sendpulse-integration.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -723,14 +779,6 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Base.php",
-      "oF" : 0
-    },
-    "\/build\/.gitignore" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/.gitignore",
       "oF" : 0
     },
     "\/Core.php" : {
@@ -923,6 +971,70 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/Beehiiv\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/BentoNow\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/BentoNow\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/BentoNow\/BentoNow.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/BentoNow\/BentoNow.php",
+      "oF" : 0
+    },
+    "\/Integrations\/BentoNow\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/BentoNow\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/BentoNow\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/BentoNow\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Birdsend\/AdminSettingsPage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Birdsend\/AdminSettingsPage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Birdsend\/Birdsend.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Birdsend\/Birdsend.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Birdsend\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Birdsend\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Birdsend\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Birdsend\/SyncAction.php",
       "oF" : 0
     },
     "\/Integrations\/Brevo\/APIClass.php" : {
@@ -1155,6 +1267,38 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/Encharge\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Engage\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Engage\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Engage\/Engage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Engage\/Engage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Engage\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Engage\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Engage\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Engage\/SyncAction.php",
       "oF" : 0
     },
     "\/Integrations\/Flodesk\/APIClass.php" : {
@@ -1485,6 +1629,38 @@
       "oAP" : "\/Integrations\/Mailchimp\/SyncAction.php",
       "oF" : 0
     },
+    "\/Integrations\/Mailercloud\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Mailercloud\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Mailercloud\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Mailercloud\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Mailercloud\/Mailercloud.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Mailercloud\/Mailercloud.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Mailercloud\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Mailercloud\/SyncAction.php",
+      "oF" : 0
+    },
     "\/Integrations\/MailerLite\/APIClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1699,6 +1875,38 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/Sender\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/SendPulse\/APIClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/SendPulse\/APIClass.php",
+      "oF" : 0
+    },
+    "\/Integrations\/SendPulse\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/SendPulse\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/SendPulse\/SendPulse.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/SendPulse\/SendPulse.php",
+      "oF" : 0
+    },
+    "\/Integrations\/SendPulse\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/SendPulse\/SyncAction.php",
       "oF" : 0
     },
     "\/Integrations\/Sendy\/APIClass.php" : {

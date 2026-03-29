@@ -61,11 +61,9 @@ class Salesforce extends AbstractIntegration
 
     public function is_credentials_saved()
     {
-        return fusewp_cache_transform('fwp_integration_' . $this->id, function () {
-            $settings = $this->get_settings();
+        $settings = $this->get_settings();
 
-            return ! empty(fusewpVar($settings, 'consumer_key')) && ! empty(fusewpVar($settings, 'consumer_secret'));
-        });
+        return ! empty(fusewpVar($settings, 'consumer_key')) && ! empty(fusewpVar($settings, 'consumer_secret'));
     }
 
     /**

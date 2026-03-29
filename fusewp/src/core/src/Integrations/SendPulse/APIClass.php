@@ -4,27 +4,25 @@ namespace FuseWP\Core\Integrations\SendPulse;
 
 class APIClass
 {
-    protected $api_url;
     protected $client_id;
     protected $client_secret;
     protected $access_token;
 
     /**
+     * Option key for storing access token and expiration
+     */
+    const TOKEN_OPTION_KEY = 'fusewp_sendpulse_access_token';
+
+    /**
      * @var string
      */
-    protected $api_base_url = 'https://api.sendpulse.com';
+    protected $api_url = 'https://api.sendpulse.com';
 
     public function __construct($client_id, $client_secret)
     {
         $this->client_id     = $client_id;
         $this->client_secret = $client_secret;
-        $this->api_url       = $this->api_base_url;
     }
-
-    /**
-     * Option key for storing access token and expiration
-     */
-    const TOKEN_OPTION_KEY = 'fusewp_sendpulse_access_token';
 
     /**
      * Get or refresh access token
@@ -99,7 +97,7 @@ class APIClass
      * @return array
      * @throws \Exception
      */
-    public function make_request($endpoint = '', array $args = [], string $method = 'get')
+    public function make_request($endpoint, $args = [], $method = 'get')
     {
         $url = $this->api_url . '/' . ltrim($endpoint, '/');
 

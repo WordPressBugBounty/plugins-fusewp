@@ -89,8 +89,11 @@ class AdminSettingsPage extends AbstractOauthAdminSettingsPage
 
         $html .= sprintf('<p>%s</p>', $guide);
 
+        $is_connected         = $this->integrationInstance->is_connected();
+        $is_credentials_saved = $this->salesforceInstance->is_credentials_saved();
+
         // Connected - Disconnect
-        if ($this->integrationInstance->is_connected()) {
+        if ($is_connected) {
 
             $label = sprintf(esc_html__('Reconnect to %s', 'fusewp'), $this->salesforceInstance->title);
 
@@ -108,7 +111,7 @@ class AdminSettingsPage extends AbstractOauthAdminSettingsPage
         }
 
         // Credentials saved but not connected - Connect
-        if ($this->salesforceInstance->is_credentials_saved()) {
+        if ($is_credentials_saved) {
             $html .= sprintf('<p><a href="%s" class="button">%s</a></p>', $this->salesforceInstance->callback_url(), esc_html__('AUTHORIZE YOUR ACCOUNT', 'fusewp'));
 
             $html .= sprintf('<p><a class="fusewp-confirm-delete button" href="%s">%s</a></p>', $this->integrationInstance->get_disconnect_url(), esc_html__('Disconnect', 'fusewp'));
@@ -143,8 +146,7 @@ class AdminSettingsPage extends AbstractOauthAdminSettingsPage
 
             if (current_user_can('manage_options')) {
 
-                $old_data                                                   = get_option(FUSEWP_SETTINGS_DB_OPTION_NAME,
-                    []);
+                $old_data                                                   = get_option(FUSEWP_SETTINGS_DB_OPTION_NAME, []);
                 $old_data[$this->salesforceInstance->id]['consumer_key']    = sanitize_text_field($_POST['fusewp-salesforce-consumer_key']);
                 $old_data[$this->salesforceInstance->id]['consumer_secret'] = sanitize_text_field($_POST['fusewp-salesforce-consumer_secret']);
                 update_option(FUSEWP_SETTINGS_DB_OPTION_NAME, $old_data);

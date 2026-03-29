@@ -4,8 +4,8 @@ Donate link: https://fusewp.com/pricing/
 Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
-Tested up to: 6.9
-Stable tag: 1.1.25.0
+Tested up to: 7.0
+Stable tag: 1.1.25.1
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -216,6 +216,10 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.25.1 =
+* Improved admin UI for WP 7
+* Fixed bug with Salesforce connection.
 
 = 1.1.25.0 =
 * Added [SendPulse integration](https://fusewp.com/article/connect-wordpress-to-sendpulse/?ref=changelog).

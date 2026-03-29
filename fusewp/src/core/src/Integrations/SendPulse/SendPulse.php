@@ -102,19 +102,38 @@ class SendPulse extends AbstractIntegration
     public function get_email_list()
     {
         $list_array = [];
-        try {
-            $response = $this->apiClass()->make_request('addressbooks', ['limit' => 100]);
-            $lists    = $response['body'] ?? [];
 
-            if (is_array($lists) && ! empty($lists)) {
-                foreach ($lists as $list) {
-                    // Only show active lists (status 0)
-                    if (isset($list['status']) && $list['status'] === 0) { // Funny that zero means active.
+        try {
+
+            $offset = 0;
+            $loop   = true;
+            $limit  = 100;
+
+            while ($loop === true) {
+
+                $response = $this->apiClass()->make_request(
+                    'addressbooks',
+                    ['limit' => $limit, 'offset' => $offset]
+                );
+
+                $lists = $response['body'] ?? [];
+
+                if (is_array($lists) && ! empty($lists)) {
+                    foreach ($lists as $list) {
                         $list_array[$list['id']] = $list['name'];
                     }
+
+                    if (count($lists) < $limit) {
+                        $loop = false;
+                    }
+
+                    $offset += $limit;
+                } else {
+                    $loop = false;
                 }
             }
-        } catch (Exception $e) {
+
+        } catch (\Exception $e) {
             fusewp_log_error($this->id, __METHOD__ . ':' . $e->getMessage());
         }
 

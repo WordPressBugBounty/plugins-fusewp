@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.25.1 =
+* Improved admin UI for WP 7
+* Fixed bug with Salesforce connection.
+
 = 1.1.25.0 =
 * Added [SendPulse integration](https://fusewp.com/article/connect-wordpress-to-sendpulse/?ref=changelog).
 * Added [Mailercloud integration](https://fusewp.com/article/connect-wordpress-to-mailercloud/?ref=changelog).

@@ -170,7 +170,7 @@ class BentoNow extends AbstractIntegration
 
                     foreach ($fields as $field) {
                         $field_key  = $field['attributes']['key'] ?? '';
-                        $field_name = $field['attributes']['name'] ?? $field_key;
+                        $field_name = ! empty($field['attributes']['name']) ? $field['attributes']['name'] : $field_key;
 
                         if (empty($field_key)) {
                             continue;
