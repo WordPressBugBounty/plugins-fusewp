@@ -260,6 +260,7 @@
                     action: 'fusewp_toggle_sync_status',
                     sync_rule_id: $switch.attr('data-sync-id'),
                     new_state: newState,
+                    csrf: fusewp_obj.nonce,
                 },
                 function () {
                     $switch.removeClass('fusewp-loading');

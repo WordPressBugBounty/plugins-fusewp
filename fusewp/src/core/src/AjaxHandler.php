@@ -148,6 +148,8 @@ class AjaxHandler
 
     public function toggle_sync_status()
     {
+        check_ajax_referer('fusewp_csrf', 'csrf');
+
         if ( ! current_user_can('manage_options')) die;
 
         $sync_rule_id = intval(fusewpVarPOST('sync_rule_id'));
@@ -157,7 +159,7 @@ class AjaxHandler
         if ( ! $sync_rule_id || ! $new_state) die;
 
         fusewp_sync_update_rule_status($sync_rule_id, $new_state);
-
+        
         wp_send_json_success();
     }
 

@@ -27,6 +27,8 @@ abstract class AbstractSyncSource
 
         add_action('fusewp_profile_update', function ($user_id) {
 
+            if ( ! $user_id || ! is_numeric($user_id)) return;
+
             $is_enabled = apply_filters('fusewp_enable_sync_on_profile_update', fusewp_get_settings('enable_external_profile_update_sync') == 'yes', $this->id, $user_id);
 
             if ($is_enabled) {

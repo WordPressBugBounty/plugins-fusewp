@@ -123,6 +123,8 @@ class WPUserRoles extends AbstractSyncSource
 
         $user = get_userdata($user_id);
 
+        if ( ! $user) return;
+
         $user_data = $this->get_mapping_user_data($user);
 
         $user_roles = apply_filters('fusewp_user_sync_roles', ! empty($role) ? [$role] : $user->roles, $user_id, $action);

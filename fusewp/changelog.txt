@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.1.25.2 =
+* Fixed CSRF vulnerability in toggle_sync_status AJAX handler.
+* Fixed: Warning: Attempt to read property "roles" on bool.
+* Fixed: Fatal error: Uncaught TypeError: Illegal offset type.
+* Fixed bug where custom field mapping data can be missing.
+* Improvement: sync retry now after one hour, not after a minute.
+
 = 1.1.25.1 =
 * Improved admin UI for WP 7
 * Fixed bug with Salesforce connection.

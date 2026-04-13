@@ -147,7 +147,7 @@ class Connection extends DatabaseConnection
             'job'          => serialize($job),
             'attempts'     => $job->attempts(),
             'reserved_at'  => null,
-            'available_at' => $this->datetime(MINUTE_IN_SECONDS)
+            'available_at' => $this->datetime(HOUR_IN_SECONDS)
         ];
         $where = ['id' => $job->id()];
         if ($this->database->update($this->jobs_table, $data, $where)) {
