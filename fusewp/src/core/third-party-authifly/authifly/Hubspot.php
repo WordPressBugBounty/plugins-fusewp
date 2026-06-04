@@ -24,7 +24,7 @@ class Hubspot extends OAuth2
     /**
      * {@inheritdoc}
      */
-    protected $accessTokenUrl = 'https://api.hubapi.com/oauth/v1/token';
+    protected $accessTokenUrl = 'https://api.hubapi.com/oauth/2026-03/token';
 
     /**
      * {@inheritdoc}

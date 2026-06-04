@@ -6,7 +6,7 @@ class APIClass
 {
     protected $api_key;
 
-    protected $revision = '2023-12-15';
+    protected $revision = '2026-04-15';
 
     /**
      * @var string
@@ -135,6 +135,7 @@ class APIClass
         if ($update_profile_id) {
 
             $payload['data']['id'] = $update_profile_id;
+
             $response              = $this->make_request("profiles/{$update_profile_id}/", $payload, 'patch');
 
             $this->add_profile_to_list($update_profile_id, $list_id, $properties);

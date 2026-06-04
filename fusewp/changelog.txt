@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.1.25.3 =
+* Updated klaviyo API version to 2026-04-15
+
 = 1.1.25.2 =
 * Fixed CSRF vulnerability in toggle_sync_status AJAX handler.
 * Fixed: Warning: Attempt to read property "roles" on bool.

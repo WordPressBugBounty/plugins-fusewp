@@ -118,8 +118,6 @@ class Base
             }
         });
 
-        \ProperP_Shogun::get_instance();
-
         Cron::get_instance();
 
         QueueManager::get_instance()->init_cron();

@@ -5,7 +5,7 @@ Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 1.1.25.2
+Stable tag: 1.1.25.3
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -217,6 +217,9 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.25.3 =
+* Updated klaviyo API version to 2026-04-15
+
 = 1.1.25.2 =
 * Fixed CSRF vulnerability in toggle_sync_status AJAX handler.
 * Fixed: Warning: Attempt to read property "roles" on bool.
@@ -236,28 +239,5 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 * Added [Birdsend integration](https://fusewp.com/article/connect-wordpress-to-birdsend/?ref=changelog).
 * Improved reliability of sync by adding better support for delayed sync.
 * Fixed PHP fatal errors when integrated plugin becomes inactive.
-
-= 1.1.24.2 =
-* Added a 1-second throttle to sender.net api during bulk-sync.
-* Added list as a segmentation to GetResponse integration.
-* Added fusewp_beehiiv_is_unsubscribe_user filter.
-* Fixed bug where dayOfCycle is missing in GetResponse subscribe params.
-* Fixed bug where Flodesk integration didn’t return all segments.
-* Fixed bug where sender.net only returned 10 groups.
-
-= 1.1.24.1 =
-* Added a mechanism for retrying jobs on failure.
-* Increased beehiiv api timeout to 60secs.
-* Added a second throttle to beehiiv api during bulksync.
-
-= 1.1.24.0 =
-* Upgraded HubSpot integration fully to v3 API.
-* Fixed bug where Kit attempted to add tag to subscriber without an email.
-* Fixed HubSpot cache clearing bug
-* Performance improvements to reduce memory usage.
-
-= 1.1.23.1 =
-* Fixed CSRF issue when saving sync rule.
-* Improved user sync caching.
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.
