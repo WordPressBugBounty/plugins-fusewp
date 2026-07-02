@@ -13,6 +13,7 @@ use FuseWP\Core\Integrations\Birdsend;
 use FuseWP\Core\Integrations\BentoNow;
 use FuseWP\Core\Integrations\CampaignMonitor;
 use FuseWP\Core\Integrations\ConstantContact;
+use FuseWP\Core\Integrations\Copper;
 use FuseWP\Core\Integrations\Drip;
 use FuseWP\Core\Integrations\EmailOctopus;
 use FuseWP\Core\Integrations\Engage;
@@ -22,7 +23,7 @@ use FuseWP\Core\Integrations\Mailchimp;
 use FuseWP\Core\Integrations\ActiveCampaign;
 use FuseWP\Core\Integrations\Brevo;
 use FuseWP\Core\Integrations\Aweber;
-use FuseWP\Core\Integrations\Mailercloud\Mailercloud;
+use FuseWP\Core\Integrations\Mailercloud;
 use FuseWP\Core\Integrations\MailerLite;
 use FuseWP\Core\Integrations\Mailjet;
 use FuseWP\Core\Integrations\Omnisend;
@@ -61,7 +62,7 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-define('FUSEWP_OAUTH_URL', ! defined('W3GUY_LOCAL') ? 'https://auth.fusewp.com' : 'https://auth.fusewp.test');
+define('FUSEWP_OAUTH_URL', defined('W3GUY_LOCAL') && W3GUY_LOCAL ? 'https://auth.fusewp.test' : 'https://auth.fusewp.com');
 
 define('FUSEWP_ROOT', wp_normalize_path(plugin_dir_path(FUSEWP_SYSTEM_FILE_PATH)));
 /** internally uses wp_normalize_path */
@@ -158,7 +159,8 @@ class Base
         Engage\Engage::get_instance();
         SendPulse\SendPulse::get_instance();
         BentoNow\BentoNow::get_instance();
-        Mailercloud::get_instance();
+        Mailercloud\Mailercloud::get_instance();
+        Copper\Copper::get_instance();
 
         add_action('groundhogg/loaded', function () {
             Groundhogg\Groundhogg::get_instance();

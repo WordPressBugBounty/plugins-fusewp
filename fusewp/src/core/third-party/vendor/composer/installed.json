@@ -382,11 +382,11 @@
         },
         {
             "name": "mailoptin\/authifly",
-            "version": "0.2.1779389499",
-            "version_normalized": "0.2.1779389499.0",
+            "version": "0.2.1782903804",
+            "version_normalized": "0.2.1782903804.0",
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_gdToO\/mailoptinauthifly-0-2-1779389499.zip"
+                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_KkxR6\/mailoptinauthifly-0-2-1782903804.zip"
             },
             "require": {
                 "composer\/installers": "~1.0",
@@ -421,7 +421,8 @@
                     "Microsoft.php",
                     "HighLevel.php",
                     "Google.php",
-                    "Birdsend.php"
+                    "Birdsend.php",
+                    "Copper.php"
                 ]
             },
             "license": [
@@ -764,17 +765,17 @@
         },
         {
             "name": "symfony\/polyfill-mbstring",
-            "version": "v1.38.1",
-            "version_normalized": "1.38.1.0",
+            "version": "v1.38.2",
+            "version_normalized": "1.38.2.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-mbstring.git",
-                "reference": "14c5439eec4ccff081ac14eca2dc57feb2a66d92"
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-mbstring\/zipball\/14c5439eec4ccff081ac14eca2dc57feb2a66d92",
-                "reference": "14c5439eec4ccff081ac14eca2dc57feb2a66d92",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-mbstring\/zipball\/d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
+                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
                 "shasum": ""
             },
             "require": {
@@ -787,7 +788,7 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "time": "2026-05-26T12:51:13+00:00",
+            "time": "2026-05-27T06:59:30+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -828,7 +829,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.38.1"
+                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.38.2"
             },
             "funding": [
                 {

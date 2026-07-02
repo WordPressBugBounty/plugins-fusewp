@@ -383,6 +383,19 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/images\/copper-integration.png" : {
+      "ft" : 32768,
+      "iS" : 13740,
+      "oA" : 0,
+      "oAP" : "\/assets\/images\/copper-integration.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/assets\/images\/drip-integration.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -1171,6 +1184,38 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/ConvertKit\/SyncAction.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Copper\/AdminSettingsPage.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Copper\/AdminSettingsPage.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Copper\/Copper.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Copper\/Copper.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Copper\/index.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Copper\/index.php",
+      "oF" : 0
+    },
+    "\/Integrations\/Copper\/SyncAction.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Integrations\/Copper\/SyncAction.php",
       "oF" : 0
     },
     "\/Integrations\/Drip\/APIClass.php" : {
@@ -2218,7 +2263,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-peach",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 773487681.88124001
+    "lastBuiltDate" : 802612051.05702603
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

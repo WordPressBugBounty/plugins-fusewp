@@ -163,12 +163,6 @@ class Settings extends AbstractSettingsPage
         $args = [
             'global_settings' => apply_filters('fusewp_global_settings_page', [
                 'section_title'                       => esc_html__('Global Settings', 'fusewp'),
-                'enable_external_profile_update_sync' => [
-                    'type'        => 'checkbox',
-                    'value'       => 'yes',
-                    'label'       => esc_html__('Enable Other Sync on Profile Update', 'fusewp'),
-                    'description' => esc_html__('Check this box if you want to trigger synchronization for our various membership and ecommerce plugin integrations when users profile are updated.', 'fusewp'),
-                ],
                 'install_missing_db_tables'           => [
                     'type'  => 'custom_field_block',
                     'label' => __('Install Missing DB Tables', 'fusewp'),

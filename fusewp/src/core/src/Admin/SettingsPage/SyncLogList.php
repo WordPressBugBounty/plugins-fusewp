@@ -198,7 +198,7 @@ class SyncLogList extends \WP_List_Table
         /** Process bulk action */
         $this->process_actions();
         $search_term = fusewpVarGET('s', '');
-        $per_page     = $this->get_items_per_page('sync_logs_per_page', 10);
+        $per_page     = $this->get_items_per_page('sync_logs_per_page', 20);
         $current_page = $this->get_pagenum();
         $total_items  = self::record_count($search_term);
         $this->set_pagination_args([

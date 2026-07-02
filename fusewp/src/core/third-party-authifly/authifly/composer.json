@@ -42,7 +42,8 @@
       "Microsoft.php",
       "HighLevel.php",
       "Google.php",
-      "Birdsend.php"
+      "Birdsend.php",
+      "Copper.php"
     ]
   },
   "config": {

@@ -5,7 +5,7 @@ Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 1.1.25.3
+Stable tag: 1.1.26.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -53,7 +53,7 @@ Map user profile information to custom fields or attributes in your email market
 
 = Integration with Ecommerce, Forms, LMS & Membership Plugins =
 
-FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, Salesforce, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Google Sheets, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, Ortto, GetResponse, Mailjet, Encharge, Sender, beehiiv, FluentCRM, MailPoet, Groundhogg, SendPulse, Bento, Mailercloud, BirdSend, Engage.so etc.
+FuseWP integrates with learning management systems (LMS), forms, membership, and ecommerce plugins to sync users and members to your email marketing list in Mailchimp, ActiveCampaign, Constant Contact, Campaign Monitor, Salesforce, HubSpot, Kit (ConvertKit), Zoho CRM, Zoho Campaigns, Brevo (Sendinblue), AWeber, Sendy, Klaviyo, Google Sheets, Keap (Infusionsoft), EmailOctopus, Drip, Flodesk, HighLevel, Omnisend, Ortto, GetResponse, Mailjet, Encharge, Sender, beehiiv, FluentCRM, MailPoet, Groundhogg, SendPulse, Bento, Mailercloud, BirdSend, Copper CRM, Engage.so etc.
 
 Say a user's membership or subscription status changes from Active to Cancelled; they will be removed from the Active email list and added to that of Cancelled.
 
@@ -183,6 +183,7 @@ WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Do
 * Bento
 * Mailercloud
 * BirdSend
+* Copper CRM
 * Engage.so
 * FluentCRM
 * Groundhogg
@@ -216,6 +217,13 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.26.0 =
+* Added [Copper CRM integration](https://fusewp.com/article/connect-wordpress-to-copper-crm/?ref=changelog).
+* Removed "Enable Other Sync on Profile Update" setting.
+* Added fusewp_remove_unsubscribe_sync_jobs_with_resubscribe_action filter.
+* Fixed EmailOctopus sync bug due to empty tag/fields data.
+* Improved beehiiv api class to respect rate limit headers.
 
 = 1.1.25.3 =
 * Updated klaviyo API version to 2026-04-15

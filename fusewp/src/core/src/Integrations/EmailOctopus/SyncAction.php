@@ -138,20 +138,22 @@ class SyncAction extends AbstractSyncAction
 
         $main_email = ! empty($old_email_address) ? $old_email_address : $email_address;
 
-        $parameters = [
+        $parameters = array_filter([
             'email_address' => $email_address,
             'fields'        => array_filter(
                 $this->transform_custom_field_data($custom_fields, $mappingUserDataEntity),
                 'fusewp_is_valid_data'
             ),
-            'tags'          => array_map('trim', explode(',', $tags)),
-        ];
+            'tags'          => ! empty($tags) ? array_map('trim', explode(',', $tags)) : '',
+        ], 'fusewp_is_valid_data');
 
         try {
             if ($this->member_exist($list_id, $main_email)) {
                 // https://emailoctopus.com/api-documentation/lists/update-contact
-                $parameters['tags'] = array_fill_keys($parameters['tags'], true);
-                $response           = $this->emailOctopusInstance->apiClass()->make_request(sprintf('lists/%s/contacts/%s', $list_id, md5(strtolower($main_email))), $parameters, 'put');
+                if ( ! empty($parameters['tags'])) {
+                    $parameters['tags'] = array_fill_keys($parameters['tags'], true);
+                }
+                $response = $this->emailOctopusInstance->apiClass()->make_request(sprintf('lists/%s/contacts/%s', $list_id, md5(strtolower($main_email))), $parameters, 'put');
 
             } else {
                 // https://emailoctopus.com/api-documentation/lists/create-contact

@@ -29,6 +29,21 @@ class SyncPage extends AbstractSettingsPage
         add_action('admin_init', [$this, 'save_changes']);
 
         add_filter('fusewp_admin_js_localize_args', [$this, 'localize_js']);
+
+        add_action('fusewp_admin_notices', [$this, 'settings_saved_notice']);
+    }
+
+    public function settings_saved_notice()
+    {
+        if (
+                fusewp_is_admin_page() &&
+                fusewpVarGET('fusewp_sync_action') == 'edit' &&
+                fusewpVarGET('settings-updated') == 'true'
+        ) {
+            echo '<div class="notice notice-success is-dismissible">';
+            echo '<p>' . esc_html__('Sync rule saved successfully.', 'fusewp') . '</p>';
+            echo '</div>';
+        }
     }
 
     public function localize_js($l10n_args)
@@ -215,7 +230,7 @@ class SyncPage extends AbstractSettingsPage
             }
         }
 
-        wp_safe_redirect(SyncList::edit_url($rule_id));
+        wp_safe_redirect(add_query_arg(['settings-updated' => 'true'], SyncList::edit_url($rule_id)));
         exit;
     }
 

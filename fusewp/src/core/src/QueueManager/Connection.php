@@ -23,6 +23,8 @@ class Connection extends DatabaseConnection
      */
     protected function remove_unsubscribe_sync_jobs_with_resubscribe_action()
     {
+        if (!apply_filters('fusewp_remove_unsubscribe_sync_jobs_with_resubscribe_action', true)) return;
+
         if (defined('FUSEWP_BULK_SYNC_PROCESS_TASK')) return;
 
         // limit to 10 (now extended to 100) so we don't have to deal with large queue data - just in case.
@@ -30,7 +32,7 @@ class Connection extends DatabaseConnection
 
         $result = $this->database->get_results($sql);
 
-        $subscribe_bucket   = [];
+        $subscribe_bucket = [];
         $unsubscribe_bucket = [];
 
         $unsubscribe_jobs_to_remove = [];
@@ -87,19 +89,20 @@ class Connection extends DatabaseConnection
         // whose sub is on-hold to a specific list and remove the user from the Active List. Because WooSub plugin typically changes the user status
         // to on-hold status before renewal and back to Active status after renewal, using this filter afford fusewp enough time to record the unsubscription and resubscription
         // and delay processing the jobs because of the status change so it can call remove_unsubscribe_sync_jobs_with_resubscribe_action() to prevent the unsubscription/resubscription in the connected CRM.
+        // Update: it does not work in some sites. An alternative solution is setting "fusewp_remove_unsubscribe_sync_jobs_with_resubscribe_action" filter to FALSE
         $delay += (int)apply_filters('fusewp_queue_manager_default_delay_seconds', 0);
 
         $result = $this->database->insert(
             $this->jobs_table,
             [
-                'job'          => serialize($job),
-                'priority'     => $priority,
+                'job' => serialize($job),
+                'priority' => $priority,
                 'available_at' => $this->datetime($delay),
-                'created_at'   => $this->datetime()
+                'created_at' => $this->datetime()
             ]
         );
 
-        if ( ! $result) {
+        if (!$result) {
             return false;
         }
 
@@ -110,7 +113,7 @@ class Connection extends DatabaseConnection
     {
         $this->remove_unsubscribe_sync_jobs_with_resubscribe_action();
         $this->release_reserved();
-        $sql     = $this->database->prepare("SELECT * FROM {$this->jobs_table} WHERE reserved_at IS NULL AND attempts <= 5 AND available_at <= %s ORDER BY priority, available_at, id LIMIT 1", $this->datetime());
+        $sql = $this->database->prepare("SELECT * FROM {$this->jobs_table} WHERE reserved_at IS NULL AND attempts <= 5 AND available_at <= %s ORDER BY priority, available_at, id LIMIT 1", $this->datetime());
         $raw_job = $this->database->get_row($sql);
         if (is_null($raw_job)) {
             return false;
