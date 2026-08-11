@@ -382,11 +382,12 @@
         },
         {
             "name": "mailoptin\/authifly",
-            "version": "0.2.1782903804",
-            "version_normalized": "0.2.1782903804.0",
+            "version": "0.2.1785158706",
+            "version_normalized": "0.2.1785158706.0",
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_KkxR6\/mailoptinauthifly-0-2-1782903804.zip"
+                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_11YjNh\/mailoptinauthifly-0-2-1785158706.zip",
+                "shasum": "667c41c317cf501d1aa17da105f3869f9bc2251d"
             },
             "require": {
                 "composer\/installers": "~1.0",

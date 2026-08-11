@@ -257,6 +257,9 @@ class Settings extends AbstractSettingsPage
 
             $wpdb->query("DELETE FROM $jobs_table WHERE job LIKE '%fwp_bulk_syncing%'");
 
+            // also delete processed cache
+            delete_option('fusewp_bulk_sync_processed_cache');
+
             wp_safe_redirect(add_query_arg('settings-updated', 'true', FUSEWP_SETTINGS_GENERAL_SETTINGS_PAGE));
             exit;
         }

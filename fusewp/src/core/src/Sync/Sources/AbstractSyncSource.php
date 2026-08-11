@@ -173,6 +173,8 @@ abstract class AbstractSyncSource
 
         $email_address = ! empty($email_address) ? $email_address : $user_data->get('user_email');
 
+        $email_address = apply_filters('fusewp_sync_email_address', $email_address, $rule, $user_id, $extras);
+
         $destinations = fusewpVar($rule, 'destinations', [], true);
 
         if ( ! empty($destinations) && is_string($destinations)) {
@@ -198,6 +200,12 @@ abstract class AbstractSyncSource
                         $list_id = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
 
                         $bucket_key = md5(sprintf('%s:%s:%s:%s', $this->id, $sync_action->get_integration_id(), $list_id, $email_address));
+
+                        // The "any" pass only feeds "Any status" destinations; skip status-specific
+                        // ones here to avoid queuing an unsubscribe that races the real subscribe.
+                        if ($status === 'any' && $destination['destination_item'] !== 'any') {
+                            continue;
+                        }
 
                         if ($destination['destination_item'] == 'any') {
 

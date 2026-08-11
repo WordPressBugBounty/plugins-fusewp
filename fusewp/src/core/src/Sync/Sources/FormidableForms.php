@@ -272,9 +272,16 @@ class FormidableForms extends AbstractSyncSource
                         $custom_fields  = fusewpVar($destination, $sync_action::CUSTOM_FIELDS_FIELD_ID, []);
                         $email_field_id = self::get_email_field_id($custom_fields);
 
+                        $email_address = '';
+
                         if ( ! empty($email_field_id) && isset($entry_data[$email_field_id])) {
                             $email_address = $entry_data[$email_field_id];
-                            $list_id       = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
+                        }
+
+                        $email_address = apply_filters('fusewp_sync_formidable_forms_email_address', $email_address, $rule, $entry_data['user_id'], $entry_data);
+
+                        if ( ! empty($email_address)) {
+                            $list_id = fusewpVar($destination, $sync_action::EMAIL_LIST_FIELD_ID, '');
 
                             QueueManager::push([
                                 'action'                => 'subscribe_user',

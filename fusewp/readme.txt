@@ -5,7 +5,7 @@ Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 1.1.26.0
+Stable tag: 1.1.26.1
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -217,6 +217,12 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.26.1 =
+* Fixed: Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array.
+* Added fusewp_sync_email_address filter in Formidable Forms sync.
+* Added filter: fusewp_sync_email_address.
+* Clear bulk-sync cache when the sync queue is deleted.
 
 = 1.1.26.0 =
 * Added [Copper CRM integration](https://fusewp.com/article/connect-wordpress-to-copper-crm/?ref=changelog).

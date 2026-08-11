@@ -245,7 +245,9 @@ class SyncLogList extends \WP_List_Table
 
             check_admin_referer('bulk-' . $this->_args['plural']);
 
-            $log_ids = array_map('absint', $_POST['sync_log_id']);
+            $log_ids = isset($_REQUEST['sync_log_id']) && is_array($_REQUEST['sync_log_id']) ? $_REQUEST['sync_log_id'] : [];
+
+            $log_ids = array_map('absint', $log_ids);
 
             foreach ($log_ids as $log_id) {
                 fusewp_delete_error_log($log_id);
