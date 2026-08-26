@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: FuseWP - Lite 1.1.26.1\n"
+"Project-Id-Version: FuseWP - Lite 1.1.26.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fusewp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-11T11:59:51+00:00\n"
+"POT-Creation-Date: 2026-08-26T11:01:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: fusewp\n"
@@ -297,7 +297,7 @@ msgid "Double-Optin Control"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:265
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:135
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:141
 msgid "Custom Field Mapping"
 msgstr ""
 
@@ -310,22 +310,22 @@ msgid "Google Sheets, Salesforce & Ortto"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:268
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:151
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:157
 msgid "WooCommerce Subscriptions Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:269
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:155
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:161
 msgid "WooCommerce Memberships Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:270
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:159
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:165
 msgid "Easy Digital Downloads Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:271
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:171
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:177
 msgid "MemberPress Sync"
 msgstr ""
 
@@ -334,7 +334,7 @@ msgid "Advanced WPForms Forms Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:273
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:211
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:217
 msgid "Advanced Gravity Forms Sync"
 msgstr ""
 
@@ -343,58 +343,58 @@ msgid "More Form Plugins Support"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:275
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:167
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:173
 msgid "ProfilePress Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:276
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:175
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:181
 msgid "Paid Memberships Pro Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:277
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:199
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:205
 msgid "Restrict Content Pro Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:278
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:179
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:185
 msgid "LearnDash Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:279
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:183
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:189
 msgid "LifterLMS Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:280
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:281
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:187
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:193
 msgid "Tutor LMS Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:282
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:191
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:197
 msgid "MasterStudy LMS Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:283
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:195
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:201
 msgid "Sensei LMS Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:284
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:203
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:209
 msgid "FluentCommunity Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:285
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:163
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:169
 msgid "WP Travel Engine Sync"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/AbstractSettingsPage.php:286
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:207
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:213
 msgid "Advanced Custom Fields Sync"
 msgstr ""
 
@@ -423,55 +423,55 @@ msgstr ""
 msgid "If you are enjoying FuseWP and find it useful, please consider leaving a ★★★★★ review on WordPress.org. %sLeave a Review%s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:34
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:44
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:40
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:50
 msgid "License"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:73
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:79
 msgid "You're using FuseWP Lite - no license needed. Enjoy! 😊"
 msgstr ""
 
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:81
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:87
 #, php-format
 msgid "Already purchased? Simply %1$sretrieve your license key%2$s and enter it below to connect with FuseWP Pro."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:108
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:114
 msgid "Connecting..."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:109
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:111
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:115
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:117
 msgid "Unlock Premium Features"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:124
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:130
 msgid "Unlock Powerful Premium Features"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:131
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:137
 msgid "Double Optin Control"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:139
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:145
 msgid "Assign Tags to Users"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:143
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:149
 msgid "Google Sheets Integration"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:147
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:153
 msgid "Salesforce & Ortto Integrations"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:215
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:221
 msgid "Advanced WPForms Sync"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:233
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:239
 #: src/core/src/Integrations/Brevo/Brevo.php:252
 #: src/core/src/Integrations/Flodesk/Flodesk.php:196
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:44
@@ -481,34 +481,42 @@ msgid "Upgrade to FuseWP Premium"
 msgstr ""
 
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:246
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:252
 #, php-format
 msgid "<strong>Bonus</strong>: Loyal FuseWP Lite users get <u>10%% off</u> regular price using the coupon code <u>10PERCENTOFF</u>, automatically applied at checkout. %1$sUpgrade to Premium →%2$s"
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:291
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:297
 msgid "You are not allowed to install plugins."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:297
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:303
 msgid "Please enter your license key to connect."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:301
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:307
 msgid "Only the Lite version can be upgraded."
 msgstr ""
 
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:314
+msgid "No sources of randomness found on the server."
+msgstr ""
+
 #. translators: %1$s Opening anchor tag, do not translate. %2$s Closing anchor tag, do not translate.
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:334
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:349
 msgid "Oops! We could not automatically install an upgrade. Please download the plugin from fusewp.com and install it manually."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:373
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:434
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:398
+msgid "The connection token has expired. Please try again."
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:412
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:473
 msgid "Plugin installed & activated."
 msgstr ""
 
-#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:414
+#: src/core/src/Admin/SettingsPage/LicenseUpgrader.php:453
 msgid "You are not licensed."
 msgstr ""
 
@@ -2487,6 +2495,14 @@ msgstr ""
 #: src/core/src/Integrations/Salesforce/SyncAction.php:53
 #, php-format
 msgid "Select the topics to assign to contacts. %sLearn more about topics%s"
+msgstr ""
+
+#: src/core/src/Integrations/Sender/APIClass.php:75
+msgid "Sender.net API rate limit exceeded. Please try again later."
+msgstr ""
+
+#: src/core/src/Integrations/Sender/APIClass.php:98
+msgid "Sender.net API rate limit exceeded after maximum retries."
 msgstr ""
 
 #: src/core/src/Integrations/Sender/Sender.php:70

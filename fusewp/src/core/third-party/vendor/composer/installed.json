@@ -603,26 +603,26 @@
         },
         {
             "name": "sniccowp\/php-scoper-wordpress-excludes",
-            "version": "6.9.1",
-            "version_normalized": "6.9.1.0",
+            "version": "7.0.1",
+            "version_normalized": "7.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes.git",
-                "reference": "94867711087d0efc3d361dbe068044e0124f4c0b"
+                "reference": "30c25b093df4ed781537e19ccbd0e5ec08ef3c31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/snicco\/php-scoper-wordpress-excludes\/zipball\/94867711087d0efc3d361dbe068044e0124f4c0b",
-                "reference": "94867711087d0efc3d361dbe068044e0124f4c0b",
+                "url": "https:\/\/api.github.com\/repos\/snicco\/php-scoper-wordpress-excludes\/zipball\/30c25b093df4ed781537e19ccbd0e5ec08ef3c31",
+                "reference": "30c25b093df4ed781537e19ccbd0e5ec08ef3c31",
                 "shasum": ""
             },
             "require-dev": {
                 "php": "^7.4",
                 "php-stubs\/wordpress-globals": "0.2.0",
-                "php-stubs\/wordpress-stubs": "6.9.1",
+                "php-stubs\/wordpress-stubs": "7.0.1",
                 "sniccowp\/php-scoper-excludes": "dev-master"
             },
-            "time": "2026-02-04T00:34:47+00:00",
+            "time": "2026-07-11T00:30:11+00:00",
             "type": "library",
             "installation-source": "dist",
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -647,7 +647,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/issues",
-                "source": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/tree\/6.9.1"
+                "source": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/tree\/7.0.1"
             },
             "install-path": "..\/sniccowp\/php-scoper-wordpress-excludes"
         },

@@ -4,8 +4,8 @@ Donate link: https://fusewp.com/pricing/
 Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.0
 Requires PHP: 7.4
-Tested up to: 7.0
-Stable tag: 1.1.26.1
+Tested up to: 7.1
+Stable tag: 1.1.26.1.1
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -217,6 +217,9 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.26.1.1 =
+* Improved security of license upgrader.
 
 = 1.1.26.1 =
 * Fixed: Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array.

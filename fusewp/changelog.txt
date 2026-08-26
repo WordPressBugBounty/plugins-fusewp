@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.1.26.1.1 =
+* Improved security of license upgrader.
+
 = 1.1.26.1 =
 * Fixed: Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array.
 * Added fusewp_sync_email_address filter in Formidable Forms sync.
