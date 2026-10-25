@@ -37,7 +37,7 @@ class SyncAction extends AbstractSyncAction
             if (false === $options) {
 
                 $response = $this->hubspotInstance->apiClass()->apiRequest(
-                    sprintf('crm/v3/properties/contacts/%s', $property)
+                    sprintf('crm/properties/%s/contacts/%s', $this->hubspotInstance->apiClass()->apiVersion, $property)
                 );
 
                 $options = [];
@@ -73,7 +73,9 @@ class SyncAction extends AbstractSyncAction
 
             try {
 
-                $response = $this->hubspotInstance->apiClass()->apiRequest('crm/v3/owners/');
+                $response = $this->hubspotInstance->apiClass()->apiRequest(
+                    sprintf('crm/owners/%s', $this->hubspotInstance->apiClass()->apiVersion)
+                );
 
                 if ( ! empty($response->results)) {
 
@@ -312,7 +314,7 @@ class SyncAction extends AbstractSyncAction
             $apiClass = $this->hubspotInstance->apiClass();
 
             $apiClass->apiRequest(
-                "crm/v3/lists/$list_id/memberships/remove",
+                sprintf("crm/lists/%s/%s/memberships/remove", $this->hubspotInstance->apiClass()->apiVersion, $list_id),
                 'PUT',
                 $parameters,
                 ['Content-Type' => 'application/json']
@@ -344,7 +346,7 @@ class SyncAction extends AbstractSyncAction
             ], $this, $email_address);
 
             $contacts = $this->hubspotInstance->apiClass()->apiRequest(
-                'crm/v3/objects/contacts/batch/read',
+                sprintf('crm/objects/%s/contacts/batch/read', $this->hubspotInstance->apiClass()->apiVersion),
                 'POST',
                 $parameters,
                 ['Content-Type' => 'application/json']
@@ -369,11 +371,19 @@ class SyncAction extends AbstractSyncAction
 
         if (empty($v3_list_id)) {
 
-            $response = $this->hubspotInstance->apiClass()->apiRequest('crm/v3/lists/idmapping?legacyListId=' . $list_id);
+            try {
 
-            if (isset($response->listId)) {
-                $v3_list_id = $response->listId;
-                set_transient($cache_key, $v3_list_id, MONTH_IN_SECONDS);
+                $response = $this->hubspotInstance->apiClass()->apiRequest(
+                    sprintf('crm/lists/%s/idmapping?legacyListId=%s', $this->hubspotInstance->apiClass()->apiVersion, $list_id)
+                );
+
+                if (isset($response->listId)) {
+                    $v3_list_id = $response->listId;
+                    set_transient($cache_key, $v3_list_id, MONTH_IN_SECONDS);
+                }
+
+            } catch (\Exception $e) {
+                $v3_list_id = false;
             }
         }
 

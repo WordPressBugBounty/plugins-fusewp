@@ -13,5 +13,6 @@ namespace FuseWPVendor\Composer\Installers;
  */
 class KanboardInstaller extends BaseInstaller
 {
+    /** @var array<string, string> */
     protected $locations = array('plugin' => 'plugins/{$name}/');
 }

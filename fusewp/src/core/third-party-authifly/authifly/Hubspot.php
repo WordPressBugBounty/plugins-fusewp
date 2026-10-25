@@ -11,6 +11,8 @@ use Authifly\Data;
  */
 class Hubspot extends OAuth2
 {
+    public $apiVersion = '2026-09';
+
     /**
      * {@inheritdoc}
      */
@@ -20,11 +22,6 @@ class Hubspot extends OAuth2
      * {@inheritdoc}
      */
     protected $authorizeUrl = 'https://app.hubspot.com/oauth/authorize';
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $accessTokenUrl = 'https://api.hubapi.com/oauth/2026-03/token';
 
     /**
      * {@inheritdoc}
@@ -43,6 +40,8 @@ class Hubspot extends OAuth2
      */
     protected function initialize()
     {
+        $this->accessTokenUrl = sprintf('https://api.hubapi.com/oauth/%s/token', $this->apiVersion);
+
         parent::initialize();
 
         $refresh_token = $this->getStoredData('refresh_token');
@@ -110,9 +109,9 @@ class Hubspot extends OAuth2
      */
     public function getEmailList($count = 500, $prefix = '')
     {
-        $response = $this->apiRequest("crm/v3/lists/search", "POST", ['count' => $count]);
+        $response = $this->apiRequest(sprintf("crm/lists/%s/all", $this->apiVersion), "POST", ['count' => $count]);
         $data     = new Data\Collection($response);
-        $lists    = $data->filter('lists')->toArray();
+        $lists    = $data->filter('results')->toArray();
 
         if ( ! is_array($lists)) {
             return array();
@@ -137,7 +136,7 @@ class Hubspot extends OAuth2
      */
     public function getListCustomFields()
     {
-        $fields = $this->apiRequest("crm/v3/properties/contacts");
+        $fields = $this->apiRequest(sprintf("crm/properties/%s/contacts", $this->apiVersion));
 
         if (empty($fields->results)) {
             return [];
@@ -190,10 +189,10 @@ class Hubspot extends OAuth2
         }
 
         try {
-            $response = $this->apiRequest("crm/v3/objects/contacts", 'POST', $contact_data);
+            $response = $this->apiRequest(sprintf("crm/objects/%s/contacts", $this->apiVersion), 'POST', $contact_data);
         } catch (\Exception $e) {
             if (409 === $this->httpClient->getResponseHttpCode()) {
-                $response = $this->apiRequest("crm/v3/objects/contacts/$email?idProperty=email", 'PATCH', $contact_data);
+                $response = $this->apiRequest(sprintf("crm/objects/%s/contacts/$email?idProperty=email", $this->apiVersion), 'PATCH', $contact_data);
             } else {
                 throw $e;
             }
@@ -219,6 +218,6 @@ class Hubspot extends OAuth2
      */
     private function addSubscriberToList($list_id, $contact_id)
     {
-        return $this->apiRequest("https://api.hubapi.com/crm/v3/lists/$list_id/memberships/add", 'PUT', [$contact_id]);
+        return $this->apiRequest("https://api.hubapi.com/crm/lists/{$this->apiVersion}/$list_id/memberships/add", 'PUT', [$contact_id]);
     }
 }

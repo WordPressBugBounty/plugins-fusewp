@@ -16,6 +16,9 @@ class SyncQueueHandler
     {
         if (isset($item['action']) && in_array($item['action'], ['subscribe_user', 'unsubscribe_user'])) {
 
+            // eg. the opt-in checkbox stops a subscribe for a contact who did not consent.
+            if ( ! apply_filters('fusewp_sync_queue_should_process', true, $item)) return;
+
             $integration = fusewp_get_registered_sync_integrations($item['integration']);
             $sync_action = $integration->get_sync_action();
             $list_id     = $item['list_id'];

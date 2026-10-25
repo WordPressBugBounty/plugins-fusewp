@@ -7,6 +7,7 @@ final class Core
     const sync_table_name = 'fusewp_sync';
     const sync_log_table_name = 'fusewp_sync_log';
     const queue_table_name = 'fusewp_queue_jobs';
+    const optin_consent_table_name = 'fusewp_optin_consents';
 
     public function __construct()
     {
@@ -32,6 +33,13 @@ final class Core
         global $wpdb;
 
         return $wpdb->prefix . self::queue_table_name;
+    }
+
+    public static function optin_consent_db_table()
+    {
+        global $wpdb;
+
+        return $wpdb->prefix . self::optin_consent_table_name;
     }
 
     public static function get_instance()

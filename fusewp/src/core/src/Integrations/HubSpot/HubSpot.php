@@ -76,7 +76,7 @@ class HubSpot extends AbstractIntegration
 
                 if ($fields === false) {
 
-                    $fields = $this->apiClass()->apiRequest("crm/v3/properties/contacts");
+                    $fields = $this->apiClass()->apiRequest(sprintf("crm/properties/%s/contacts", $this->apiClass()->apiVersion));
 
                     set_transient('fusewp_hubspot_contact_fields', $fields, 12 * HOUR_IN_SECONDS);
                 }

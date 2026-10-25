@@ -50,17 +50,17 @@
         },
         {
             "name": "carbonphp\/carbon-doctrine-types",
-            "version": "2.1.0",
-            "version_normalized": "2.1.0.0",
+            "version": "2.1.1",
+            "version_normalized": "2.1.1.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/CarbonPHP\/carbon-doctrine-types.git",
-                "reference": "99f76ffa36cce3b70a4a6abce41dba15ca2e84cb"
+                "reference": "bf72f821b9952722ea9f9c3912f85946e1af9e3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/CarbonPHP\/carbon-doctrine-types\/zipball\/99f76ffa36cce3b70a4a6abce41dba15ca2e84cb",
-                "reference": "99f76ffa36cce3b70a4a6abce41dba15ca2e84cb",
+                "url": "https:\/\/api.github.com\/repos\/CarbonPHP\/carbon-doctrine-types\/zipball\/bf72f821b9952722ea9f9c3912f85946e1af9e3d",
+                "reference": "bf72f821b9952722ea9f9c3912f85946e1af9e3d",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,7 @@
                 "nesbot\/carbon": "^2.71.0 || ^3.0.0",
                 "phpunit\/phpunit": "^10.3"
             },
-            "time": "2023-12-11T17:09:12+00:00",
+            "time": "2026-09-06T14:11:23+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -102,7 +102,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/CarbonPHP\/carbon-doctrine-types\/issues",
-                "source": "https:\/\/github.com\/CarbonPHP\/carbon-doctrine-types\/tree\/2.1.0"
+                "source": "https:\/\/github.com\/CarbonPHP\/carbon-doctrine-types\/tree\/2.1.1"
             },
             "funding": [
                 {
@@ -166,41 +166,39 @@
         },
         {
             "name": "composer\/installers",
-            "version": "v1.12.0",
-            "version_normalized": "1.12.0.0",
+            "version": "v2.3.0",
+            "version_normalized": "2.3.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/composer\/installers.git",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/composer\/installers\/zipball\/d20a64ed3c94748397ff5973488761b22f6d3f19",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "url": "https:\/\/api.github.com\/repos\/composer\/installers\/zipball\/12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "replace": {
-                "roundcube\/plugin-installer": "*",
-                "shama\/baton": "*"
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "composer\/composer": "1.6.* || ^2.0",
-                "composer\/semver": "^1 || ^3",
-                "phpstan\/phpstan": "^0.12.55",
-                "phpstan\/phpstan-phpunit": "^0.12.16",
-                "symfony\/phpunit-bridge": "^4.2 || ^5",
-                "symfony\/process": "^2.3"
+                "composer\/composer": "^1.10.27 || ^2.7",
+                "composer\/semver": "^1.7.2 || ^3.4.0",
+                "phpstan\/phpstan": "^1.11",
+                "phpstan\/phpstan-phpunit": "^1",
+                "symfony\/phpunit-bridge": "^7.1.1",
+                "symfony\/process": "^5 || ^6 || ^7"
             },
-            "time": "2021-09-13T08:19:44+00:00",
+            "time": "2024-06-24T20:46:46+00:00",
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
             },
             "installation-source": "dist",
             "autoload": {
@@ -222,7 +220,6 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "https:\/\/composer.github.io\/installers\/",
             "keywords": [
-                "Craft",
                 "Dolibarr",
                 "Eliasis",
                 "Hurad",
@@ -243,7 +240,6 @@
                 "Whmcs",
                 "WolfCMS",
                 "agl",
-                "aimeos",
                 "annotatecms",
                 "attogram",
                 "bitrix",
@@ -252,6 +248,7 @@
                 "cockpit",
                 "codeigniter",
                 "concrete5",
+                "concreteCMS",
                 "croogo",
                 "dokuwiki",
                 "drupal",
@@ -262,7 +259,6 @@
                 "grav",
                 "installer",
                 "itop",
-                "joomla",
                 "known",
                 "kohana",
                 "laravel",
@@ -271,6 +267,7 @@
                 "magento",
                 "majima",
                 "mako",
+                "matomo",
                 "mediawiki",
                 "miaoxing",
                 "modulework",
@@ -290,9 +287,7 @@
                 "silverstripe",
                 "sydes",
                 "sylius",
-                "symfony",
                 "tastyigniter",
-                "typo3",
                 "wordpress",
                 "yawik",
                 "zend",
@@ -300,7 +295,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/composer\/installers\/issues",
-                "source": "https:\/\/github.com\/composer\/installers\/tree\/v1.12.0"
+                "source": "https:\/\/github.com\/composer\/installers\/tree\/v2.3.0"
             },
             "funding": [
                 {
@@ -382,15 +377,15 @@
         },
         {
             "name": "mailoptin\/authifly",
-            "version": "0.2.1785158706",
-            "version_normalized": "0.2.1785158706.0",
+            "version": "0.2.1791913678",
+            "version_normalized": "0.2.1791913678.0",
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_11YjNh\/mailoptinauthifly-0-2-1785158706.zip",
-                "shasum": "667c41c317cf501d1aa17da105f3869f9bc2251d"
+                "url": "https:\/\/php.fury.io\/uDXRvLf8b2ywvgcokC7z\/mailoptin\/~\/up\/ver_2g4paL\/mailoptinauthifly-0-2-1791913678.zip",
+                "shasum": "c210c42c8a23438477be6657c40baf7c60e1866b"
             },
             "require": {
-                "composer\/installers": "~1.0",
+                "composer\/installers": "~2.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -603,26 +598,26 @@
         },
         {
             "name": "sniccowp\/php-scoper-wordpress-excludes",
-            "version": "7.0.1",
-            "version_normalized": "7.0.1.0",
+            "version": "7.1.0",
+            "version_normalized": "7.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes.git",
-                "reference": "30c25b093df4ed781537e19ccbd0e5ec08ef3c31"
+                "reference": "d8ad8aae8a051a4f332150f37a7bf96df1d11d0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/snicco\/php-scoper-wordpress-excludes\/zipball\/30c25b093df4ed781537e19ccbd0e5ec08ef3c31",
-                "reference": "30c25b093df4ed781537e19ccbd0e5ec08ef3c31",
+                "url": "https:\/\/api.github.com\/repos\/snicco\/php-scoper-wordpress-excludes\/zipball\/d8ad8aae8a051a4f332150f37a7bf96df1d11d0a",
+                "reference": "d8ad8aae8a051a4f332150f37a7bf96df1d11d0a",
                 "shasum": ""
             },
             "require-dev": {
                 "php": "^7.4",
                 "php-stubs\/wordpress-globals": "0.2.0",
-                "php-stubs\/wordpress-stubs": "7.0.1",
+                "php-stubs\/wordpress-stubs": "7.1.0",
                 "sniccowp\/php-scoper-excludes": "dev-master"
             },
-            "time": "2026-07-11T00:30:11+00:00",
+            "time": "2026-08-28T02:50:05+00:00",
             "type": "library",
             "installation-source": "dist",
             "notification-url": "https:\/\/packagist.org\/downloads\/",
@@ -647,7 +642,7 @@
             ],
             "support": {
                 "issues": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/issues",
-                "source": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/tree\/7.0.1"
+                "source": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/tree\/7.1.0"
             },
             "install-path": "..\/sniccowp\/php-scoper-wordpress-excludes"
         },
@@ -766,17 +761,17 @@
         },
         {
             "name": "symfony\/polyfill-mbstring",
-            "version": "v1.38.2",
-            "version_normalized": "1.38.2.0",
+            "version": "v1.43.0",
+            "version_normalized": "1.43.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-mbstring.git",
-                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6"
+                "reference": "4d5d331bf731e0aedbc6b2f5e61135b7b7996a72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-mbstring\/zipball\/d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
-                "reference": "d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-mbstring\/zipball\/4d5d331bf731e0aedbc6b2f5e61135b7b7996a72",
+                "reference": "4d5d331bf731e0aedbc6b2f5e61135b7b7996a72",
                 "shasum": ""
             },
             "require": {
@@ -789,7 +784,7 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "time": "2026-05-27T06:59:30+00:00",
+            "time": "2026-09-24T15:19:04+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -830,7 +825,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.38.2"
+                "source": "https:\/\/github.com\/symfony\/polyfill-mbstring\/tree\/v1.43.0"
             },
             "funding": [
                 {
@@ -854,23 +849,23 @@
         },
         {
             "name": "symfony\/polyfill-php80",
-            "version": "v1.37.0",
-            "version_normalized": "1.37.0.0",
+            "version": "v1.43.0",
+            "version_normalized": "1.43.0.0",
             "source": {
                 "type": "git",
                 "url": "https:\/\/github.com\/symfony\/polyfill-php80.git",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-php80\/zipball\/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
-                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-php80\/zipball\/9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
+                "reference": "9c6a5d6b01ca51d486c813e9a9c0ed55f208bb74",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2"
             },
-            "time": "2026-04-10T16:19:22+00:00",
+            "time": "2026-09-25T15:50:05+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -917,7 +912,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-php80\/tree\/v1.37.0"
+                "source": "https:\/\/github.com\/symfony\/polyfill-php80\/tree\/v1.43.0"
             },
             "funding": [
                 {

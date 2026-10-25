@@ -6,7 +6,7 @@ class DBUpdates
 {
     public static $instance;
 
-    const DB_VER = 1;
+    const DB_VER = 2;
 
     public function init_options()
     {
@@ -74,6 +74,14 @@ class DBUpdates
                 ) {$charset_collate};";
 
         \dbDelta($sql);
+    }
+
+    public function update_routine_2()
+    {
+        global $wpdb;
+        require_once \ABSPATH . 'wp-admin/includes/upgrade.php';
+        $wpdb->hide_errors();
+        \dbDelta(Optin\OptinConsent::create_table_sql($wpdb->get_charset_collate()));
     }
 
     public static function get_instance()

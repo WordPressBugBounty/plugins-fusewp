@@ -167,7 +167,9 @@ class Curl implements HttpClientInterface
             }
         }
 
-        curl_close($curl);
+        if (PHP_VERSION_ID < 80000) {
+            curl_close($curl);
+        }
 
         return $this->responseBody;
     }

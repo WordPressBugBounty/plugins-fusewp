@@ -18,6 +18,7 @@ function fusewp_mo_uninstall_function()
         $drop_tables[] = "DROP TABLE IF EXISTS " . Core::sync_rule_db_table();
         $drop_tables[] = "DROP TABLE IF EXISTS " . Core::sync_log_db_table();
         $drop_tables[] = "DROP TABLE IF EXISTS " . Core::queue_db_table();
+        $drop_tables[] = "DROP TABLE IF EXISTS " . Core::optin_consent_db_table();
 
         foreach ($drop_tables as $tables) {
             $wpdb->query($tables);

@@ -9,19 +9,14 @@ namespace FuseWPVendor\Composer\Installers;
  */
 class PiwikInstaller extends BaseInstaller
 {
-    /**
-     * @var array
-     */
+    /** @var array<string, string> */
     protected $locations = array('plugin' => 'plugins/{$name}/');
     /**
      * Format package name to CamelCase
-     * @param array $vars
-     *
-     * @return array
      */
-    public function inflectPackageVars($vars)
+    public function inflectPackageVars(array $vars): array
     {
-        $vars['name'] = strtolower(preg_replace('/(?<=\w)([A-Z])/', 'FuseWPVendor\_\1', $vars['name']));
+        $vars['name'] = strtolower($this->pregReplace('/(?<=\w)([A-Z])/', 'FuseWPVendor\_\1', $vars['name']));
         $vars['name'] = str_replace(array('-', '_'), ' ', $vars['name']);
         $vars['name'] = str_replace(' ', '', ucwords($vars['name']));
         return $vars;

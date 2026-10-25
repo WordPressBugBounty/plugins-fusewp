@@ -2,10 +2,10 @@
 Contributors: fusewp, properfraction, collizo4sky, richienabuk
 Donate link: https://fusewp.com/pricing/
 Tags: google sheets, automation, marketing, mailchimp, membership
-Requires at least: 6.0
-Requires PHP: 7.4
+Requires at least: 6.9
+Requires PHP: 8.0
 Tested up to: 7.1
-Stable tag: 1.1.26.1.1
+Stable tag: 1.1.27.0
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -23,6 +23,8 @@ https://www.youtube.com/watch?v=7CqQslIu6Xg&rel=0
 FuseWP [subscribes WordPress users after registration to your email list based on their user roles](https://fusewp.com/article/sync-wordpress-users-email-list-based-on-user-roles/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion). If users update their profile information or change their account email address, their profile changes are automatically synchronized to your email marketing software and CRM. And if users' accounts are deleted, they are automatically unsubscribed.
 
 With FuseWP, you can [export, bulk-sync, or batch-process existing WordPress users](https://fusewp.com/article/bulk-sync-existing-users-memberships-records/) to your CRM and email marketing platforms as contacts.
+
+**Opt-in Checkbox:** Add an opt-in checkbox so that only users and contacts who consent to join your email list are synced to your CRM and email marketing software. This helps you respect subscriber consent and meet privacy requirements such as GDPR.
 
 FuseWP Lite connects WordPress form plugin to CRM and email marketing software so leads are synced to your email list after form submissions. They include: Contact Form 7, Gravity Forms, WPForms, Fluent Forms, Ninja Forms, Formidable Forms, Forminator Forms, Everest Forms, WS Form, SureForms.
 
@@ -143,12 +145,12 @@ FuseWP also integrates with affiliate plugins including [SliceWP](https://fusewp
 
 ### Other Integration
 
-FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, LifterLMS, MemberPress, GiveWP, Paid Memberships Pro, Tutor LMS, Academy LMS, wpForo, Profile Builder, Paid Member Subscriptions, WP Travel Engine.
+FuseWP supports various e-commerce, forms, and user registration plugins that allow users to register and update their profiles in WordPress, with special compatibility for WooCommerce, Easy Digital Downloads, ProfilePress, Ultimate Member, User Registration, UsersWP, LifterLMS, MemberPress, GiveWP, Paid Memberships Pro, Tutor LMS, Academy LMS, wpForo, Profile Builder, Paid Member Subscriptions, WP Travel Engine.
 
 [Advanced Custom Fields](https://fusewp.com/article/advanced-custom-fields/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion): FuseWP can detect custom fields added by Advanced Custom Fields (ACF) to the user profile page in the WordPress dashboard so you can sync the field data to your email marketing platform and CRM.
 
 ### Supported Forms, LMS, Ecommerce and Membership Plugins
-WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, Ninja Forms, Forminator Forms, Fluent Forms, Formidable Forms, Everest Forms, SureForms, WS Form, ProfilePress, WP Travel Engine, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, MasterStudy LMS, Sensei LMS, FluentCommunity, Paid Member Subscriptions, AffiliateWP, SliceWP.
+WooCommerce, WooCommerce Memberships, WooCommerce Subscriptions, Easy Digital Downloads, MemberPress, Gravity Forms, WPForms, Ninja Forms, Forminator Forms, Fluent Forms, Formidable Forms, Everest Forms, SureForms, WS Form, ProfilePress, User Registration, UsersWP, WP Travel Engine, Paid Memberships Pro, Restrict Content Pro, LearnDash, LifterLMS, Tutor LMS, GiveWP, Academy LMS, MasterStudy LMS, Sensei LMS, FluentCommunity, Paid Member Subscriptions, AffiliateWP, SliceWP.
 
 ### Supported Email Marketing & CRM Integrations
 
@@ -217,6 +219,12 @@ Navigate to your WordPress "Plugins" page inside of your WordPress dashboard, an
 Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) with any questions.
 
 == Changelog ==
+
+= 1.1.27.0 =
+* Premium: Added User Registration plugin integration
+* Premium: Added UsersWP plugin integration.
+* Added Opt-in checkbox: only sync contacts who consented.
+* Updated HubSpot API version to 2026-09.
 
 = 1.1.26.1.1 =
 * Improved security of license upgrader.

@@ -4,6 +4,7 @@ namespace FuseWP\Core\RegisterActivation;
 
 
 use FuseWP\Core\Core;
+use FuseWP\Core\Optin\OptinConsent;
 
 class CreateDBTables
 {
@@ -49,6 +50,8 @@ class CreateDBTables
                     created_at datetime NOT NULL,
                     PRIMARY KEY (id)
                 ) $collate;";
+
+        $sqls[] = OptinConsent::create_table_sql($collate);
 
         $sqls = apply_filters('fusewp_create_database_tables', $sqls, $collate);
 

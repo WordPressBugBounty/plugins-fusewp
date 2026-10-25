@@ -5,13 +5,17 @@ namespace FuseWPVendor\Composer\Installers;
 use FuseWPVendor\Composer\Package\PackageInterface;
 class ExpressionEngineInstaller extends BaseInstaller
 {
-    protected $locations = array();
+    /** @var array<string, string> */
     private $ee2Locations = array('addon' => 'system/expressionengine/third_party/{$name}/', 'theme' => 'themes/third_party/{$name}/');
+    /** @var array<string, string> */
     private $ee3Locations = array('addon' => 'system/user/addons/{$name}/', 'theme' => 'themes/user/{$name}/');
-    public function getInstallPath(PackageInterface $package, $frameworkType = '')
+    public function getLocations(string $frameworkType): array
     {
-        $version = "{$frameworkType}Locations";
-        $this->locations = $this->{$version};
-        return parent::getInstallPath($package, $frameworkType);
+        if ($frameworkType === 'ee2') {
+            $this->locations = $this->ee2Locations;
+        } else {
+            $this->locations = $this->ee3Locations;
+        }
+        return $this->locations;
     }
 }

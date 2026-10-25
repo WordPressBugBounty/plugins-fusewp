@@ -1,0 +1,25 @@
+/* Opt-in Checkbox settings: "Where the Checkbox Shows" and its Setup popups (optin-setup.js). */
+.fusewp-optin-setup { max-width: 600px; }
+.fusewp-optin-setup > table { border-radius: 4px; }
+.fusewp-optin-setup > table td { vertical-align: middle; padding: 10px 12px; }
+.fusewp-optin-setup__action { text-align: right; width: 110px; }
+.fusewp-optin-setup .js-optin-setup .dashicons { font-size: 16px; width: 16px; height: 16px; margin: 4px 5px 0 -2px; }
+.fusewp-optin-setup__empty { margin-top: 0 !important; }
+
+.fusewp-optin-setup__popup { position: fixed; inset: 0; z-index: 100050; display: flex; align-items: flex-start; justify-content: center; padding: 70px 16px 16px; background: rgba(0, 0, 0, .55); overflow-y: auto; }
+.fusewp-optin-setup__popup[hidden] { display: none; }
+.fusewp-optin-setup__dialog { width: 100%; max-width: 560px; background: #fff; border-radius: 6px; box-shadow: 0 10px 40px rgba(0, 0, 0, .3); }
+.fusewp-optin-setup__head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid #dcdcde; }
+.fusewp-optin-setup__head h2 { margin: 0; font-size: 16px; line-height: 1.4; }
+.fusewp-optin-setup__close { border: 0; background: none; padding: 4px; color: #646970; cursor: pointer; }
+.fusewp-optin-setup__close:hover { color: #1d2327; }
+.fusewp-optin-setup__dialog .form-table { margin: 0 18px; width: calc(100% - 36px); table-layout: fixed; }
+/* !important: the settings page sets 250px with an id selector */
+.fusewp-optin-setup .fusewp-optin-setup__dialog .form-table th { width: 110px !important; padding: 16px 10px 16px 0; }
+.fusewp-optin-setup .fusewp-optin-setup__dialog .form-table td { padding: 16px 0; }
+.fusewp-optin-setup__mode { display: block; margin-bottom: 6px; }
+.fusewp-optin-setup__forms { margin: 8px 0 0 24px; }
+.fusewp-optin-setup__dialog .select2-container { z-index: 100060; }
+.fusewp-optin-setup__dialog .select2-selection--multiple { min-height: 32px; border-color: #8c8f94; }
+.fusewp-optin-setup__foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 18px; border-top: 1px solid #dcdcde; background: #f6f7f7; border-radius: 0 0 6px 6px; }
+body.fusewp-optin-setup-open { overflow: hidden; }

@@ -11,7 +11,7 @@ class ContactForms7 extends AbstractSyncSource
 {
     public function __construct()
     {
-        $this->title = 'Contact Forms 7';
+        $this->title = 'Contact Form 7';
 
         $this->id = 'contact_forms_7';
 

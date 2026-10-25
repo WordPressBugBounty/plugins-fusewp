@@ -205,6 +205,24 @@ class AdminNotices
                 'message'   => esc_html__('Did you know you can sync registered users through Profile Builder registration forms to your CRM and email list? %sLearn more%s', 'fusewp')
             ],
             [
+                'id'        => 'userswp',
+                'is_active' => defined('USERSWP_VERSION'),
+                'url'       => 'https://fusewp.com/article/connect-userswp-email-marketing-software/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=userswp_admin_notice',
+                'message'   => esc_html__('Did you know you can sync registered users and their profile fields through UsersWP registration and account forms to your CRM and email list? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'user_registration',
+                'is_active' => defined('UR_VERSION'),
+                'url'       => 'https://fusewp.com/article/connect-user-registration-email-marketing-software/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=user_registration_admin_notice',
+                'message'   => esc_html__('Did you know you can sync registered users and their custom fields through User Registration forms to your CRM and email list? %sLearn more%s', 'fusewp')
+            ],
+            [
+                'id'        => 'wpforo',
+                'is_active' => defined('WPFORO_VERSION'),
+                'url'       => 'https://fusewp.com/article/connect-wpforo-email-marketing-software/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=wpforo_admin_notice',
+                'message'   => esc_html__('Did you know you can sync wpForo forum members and their profile fields to your CRM and email list after registration and profile update? %sLearn more%s', 'fusewp')
+            ],
+            [
                 'id'        => 'easy_digital_downloads',
                 'is_active' => class_exists('\Easy_Digital_Downloads'),
                 'url'       => 'https://fusewp.com/article/sync-easy-digital-downloads-email-marketing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=easy_digital_downloads_admin_notice',

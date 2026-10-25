@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: FuseWP - Lite 1.1.26.1.1\n"
+"Project-Id-Version: FuseWP - Lite 1.1.27.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fusewp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-26T11:01:00+00:00\n"
+"POT-Creation-Date: 2026-10-25T12:43:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: fusewp\n"
@@ -135,75 +135,90 @@ msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:211
 #, php-format
-msgid "Did you know you can sync customers in Easy Digital Downloads to your CRM and email list based on their purchased products, order and subscription status? %sLearn more%s"
+msgid "Did you know you can sync registered users and their profile fields through UsersWP registration and account forms to your CRM and email list? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:217
 #, php-format
-msgid "Did you know you can sync Gravity Forms to your CRM and email list after payment and submission based on the form submitted, order and subscription status? %sLearn more%s"
+msgid "Did you know you can sync registered users and their custom fields through User Registration forms to your CRM and email list? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:223
 #, php-format
-msgid "Did you know you can sync WPForms to your CRM and email list after form submission and user registration based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync wpForo forum members and their profile fields to your CRM and email list after registration and profile update? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:229
 #, php-format
-msgid "Did you know you can sync Contact Form 7 to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync customers in Easy Digital Downloads to your CRM and email list based on their purchased products, order and subscription status? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:235
 #, php-format
-msgid "Did you know you can sync Fluent Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync Gravity Forms to your CRM and email list after payment and submission based on the form submitted, order and subscription status? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:241
 #, php-format
-msgid "Did you know you can integrate Forminator to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync WPForms to your CRM and email list after form submission and user registration based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:247
 #, php-format
-msgid "Did you know you can sync Formidable Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync Contact Form 7 to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:253
 #, php-format
-msgid "Did you know you can sync Everest Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync Fluent Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:259
 #, php-format
-msgid "Did you know you can sync SureForms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can integrate Forminator to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:265
 #, php-format
-msgid "Did you know you can sync WS Form to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync Formidable Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:271
 #, php-format
-msgid "Did you know you can sync Ninja Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
+msgid "Did you know you can sync Everest Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:277
 #, php-format
-msgid "Did you know you can sync GiveWP donors to your CRM and email list after donation based on their payment and subscription status? %sLearn more%s"
+msgid "Did you know you can sync SureForms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:283
 #, php-format
-msgid "Did you know you can sync WP Travel Engine customers to your CRM and email list after donation based on their booked trips, trip type and booking status? %sLearn more%s"
+msgid "Did you know you can sync WS Form to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:289
 #, php-format
-msgid "Did you know you can subscribed affiliates in AffiliateWP to your CRM and email list after registration and profile update? %sLearn more%s"
+msgid "Did you know you can sync Ninja Forms to your CRM and email list after form submission based on the form submitted? %sLearn more%s"
 msgstr ""
 
 #: src/core/src/Admin/AdminNotices.php:295
+#, php-format
+msgid "Did you know you can sync GiveWP donors to your CRM and email list after donation based on their payment and subscription status? %sLearn more%s"
+msgstr ""
+
+#: src/core/src/Admin/AdminNotices.php:301
+#, php-format
+msgid "Did you know you can sync WP Travel Engine customers to your CRM and email list after donation based on their booked trips, trip type and booking status? %sLearn more%s"
+msgstr ""
+
+#: src/core/src/Admin/AdminNotices.php:307
+#, php-format
+msgid "Did you know you can subscribed affiliates in AffiliateWP to your CRM and email list after registration and profile update? %sLearn more%s"
+msgstr ""
+
+#: src/core/src/Admin/AdminNotices.php:313
 #, php-format
 msgid "Did you know you can subscribed affiliates in SliceWP to your CRM and email list after registration and profile update? %sLearn more%s"
 msgstr ""
@@ -617,6 +632,7 @@ msgid "Configure"
 msgstr ""
 
 #: src/core/src/Admin/SettingsPage/Settings.php:223
+#: src/core/src/Optin/OptinCheckbox.php:538
 msgid "Close"
 msgstr ""
 
@@ -1204,7 +1220,7 @@ msgstr ""
 #: src/core/src/Integrations/GetResponse/SyncAction.php:60
 #: src/core/src/Integrations/Groundhogg/SyncAction.php:86
 #: src/core/src/Integrations/HighLevel/SyncAction.php:75
-#: src/core/src/Integrations/HubSpot/SyncAction.php:116
+#: src/core/src/Integrations/HubSpot/SyncAction.php:118
 #: src/core/src/Integrations/Keap/SyncAction.php:111
 #: src/core/src/Integrations/Mailchimp/SyncAction.php:45
 #: src/core/src/Integrations/Mailjet/SyncAction.php:41
@@ -1243,7 +1259,7 @@ msgstr ""
 #: src/core/src/Integrations/GoogleSheet/SyncAction.php:59
 #: src/core/src/Integrations/Groundhogg/SyncAction.php:115
 #: src/core/src/Integrations/HighLevel/SyncAction.php:99
-#: src/core/src/Integrations/HubSpot/SyncAction.php:142
+#: src/core/src/Integrations/HubSpot/SyncAction.php:144
 #: src/core/src/Integrations/Keap/SyncAction.php:119
 #: src/core/src/Integrations/Klaviyo/SyncAction.php:47
 #: src/core/src/Integrations/Mailchimp/SyncAction.php:69
@@ -1273,7 +1289,7 @@ msgstr ""
 #: src/core/src/Integrations/Engage/SyncAction.php:34
 #: src/core/src/Integrations/FluentCRM/SyncAction.php:34
 #: src/core/src/Integrations/GetResponse/SyncAction.php:36
-#: src/core/src/Integrations/HubSpot/SyncAction.php:100
+#: src/core/src/Integrations/HubSpot/SyncAction.php:102
 #: src/core/src/Integrations/Klaviyo/SyncAction.php:32
 #: src/core/src/Integrations/Mailercloud/SyncAction.php:33
 #: src/core/src/Integrations/Mailjet/SyncAction.php:35
@@ -1748,6 +1764,7 @@ msgstr ""
 #: src/core/src/Integrations/FluentCRM/AdminSettingsPage.php:29
 #: src/core/src/Integrations/Mailchimp/AdminSettingsPage.php:55
 #: src/core/src/Integrations/SendPulse/SendPulse.php:216
+#: src/core/src/Optin/OptinCheckbox.php:449
 msgid "Check to Enable"
 msgstr ""
 
@@ -1968,7 +1985,7 @@ msgid "Select the tag to assign to contacts. Can't find the appropriate tag, %sc
 msgstr ""
 
 #: src/core/src/Integrations/Groundhogg/SyncAction.php:80
-#: src/core/src/Integrations/HubSpot/SyncAction.php:106
+#: src/core/src/Integrations/HubSpot/SyncAction.php:108
 msgid "Contact Owner"
 msgstr ""
 
@@ -2002,19 +2019,19 @@ msgstr ""
 msgid "HubSpot access token not found."
 msgstr ""
 
-#: src/core/src/Integrations/HubSpot/SyncAction.php:109
+#: src/core/src/Integrations/HubSpot/SyncAction.php:111
 msgid "Select a HubSpot user that will be assigned as the owner of subscribed users."
 msgstr ""
 
-#: src/core/src/Integrations/HubSpot/SyncAction.php:110
+#: src/core/src/Integrations/HubSpot/SyncAction.php:112
 msgid "Lifecycle Stage"
 msgstr ""
 
-#: src/core/src/Integrations/HubSpot/SyncAction.php:113
+#: src/core/src/Integrations/HubSpot/SyncAction.php:115
 msgid "Lead Status"
 msgstr ""
 
-#: src/core/src/Integrations/HubSpot/SyncAction.php:119
+#: src/core/src/Integrations/HubSpot/SyncAction.php:121
 #, php-format
 msgid "%sUpgrade to FuseWP Premium%s to select contact owner, define Lifecycle stage & Lead status and map custom fields."
 msgstr ""
@@ -2318,6 +2335,7 @@ msgid "Not connected because MailPoet is not activated on this website"
 msgstr ""
 
 #: src/core/src/Integrations/MailPoet/MailPoet.php:79
+#: src/core/src/Optin/OptinConsent.php:202
 msgid "Email"
 msgstr ""
 
@@ -2659,6 +2677,270 @@ msgstr ""
 
 #: src/core/src/Integrations/ZohoCRM/ZohoCRM.php:171
 msgid "ZohoCRM access token not found."
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:51
+msgid "LifterLMS Registration & Checkout"
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:58
+msgid "Tutor LMS Registration & Checkout"
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:65
+msgid "Academy LMS Registration"
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:164
+msgid "Registration form"
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:165
+#: src/core/src/Optin/LmsCheckpoints.php:208
+msgid "Checkout"
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:166
+msgid "Free enrollment button (logged-in students)"
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:206
+#: src/core/src/Optin/LmsCheckpoints.php:248
+msgid "Student registration"
+msgstr ""
+
+#: src/core/src/Optin/LmsCheckpoints.php:207
+#: src/core/src/Optin/LmsCheckpoints.php:249
+msgid "Instructor registration"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:154
+msgid "WordPress Registration Form"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:217
+msgid "Checkout & WordPress Registration: adds an opt-in checkbox"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:218
+msgid "Registration Plugins: adds an opt-in checkbox"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:219
+msgid "Forms: map a form field to \"Opt-in Consent\""
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:220
+msgid "Others: uses the consent given at checkout or registration"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:266
+#: src/core/src/Optin/OptinCheckbox.php:443
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:422
+msgid "Opt-in Checkbox"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:425
+msgid "Require Opt-in Consent For"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:428
+msgid "For the integrations selected here, only contacts who opted in are subscribed. Integrations you don't select keep syncing everyone, as before. Status changes that remove a contact from a list are always synced."
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:429
+msgid "• Checkout & WordPress Registration, Registration Plugins: an opt-in checkbox is added to the form automatically."
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:430
+msgid "• Forms: add a checkbox field to your form, then map it to \"Opt-in Consent\" in the sync rule."
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:431
+msgid "• Others: the consent the contact gave at checkout or registration is used."
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:436
+msgid "Where the Checkbox Shows"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:442
+msgid "Checkbox Label"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:448
+msgid "Pre-check the Box"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:450
+msgid "GDPR requires an unticked box, so leave this off if you sell to the EU or UK."
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:456
+msgid "Existing Contacts"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:457
+msgid "Keep syncing contacts who signed up before opt-in was required"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:458
+msgid "Applies to user accounts created, and orders placed, before you first enabled opt-in consent."
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:494
+msgid "Setup"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:502
+msgid "Pick the forms…"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:519
+msgid "Show on"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:520
+#: src/core/src/Optin/OptinCheckbox.php:552
+msgid "All registration forms"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:521
+msgid "Only these forms"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:523
+msgid "A form left out shows no checkbox; its sign-ups sync only if they opted in somewhere else."
+msgstr ""
+
+#. translators: %s: eg. "ProfilePress Registration"
+#: src/core/src/Optin/OptinCheckbox.php:537
+#, php-format
+msgid "%s: opt-in checkbox"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:540
+msgid "Label"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:542
+msgid "Leave empty to use the Checkbox Label below."
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:543
+msgid "Done"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:544
+msgid "Click Save Changes on the page to keep these settings."
+msgstr ""
+
+#. translators: 1: forms picked, 2: forms in all
+#: src/core/src/Optin/OptinCheckbox.php:554
+#, php-format
+msgid "%1$s of %2$s forms"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:555
+msgid "No form picked: the checkbox shows nowhere"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:556
+msgid "own label"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:557
+msgid "default label"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:558
+msgid "Its registration form"
+msgstr ""
+
+#: src/core/src/Optin/OptinCheckbox.php:561
+msgid "Select a registration plugin in \"Require Opt-in Consent For\" to choose its forms and label."
+msgstr ""
+
+#: src/core/src/Optin/OptinConsent.php:191
+#: src/core/src/Optin/OptinConsent.php:220
+msgid "FuseWP Opt-in Consent"
+msgstr ""
+
+#: src/core/src/Optin/OptinConsent.php:199
+msgid "Newsletter Opt-in Consent"
+msgstr ""
+
+#: src/core/src/Optin/OptinConsent.php:203
+msgid "Consented on"
+msgstr ""
+
+#: src/core/src/Optin/OptinConsent.php:204
+msgid "Where"
+msgstr ""
+
+#: src/core/src/Optin/OptinConsent.php:205
+msgid "IP address"
+msgstr ""
+
+#: src/core/src/Optin/OptinGate.php:165
+msgid "Opt-in Consent"
+msgstr ""
+
+#: src/core/src/Optin/PaymentCheckpoints.php:40
+msgid "GiveWP Donation Forms"
+msgstr ""
+
+#: src/core/src/Optin/PaymentCheckpoints.php:47
+msgid "WP Travel Engine Checkout"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:71
+msgid "ProfilePress Registration & Checkout"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:78
+msgid "Paid Member Subscriptions Registration"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:85
+msgid "UsersWP Registration"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:92
+msgid "User Registration Forms"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:99
+msgid "Profile Builder Registration"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:106
+msgid "Simple Membership Registration"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:113
+msgid "Ultimate Member Registration"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:120
+msgid "wpForo Registration"
+msgstr ""
+
+#. translators: %s: a ProfilePress melange form's name
+#: src/core/src/Optin/RegistrationCheckpoints.php:226
+#, php-format
+msgid "%s (melange)"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:230
+msgid "Checkout (buying a membership plan)"
+msgstr ""
+
+#: src/core/src/Optin/RegistrationCheckpoints.php:362
+msgid "Default registration form"
 msgstr ""
 
 #: src/core/src/RegisterScripts.php:41

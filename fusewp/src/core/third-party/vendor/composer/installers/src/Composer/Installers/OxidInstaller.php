@@ -6,15 +6,9 @@ use FuseWPVendor\Composer\Package\PackageInterface;
 class OxidInstaller extends BaseInstaller
 {
     const VENDOR_PATTERN = '/^modules\/(?P<vendor>.+)\/.+/';
+    /** @var array<string, string> */
     protected $locations = array('module' => 'modules/{$name}/', 'theme' => 'application/views/{$name}/', 'out' => 'out/{$name}/');
-    /**
-     * getInstallPath
-     *
-     * @param PackageInterface $package
-     * @param string $frameworkType
-     * @return string
-     */
-    public function getInstallPath(PackageInterface $package, $frameworkType = '')
+    public function getInstallPath(PackageInterface $package, string $frameworkType = ''): string
     {
         $installPath = parent::getInstallPath($package, $frameworkType);
         $type = $this->package->getType();
@@ -24,15 +18,10 @@ class OxidInstaller extends BaseInstaller
         return $installPath;
     }
     /**
-     * prepareVendorDirectory
-     *
      * Makes sure there is a vendormetadata.php file inside
      * the vendor folder if there is a vendor folder.
-     *
-     * @param string $installPath
-     * @return void
      */
-    protected function prepareVendorDirectory($installPath)
+    protected function prepareVendorDirectory(string $installPath): void
     {
         $matches = '';
         $hasVendorDirectory = preg_match(self::VENDOR_PATTERN, $installPath, $matches);

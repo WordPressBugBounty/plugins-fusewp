@@ -4,19 +4,16 @@ namespace FuseWPVendor\Composer\Installers;
 
 class GravInstaller extends BaseInstaller
 {
+    /** @var array<string, string> */
     protected $locations = array('plugin' => 'user/plugins/{$name}/', 'theme' => 'user/themes/{$name}/');
     /**
      * Format package name
-     *
-     * @param array $vars
-     *
-     * @return array
      */
-    public function inflectPackageVars($vars)
+    public function inflectPackageVars(array $vars): array
     {
         $restrictedWords = implode('|', array_keys($this->locations));
         $vars['name'] = strtolower($vars['name']);
-        $vars['name'] = preg_replace('/^(?:grav-)?(?:(?:' . $restrictedWords . ')-)?(.*?)(?:-(?:' . $restrictedWords . '))?$/ui', '$1', $vars['name']);
+        $vars['name'] = $this->pregReplace('/^(?:grav-)?(?:(?:' . $restrictedWords . ')-)?(.*?)(?:-(?:' . $restrictedWords . '))?$/ui', '$1', $vars['name']);
         return $vars;
     }
 }

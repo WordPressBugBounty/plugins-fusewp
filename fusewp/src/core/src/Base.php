@@ -123,6 +123,12 @@ class Base
 
         QueueManager::get_instance()->init_cron();
         SyncQueueHandler::get_instance();
+        Optin\OptinConsent::get_instance();
+        Optin\OptinCheckbox::get_instance();
+        Optin\OptinGate::get_instance();
+        Optin\RegistrationCheckpoints::get_instance();
+        Optin\LmsCheckpoints::get_instance();
+        Optin\PaymentCheckpoints::get_instance();
 
         AjaxHandler::get_instance();
         RegisterScripts::get_instance();

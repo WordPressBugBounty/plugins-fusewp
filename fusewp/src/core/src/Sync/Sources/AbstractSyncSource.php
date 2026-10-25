@@ -137,20 +137,24 @@ abstract class AbstractSyncSource
 
     public static function filter_out_fusewpEmail_from_custom_fields_array($custom_fields)
     {
-        // Find the index of "fusewpEmail" in the field_values array
-        $index = array_search("fusewpEmail", $custom_fields["field_values"]);
+        if ( ! isset($custom_fields["field_values"]) || ! is_array($custom_fields["field_values"])) return $custom_fields;
 
-        // If "fusewpEmail" is found, remove it and the corresponding items from other arrays
-        if ($index !== false) {
-            unset($custom_fields["mappable_data"][$index]);
-            unset($custom_fields["mappable_data_types"][$index]);
-            unset($custom_fields["field_values"][$index]);
+        // FuseWP-only mappings (lead email, opt-in consent) are never sent to the integration.
+        foreach (['fusewpEmail', 'fusewpConsent'] as $fusewp_field) {
 
-            // Re-index the arrays to ensure consecutive numeric keys
-            $custom_fields["mappable_data"]       = array_values($custom_fields["mappable_data"]);
-            $custom_fields["mappable_data_types"] = array_values($custom_fields["mappable_data_types"]);
-            $custom_fields["field_values"]        = array_values($custom_fields["field_values"]);
+            $index = array_search($fusewp_field, $custom_fields["field_values"]);
+
+            if ($index !== false) {
+                unset($custom_fields["mappable_data"][$index]);
+                unset($custom_fields["mappable_data_types"][$index]);
+                unset($custom_fields["field_values"][$index]);
+            }
         }
+
+        // Re-index the arrays to ensure consecutive numeric keys
+        $custom_fields["mappable_data"]       = array_values($custom_fields["mappable_data"] ?? []);
+        $custom_fields["mappable_data_types"] = array_values($custom_fields["mappable_data_types"] ?? []);
+        $custom_fields["field_values"]        = array_values($custom_fields["field_values"]);
 
         return $custom_fields;
     }

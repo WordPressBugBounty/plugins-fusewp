@@ -7,5 +7,6 @@ namespace FuseWPVendor\Composer\Installers;
  */
 class ModxInstaller extends BaseInstaller
 {
+    /** @var array<string, string> */
     protected $locations = array('extra' => 'core/packages/{$name}/');
 }
