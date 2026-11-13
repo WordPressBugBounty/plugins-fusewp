@@ -133,8 +133,8 @@ final class Collection
     {
         $properties = [];
 
-        foreach ($this->collection as $property) {
-            $properties[] = $property;
+        foreach ($this->collection as $key => $value) {
+            $properties[] = $key;
         }
 
         return $properties;
@@ -149,8 +149,8 @@ final class Collection
     {
         $values = [];
 
-        foreach ($this->collection as $property) {
-            $values[] = $this->get($property);
+        foreach ($this->collection as $value) {
+            $values[] = $value;
         }
 
         return $values;

@@ -8,6 +8,9 @@ use Authifly\Data;
 use Authifly\Exception\HttpClientFailureException;
 use Authifly\Exception\HttpRequestFailedException;
 use Authifly\Exception\InvalidAccessTokenException;
+use Authifly\Exception\InvalidAuthorizationStateException;
+use Authifly\Exception\RuntimeException;
+use Authifly\Storage\WPTransientStorage;
 
 /**
  * Salesforce OAuth2 provider adapter.
@@ -35,7 +38,16 @@ class Salesforce extends OAuth2
      */
     protected $scope = 'api refresh_token';
 
+    /**
+     * State is handled (and validated) via the handshake storage since the adapter storage doesn't persist
+     * across the redirect. See getAuthorizeUrl() and exchangeCodeForAccessToken().
+     */
     protected $supportRequestState = false;
+
+    /**
+     * @var WPTransientStorage|null
+     */
+    protected $handshakeStorage;
 
 
     /**
@@ -61,6 +73,81 @@ class Salesforce extends OAuth2
 
         $this->tokenRefreshParameters['client_id']     = $this->clientId;
         $this->tokenRefreshParameters['client_secret'] = $this->clientSecret;
+    }
+
+    /**
+     * Persistent storage for data that must survive the OAuth redirect round trip (state and PKCE code verifier).
+     *
+     * The adapter storage passed in by consumers is in-memory (OAuthCredentialStorage) and only holds tokens.
+     *
+     * @return WPTransientStorage
+     * @throws RuntimeException
+     */
+    protected function getHandshakeStorage()
+    {
+        if ( ! $this->handshakeStorage) {
+            // scoped by callback so concurrent authorizations from different consumers (e.g. MailOptin, FuseWP) don't collide.
+            $this->handshakeStorage = new WPTransientStorage('authifly_sf_oauth_' . substr(md5((string)$this->callback), 0, 10));
+        }
+
+        return $this->handshakeStorage;
+    }
+
+    /**
+     * Adds state and PKCE (code_challenge) to the authorization request.
+     *
+     * Salesforce (External Client Apps and connected apps with "Require PKCE") rejects authorization
+     * requests without a code challenge.
+     *
+     * @see https://help.salesforce.com/s/articleView?id=xcloud.remoteaccess_pkce.htm&type=5
+     *
+     * {@inheritdoc}
+     */
+    protected function getAuthorizeUrl($parameters = [])
+    {
+        $state         = 'HA-' . bin2hex(random_bytes(16));
+        $code_verifier = rtrim(strtr(base64_encode(random_bytes(64)), '+/', '-_'), '=');
+
+        $storage = $this->getHandshakeStorage();
+        $storage->set('state', $state);
+        $storage->set('code_verifier', $code_verifier);
+
+        $this->AuthorizeUrlParameters['state']                 = $state;
+        $this->AuthorizeUrlParameters['code_challenge']        = rtrim(strtr(base64_encode(hash('sha256', $code_verifier, true)), '+/', '-_'), '=');
+        $this->AuthorizeUrlParameters['code_challenge_method'] = 'S256';
+
+        return parent::getAuthorizeUrl($parameters);
+    }
+
+    /**
+     * Validates the returned state and sends the PKCE code_verifier along with the authorization code.
+     *
+     * {@inheritdoc}
+     *
+     * @throws InvalidAuthorizationStateException
+     */
+    protected function exchangeCodeForAccessToken($code)
+    {
+        $state = filter_input($_SERVER['REQUEST_METHOD'] === 'POST' ? INPUT_POST : INPUT_GET, 'state');
+
+        $storage       = $this->getHandshakeStorage();
+        $stored_state  = $storage->get('state');
+        $code_verifier = $storage->get('code_verifier');
+
+        // Validate before clearing so a forged callback can't wipe an in-progress authorization.
+        if (empty($state) || empty($stored_state) || ! hash_equals((string)$stored_state, (string)$state)) {
+            throw new InvalidAuthorizationStateException(
+                'The authorization state [state=' . substr(htmlentities((string)$state), 0, 100) . '] '
+                . 'of this page is either invalid or has already been consumed.'
+            );
+        }
+
+        // single use
+        $storage->clear();
+
+        $this->tokenExchangeParameters['code_verifier'] = $code_verifier;
+
+        return parent::exchangeCodeForAccessToken($code);
     }
 
     public function apiRequest($url, $method = 'GET', $parameters = [], $headers = [])

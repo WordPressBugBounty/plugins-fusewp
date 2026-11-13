@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 1.1.27.1 =
+* Fixed a fatal error when the licence upgrader received array input.
+* Security: Added a nonce and capability check to the review-notice dismissal handler.
+* Security: Only administrators can now dismiss FuseWP admin notices.
+* Security: A failed licence-upgrade request no longer cancels an admin's pending upgrade token.
+* Security: Hardened WS Form bulk sync so stored submission data can no longer create PHP objects.
+* Thanks to Nathan Cross (CyberBadger) for responsibly disclosing these issues.
+
 = 1.1.27.0 =
 * Premium: Added User Registration plugin integration
 * Premium: Added UsersWP plugin integration.

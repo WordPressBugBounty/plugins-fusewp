@@ -5,7 +5,7 @@ Tags: google sheets, automation, marketing, mailchimp, membership
 Requires at least: 6.9
 Requires PHP: 8.0
 Tested up to: 7.1
-Stable tag: 1.1.27.0
+Stable tag: 1.1.27.1
 License: GPLv2 or later
 
 Subscribe WordPress users to CRM & email marketing software. Constant Contact, Mailchimp ActiveCampaign MailerLite Brevo Klaviyo AWeber HubSpot etc
@@ -220,6 +220,14 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 
 == Changelog ==
 
+= 1.1.27.1 =
+* Fixed a fatal error when the licence upgrader received array input.
+* Security: Added a nonce and capability check to the review-notice dismissal handler.
+* Security: Only administrators can now dismiss FuseWP admin notices.
+* Security: A failed licence-upgrade request no longer cancels an admin's pending upgrade token.
+* Security: Hardened WS Form bulk sync so stored submission data can no longer create PHP objects.
+* Thanks to Nathan Cross (CyberBadger) for responsibly disclosing these issues.
+
 = 1.1.27.0 =
 * Premium: Added User Registration plugin integration
 * Premium: Added UsersWP plugin integration.
@@ -234,35 +242,5 @@ Please visit the [plugin page](https://fusewp.com/?utm_source=wprepo&utm_medium=
 * Added fusewp_sync_email_address filter in Formidable Forms sync.
 * Added filter: fusewp_sync_email_address.
 * Clear bulk-sync cache when the sync queue is deleted.
-
-= 1.1.26.0 =
-* Added [Copper CRM integration](https://fusewp.com/article/connect-wordpress-to-copper-crm/?ref=changelog).
-* Removed "Enable Other Sync on Profile Update" setting.
-* Added fusewp_remove_unsubscribe_sync_jobs_with_resubscribe_action filter.
-* Fixed EmailOctopus sync bug due to empty tag/fields data.
-* Improved beehiiv api class to respect rate limit headers.
-
-= 1.1.25.3 =
-* Updated klaviyo API version to 2026-04-15
-
-= 1.1.25.2 =
-* Fixed CSRF vulnerability in toggle_sync_status AJAX handler.
-* Fixed: Warning: Attempt to read property "roles" on bool.
-* Fixed: Fatal error: Uncaught TypeError: Illegal offset type.
-* Fixed bug where custom field mapping data can be missing.
-* Improvement: sync retry now after one hour, not after a minute.
-
-= 1.1.25.1 =
-* Improved admin UI for WP 7
-* Fixed bug with Salesforce connection.
-
-= 1.1.25.0 =
-* Added [SendPulse integration](https://fusewp.com/article/connect-wordpress-to-sendpulse/?ref=changelog).
-* Added [Mailercloud integration](https://fusewp.com/article/connect-wordpress-to-mailercloud/?ref=changelog).
-* Added [Bento integration](https://fusewp.com/article/connect-wordpress-to-bento/?ref=changelog).
-* Added [Engage.so integration](https://fusewp.com/article/connect-wordpress-to-engage/?ref=changelog).
-* Added [Birdsend integration](https://fusewp.com/article/connect-wordpress-to-birdsend/?ref=changelog).
-* Improved reliability of sync by adding better support for delayed sync.
-* Fixed PHP fatal errors when integrated plugin becomes inactive.
 
 See the [changelog file](https://plugins.svn.wordpress.org/fusewp/trunk/changelog.txt) for complete changelog information.

@@ -50,7 +50,7 @@ class Logger implements LoggerInterface
         if ($level && $level !== self::NONE) {
             $this->initialize($file);
 
-            $this->level = $level;
+            $this->level = $level === true ? self::DEBUG : $level;
             $this->file = $file;
         }
     }

@@ -359,8 +359,9 @@ class LicenseUpgrader
                 ]
         );
 
-        $post_oth = ! empty($_REQUEST['oth']) ? sanitize_text_field($_REQUEST['oth']) : '';
-        $post_url = ! empty($_REQUEST['file']) ? esc_url_raw($_REQUEST['file']) : '';
+        // this endpoint is unauthenticated, so reject array input instead of letting it fatal
+        $post_oth = ! empty($_REQUEST['oth']) && is_string($_REQUEST['oth']) ? sanitize_text_field(wp_unslash($_REQUEST['oth'])) : '';
+        $post_url = ! empty($_REQUEST['file']) && is_string($_REQUEST['file']) ? esc_url_raw(wp_unslash($_REQUEST['file'])) : '';
 
         if (empty($post_oth) || empty($post_url)) {
             wp_send_json_error(['message' => $error, 'code_err' => '1']);
@@ -383,24 +384,27 @@ class LicenseUpgrader
 
         $token_data = get_option('fusewp_connect_token');
 
-        // Always delete token on any attempt (success or failure) to prevent brute-force
-        delete_option('fusewp_connect_token');
-
         if (empty($token_data) || ! is_array($token_data)) {
             wp_send_json_error(['message' => $error, 'code_err' => '2']);
         }
 
-        $stored_token = $token_data['token'] ?? '';
+        $stored_token = (string) ($token_data['token'] ?? '');
         $created_at   = isset($token_data['created_at']) ? (int) $token_data['created_at'] : 0;
 
         // Verify token hasn't expired
         if ((time() - $created_at) > self::TOKEN_EXPIRY_SECONDS) {
+            delete_option('fusewp_connect_token');
             wp_send_json_error(['message' => esc_html__('The connection token has expired. Please try again.', 'fusewp'), 'code_err' => 'token_expired']);
         }
 
-        if ( ! hash_equals($stored_token, $post_oth)) {
+        // A wrong token must not consume the pending one, otherwise any anonymous request could cancel an
+        // admin's upgrade. The token is 256 bits of random_bytes() and expires in 5 minutes, so brute force is moot.
+        if ('' === $stored_token || ! hash_equals($stored_token, $post_oth)) {
             wp_send_json_error(['message' => $error, 'code_err' => '3']);
         }
+
+        // Single use: consume the token once it has been verified.
+        delete_option('fusewp_connect_token');
 
         // Set the current screen to avoid undefined notices.
         set_current_screen('toplevel_page_fusewp-settings');

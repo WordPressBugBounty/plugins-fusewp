@@ -71,7 +71,7 @@ class WSForm extends AbstractSyncSource
     public function get_rule_information()
     {
         return '<p>' . sprintf(
-                esc_html__('Sync WS Form Forms leads to your email marketing software after form submissionh. %sLearn more%s', 'fusewp'),
+                esc_html__('Sync WS Form Forms leads to your email marketing software after form submission. %sLearn more%s', 'fusewp'),
                 '<a target="_blank" href="https://fusewp.com/article/sync-wsform-email-marketing/">', '</a>'
             ) . '</p>';
     }
@@ -310,12 +310,38 @@ class WSForm extends AbstractSyncSource
             $submission = (array) $item['r'];
 
             foreach ($fields as $field) {
-                $value = maybe_unserialize($field->meta_value);
+                $value = $field->meta_value;
+
+                // Never instantiate objects from stored submission data.
+                if (is_serialized($value)) {
+                    $value = $this->strip_objects(@unserialize(trim($value), ['allowed_classes' => false]));
+                }
                 $submission[$field->meta_key] = $this->transform_field_value($value);
             }
 
             $this->sync_user('form_submission', $submission);
         }
+    }
+
+    /**
+     * allowed_classes => false still yields __PHP_Incomplete_Class instances, which would fatal
+     * once the sync casts them to strings. Submission values are scalars or arrays only, so drop objects.
+     */
+    private function strip_objects($value)
+    {
+        if (is_object($value)) return '';
+
+        if (is_array($value)) {
+            foreach ($value as $key => $item) {
+                if (is_object($item)) {
+                    unset($value[$key]);
+                } elseif (is_array($item)) {
+                    $value[$key] = $this->strip_objects($item);
+                }
+            }
+        }
+
+        return $value;
     }
 
     private function transform_field_value($value)

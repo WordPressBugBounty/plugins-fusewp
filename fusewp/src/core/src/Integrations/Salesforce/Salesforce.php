@@ -263,7 +263,7 @@ class Salesforce extends AbstractIntegration
             throw new Exception(__('Salesforce refresh token not found.', 'fusewp'));
         }
 
-        $api_version = apply_filters('fusewp_salesforce_rest_api_version', '63.0');
+        $api_version = apply_filters('fusewp_salesforce_rest_api_version', '68.0');
 
         $config = [
             'callback'   => self::callback_url(),

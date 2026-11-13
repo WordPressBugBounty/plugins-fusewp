@@ -20,6 +20,25 @@ class AdminNotices
 
         add_action('admin_init', ['\FuseWPVendor\PAnD', 'init']);
         add_action('admin_init', [$this, 'dismiss_leave_review_notice_forever']);
+
+        // Runs before every PAnD copy's handler (FuseWP's or another plugin's) so only admins can dismiss FuseWP notices site-wide.
+        add_action('wp_ajax_dismiss_admin_notice', [$this, 'guard_notice_dismissal'], PHP_INT_MIN);
+    }
+
+    /**
+     * PAnD stores dismissals in a site option and only checks a nonce that is printed on every admin page,
+     * so any logged-in user could dismiss a notice for everyone. Require manage_options for FuseWP's notices.
+     * Other plugins' notices are left to their own PAnD handling.
+     */
+    public function guard_notice_dismissal()
+    {
+        $option_name = isset($_POST['option_name']) ? sanitize_text_field(wp_unslash($_POST['option_name'])) : '';
+
+        if (strpos($option_name, 'fusewp') !== 0 && strpos($option_name, 'fwp_') !== 0) return;
+
+        if ( ! current_user_can('manage_options')) {
+            wp_die(-1, 403);
+        }
     }
 
     public function admin_notices_bucket()
@@ -50,9 +69,14 @@ class AdminNotices
     public function dismiss_leave_review_notice_forever()
     {
         if ( ! empty($_GET['fusewp_admin_action']) && $_GET['fusewp_admin_action'] == 'dismiss_leave_review_forever') {
+
+            if ( ! current_user_can('manage_options')) return;
+
+            check_admin_referer('fusewp_dismiss_leave_review_forever');
+
             update_option('fusewp_dismiss_leave_review_forever', true);
 
-            wp_safe_redirect(esc_url_raw(remove_query_arg('fusewp_admin_action')));
+            wp_safe_redirect(esc_url_raw(remove_query_arg(['fusewp_admin_action', '_wpnonce'])));
             exit;
         }
     }
@@ -78,7 +102,7 @@ class AdminNotices
 
         $review_url = 'https://wordpress.org/support/plugin/fusewp/reviews/?filter=5#new-post';
 
-        $dismiss_url = esc_url_raw(add_query_arg('fusewp_admin_action', 'dismiss_leave_review_forever'));
+        $dismiss_url = esc_url(wp_nonce_url(add_query_arg('fusewp_admin_action', 'dismiss_leave_review_forever'), 'fusewp_dismiss_leave_review_forever'));
 
         $notice = sprintf(
             __('Hey, I noticed you have been using FuseWP for at least 7 days now - that\'s awesome! Could you please do me a BIG favor and give it a %1$s5-star rating on WordPress?%2$s This will help us spread the word and boost our motivation - thanks!', 'fusewp'),
@@ -99,6 +123,8 @@ class AdminNotices
 
     public function integrations_upsell()
     {
+        if ( ! current_user_can('manage_options')) return;
+
         if ( ! $this->is_admin_notice_show()) return;
 
         $upsells = [

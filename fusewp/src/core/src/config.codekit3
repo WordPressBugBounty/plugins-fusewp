@@ -281,6 +281,18 @@
       "oAP" : "\/assets\/css\/index.php",
       "oF" : 0
     },
+    "\/assets\/css\/optin-setup.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/css\/optin-setup.min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/assets\/images\/activecampaign-integration.png" : {
       "ft" : 32768,
       "iS" : 5061,
@@ -755,6 +767,17 @@
       "oA" : 1,
       "oAP" : "\/assets\/js\/license.min.js",
       "oF" : 1,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/assets\/js\/optin-setup.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/assets\/js\/optin-setup.min.js",
+      "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
@@ -2056,6 +2079,54 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/Integrations\/ZohoCRM\/ZohoCRM.php",
+      "oF" : 0
+    },
+    "\/Optin\/LmsCheckpoints.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Optin\/LmsCheckpoints.php",
+      "oF" : 0
+    },
+    "\/Optin\/OptinCheckbox.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Optin\/OptinCheckbox.php",
+      "oF" : 0
+    },
+    "\/Optin\/OptinConsent.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Optin\/OptinConsent.php",
+      "oF" : 0
+    },
+    "\/Optin\/OptinGate.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Optin\/OptinGate.php",
+      "oF" : 0
+    },
+    "\/Optin\/PaymentCheckpoints.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Optin\/PaymentCheckpoints.php",
+      "oF" : 0
+    },
+    "\/Optin\/RegistrationCheckpoints.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/Optin\/RegistrationCheckpoints.php",
       "oF" : 0
     },
     "\/QueueManager\/Connection.php" : {
